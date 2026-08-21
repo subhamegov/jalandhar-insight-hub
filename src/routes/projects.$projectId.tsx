@@ -5,6 +5,11 @@ import type { GovPoint } from "@/components/map/MapCanvas";
 import { EmptyNote, Field, MetricCard, PageHeader, Panel } from "@/components/app/Primitives";
 import { ConflictList } from "@/components/app/ConflictList";
 import { EvidenceBadge, StatusBadge } from "@/components/app/StatusBadge";
+import { SourceBadge } from "@/components/app/SourceBadge";
+import { FreshnessBadge } from "@/components/app/FreshnessBadge";
+import { AttentionBadge } from "@/components/app/AttentionBadge";
+import { EvidenceLink } from "@/components/app/EvidenceDrawer";
+import { assessProject } from "@/data/attentionLabel";
 import { conflictsForProject } from "@/data/conflicts";
 import { componentsFor, eventsFor, programmesFor } from "@/data/programmes";
 import { assets, evidence, isDelayed, projects } from "@/data/selectors";
@@ -81,7 +86,35 @@ function ProjectDetail() {
       <PageHeader
         title={p.project_name}
         subtitle={p.short_description ?? undefined}
-        actions={<StatusBadge status={p.status} />}
+        actions={
+          <div className="flex flex-wrap items-center gap-2">
+            <StatusBadge status={p.status} />
+            <AttentionBadge
+              label={assessProject(p).label}
+              title={assessProject(p).reasons.join("; ")}
+            />
+            <FreshnessBadge date={p.last_verified} showDate />
+            <EvidenceLink
+              request={{
+                fact: "Project record",
+                entityId: p.project_id,
+                entityName: p.project_name,
+                lastVerified: p.last_verified,
+                conflictNote: p.conflict_note ?? null,
+                reported: p.cost_records ?? [],
+                fallback: {
+                  source_agency: p.source_agency,
+                  source_url: p.source_url,
+                  source_date: p.source_date,
+                  evidence_quality: p.evidence_quality,
+                },
+              }}
+              className="rounded-sm border border-input px-2 py-1"
+            >
+              View evidence
+            </EvidenceLink>
+          </div>
+        }
       />
 
       <div className="mb-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-muted-foreground">
@@ -206,8 +239,16 @@ function OverviewTab({ p, programmes }: { p: P; programmes: string[] }) {
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           <Field label="Source agency" value={text(p.source_agency)} />
           <Field label="Source date" value={dateText(p.source_date)} mono />
-          <Field label="Evidence quality" value={<EvidenceBadge quality={p.evidence_quality} />} />
-          <Field label="Last verified" value={dateText(p.last_verified)} mono />
+          <Field label="Evidence quality" value={<SourceBadge quality={p.evidence_quality} />} />
+          <Field
+            label="Last verified"
+            value={
+              <span className="flex items-center gap-2">
+                <span className="num">{dateText(p.last_verified)}</span>
+                <FreshnessBadge date={p.last_verified} />
+              </span>
+            }
+          />
         </div>
         {p.notes ? <p className="mt-3 text-sm text-muted-foreground">{p.notes}</p> : null}
       </Panel>
@@ -450,7 +491,7 @@ function EvidenceTab({ items, p }: { items: typeof evidence; p: P }) {
       <div className="mb-3 grid grid-cols-2 gap-3 md:grid-cols-4">
         <Field label="Source agency" value={text(p.source_agency)} />
         <Field label="Source URL" value={text(p.source_url)} />
-        <Field label="Evidence quality" value={<EvidenceBadge quality={p.evidence_quality} />} />
+        <Field label="Evidence quality" value={<SourceBadge quality={p.evidence_quality} />} />
         <Field label="Last verified" value={dateText(p.last_verified)} mono />
       </div>
       {items.length === 0 ? (
