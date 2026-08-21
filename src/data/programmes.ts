@@ -34,15 +34,33 @@ function component(
 export const fundingComponents: FundingComponent[] = [
   component("FC-001", "PRJ-JAL-001", "AMRUT 2.0", "central", MOHUA),
   component("FC-002", "PRJ-JAL-001", "Punjab Urban Environment Improvement Programme", "state", LG),
-  component("FC-003", "PRJ-JAL-001", "Municipal Corporation Jalandhar own funds", "city", "Municipal Corporation Jalandhar"),
+  component(
+    "FC-003",
+    "PRJ-JAL-001",
+    "Municipal Corporation Jalandhar own funds",
+    "city",
+    "Municipal Corporation Jalandhar",
+  ),
   component("FC-004", "PRJ-JAL-002", "Swachh Bharat Mission - Urban", "central", MOHUA),
   component("FC-005", "PRJ-JAL-002", "Punjab Local Government projects", "state", LG),
   component("FC-006", "PRJ-JAL-003", "AMRUT", "central", MOHUA),
   component("FC-007", "PRJ-JAL-003", "Punjab Municipal Services", "state", LG),
   component("FC-008", "PRJ-JAL-004", "PM-eBus Sewa", "central", MOHUA),
   component("FC-009", "PRJ-JAL-004", "Punjab Municipal Services", "state", LG),
-  component("FC-010", "PRJ-JAL-006", "Amrit Bharat Station Scheme", "central", "Ministry of Railways"),
-  component("FC-011", "PRJ-JAL-007", "National Clean Air Programme", "central", "Ministry of Environment, Forest and Climate Change"),
+  component(
+    "FC-010",
+    "PRJ-JAL-006",
+    "Amrit Bharat Station Scheme",
+    "central",
+    "Ministry of Railways",
+  ),
+  component(
+    "FC-011",
+    "PRJ-JAL-007",
+    "National Clean Air Programme",
+    "central",
+    "Ministry of Environment, Forest and Climate Change",
+  ),
 ];
 
 function event(
@@ -65,9 +83,19 @@ function event(
 // Events recorded as expected stages for each project. Dates stay null until a
 // sanction order, tender document or completion certificate is attached.
 export const timelineEvents: TimelineEvent[] = [
-  event("TE-001", "PRJ-JAL-001", "announced", "Surface water supply scheme announced for the city."),
+  event(
+    "TE-001",
+    "PRJ-JAL-001",
+    "announced",
+    "Surface water supply scheme announced for the city.",
+  ),
   event("TE-002", "PRJ-JAL-001", "sanctioned", null),
-  event("TE-003", "PRJ-JAL-001", "tender_published", "Tender publication does not by itself confirm implementation."),
+  event(
+    "TE-003",
+    "PRJ-JAL-001",
+    "tender_published",
+    "Tender publication does not by itself confirm implementation.",
+  ),
   event("TE-004", "PRJ-JAL-001", "contract_awarded", "Contractor recorded as Larsen and Toubro."),
   event("TE-005", "PRJ-JAL-001", "work_started", null),
 
@@ -80,15 +108,30 @@ export const timelineEvents: TimelineEvent[] = [
   event("TE-011", "PRJ-JAL-003", "work_started", null),
   event("TE-012", "PRJ-JAL-003", "substantial_completion", null),
   event("TE-013", "PRJ-JAL-003", "commissioned", "Commissioning record not located."),
-  event("TE-014", "PRJ-JAL-003", "operational", "Operational status of the plant is not confirmed."),
+  event(
+    "TE-014",
+    "PRJ-JAL-003",
+    "operational",
+    "Operational status of the plant is not confirmed.",
+  ),
 
-  event("TE-015", "PRJ-JAL-004", "announced", "Buses allocated to Jalandhar under the central bus programme."),
+  event(
+    "TE-015",
+    "PRJ-JAL-004",
+    "announced",
+    "Buses allocated to Jalandhar under the central bus programme.",
+  ),
   event("TE-016", "PRJ-JAL-004", "sanctioned", "97 buses recorded as sanctioned."),
 
   event("TE-017", "PRJ-JAL-005", "announced", "Redevelopment of the sports complex announced."),
   event("TE-018", "PRJ-JAL-005", "work_started", "Work reported as stalled after start."),
 
-  event("TE-019", "PRJ-JAL-006", "sanctioned", "Station taken up under the station redevelopment programme."),
+  event(
+    "TE-019",
+    "PRJ-JAL-006",
+    "sanctioned",
+    "Station taken up under the station redevelopment programme.",
+  ),
   event("TE-020", "PRJ-JAL-006", "work_started", null),
 
   event("TE-021", "PRJ-JAL-007", "announced", "Intervention for dairy complex waste and effluent."),
@@ -111,5 +154,7 @@ export function programmesFor(projectId: string, primaryScheme: string | null): 
 }
 
 export function projectIdsForProgramme(programme: string): string[] {
-  return [...new Set(fundingComponents.filter((c) => c.programme === programme).map((c) => c.project_id))];
+  return [
+    ...new Set(fundingComponents.filter((c) => c.programme === programme).map((c) => c.project_id)),
+  ];
 }

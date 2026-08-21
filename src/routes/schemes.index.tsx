@@ -27,14 +27,24 @@ export const Route = createFileRoute("/schemes/")({
 function SchemesPage() {
   const columns: Column<Scheme>[] = [
     { key: "scheme_name", header: "Scheme", value: (s) => s.scheme_name },
-    { key: "ministry", header: "Ministry", value: (s) => s.ministry, render: (s) => text(s.ministry) },
+    {
+      key: "ministry",
+      header: "Ministry",
+      value: (s) => s.ministry,
+      render: (s) => text(s.ministry),
+    },
     {
       key: "state_or_central",
       header: "Level",
       value: (s) => s.state_or_central,
       render: (s) => labelise(s.state_or_central),
     },
-    { key: "objective", header: "Objective", value: (s) => s.objective, render: (s) => text(s.objective) },
+    {
+      key: "objective",
+      header: "Objective",
+      value: (s) => s.objective,
+      render: (s) => text(s.objective),
+    },
     {
       key: "start_year",
       header: "Period",

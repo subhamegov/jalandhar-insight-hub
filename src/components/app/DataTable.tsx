@@ -52,8 +52,16 @@ export function DataTable<T>({
       if (!q) return true;
       const extra = searchValues ? searchValues(row) : [];
       return (
-        columns.some((c) => String(c.value(row) ?? "").toLowerCase().includes(q)) ||
-        extra.some((v) => String(v ?? "").toLowerCase().includes(q))
+        columns.some((c) =>
+          String(c.value(row) ?? "")
+            .toLowerCase()
+            .includes(q),
+        ) ||
+        extra.some((v) =>
+          String(v ?? "")
+            .toLowerCase()
+            .includes(q),
+        )
       );
     });
     if (sortKey) {
@@ -157,7 +165,10 @@ export function DataTable<T>({
           </thead>
           <tbody>
             {visible.map((row) => (
-              <tr key={getRowKey(row)} className="border-b border-border last:border-0 hover:bg-muted/40">
+              <tr
+                key={getRowKey(row)}
+                className="border-b border-border last:border-0 hover:bg-muted/40"
+              >
                 {columns.map((c) => (
                   <td
                     key={c.key}
@@ -167,7 +178,11 @@ export function DataTable<T>({
                       c.className,
                     )}
                   >
-                    {c.render ? c.render(row) : (c.value(row) ?? <span className="text-muted-foreground italic">Not available</span>)}
+                    {c.render
+                      ? c.render(row)
+                      : (c.value(row) ?? (
+                          <span className="text-muted-foreground italic">Not available</span>
+                        ))}
                   </td>
                 ))}
               </tr>

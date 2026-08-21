@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/app/Primitives";
 import { StatusBadge, EvidenceBadge } from "@/components/app/StatusBadge";
 import { ClientOnly } from "@/components/map/ClientOnly";
+import { DEFAULT_SHARED_FILTERS, readSharedFilters, writeSharedFilters } from "@/lib/sharedFilters";
 import type { GovPoint, MarkerState } from "@/components/map/MapCanvas";
 import { assets, evidence, projects } from "@/data/selectors";
 import { priorityLocations, LOCATION_CATEGORY_LABELS } from "@/data/mapFeatures";
@@ -46,7 +47,8 @@ function markerState(status: ProjectStatus, delayed: boolean): MarkerState {
   if (delayed) return "warning";
   if (status === "operational" || status === "commissioned") return "operational";
   if (status === "completed" || status === "substantially_complete") return "completed";
-  if (status === "under_construction" || status === "awarded" || status === "tendered") return "active";
+  if (status === "under_construction" || status === "awarded" || status === "tendered")
+    return "active";
   return "announced";
 }
 
@@ -129,6 +131,22 @@ function CityMap() {
   const [completionYear, setCompletionYear] = useState("all");
   const [quality, setQuality] = useState("all");
 
+  // Filters carried over from the project register, and kept in step with it.
+  useEffect(() => {
+    const shared = readSharedFilters();
+    if (shared.sector !== "all") setSector(shared.sector);
+    if (shared.scheme !== "all") setScheme(shared.scheme);
+    if (shared.status !== "all") setStatus(shared.status);
+    if (shared.agency !== "all") setImplementing(shared.agency);
+    if (shared.ward !== "all") setWard(shared.ward);
+    if (shared.query) setSearch(shared.query);
+    // Applied once on entry so the review context is not lost.
+  }, []);
+
+  useEffect(() => {
+    writeSharedFilters({ sector, scheme, status, agency: implementing, ward, query: search });
+  }, [sector, scheme, status, implementing, ward, search]);
+
   function resetFilters() {
     setSearch("");
     setSector("all");
@@ -140,6 +158,7 @@ function CityMap() {
     setInvestment("all");
     setCompletionYear("all");
     setQuality("all");
+    writeSharedFilters(DEFAULT_SHARED_FILTERS);
   }
 
   // Load OSM layers on demand.
@@ -191,7 +210,18 @@ function CityMap() {
       }
       return true;
     });
-  }, [search, sector, scheme, status, implementing, owning, ward, investment, completionYear, quality]);
+  }, [
+    search,
+    sector,
+    scheme,
+    status,
+    implementing,
+    owning,
+    ward,
+    investment,
+    completionYear,
+    quality,
+  ]);
 
   const govPoints: GovPoint[] = useMemo(() => {
     const points: GovPoint[] = [];
@@ -244,13 +274,9 @@ function CityMap() {
     [activeLayers, osmData],
   );
 
-  const layerColors = useMemo(
-    () => Object.fromEntries(MAP_LAYERS.map((l) => [l.id, l.color])),
-    [],
-  );
+  const layerColors = useMemo(() => Object.fromEntries(MAP_LAYERS.map((l) => [l.id, l.color])), []);
 
-  const selectedId =
-    selection && selection.kind !== "osm" ? selection.id : null;
+  const selectedId = selection && selection.kind !== "osm" ? selection.id : null;
 
   const handleSelectGov = useCallback((id: string) => {
     if (id.startsWith("PRJ")) setSelection({ kind: "project", id });
@@ -273,7 +299,13 @@ function CityMap() {
   const searchMatches = useMemo(() => {
     const q = search.trim().toLowerCase();
     if (!q) return [];
-    const results: { id: string; label: string; sub: string; lat: number | null; lon: number | null }[] = [];
+    const results: {
+      id: string;
+      label: string;
+      sub: string;
+      lat: number | null;
+      lon: number | null;
+    }[] = [];
     for (const p of filteredProjects.slice(0, 6))
       results.push({
         id: p.project_id,
@@ -348,7 +380,17 @@ function CityMap() {
 
           <FilterSection
             projects={projects}
-            values={{ sector, scheme, status, implementing, owning, ward, investment, completionYear, quality }}
+            values={{
+              sector,
+              scheme,
+              status,
+              implementing,
+              owning,
+              ward,
+              investment,
+              completionYear,
+              quality,
+            }}
             set={{
               setSector,
               setScheme,
@@ -375,7 +417,8 @@ function CityMap() {
                   <ul className="space-y-0.5">
                     {MAP_LAYERS.filter((l) => l.category === cat).map((l) => {
                       const on = activeLayers.includes(l.id);
-                      const unavailable = l.source === "official" && l.query.length === 0 && l.caveat;
+                      const unavailable =
+                        l.source === "official" && l.query.length === 0 && l.caveat;
                       return (
                         <li key={l.id} className="text-[12px]">
                           <label className="flex items-start gap-1.5">
@@ -396,10 +439,14 @@ function CityMap() {
                                 {l.source === "osm" ? "OSM" : "Gov"}
                               </span>
                               {loadingLayers.includes(l.id) && (
-                                <span className="ml-1 text-[10px] text-muted-foreground">loading…</span>
+                                <span className="ml-1 text-[10px] text-muted-foreground">
+                                  loading…
+                                </span>
                               )}
                               {layerErrors[l.id] && (
-                                <span className="ml-1 text-[10px] text-destructive">unavailable</span>
+                                <span className="ml-1 text-[10px] text-destructive">
+                                  unavailable
+                                </span>
                               )}
                               {l.caveat && (
                                 <span className="block text-[10px] leading-tight text-muted-foreground">
@@ -568,13 +615,48 @@ function FilterSection({
         Filters
       </h2>
       <div className="grid grid-cols-2 gap-2">
-        <Select label="Sector" value={values.sector} onChange={set.setSector} options={opt(uniq(all.map((p) => p.sector)), "All sectors")} />
-        <Select label="Scheme" value={values.scheme} onChange={set.setScheme} options={opt(uniq(all.map((p) => p.scheme)), "All schemes")} />
-        <Select label="Status" value={values.status} onChange={set.setStatus} options={opt(uniq(all.map((p) => p.status)), "All statuses")} />
-        <Select label="Evidence" value={values.quality} onChange={set.setQuality} options={opt(uniq(all.map((p) => p.evidence_quality)), "Any quality")} />
-        <Select label="Implementing agency" value={values.implementing} onChange={set.setImplementing} options={opt(uniq(all.map((p) => p.implementing_agency)), "All agencies")} />
-        <Select label="Owning agency" value={values.owning} onChange={set.setOwning} options={opt(uniq(all.map((p) => p.owning_agency)), "All agencies")} />
-        <Select label="Ward" value={values.ward} onChange={set.setWard} options={opt(uniq(all.map((p) => p.ward ?? "Not available")), "All wards")} />
+        <Select
+          label="Sector"
+          value={values.sector}
+          onChange={set.setSector}
+          options={opt(uniq(all.map((p) => p.sector)), "All sectors")}
+        />
+        <Select
+          label="Scheme"
+          value={values.scheme}
+          onChange={set.setScheme}
+          options={opt(uniq(all.map((p) => p.scheme)), "All schemes")}
+        />
+        <Select
+          label="Status"
+          value={values.status}
+          onChange={set.setStatus}
+          options={opt(uniq(all.map((p) => p.status)), "All statuses")}
+        />
+        <Select
+          label="Evidence"
+          value={values.quality}
+          onChange={set.setQuality}
+          options={opt(uniq(all.map((p) => p.evidence_quality)), "Any quality")}
+        />
+        <Select
+          label="Implementing agency"
+          value={values.implementing}
+          onChange={set.setImplementing}
+          options={opt(uniq(all.map((p) => p.implementing_agency)), "All agencies")}
+        />
+        <Select
+          label="Owning agency"
+          value={values.owning}
+          onChange={set.setOwning}
+          options={opt(uniq(all.map((p) => p.owning_agency)), "All agencies")}
+        />
+        <Select
+          label="Ward"
+          value={values.ward}
+          onChange={set.setWard}
+          options={opt(uniq(all.map((p) => p.ward ?? "Not available")), "All wards")}
+        />
         <Select
           label="Investment"
           value={values.investment}
@@ -644,7 +726,10 @@ function ProjectPanel({
     )
     .map((o) => ({
       p: o,
-      d: Math.hypot((o.latitude as number) - (p.latitude as number), (o.longitude as number) - (p.longitude as number)),
+      d: Math.hypot(
+        (o.latitude as number) - (p.latitude as number),
+        (o.longitude as number) - (p.longitude as number),
+      ),
     }))
     .sort((a, b) => a.d - b.d)
     .slice(0, 3);
@@ -668,7 +753,11 @@ function ProjectPanel({
       <Row label="Last verified" value={dateText(p.last_verified)} />
 
       <Actions>
-        <Link to="/projects/$projectId" params={{ projectId: p.project_id }} className={actionClass}>
+        <Link
+          to="/projects/$projectId"
+          params={{ projectId: p.project_id }}
+          className={actionClass}
+        >
           View project
         </Link>
         <Link to="/evidence" className={actionClass}>
@@ -681,7 +770,11 @@ function ProjectPanel({
 
       <PanelList title="Related assets" empty="No assets linked.">
         {linkedAssets.map((a) => (
-          <button key={a.asset_id} onClick={() => onSelect(a.asset_id)} className="block w-full text-left hover:underline">
+          <button
+            key={a.asset_id}
+            onClick={() => onSelect(a.asset_id)}
+            className="block w-full text-left hover:underline"
+          >
             {a.asset_name}
           </button>
         ))}
@@ -689,7 +782,11 @@ function ProjectPanel({
 
       <PanelList title="Nearby projects" empty="No nearby projects.">
         {nearby.map(({ p: o }) => (
-          <button key={o.project_id} onClick={() => onSelect(o.project_id)} className="block w-full text-left hover:underline">
+          <button
+            key={o.project_id}
+            onClick={() => onSelect(o.project_id)}
+            className="block w-full text-left hover:underline"
+          >
             {o.project_name}
           </button>
         ))}
@@ -773,7 +870,11 @@ function AssetPanel({
         {a.related_projects.map((pid) => {
           const p = projects.find((x) => x.project_id === pid);
           return (
-            <button key={pid} onClick={() => onSelect(pid)} className="block w-full text-left hover:underline">
+            <button
+              key={pid}
+              onClick={() => onSelect(pid)}
+              className="block w-full text-left hover:underline"
+            >
               {p ? p.project_name : pid}
             </button>
           );
@@ -815,7 +916,11 @@ function LocationPanel({
         {l.related_projects.map((pid) => {
           const p = projects.find((x) => x.project_id === pid);
           return (
-            <button key={pid} onClick={() => onSelect(pid)} className="block w-full text-left hover:underline">
+            <button
+              key={pid}
+              onClick={() => onSelect(pid)}
+              className="block w-full text-left hover:underline"
+            >
               {p ? p.project_name : pid}
             </button>
           );
@@ -825,7 +930,11 @@ function LocationPanel({
         {l.related_assets.map((aid) => {
           const a = assets.find((x) => x.asset_id === aid);
           return (
-            <button key={aid} onClick={() => onSelect(aid)} className="block w-full text-left hover:underline">
+            <button
+              key={aid}
+              onClick={() => onSelect(aid)}
+              className="block w-full text-left hover:underline"
+            >
               {a ? a.asset_name : aid}
             </button>
           );

@@ -35,9 +35,8 @@ function WardsPage() {
 
       {!WARD_BOUNDARIES_LOADED ? (
         <p className="mb-4 rounded-sm border border-warning/40 bg-warning/10 px-3 py-2 text-xs text-foreground">
-          Official ward boundaries have not been loaded. Records without a recorded ward are
-          grouped by locality, or shown together as "Ward not recorded". Ward populations are not
-          available.
+          Official ward boundaries have not been loaded. Records without a recorded ward are grouped
+          by locality, or shown together as "Ward not recorded". Ward populations are not available.
         </p>
       ) : null}
 

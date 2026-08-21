@@ -22,7 +22,10 @@ export interface WardArea {
 }
 
 function slug(value: string): string {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 function keyForProject(p: Project): { id: string; label: string; basis: WardArea["basis"] } {

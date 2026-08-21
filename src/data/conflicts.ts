@@ -160,13 +160,7 @@ export function conflictsForProject(p: Project): Conflict[] {
 
   if (p.conflict_note) {
     out.push(
-      make(
-        p,
-        "recorded_note",
-        "Recorded conflict note",
-        "review_required",
-        p.conflict_note,
-      ),
+      make(p, "recorded_note", "Recorded conflict note", "review_required", p.conflict_note),
     );
   }
 

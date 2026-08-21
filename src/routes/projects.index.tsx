@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { z } from "zod";
 import { DataTable, type Column } from "@/components/app/DataTable";
 import { PageHeader } from "@/components/app/Primitives";
-import { EvidenceBadge, StatusBadge } from "@/components/app/StatusBadge";
+import { StatusBadge } from "@/components/app/StatusBadge";
+import { SourceBadge } from "@/components/app/SourceBadge";
+import { FreshnessBadge } from "@/components/app/FreshnessBadge";
+import { AttentionBadge } from "@/components/app/AttentionBadge";
+import { EvidenceLink } from "@/components/app/EvidenceDrawer";
+import { ATTENTION_LABELS, assessProject } from "@/data/attentionLabel";
+import { downloadCsv, toCsv } from "@/lib/exportData";
+import { projectCsv } from "@/lib/projectCsv";
+import { readSharedFilters, writeSharedFilters } from "@/lib/sharedFilters";
 import { conflictsForProject } from "@/data/conflicts";
 import { programmesFor } from "@/data/programmes";
 import {
@@ -15,7 +24,7 @@ import {
 } from "@/data/selectors";
 import type { Project } from "@/data/types";
 import { CITY_SYSTEMS, EVIDENCE_QUALITIES, PROJECT_STATUSES } from "@/data/types";
-import { crore, dateText, labelise, percent, text } from "@/lib/format";
+import { EMPTY, crore, dateText, labelise, percent, text } from "@/lib/format";
 
 const searchSchema = z.object({
   sector: z.string().optional(),
@@ -52,6 +61,16 @@ function uniq(values: (string | null | undefined)[]): string[] {
 
 function ProjectsPage() {
   const { sector, scheme, agency } = Route.useSearch();
+
+  // Filters persist when moving between the register and the map.
+  useEffect(() => {
+    writeSharedFilters({
+      sector: sector ?? "all",
+      scheme: scheme ?? "all",
+      agency: agency ?? "all",
+    });
+  }, [sector, scheme, agency]);
+
   const rows = projects.filter((p) => {
     if (sector && p.sector !== sector) return false;
     if (scheme && !programmesFor(p.project_id, p.scheme).includes(scheme)) return false;
@@ -136,6 +155,15 @@ function ProjectsPage() {
       render: (p) => <StatusBadge status={p.status} />,
     },
     {
+      key: "attention",
+      header: "Attention",
+      value: (p) => assessProject(p).label,
+      render: (p) => {
+        const a = assessProject(p);
+        return <AttentionBadge label={a.label} title={a.reasons.join("; ")} />;
+      },
+    },
+    {
       key: "physical_progress_percentage",
       header: "Physical progress",
       align: "right",
@@ -167,13 +195,38 @@ function ProjectsPage() {
       key: "evidence_quality",
       header: "Evidence quality",
       value: (p) => p.evidence_quality,
-      render: (p) => <EvidenceBadge quality={p.evidence_quality} />,
+      render: (p) => (
+        <span className="flex items-center gap-1.5">
+          <SourceBadge quality={p.evidence_quality} />
+          <EvidenceLink
+            request={{
+              fact: "Project record",
+              entityId: p.project_id,
+              entityName: p.project_name,
+              lastVerified: p.last_verified,
+              conflictNote: p.conflict_note ?? null,
+              reported: p.cost_records ?? [],
+              fallback: {
+                source_agency: p.source_agency,
+                source_url: p.source_url,
+                source_date: p.source_date,
+                evidence_quality: p.evidence_quality,
+              },
+            }}
+          />
+        </span>
+      ),
     },
     {
       key: "last_verified",
       header: "Last verified",
       value: (p) => p.last_verified,
-      render: (p) => <span className="num">{dateText(p.last_verified)}</span>,
+      render: (p) => (
+        <span className="flex items-center gap-1.5 whitespace-nowrap">
+          <span className="num">{dateText(p.last_verified)}</span>
+          <FreshnessBadge date={p.last_verified} />
+        </span>
+      ),
     },
     {
       key: "conflicts",
@@ -204,15 +257,27 @@ function ProjectsPage() {
         title="Project register"
         subtitle="Projects are organised by physical intervention and sector. Scheme and funding programme are metadata, so a project funded by several programmes appears once."
         actions={
-          activeFilters.length ? (
-            <Link
-              to="/projects"
-              search={{}}
-              className="rounded-sm border border-border px-2.5 py-1 text-xs text-muted-foreground hover:bg-muted"
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                const { headers, rows: data } = projectCsv(rows);
+                downloadCsv("jalandhar-project-register", toCsv(headers, data));
+              }}
+              className="rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
-              Clear: {activeFilters.map(([k, v]) => `${k} = ${v}`).join(", ")}
-            </Link>
-          ) : null
+              Export CSV
+            </button>
+            {activeFilters.length ? (
+              <Link
+                to="/projects"
+                search={{}}
+                className="rounded-sm border border-border px-2.5 py-1 text-xs text-muted-foreground hover:bg-muted"
+              >
+                Clear: {activeFilters.map(([k, v]) => `${k} = ${v}`).join(", ")}
+              </Link>
+            ) : null}
+          </div>
         }
       />
       <DataTable
@@ -301,6 +366,12 @@ function ProjectsPage() {
             match: (p, v) => (v === "Delayed" ? isDelayed(p) : !isDelayed(p)),
           },
           {
+            key: "attention",
+            label: "Attention",
+            options: [...ATTENTION_LABELS],
+            match: (p, v) => assessProject(p).label === v,
+          },
+          {
             key: "evidence",
             label: "Evidence quality",
             options: EVIDENCE_QUALITIES.map(labelise),
@@ -314,9 +385,12 @@ function ProjectsPage() {
           },
         ]}
       />
+      {rows.length === 0 ? (
+        <p className="mt-3 text-sm text-muted-foreground">{EMPTY.noProjects}</p>
+      ) : null}
       <p className="mt-3 text-xs text-muted-foreground">
-        Tender publication is not treated as proof of implementation, and completion of
-        construction is not treated as proof that an asset is operational.
+        Tender publication is not treated as proof of implementation, and completion of construction
+        is not treated as proof that an asset is operational.
       </p>
     </>
   );

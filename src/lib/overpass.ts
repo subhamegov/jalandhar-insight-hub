@@ -82,7 +82,12 @@ export async function fetchLayer(layer: MapLayer, signal?: AbortSignal): Promise
     const first = geom?.[0];
     const last = geom?.[geom.length - 1];
     const closed =
-      !!geom && geom.length > 3 && !!first && !!last && first[0] === last[0] && first[1] === last[1];
+      !!geom &&
+      geom.length > 3 &&
+      !!first &&
+      !!last &&
+      first[0] === last[0] &&
+      first[1] === last[1];
     features.push({
       id: `${el.type}/${el.id}`,
       layerId: layer.id,

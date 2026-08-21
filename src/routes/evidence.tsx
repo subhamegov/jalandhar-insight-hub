@@ -27,8 +27,7 @@ export const Route = createFileRoute("/evidence")({
 });
 
 function EvidencePage() {
-  const projectName = (id: string) =>
-    projects.find((p) => p.project_id === id)?.project_name ?? id;
+  const projectName = (id: string) => projects.find((p) => p.project_id === id)?.project_name ?? id;
 
   const columns: Column<Evidence>[] = [
     { key: "title", header: "Document", value: (e) => e.title },

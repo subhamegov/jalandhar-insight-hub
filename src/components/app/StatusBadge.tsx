@@ -18,13 +18,7 @@ const STATUS_TONE: Record<ProjectStatus, string> = {
   unknown: "bg-muted text-muted-foreground border-dashed border-border",
 };
 
-export function StatusBadge({
-  status,
-  className,
-}: {
-  status: ProjectStatus;
-  className?: string;
-}) {
+export function StatusBadge({ status, className }: { status: ProjectStatus; className?: string }) {
   return (
     <span
       className={cn(

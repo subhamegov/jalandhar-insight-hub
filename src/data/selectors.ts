@@ -8,11 +8,7 @@ export const IN_EXECUTION: ProjectStatus[] = [
   "substantially_complete",
 ];
 
-export const COMPLETED_STATES: ProjectStatus[] = [
-  "completed",
-  "commissioned",
-  "operational",
-];
+export const COMPLETED_STATES: ProjectStatus[] = ["completed", "commissioned", "operational"];
 
 export function isDelayed(p: Project): boolean {
   if (p.status === "stalled") return true;
@@ -100,8 +96,7 @@ export function fieldCompleteness() {
 }
 
 export function projectYear(p: Project): string {
-  const d =
-    p.sanction_date ?? p.award_date ?? p.announcement_date ?? p.planned_end_date ?? null;
+  const d = p.sanction_date ?? p.award_date ?? p.announcement_date ?? p.planned_end_date ?? null;
   if (!d) return "Not available";
   const y = d.slice(0, 4);
   return /^\d{4}$/.test(y) ? y : "Not available";

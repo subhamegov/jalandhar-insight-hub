@@ -160,6 +160,36 @@
   h3 {
     letter-spacing: -0.01em;
   }
+
+  /* Visible focus for keyboard users on every interactive control. */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  th {
+    font-weight: 600;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+    font-size: 11pt;
+  }
+
+  a[href]::after {
+    content: "";
+  }
+
+  section {
+    break-inside: avoid;
+  }
 }
 
 @utility num {

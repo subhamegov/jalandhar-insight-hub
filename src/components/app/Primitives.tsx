@@ -43,9 +43,7 @@ export function Panel({
         <div className="flex items-center justify-between gap-3 border-b border-border px-4 py-2.5">
           <div>
             <h2 className="text-sm font-semibold text-foreground">{title}</h2>
-            {description ? (
-              <p className="text-xs text-muted-foreground">{description}</p>
-            ) : null}
+            {description ? <p className="text-xs text-muted-foreground">{description}</p> : null}
           </div>
           {right}
         </div>
@@ -85,15 +83,7 @@ export function MetricCard({
   );
 }
 
-export function Field({
-  label,
-  value,
-  mono,
-}: {
-  label: string;
-  value: ReactNode;
-  mono?: boolean;
-}) {
+export function Field({ label, value, mono }: { label: string; value: ReactNode; mono?: boolean }) {
   const empty = value === NA || value === null || value === undefined || value === "";
   return (
     <div className="min-w-0">
@@ -123,12 +113,12 @@ export function BarRow({
   label,
   value,
   max,
-  href,
+  valueLabel,
 }: {
   label: ReactNode;
   value: number;
   max: number;
-  href?: string;
+  valueLabel?: string;
 }) {
   const pct = max > 0 ? Math.round((value / max) * 100) : 0;
   return (
@@ -137,8 +127,14 @@ export function BarRow({
       <div className="h-2 flex-1 rounded-sm bg-muted">
         <div className="h-2 rounded-sm bg-primary" style={{ width: `${pct}%` }} />
       </div>
-      <div className="num w-8 shrink-0 text-right text-sm text-muted-foreground">{value}</div>
-      {href ? null : null}
+      <div
+        className={cn(
+          "num shrink-0 text-right text-sm text-muted-foreground",
+          valueLabel ? "w-24" : "w-8",
+        )}
+      >
+        {valueLabel ?? value}
+      </div>
     </div>
   );
 }
