@@ -180,7 +180,7 @@ function DomainPanel({ domain }: { domain: OutcomeDomain }) {
       ) : null}
 
       <div className="mt-4 grid gap-4 lg:grid-cols-2">
-        <div>
+        <div className="min-w-0">
           <p className="field-label mb-1">Projects</p>
           {linked.length === 0 ? (
             <EmptyNote>No projects recorded in this domain.</EmptyNote>
@@ -189,12 +189,12 @@ function DomainPanel({ domain }: { domain: OutcomeDomain }) {
               {linked.map((p) => (
                 <li
                   key={p.project_id}
-                  className="flex items-center justify-between gap-3 px-3 py-2"
+                  className="flex flex-wrap items-center justify-between gap-2 px-3 py-2"
                 >
                   <Link
                     to="/projects/$projectId"
                     params={{ projectId: p.project_id }}
-                    className="truncate text-sm text-primary hover:underline"
+                    className="min-w-0 flex-1 truncate text-sm text-primary hover:underline"
                   >
                     {p.project_name}
                   </Link>
@@ -209,7 +209,7 @@ function DomainPanel({ domain }: { domain: OutcomeDomain }) {
             </ul>
           )}
         </div>
-        <div>
+        <div className="min-w-0">
           <p className="field-label mb-1">Map layers for this domain</p>
           <div className="flex flex-wrap gap-1.5">
             {domain.map_layers.map((layer) => (

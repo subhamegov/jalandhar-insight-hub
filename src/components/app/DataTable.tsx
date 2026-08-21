@@ -106,12 +106,12 @@ export function DataTable<T>({
           />
         </div>
         {filters.map((f) => (
-          <label key={f.key} className="flex items-center gap-1.5 text-xs text-muted-foreground">
+          <label key={f.key} className="flex min-w-0 items-center gap-1.5 text-xs text-muted-foreground">
             {f.label}
             <select
               value={active[f.key] ?? "all"}
               onChange={(e) => setActive({ ...active, [f.key]: e.target.value })}
-              className="h-8 rounded-sm border border-input bg-background px-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring/40"
+              className="h-8 min-w-0 flex-1 rounded-sm border border-input bg-background px-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring/40"
             >
               <option value="all">All</option>
               {f.options.map((o) => (
