@@ -15,7 +15,11 @@ export interface OsmFeature {
   isArea: boolean;
 }
 
-const ENDPOINT = "https://overpass-api.de/api/interpreter";
+const ENDPOINTS = [
+  "https://overpass-api.de/api/interpreter",
+  "https://overpass.kumi.systems/api/interpreter",
+  "https://overpass.private.coffee/api/interpreter",
+];
 const cache = new Map<string, OsmFeature[]>();
 
 function bboxString() {
@@ -44,13 +48,23 @@ export async function fetchLayer(layer: MapLayer, signal?: AbortSignal): Promise
     layer.query.map((q) => `${q}(${bbox});`).join("") +
     `);out geom center tags 400;`;
 
-  const res = await fetch(ENDPOINT, {
-    method: "POST",
-    body: new URLSearchParams({ data: body }),
-    ...(signal ? { signal } : {}),
-  });
-  if (!res.ok) throw new Error(`Overpass request failed (${res.status})`);
-  const json = (await res.json()) as { elements?: OverpassElement[] };
+  let json: { elements?: OverpassElement[] } | null = null;
+  let lastError: unknown = null;
+  for (const endpoint of ENDPOINTS) {
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        body: new URLSearchParams({ data: body }),
+        ...(signal ? { signal } : {}),
+      });
+      if (!res.ok) throw new Error(`Overpass request failed (${res.status})`);
+      json = (await res.json()) as { elements?: OverpassElement[] };
+      break;
+    } catch (err) {
+      lastError = err;
+    }
+  }
+  if (!json) throw lastError instanceof Error ? lastError : new Error("Overpass unavailable");
 
   const features: OsmFeature[] = [];
   for (const el of json.elements ?? []) {
