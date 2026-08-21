@@ -128,8 +128,8 @@ export function GlobalHeader() {
   const freshness = freshnessOf(lastRefresh);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur print:hidden">
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-2.5 lg:px-8">
+    <header className="z-40 border-b border-border bg-background/95 backdrop-blur print:hidden lg:sticky lg:top-0">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2.5 sm:px-4 lg:px-8">
         <div className="min-w-0">
           <h1 className="truncate text-sm font-semibold text-foreground">
             Jalandhar City Intelligence
