@@ -794,6 +794,11 @@ function ProjectPanel({
       <Row label="Planned completion" value={dateText(p.planned_end_date)} />
       <Row label="Physical progress" value={percent(p.physical_progress_percentage)} />
       <Row label="Locality" value={text(p.locality)} />
+      <Row label="Geographic scope" value={text(p.geography_scope ?? null)} />
+      <Row
+        label="Location quality"
+        value={LOCATION_QUALITY_LABEL[p.location_quality ?? "no_coordinate"]}
+      />
       <Row label="Source" value={text(p.source_agency)} />
       <Row label="Last verified" value={dateText(p.last_verified)} />
 
@@ -805,6 +810,16 @@ function ProjectPanel({
         >
           View project
         </Link>
+        {p.source_url ? (
+          <a
+            href={p.source_url}
+            target="_blank"
+            rel="noreferrer noopener"
+            className={actionClass}
+          >
+            Open source
+          </a>
+        ) : null}
         <Link to="/evidence" className={actionClass}>
           View evidence
         </Link>
