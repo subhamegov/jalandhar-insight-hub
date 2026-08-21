@@ -12,7 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AgenciesRouteImport } from './routes/agencies'
 import { Route as AssetsRouteImport } from './routes/assets'
+import { Route as DataQualityRouteImport } from './routes/data-quality'
+import { Route as EvidenceRouteImport } from './routes/evidence'
 import { Route as MapRouteImport } from './routes/map'
+import { Route as OutcomesRouteImport } from './routes/outcomes'
 import { Route as SchemesRouteImport } from './routes/schemes'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as ProjectsProjectIdRouteImport } from './routes/projects.$projectId'
@@ -32,9 +35,24 @@ const AssetsRoute = AssetsRouteImport.update({
   path: '/assets',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DataQualityRoute = DataQualityRouteImport.update({
+  id: '/data-quality',
+  path: '/data-quality',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EvidenceRoute = EvidenceRouteImport.update({
+  id: '/evidence',
+  path: '/evidence',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MapRoute = MapRouteImport.update({
   id: '/map',
   path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutcomesRoute = OutcomesRouteImport.update({
+  id: '/outcomes',
+  path: '/outcomes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SchemesRoute = SchemesRouteImport.update({
@@ -57,7 +75,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agencies': typeof AgenciesRoute
   '/assets': typeof AssetsRoute
+  '/data-quality': typeof DataQualityRoute
+  '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
+  '/outcomes': typeof OutcomesRoute
   '/schemes': typeof SchemesRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects/': typeof ProjectsIndexRoute
@@ -66,7 +87,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agencies': typeof AgenciesRoute
   '/assets': typeof AssetsRoute
+  '/data-quality': typeof DataQualityRoute
+  '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
+  '/outcomes': typeof OutcomesRoute
   '/schemes': typeof SchemesRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects': typeof ProjectsIndexRoute
@@ -76,7 +100,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/agencies': typeof AgenciesRoute
   '/assets': typeof AssetsRoute
+  '/data-quality': typeof DataQualityRoute
+  '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
+  '/outcomes': typeof OutcomesRoute
   '/schemes': typeof SchemesRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/projects/': typeof ProjectsIndexRoute
@@ -87,7 +114,10 @@ export interface FileRouteTypes {
     | '/'
     | '/agencies'
     | '/assets'
+    | '/data-quality'
+    | '/evidence'
     | '/map'
+    | '/outcomes'
     | '/schemes'
     | '/projects/$projectId'
     | '/projects/'
@@ -96,7 +126,10 @@ export interface FileRouteTypes {
     | '/'
     | '/agencies'
     | '/assets'
+    | '/data-quality'
+    | '/evidence'
     | '/map'
+    | '/outcomes'
     | '/schemes'
     | '/projects/$projectId'
     | '/projects'
@@ -105,7 +138,10 @@ export interface FileRouteTypes {
     | '/'
     | '/agencies'
     | '/assets'
+    | '/data-quality'
+    | '/evidence'
     | '/map'
+    | '/outcomes'
     | '/schemes'
     | '/projects/$projectId'
     | '/projects/'
@@ -115,7 +151,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgenciesRoute: typeof AgenciesRoute
   AssetsRoute: typeof AssetsRoute
+  DataQualityRoute: typeof DataQualityRoute
+  EvidenceRoute: typeof EvidenceRoute
   MapRoute: typeof MapRoute
+  OutcomesRoute: typeof OutcomesRoute
   SchemesRoute: typeof SchemesRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
@@ -144,11 +183,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AssetsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/data-quality': {
+      id: '/data-quality'
+      path: '/data-quality'
+      fullPath: '/data-quality'
+      preLoaderRoute: typeof DataQualityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evidence': {
+      id: '/evidence'
+      path: '/evidence'
+      fullPath: '/evidence'
+      preLoaderRoute: typeof EvidenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/map': {
       id: '/map'
       path: '/map'
       fullPath: '/map'
       preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outcomes': {
+      id: '/outcomes'
+      path: '/outcomes'
+      fullPath: '/outcomes'
+      preLoaderRoute: typeof OutcomesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/schemes': {
@@ -179,7 +239,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgenciesRoute: AgenciesRoute,
   AssetsRoute: AssetsRoute,
+  DataQualityRoute: DataQualityRoute,
+  EvidenceRoute: EvidenceRoute,
   MapRoute: MapRoute,
+  OutcomesRoute: OutcomesRoute,
   SchemesRoute: SchemesRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
