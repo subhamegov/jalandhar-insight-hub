@@ -22,11 +22,7 @@ import {
 } from "@/data/selectors";
 import { EMPTY, crore, dateText, labelise, percent, text } from "@/lib/format";
 import { sortByOrder, usePriorityOrder } from "@/lib/priorityOrder";
-import {
-  PriorityHandle,
-  PriorityNotice,
-  usePriorityDrag,
-} from "@/components/app/PriorityControl";
+import { PriorityHandle, PriorityNotice, usePriorityDrag } from "@/components/app/PriorityControl";
 import { isStale } from "@/lib/freshness";
 
 const MapCanvas = lazy(() => import("@/components/map/MapCanvas"));

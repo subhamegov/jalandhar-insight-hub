@@ -111,7 +111,5 @@ export function usePriorityOrder(key: string, defaults: string[]): PriorityOrder
 /** Sorts records into the reviewer's order. */
 export function sortByOrder<T>(items: T[], order: string[], idOf: (item: T) => string): T[] {
   const index = new Map(order.map((id, i) => [id, i]));
-  return [...items].sort(
-    (a, b) => (index.get(idOf(a)) ?? 9999) - (index.get(idOf(b)) ?? 9999),
-  );
+  return [...items].sort((a, b) => (index.get(idOf(a)) ?? 9999) - (index.get(idOf(b)) ?? 9999));
 }
