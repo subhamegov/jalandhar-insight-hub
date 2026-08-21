@@ -24,7 +24,7 @@ export interface Indicator {
   /** What the indicator measures, in simple English. */
   definition: string;
   /** Construction output vs. service performance. */
-  measure_type: "construction" | "service" | "финанс" | "finance";
+  measure_type: "construction" | "service" | "finance";
 }
 
 export interface SeriesPoint {
