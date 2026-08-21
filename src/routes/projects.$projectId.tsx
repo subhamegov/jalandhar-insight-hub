@@ -19,6 +19,8 @@ import {
   relatedRecords,
   scopeGroupOf,
 } from "@/data/registerLogic";
+import { MAP_LOCATION_UI, resolveMapLocation } from "@/data/mapLocations";
+
 import type { Conflict, TimelineEvent } from "@/data/types";
 import { TIMELINE_EVENT_LABELS, TIMELINE_EVENT_ORDER } from "@/data/types";
 import { crore, dateText, labelise, percent, text } from "@/lib/format";
