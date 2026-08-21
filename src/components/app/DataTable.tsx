@@ -84,6 +84,8 @@ export function DataTable<T>({
     return out;
   }, [rows, columns, filters, active, query, sortKey, sortDir, searchValues]);
 
+  const activeCount = Object.values(active).filter((v) => v && v !== "all").length;
+
   function toggleSort(key: string) {
     if (sortKey === key) {
       setSortDir(sortDir === "asc" ? "desc" : "asc");
@@ -152,7 +154,7 @@ export function DataTable<T>({
                 </label>
               ))}
             </div>
-          </details>
+          </div>
         ) : null}
       </div>
 
