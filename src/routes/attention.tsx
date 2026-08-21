@@ -4,6 +4,8 @@ import { EvidenceBadge, StatusBadge } from "@/components/app/StatusBadge";
 import type { AttentionRow } from "@/data/attention";
 import { attentionRows } from "@/data/attention";
 import { crore, dateText, text } from "@/lib/format";
+import { sortByOrder, usePriorityOrder } from "@/lib/priorityOrder";
+import { PriorityHandle, PriorityNotice, usePriorityDrag } from "@/components/app/PriorityControl";
 
 export const Route = createFileRoute("/attention")({
   head: () => ({
@@ -27,7 +29,13 @@ export const Route = createFileRoute("/attention")({
 });
 
 function AttentionPage() {
-  const rows = attentionRows();
+  const computed = attentionRows();
+  const priority = usePriorityOrder(
+    "attention",
+    computed.map((r) => r.project.project_id),
+  );
+  const drag = usePriorityDrag(priority);
+  const rows = sortByOrder(computed, priority.order, (r) => r.project.project_id);
   const top = rows.slice(0, 5);
 
   return (
@@ -84,7 +92,12 @@ function AttentionPage() {
         </ol>
       </Panel>
 
-      <Panel title="Full ranking" className="mt-4">
+      <Panel
+        title="Full ranking"
+        description="Move any project to set the order this office reviews them in. Scores are not changed."
+        right={<PriorityNotice priority={priority} />}
+        className="mt-4"
+      >
         {rows.length === 0 ? (
           <EmptyNote>No projects recorded.</EmptyNote>
         ) : (
@@ -92,6 +105,7 @@ function AttentionPage() {
             <table className="w-full min-w-[1100px] text-sm">
               <thead>
                 <tr className="bg-muted/60">
+                  <th className="field-label px-3 py-2 text-left">Order</th>
                   <th className="field-label px-3 py-2 text-right">Score</th>
                   <th className="field-label px-3 py-2 text-left">Project</th>
                   <th className="field-label px-3 py-2 text-left">Why it matters</th>
@@ -108,9 +122,24 @@ function AttentionPage() {
                 {rows.map((r) => (
                   <tr
                     key={r.project.project_id}
-                    className="border-b border-border align-top last:border-0"
+                    {...drag.rowProps(r.project.project_id)}
+                    className={`border-b border-border align-top last:border-0 ${drag.rowProps(r.project.project_id).className}`}
                   >
-                    <td className="num px-3 py-2 text-right font-semibold">{r.score}</td>
+                    <td className="px-3 py-2">
+                      <PriorityHandle
+                        id={r.project.project_id}
+                        label={r.project.project_name}
+                        priority={priority}
+                      />
+                    </td>
+                    <td className="num px-3 py-2 text-right font-semibold">
+                      {r.score}
+                      {priority.isCustom ? (
+                        <span className="block text-xs font-normal text-muted-foreground">
+                          rank {priority.computedRank(r.project.project_id)}
+                        </span>
+                      ) : null}
+                    </td>
                     <td className="px-3 py-2">
                       <Link
                         to="/projects/$projectId"

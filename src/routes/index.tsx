@@ -21,6 +21,8 @@ import {
   projectsByAgency,
 } from "@/data/selectors";
 import { EMPTY, crore, dateText, labelise, percent, text } from "@/lib/format";
+import { sortByOrder, usePriorityOrder } from "@/lib/priorityOrder";
+import { PriorityHandle, PriorityNotice, usePriorityDrag } from "@/components/app/PriorityControl";
 import { isStale } from "@/lib/freshness";
 
 const MapCanvas = lazy(() => import("@/components/map/MapCanvas"));
@@ -69,6 +71,34 @@ function Overview() {
     [],
   );
   const [fitSignal] = useState(0);
+
+  // The computed ranking is the default; the reviewer can reorder it.
+  const attentionPriority = usePriorityOrder(
+    "attention",
+    rows.map((r) => r.project.project_id),
+  );
+  const attentionDrag = usePriorityDrag(attentionPriority);
+  const orderedRows = useMemo(
+    () => sortByOrder(rows, attentionPriority.order, (r) => r.project.project_id),
+    [rows, attentionPriority.order],
+  );
+
+  const systemDomains = useMemo(
+    () =>
+      outcomeDomains.filter((d) =>
+        ["water", "used_water", "solid_waste", "mobility", "air_quality"].includes(d.id),
+      ),
+    [],
+  );
+  const systemPriority = usePriorityOrder(
+    "city-systems",
+    systemDomains.map((d) => d.id),
+  );
+  const systemDrag = usePriorityDrag(systemPriority);
+  const orderedSystems = useMemo(
+    () => sortByOrder(systemDomains, systemPriority.order, (d) => d.id),
+    [systemDomains, systemPriority.order],
+  );
 
   const assessed = projects.map((p) => ({ project: p, assessment: assessProject(p) }));
   const critical = assessed.filter((a) => a.assessment.label === "Critical");
@@ -173,9 +203,12 @@ function Overview() {
           title="What requires attention now"
           description="Value weighted ranking across delay, risk, dependency and evidence conflict"
           right={
-            <Link to="/attention" className="text-xs text-primary underline underline-offset-2">
-              Full attention register
-            </Link>
+            <span className="flex flex-wrap items-center gap-3">
+              <PriorityNotice priority={attentionPriority} />
+              <Link to="/attention" className="text-xs text-primary underline underline-offset-2">
+                Full attention register
+              </Link>
+            </span>
           }
         >
           <h2 id="attention-now" className="sr-only">
@@ -187,6 +220,9 @@ function Overview() {
                 <caption className="sr-only">Projects requiring senior attention</caption>
                 <thead>
                   <tr className="border-b border-border text-left">
+                    <th scope="col" className="field-label py-1.5 pr-3">
+                      Order
+                    </th>
                     <th scope="col" className="field-label py-1.5 pr-3">
                       Project
                     </th>
@@ -208,10 +244,22 @@ function Overview() {
                   </tr>
                 </thead>
                 <tbody>
-                  {rows.slice(0, 6).map(({ project }) => {
+                  {orderedRows.slice(0, 6).map(({ project }) => {
                     const a = assessProject(project);
+                    const drag = attentionDrag.rowProps(project.project_id);
                     return (
-                      <tr key={project.project_id} className="border-b border-border/70 align-top">
+                      <tr
+                        key={project.project_id}
+                        {...drag}
+                        className={`border-b border-border/70 align-top ${drag.className}`}
+                      >
+                        <td className="py-2 pr-3">
+                          <PriorityHandle
+                            id={project.project_id}
+                            label={project.project_name}
+                            priority={attentionPriority}
+                          />
+                        </td>
                         <td className="py-2 pr-3">
                           <Link
                             to="/projects/$projectId"
@@ -291,45 +339,53 @@ function Overview() {
 
       {/* 4. Major city systems */}
       <section aria-labelledby="systems" className="mt-6">
-        <h2 id="systems" className="field-label mb-2">
-          Major city systems
-        </h2>
+        <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+          <h2 id="systems" className="field-label">
+            Major city systems
+          </h2>
+          <PriorityNotice priority={systemPriority} computedLabel="standard order" />
+        </div>
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
-          {outcomeDomains
-            .filter((d) =>
-              ["water", "used_water", "solid_waste", "mobility", "air_quality"].includes(d.id),
-            )
-            .map((d) => {
-              const linked = projects.filter((p) => p.sector && d.sectors.includes(p.sector));
-              const service = d.indicators.filter((i) => i.measure_type === "service");
-              const measured = service.filter((i) => i.value !== null).length;
-              return (
+          {orderedSystems.map((d) => {
+            const linked = projects.filter((p) => p.sector && d.sectors.includes(p.sector));
+            const service = d.indicators.filter((i) => i.measure_type === "service");
+            const measured = service.filter((i) => i.value !== null).length;
+            const drag = systemDrag.rowProps(d.id);
+            return (
+              <div
+                key={d.id}
+                {...drag}
+                className={`flex flex-col rounded-sm border border-border bg-card p-3 ${drag.className}`}
+              >
+                <div className="mb-1 flex items-center justify-between">
+                  <PriorityHandle id={d.id} label={d.label} priority={systemPriority} />
+                </div>
                 <Link
-                  key={d.id}
                   to="/outcomes"
-                  className="rounded-md border border-border bg-card p-3 hover:border-primary/50 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                  className="focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                 >
-                  <p className="text-sm font-medium">{d.label}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">{d.headline_question}</p>
-                  <dl className="mt-2 space-y-0.5 text-xs">
-                    <div className="flex justify-between">
-                      <dt className="text-muted-foreground">Projects</dt>
-                      <dd className="num">{linked.length}</dd>
-                    </div>
-                    <div className="flex justify-between">
-                      <dt className="text-muted-foreground">Sanctioned</dt>
-                      <dd className="num">{crore(sum(linked.map((p) => p.sanctioned_cost)))}</dd>
-                    </div>
-                    <div className="flex justify-between">
-                      <dt className="text-muted-foreground">Service measures</dt>
-                      <dd className="num">
-                        {measured}/{service.length} reported
-                      </dd>
-                    </div>
-                  </dl>
+                  <p className="text-sm font-medium hover:underline">{d.label}</p>
                 </Link>
-              );
-            })}
+                <p className="mt-1 text-xs text-muted-foreground">{d.headline_question}</p>
+                <dl className="mt-2 space-y-0.5 text-xs">
+                  <div className="flex justify-between">
+                    <dt className="text-muted-foreground">Projects</dt>
+                    <dd className="num">{linked.length}</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-muted-foreground">Sanctioned</dt>
+                    <dd className="num">{crore(sum(linked.map((p) => p.sanctioned_cost)))}</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-muted-foreground">Service measures</dt>
+                    <dd className="num">
+                      {measured}/{service.length} reported
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            );
+          })}
         </div>
       </section>
 

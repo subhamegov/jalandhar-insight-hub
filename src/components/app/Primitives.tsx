@@ -12,14 +12,17 @@ export function PageHeader({
   actions?: ReactNode;
 }) {
   return (
-    <header className="mb-5 flex flex-wrap items-end justify-between gap-3 border-b border-border pb-4">
-      <div>
-        <h1 className="text-xl font-semibold text-foreground">{title}</h1>
-        {subtitle ? (
-          <p className="mt-1 max-w-3xl text-sm text-muted-foreground">{subtitle}</p>
-        ) : null}
+    <header className="mb-5 border-b border-border pb-4">
+      <div className="digit-rule mb-3 w-16" aria-hidden="true" />
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <h1 className="text-xl font-semibold text-foreground">{title}</h1>
+          {subtitle ? (
+            <p className="mt-1 max-w-3xl text-sm text-muted-foreground">{subtitle}</p>
+          ) : null}
+        </div>
+        {actions}
       </div>
-      {actions}
     </header>
   );
 }
@@ -38,7 +41,7 @@ export function Panel({
   className?: string;
 }) {
   return (
-    <section className={cn("rounded-md border border-border bg-card", className)}>
+    <section className={cn("digit-card", className)}>
       {title ? (
         <div className="flex items-center justify-between gap-3 border-b border-border px-4 py-2.5">
           <div>
@@ -66,7 +69,7 @@ export function MetricCard({
 }) {
   const display = value === null || value === undefined ? NA : value;
   return (
-    <div className="rounded-md border border-border bg-card p-3">
+    <div className="digit-card p-3">
       <p className="field-label">{label}</p>
       <p
         className={cn(
