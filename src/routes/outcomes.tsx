@@ -235,7 +235,7 @@ function IndicatorTable({ title, rows }: { title: string; rows: Indicator[] }) {
   return (
     <div className="overflow-hidden rounded-sm border border-border">
       <p className="field-label border-b border-border bg-muted/60 px-3 py-2">{title}</p>
-      <div className="-mx-3 overflow-x-auto px-3 sm:mx-0 sm:px-0"><table className="w-full text-sm">
+      <div className="overflow-x-auto"><table className="w-full min-w-[32rem] text-sm">
         <thead>
           <tr className="border-b border-border">
             <th className="field-label px-3 py-1.5 text-left">Indicator</th>
