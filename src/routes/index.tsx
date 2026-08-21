@@ -343,45 +343,53 @@ function Overview() {
 
       {/* 4. Major city systems */}
       <section aria-labelledby="systems" className="mt-6">
-        <h2 id="systems" className="field-label mb-2">
-          Major city systems
-        </h2>
+        <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+          <h2 id="systems" className="field-label">
+            Major city systems
+          </h2>
+          <PriorityNotice priority={systemPriority} computedLabel="standard order" />
+        </div>
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
-          {outcomeDomains
-            .filter((d) =>
-              ["water", "used_water", "solid_waste", "mobility", "air_quality"].includes(d.id),
-            )
-            .map((d) => {
-              const linked = projects.filter((p) => p.sector && d.sectors.includes(p.sector));
-              const service = d.indicators.filter((i) => i.measure_type === "service");
-              const measured = service.filter((i) => i.value !== null).length;
-              return (
+          {orderedSystems.map((d) => {
+            const linked = projects.filter((p) => p.sector && d.sectors.includes(p.sector));
+            const service = d.indicators.filter((i) => i.measure_type === "service");
+            const measured = service.filter((i) => i.value !== null).length;
+            const drag = systemDrag.rowProps(d.id);
+            return (
+              <div
+                key={d.id}
+                {...drag}
+                className={`flex flex-col rounded-sm border border-border bg-card p-3 ${drag.className}`}
+              >
+                <div className="mb-1 flex items-center justify-between">
+                  <PriorityHandle id={d.id} label={d.label} priority={systemPriority} />
+                </div>
                 <Link
-                  key={d.id}
                   to="/outcomes"
-                  className="rounded-md border border-border bg-card p-3 hover:border-primary/50 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                  className="focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
                 >
-                  <p className="text-sm font-medium">{d.label}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">{d.headline_question}</p>
-                  <dl className="mt-2 space-y-0.5 text-xs">
-                    <div className="flex justify-between">
-                      <dt className="text-muted-foreground">Projects</dt>
-                      <dd className="num">{linked.length}</dd>
-                    </div>
-                    <div className="flex justify-between">
-                      <dt className="text-muted-foreground">Sanctioned</dt>
-                      <dd className="num">{crore(sum(linked.map((p) => p.sanctioned_cost)))}</dd>
-                    </div>
-                    <div className="flex justify-between">
-                      <dt className="text-muted-foreground">Service measures</dt>
-                      <dd className="num">
-                        {measured}/{service.length} reported
-                      </dd>
-                    </div>
-                  </dl>
+                  <p className="text-sm font-medium hover:underline">{d.label}</p>
                 </Link>
-              );
-            })}
+                <p className="mt-1 text-xs text-muted-foreground">{d.headline_question}</p>
+                <dl className="mt-2 space-y-0.5 text-xs">
+                  <div className="flex justify-between">
+                    <dt className="text-muted-foreground">Projects</dt>
+                    <dd className="num">{linked.length}</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-muted-foreground">Sanctioned</dt>
+                    <dd className="num">{crore(sum(linked.map((p) => p.sanctioned_cost)))}</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-muted-foreground">Service measures</dt>
+                    <dd className="num">
+                      {measured}/{service.length} reported
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            );
+          })}
         </div>
       </section>
 
