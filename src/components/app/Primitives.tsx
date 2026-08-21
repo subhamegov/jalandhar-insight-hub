@@ -1,0 +1,144 @@
+import type { ReactNode } from "react";
+import { NA } from "@/lib/format";
+import { cn } from "@/lib/utils";
+
+export function PageHeader({
+  title,
+  subtitle,
+  actions,
+}: {
+  title: string;
+  subtitle?: string | undefined;
+  actions?: ReactNode;
+}) {
+  return (
+    <header className="mb-5 flex flex-wrap items-end justify-between gap-3 border-b border-border pb-4">
+      <div>
+        <h1 className="text-xl font-semibold text-foreground">{title}</h1>
+        {subtitle ? (
+          <p className="mt-1 max-w-3xl text-sm text-muted-foreground">{subtitle}</p>
+        ) : null}
+      </div>
+      {actions}
+    </header>
+  );
+}
+
+export function Panel({
+  title,
+  description,
+  right,
+  children,
+  className,
+}: {
+  title?: string;
+  description?: string;
+  right?: ReactNode;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <section className={cn("rounded-md border border-border bg-card", className)}>
+      {title ? (
+        <div className="flex items-center justify-between gap-3 border-b border-border px-4 py-2.5">
+          <div>
+            <h2 className="text-sm font-semibold text-foreground">{title}</h2>
+            {description ? (
+              <p className="text-xs text-muted-foreground">{description}</p>
+            ) : null}
+          </div>
+          {right}
+        </div>
+      ) : null}
+      <div className="p-4">{children}</div>
+    </section>
+  );
+}
+
+export function MetricCard({
+  label,
+  value,
+  hint,
+  tone = "default",
+}: {
+  label: string;
+  value: string | number | null;
+  hint?: string;
+  tone?: "default" | "warning" | "critical";
+}) {
+  const display = value === null || value === undefined ? NA : value;
+  return (
+    <div className="rounded-md border border-border bg-card p-3">
+      <p className="field-label">{label}</p>
+      <p
+        className={cn(
+          "num mt-1.5 text-2xl font-semibold",
+          value === null && "text-base font-normal text-muted-foreground",
+          tone === "warning" && value !== null && "text-warning",
+          tone === "critical" && value !== null && "text-destructive",
+        )}
+      >
+        {display}
+      </p>
+      {hint ? <p className="mt-1 text-xs text-muted-foreground">{hint}</p> : null}
+    </div>
+  );
+}
+
+export function Field({
+  label,
+  value,
+  mono,
+}: {
+  label: string;
+  value: ReactNode;
+  mono?: boolean;
+}) {
+  const empty = value === NA || value === null || value === undefined || value === "";
+  return (
+    <div className="min-w-0">
+      <p className="field-label">{label}</p>
+      <p
+        className={cn(
+          "mt-0.5 break-words text-sm",
+          mono && "num",
+          empty ? "text-muted-foreground italic" : "text-foreground",
+        )}
+      >
+        {empty ? NA : value}
+      </p>
+    </div>
+  );
+}
+
+export function EmptyNote({ children }: { children: ReactNode }) {
+  return (
+    <p className="rounded-sm border border-dashed border-border bg-muted/40 px-3 py-6 text-center text-sm text-muted-foreground">
+      {children}
+    </p>
+  );
+}
+
+export function BarRow({
+  label,
+  value,
+  max,
+  href,
+}: {
+  label: ReactNode;
+  value: number;
+  max: number;
+  href?: string;
+}) {
+  const pct = max > 0 ? Math.round((value / max) * 100) : 0;
+  return (
+    <div className="flex items-center gap-3 py-1.5">
+      <div className="w-56 shrink-0 truncate text-sm text-foreground">{label}</div>
+      <div className="h-2 flex-1 rounded-sm bg-muted">
+        <div className="h-2 rounded-sm bg-primary" style={{ width: `${pct}%` }} />
+      </div>
+      <div className="num w-8 shrink-0 text-right text-sm text-muted-foreground">{value}</div>
+      {href ? null : null}
+    </div>
+  );
+}
