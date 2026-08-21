@@ -47,7 +47,10 @@ function AreaNotFound() {
     <>
       <PageHeader title="Area not found" />
       <EmptyNote>
-        No area with this identifier. <Link to="/wards" className="text-primary">Back to Ward View</Link>
+        No area with this identifier.{" "}
+        <Link to="/wards" className="text-primary">
+          Back to Ward View
+        </Link>
       </EmptyNote>
     </>
   );
@@ -234,7 +237,10 @@ function WardDetail() {
                     </li>
                   ))}
                   {sectionAssets.map((a) => (
-                    <li key={a.asset_id} className="flex justify-between gap-3 text-muted-foreground">
+                    <li
+                      key={a.asset_id}
+                      className="flex justify-between gap-3 text-muted-foreground"
+                    >
                       <span className="truncate">{a.asset_name}</span>
                       <span className="text-xs">{text(a.operational_status)}</span>
                     </li>

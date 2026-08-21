@@ -28,7 +28,12 @@ export const Route = createFileRoute("/assets")({
 function AssetsPage() {
   const columns: Column<Asset>[] = [
     { key: "asset_name", header: "Asset", value: (a) => a.asset_name },
-    { key: "asset_type", header: "Type", value: (a) => a.asset_type, render: (a) => text(a.asset_type) },
+    {
+      key: "asset_type",
+      header: "Type",
+      value: (a) => a.asset_type,
+      render: (a) => text(a.asset_type),
+    },
     { key: "sector", header: "System", value: (a) => a.sector, render: (a) => text(a.sector) },
     {
       key: "owning_agency",

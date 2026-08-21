@@ -79,10 +79,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Jalandhar City Intelligence" },
-      { name: "description", content: "Projects, infrastructure, investment and outcomes across government in Jalandhar." },
+      {
+        name: "description",
+        content:
+          "Projects, infrastructure, investment and outcomes across government in Jalandhar.",
+      },
       { name: "author", content: "Jalandhar City Intelligence" },
       { property: "og:title", content: "Jalandhar City Intelligence" },
-      { property: "og:description", content: "One joined-up view of Jalandhar city infrastructure and government investment." },
+      {
+        property: "og:description",
+        content: "One joined-up view of Jalandhar city infrastructure and government investment.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },

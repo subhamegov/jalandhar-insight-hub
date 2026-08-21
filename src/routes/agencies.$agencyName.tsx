@@ -44,9 +44,7 @@ function AgencyPage() {
   const agencyAssets = assets.filter(
     (a) => a.owning_agency === name || a.operating_agency === name,
   );
-  const operational = agencyAssets.filter((a) =>
-    /^operational$/i.test(a.operational_status ?? ""),
-  );
+  const operational = agencyAssets.filter((a) => /^operational$/i.test(a.operational_status ?? ""));
   const docs = evidence.filter((e) => related.some((p) => p.project_id === e.linked_entity));
 
   return (
@@ -67,7 +65,10 @@ function AgencyPage() {
       <div className="mb-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
         <MetricCard label="Projects owned" value={owned.length} />
         <MetricCard label="Projects implemented" value={implemented.length} />
-        <MetricCard label="Total sanctioned value" value={crore(sum(related.map((p) => p.sanctioned_cost)))} />
+        <MetricCard
+          label="Total sanctioned value"
+          value={crore(sum(related.map((p) => p.sanctioned_cost)))}
+        />
         <MetricCard
           label="Delayed projects"
           value={delayed.length}

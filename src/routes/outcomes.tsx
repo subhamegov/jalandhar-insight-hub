@@ -98,8 +98,8 @@ function OutcomesPage() {
         </div>
         <p className="mt-3 text-xs text-muted-foreground">
           Value weighted measures are used throughout. A large number of small projects does not
-          raise a sector up this list. A completed project whose asset is not confirmed
-          operational stays visible as a risk.
+          raise a sector up this list. A completed project whose asset is not confirmed operational
+          stays visible as a risk.
         </p>
       </Panel>
 
@@ -111,9 +111,9 @@ function OutcomesPage() {
 
       <Panel title="Cross scheme analysis" className="mt-4">
         <p className="mb-3 text-xs text-muted-foreground">
-          A single physical intervention is usually funded by more than one programme. These are
-          the programmes that fund each domain, so a reader can see where one problem is being
-          addressed by several ministries and departments at once.
+          A single physical intervention is usually funded by more than one programme. These are the
+          programmes that fund each domain, so a reader can see where one problem is being addressed
+          by several ministries and departments at once.
         </p>
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {outcomeDomains.map((d) => (
@@ -187,7 +187,10 @@ function DomainPanel({ domain }: { domain: OutcomeDomain }) {
           ) : (
             <ul className="divide-y divide-border rounded-sm border border-border">
               {linked.map((p) => (
-                <li key={p.project_id} className="flex items-center justify-between gap-3 px-3 py-2">
+                <li
+                  key={p.project_id}
+                  className="flex items-center justify-between gap-3 px-3 py-2"
+                >
                   <Link
                     to="/projects/$projectId"
                     params={{ projectId: p.project_id }}
@@ -273,8 +276,8 @@ function ChartSlot({ series }: { series: IndicatorSeries }) {
       <p className="text-xs text-muted-foreground">Source: {text(series.source)}</p>
       {points.length < 2 ? (
         <p className="mt-3 rounded-sm border border-dashed border-border bg-muted/40 px-3 py-6 text-center text-xs text-muted-foreground">
-          No published series attached. A trend is not shown from a single reading or from
-          missing data.
+          No published series attached. A trend is not shown from a single reading or from missing
+          data.
         </p>
       ) : (
         <ul className="mt-3 space-y-1">

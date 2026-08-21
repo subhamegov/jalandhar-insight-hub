@@ -187,12 +187,24 @@ function Overview() {
                 <caption className="sr-only">Projects requiring senior attention</caption>
                 <thead>
                   <tr className="border-b border-border text-left">
-                    <th scope="col" className="field-label py-1.5 pr-3">Project</th>
-                    <th scope="col" className="field-label py-1.5 pr-3">Assessment</th>
-                    <th scope="col" className="field-label py-1.5 pr-3">Status</th>
-                    <th scope="col" className="field-label py-1.5 pr-3">Value</th>
-                    <th scope="col" className="field-label py-1.5 pr-3">Why it matters</th>
-                    <th scope="col" className="field-label py-1.5">Verified</th>
+                    <th scope="col" className="field-label py-1.5 pr-3">
+                      Project
+                    </th>
+                    <th scope="col" className="field-label py-1.5 pr-3">
+                      Assessment
+                    </th>
+                    <th scope="col" className="field-label py-1.5 pr-3">
+                      Status
+                    </th>
+                    <th scope="col" className="field-label py-1.5 pr-3">
+                      Value
+                    </th>
+                    <th scope="col" className="field-label py-1.5 pr-3">
+                      Why it matters
+                    </th>
+                    <th scope="col" className="field-label py-1.5">
+                      Verified
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -271,9 +283,8 @@ function Overview() {
             </ClientOnly>
           </div>
           <p className="mt-2 text-xs text-muted-foreground">
-            {govPoints.length} located records.{" "}
-            {projects.filter((p) => p.latitude === null).length} projects have no precise
-            location and cannot be shown.
+            {govPoints.length} located records. {projects.filter((p) => p.latitude === null).length}{" "}
+            projects have no precise location and cannot be shown.
           </p>
         </Panel>
       </section>
@@ -358,8 +369,8 @@ function Overview() {
                   <SourceBadge quality={e.evidence_quality} />
                 </div>
                 <p className="mt-0.5 text-xs text-muted-foreground">
-                  {text(e.publishing_agency)} · published {dateText(e.publication_date)} ·
-                  retrieved {dateText(e.retrieved_date)}
+                  {text(e.publishing_agency)} · published {dateText(e.publication_date)} · retrieved{" "}
+                  {dateText(e.retrieved_date)}
                 </p>
                 <EvidenceLink
                   request={{

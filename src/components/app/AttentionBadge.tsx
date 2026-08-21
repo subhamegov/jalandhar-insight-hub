@@ -4,7 +4,10 @@ import { cn } from "@/lib/utils";
 const TONE: Record<AttentionLabel, { tone: string; mark: string }> = {
   Critical: { tone: "border-destructive/45 bg-destructive/12 text-destructive", mark: "▲" },
   Attention: { tone: "border-warning/45 bg-warning/12 text-warning", mark: "●" },
-  "Data incomplete": { tone: "border-dashed border-border bg-muted text-muted-foreground", mark: "?" },
+  "Data incomplete": {
+    tone: "border-dashed border-border bg-muted text-muted-foreground",
+    mark: "?",
+  },
   "On track": { tone: "border-positive/45 bg-positive/10 text-positive", mark: "✔" },
 };
 

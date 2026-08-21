@@ -104,7 +104,9 @@ export function GlobalHeader() {
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (q.length < 2) return [];
-    return index.filter((h) => h.label.toLowerCase().includes(q) || h.sub.toLowerCase().includes(q)).slice(0, 12);
+    return index
+      .filter((h) => h.label.toLowerCase().includes(q) || h.sub.toLowerCase().includes(q))
+      .slice(0, 12);
   }, [index, query]);
 
   useEffect(() => {
@@ -122,9 +124,7 @@ export function GlobalHeader() {
   const withEvidence = projects.filter(
     (p) => p.evidence_quality !== "unverified" && Boolean(p.source_url ?? p.source_agency),
   ).length;
-  const completeness = projects.length
-    ? Math.round((withEvidence / projects.length) * 100)
-    : 0;
+  const completeness = projects.length ? Math.round((withEvidence / projects.length) * 100) : 0;
   const freshness = freshnessOf(lastRefresh);
 
   return (
@@ -139,7 +139,10 @@ export function GlobalHeader() {
           </p>
         </div>
 
-        <div ref={boxRef} className="relative order-last w-full min-w-0 flex-1 md:order-none md:w-auto md:max-w-md">
+        <div
+          ref={boxRef}
+          className="relative order-last w-full min-w-0 flex-1 md:order-none md:w-auto md:max-w-md"
+        >
           <label htmlFor="global-search" className="sr-only">
             Search projects, assets, schemes, agencies, contractors, wards and localities
           </label>

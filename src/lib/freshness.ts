@@ -21,10 +21,7 @@ export const FRESHNESS_RANGE: Record<Freshness, string> = {
 /** Fixed reference date so the view is reproducible across sessions. */
 export const AS_OF = "2026-08-21";
 
-export function ageInDays(
-  date: string | null | undefined,
-  asOf: string = AS_OF,
-): number | null {
+export function ageInDays(date: string | null | undefined, asOf: string = AS_OF): number | null {
   if (!date) return null;
   const then = Date.parse(date);
   const now = Date.parse(asOf);

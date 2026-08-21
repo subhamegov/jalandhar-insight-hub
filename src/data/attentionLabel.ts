@@ -16,9 +16,7 @@ const MAJOR_PROJECT_CRORE = 100;
 export function assessProject(p: Project): AttentionAssessment {
   const reasons: string[] = [];
   const profile = profileFor(p.project_id);
-  const material = conflictsForProject(p).filter(
-    (c) => c.severity === "material_conflict",
-  ).length;
+  const material = conflictsForProject(p).filter((c) => c.severity === "material_conflict").length;
 
   const major = (p.sanctioned_cost ?? p.contracted_cost ?? 0) >= MAJOR_PROJECT_CRORE;
   const built = p.status === "completed" || p.status === "substantially_complete";

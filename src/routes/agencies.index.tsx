@@ -27,7 +27,12 @@ export const Route = createFileRoute("/agencies/")({
 function AgenciesPage() {
   const columns: Column<Agency>[] = [
     { key: "agency_name", header: "Agency", value: (a) => a.agency_name },
-    { key: "agency_type", header: "Type", value: (a) => a.agency_type, render: (a) => text(a.agency_type) },
+    {
+      key: "agency_type",
+      header: "Type",
+      value: (a) => a.agency_type,
+      render: (a) => text(a.agency_type),
+    },
     {
       key: "parent_department",
       header: "Parent department",

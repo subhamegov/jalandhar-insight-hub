@@ -38,15 +38,7 @@ export const Route = createFileRoute("/brief")({
   component: BriefPage,
 });
 
-function Section({
-  n,
-  title,
-  children,
-}: {
-  n: number;
-  title: string;
-  children: React.ReactNode;
-}) {
+function Section({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {
   return (
     <section className="mt-6 break-inside-avoid">
       <h2 className="mb-2 border-b border-border pb-1 text-sm font-semibold">
@@ -181,8 +173,8 @@ function BriefPage() {
           })}
         />
         <p className="mt-2 text-xs text-muted-foreground">
-          Where a service measure is not reported, no figure is shown. Construction progress is
-          not treated as service delivery.
+          Where a service measure is not reported, no figure is shown. Construction progress is not
+          treated as service delivery.
         </p>
       </Section>
 
@@ -243,7 +235,9 @@ function BriefPage() {
               <li key={r.project.project_id}>
                 <p className="text-sm font-medium">{r.project.project_name}</p>
                 <ul className="ml-4 list-disc text-xs text-muted-foreground">
-                  {r.profile?.depends_on_this.map((d) => <li key={d}>{d}</li>)}
+                  {r.profile?.depends_on_this.map((d) => (
+                    <li key={d}>{d}</li>
+                  ))}
                 </ul>
               </li>
             ))}

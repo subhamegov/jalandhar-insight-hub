@@ -54,8 +54,7 @@ export const projects: Project[] = [
     evidence_quality: "unverified",
     last_verified: null,
     notes: "Financials pending verification against sanction order.",
-    conflict_note:
-      "Completion timeline reported differently by state and municipal statements.",
+    conflict_note: "Completion timeline reported differently by state and municipal statements.",
     record_updated: "2026-08-21",
     geography_type: "network",
     priority: "critical",
@@ -111,8 +110,7 @@ export const projects: Project[] = [
     evidence_quality: "unverified",
     last_verified: null,
     notes: "Subject of pollution control and tribunal proceedings; records to be attached.",
-    conflict_note:
-      "Quantum of waste remediated differs between municipal and tribunal filings.",
+    conflict_note: "Quantum of waste remediated differs between municipal and tribunal filings.",
     record_updated: "2026-08-21",
     geography_type: "site",
     priority: "critical",
@@ -221,9 +219,7 @@ export const projects: Project[] = [
     geography_type: "network",
     priority: "high",
     progress_as_of: null,
-    key_attributes: [
-      { label: "Sanctioned buses", value: "97", source: null },
-    ],
+    key_attributes: [{ label: "Sanctioned buses", value: "97", source: null }],
   },
   {
     project_id: "PRJ-JAL-005",
@@ -279,8 +275,7 @@ export const projects: Project[] = [
   {
     project_id: "PRJ-JAL-006",
     project_name: "Jalandhar Cantt Railway Station Redevelopment",
-    short_description:
-      "Station redevelopment under the central station modernisation programme.",
+    short_description: "Station redevelopment under the central station modernisation programme.",
     sector: "Mobility",
     asset_type: "Railway station",
     scheme: "Amrit Bharat Station Scheme",

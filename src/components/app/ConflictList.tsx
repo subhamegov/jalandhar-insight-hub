@@ -27,11 +27,16 @@ export function ConflictList({
         <li key={c.conflict_id} className="rounded-sm border border-border p-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="text-sm font-medium">
-              {showProject ? <span className="text-muted-foreground">{c.project_name}: </span> : null}
+              {showProject ? (
+                <span className="text-muted-foreground">{c.project_name}: </span>
+              ) : null}
               {c.rule_label}
             </p>
             <span
-              className={cn("rounded-sm border px-1.5 py-0.5 text-[11px]", SEVERITY_STYLE[c.severity])}
+              className={cn(
+                "rounded-sm border px-1.5 py-0.5 text-[11px]",
+                SEVERITY_STYLE[c.severity],
+              )}
             >
               {labelise(c.severity)}
             </span>

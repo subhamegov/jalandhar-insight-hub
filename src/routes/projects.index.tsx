@@ -268,15 +268,15 @@ function ProjectsPage() {
             >
               Export CSV
             </button>
-          {activeFilters.length ? (
-            <Link
-              to="/projects"
-              search={{}}
-              className="rounded-sm border border-border px-2.5 py-1 text-xs text-muted-foreground hover:bg-muted"
-            >
-              Clear: {activeFilters.map(([k, v]) => `${k} = ${v}`).join(", ")}
-            </Link>
-          ) : null}
+            {activeFilters.length ? (
+              <Link
+                to="/projects"
+                search={{}}
+                className="rounded-sm border border-border px-2.5 py-1 text-xs text-muted-foreground hover:bg-muted"
+              >
+                Clear: {activeFilters.map(([k, v]) => `${k} = ${v}`).join(", ")}
+              </Link>
+            ) : null}
           </div>
         }
       />
@@ -389,8 +389,8 @@ function ProjectsPage() {
         <p className="mt-3 text-sm text-muted-foreground">{EMPTY.noProjects}</p>
       ) : null}
       <p className="mt-3 text-xs text-muted-foreground">
-        Tender publication is not treated as proof of implementation, and completion of
-        construction is not treated as proof that an asset is operational.
+        Tender publication is not treated as proof of implementation, and completion of construction
+        is not treated as proof that an asset is operational.
       </p>
     </>
   );

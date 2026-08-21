@@ -126,14 +126,54 @@ function DataQualityPage() {
       />
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <MetricCard label="Projects without coordinates" value={noCoords.length} tone="warning" hint="Cannot be placed on the map" />
-        <MetricCard label="Projects without current status" value={noStatus.length} tone="warning" hint="Status recorded as unknown" />
-        <MetricCard label="Not verified in 180 days" value={notVerified180.length} tone="critical" hint={EMPTY.stale} />
-        <MetricCard label="Conflicting costs" value={costConflicts.length} tone="critical" hint="More than one sanctioned or contract value" />
-        <MetricCard label="Conflicting deadlines" value={deadlineConflicts.length} tone="critical" hint="More than one completion date reported" />
-        <MetricCard label="Completed without operational confirmation" value={completedNotOperational.length} tone="critical" hint="Built, service unproven" />
-        <MetricCard label="Projects without an implementing agency" value={noAgency.length} tone="warning" hint="No accountable body recorded" />
-        <MetricCard label="Assets without owning agency" value={assetsNoOwner.length} tone="warning" hint="Ownership unclear" />
+        <MetricCard
+          label="Projects without coordinates"
+          value={noCoords.length}
+          tone="warning"
+          hint="Cannot be placed on the map"
+        />
+        <MetricCard
+          label="Projects without current status"
+          value={noStatus.length}
+          tone="warning"
+          hint="Status recorded as unknown"
+        />
+        <MetricCard
+          label="Not verified in 180 days"
+          value={notVerified180.length}
+          tone="critical"
+          hint={EMPTY.stale}
+        />
+        <MetricCard
+          label="Conflicting costs"
+          value={costConflicts.length}
+          tone="critical"
+          hint="More than one sanctioned or contract value"
+        />
+        <MetricCard
+          label="Conflicting deadlines"
+          value={deadlineConflicts.length}
+          tone="critical"
+          hint="More than one completion date reported"
+        />
+        <MetricCard
+          label="Completed without operational confirmation"
+          value={completedNotOperational.length}
+          tone="critical"
+          hint="Built, service unproven"
+        />
+        <MetricCard
+          label="Projects without an implementing agency"
+          value={noAgency.length}
+          tone="warning"
+          hint="No accountable body recorded"
+        />
+        <MetricCard
+          label="Assets without owning agency"
+          value={assetsNoOwner.length}
+          tone="warning"
+          hint="Ownership unclear"
+        />
       </div>
 
       <Panel
@@ -167,13 +207,20 @@ function DataQualityPage() {
               <caption className="sr-only">Conflicting government records</caption>
               <thead>
                 <tr className="border-b border-border text-left">
-                  {["Entity", "Field", "Source A", "Source B", "Difference", "Severity", "Recommended review", "Evidence"].map(
-                    (h) => (
-                      <th key={h} scope="col" className="field-label py-1.5 pr-3">
-                        {h}
-                      </th>
-                    ),
-                  )}
+                  {[
+                    "Entity",
+                    "Field",
+                    "Source A",
+                    "Source B",
+                    "Difference",
+                    "Severity",
+                    "Recommended review",
+                    "Evidence",
+                  ].map((h) => (
+                    <th key={h} scope="col" className="field-label py-1.5 pr-3">
+                      {h}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>

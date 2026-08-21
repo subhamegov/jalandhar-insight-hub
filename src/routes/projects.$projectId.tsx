@@ -138,16 +138,15 @@ function ProjectDetail() {
         <MetricCard label="Contracted cost" value={crore(p.contracted_cost)} />
         <MetricCard label="Expenditure" value={crore(p.expenditure)} />
         <MetricCard label="Physical progress" value={percent(p.physical_progress_percentage)} />
-        <MetricCard
-          label="Financial progress"
-          value={percent(p.financial_progress_percentage)}
-        />
+        <MetricCard label="Financial progress" value={percent(p.financial_progress_percentage)} />
         <MetricCard label="Planned completion" value={dateText(p.planned_end_date)} />
         <MetricCard
           label="Delay (days)"
           value={p.delay_days ?? null}
           tone={isDelayed(p) ? "critical" : "default"}
-          hint={isDelayed(p) && p.delay_days === null ? "Delayed, duration not on record" : undefined}
+          hint={
+            isDelayed(p) && p.delay_days === null ? "Delayed, duration not on record" : undefined
+          }
         />
       </div>
 
@@ -287,9 +286,7 @@ function MapTab({ p }: { p: P }) {
         {point.length === 0 ? (
           <EmptyNote>No coordinates recorded for this project.</EmptyNote>
         ) : (
-          <ClientOnly
-            fallback={<div className="h-full w-full animate-pulse bg-muted" />}
-          >
+          <ClientOnly fallback={<div className="h-full w-full animate-pulse bg-muted" />}>
             <Suspense fallback={<div className="h-full w-full animate-pulse bg-muted" />}>
               <MapCanvas
                 govPoints={point}
@@ -345,13 +342,7 @@ function TimelineTab({ events }: { events: TimelineEvent[] }) {
   );
 }
 
-function FundingTab({
-  p,
-  funding,
-}: {
-  p: P;
-  funding: ReturnType<typeof componentsFor>;
-}) {
+function FundingTab({ p, funding }: { p: P; funding: ReturnType<typeof componentsFor> }) {
   return (
     <div className="grid gap-4">
       <Panel
@@ -453,8 +444,8 @@ function AssetsTab({ assets: linked }: { assets: typeof assets }) {
             <li key={a.asset_id} className="py-2.5">
               <p className="text-sm font-medium">{a.asset_name}</p>
               <p className="text-xs text-muted-foreground">
-                {text(a.asset_type)} · Operational status: {text(a.operational_status)} ·
-                Operator: {text(a.operating_agency)}
+                {text(a.asset_type)} · Operational status: {text(a.operational_status)} · Operator:{" "}
+                {text(a.operating_agency)}
               </p>
             </li>
           ))}
@@ -478,8 +469,8 @@ function OutcomesTab({ p, assets: linked }: { p: P; assets: typeof assets }) {
         />
       </div>
       <p className="mt-3 text-sm text-muted-foreground">
-        Expenditure and construction progress are inputs. This system records a service
-        outcome only where an operational record exists.
+        Expenditure and construction progress are inputs. This system records a service outcome only
+        where an operational record exists.
       </p>
     </Panel>
   );
@@ -505,9 +496,7 @@ function EvidenceTab({ items, p }: { items: typeof evidence; p: P }) {
                 <p className="text-xs text-muted-foreground">
                   {text(e.publishing_agency)} · {dateText(e.publication_date)}
                 </p>
-                {e.notes ? (
-                  <p className="mt-0.5 text-xs text-muted-foreground">{e.notes}</p>
-                ) : null}
+                {e.notes ? <p className="mt-0.5 text-xs text-muted-foreground">{e.notes}</p> : null}
               </div>
               <EvidenceBadge quality={e.evidence_quality} />
             </li>

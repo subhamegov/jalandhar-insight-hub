@@ -106,7 +106,10 @@ function AttentionPage() {
               </thead>
               <tbody>
                 {rows.map((r) => (
-                  <tr key={r.project.project_id} className="border-b border-border align-top last:border-0">
+                  <tr
+                    key={r.project.project_id}
+                    className="border-b border-border align-top last:border-0"
+                  >
                     <td className="num px-3 py-2 text-right font-semibold">{r.score}</td>
                     <td className="px-3 py-2">
                       <Link

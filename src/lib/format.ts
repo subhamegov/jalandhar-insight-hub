@@ -37,20 +37,7 @@ export function count(value: number | null | undefined): string {
   return value.toLocaleString("en-IN");
 }
 
-const MONTHS = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 /** Dates are displayed as DD MMM YYYY everywhere. */
 export function dateText(value: string | null | undefined): string {
