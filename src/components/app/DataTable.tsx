@@ -39,6 +39,7 @@ export function DataTable<T>({
 }) {
   const [query, setQuery] = useState("");
   const [active, setActive] = useState<Record<string, string>>({});
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [sortKey, setSortKey] = useState<string | null>(null);
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
 
