@@ -17,13 +17,18 @@ export type MarkerState =
 
 export interface GovPoint {
   id: string;
-  kind: "project" | "asset" | "location";
+  kind: "project" | "asset" | "location" | "group";
   name: string;
   sub: string;
   lat: number;
   lon: number;
   state: MarkerState;
+  /** Corridor or line geometry, when the record represents a corridor. */
+  path?: [number, number][] | null;
+  /** Number of projects sharing this representation. */
+  count?: number;
 }
+
 
 const STATE_COLORS: Record<MarkerState, { fill: string; stroke: string }> = {
   announced: { fill: "transparent", stroke: "#1d4ed8" },
@@ -129,17 +134,42 @@ export default function MapCanvas({
     for (const p of govPoints) {
       const c = STATE_COLORS[p.state];
       const isSelected = p.id === selectedId;
+      const count = p.count ?? 1;
+      if (p.path && p.path.length > 1) {
+        const line = L.polyline(p.path, {
+          color: isSelected ? "#0f172a" : c.stroke,
+          weight: isSelected ? 7 : 5,
+          opacity: 0.85,
+          dashArray: "8 5",
+        });
+        line.bindTooltip(`${p.name} — ${p.sub}`, { direction: "top" });
+        line.on("click", () => onSelectGov(p.id));
+        line.addTo(group);
+      }
       const marker = L.circleMarker([p.lat, p.lon], {
-        radius: p.kind === "project" ? 9 : 7,
+        radius: count > 1 ? Math.min(9 + Math.round(Math.sqrt(count) * 2.5), 20) : 9,
         color: isSelected ? "#0f172a" : c.stroke,
         weight: isSelected ? 4 : 2,
         fillColor: c.fill === "transparent" ? "#ffffff" : c.fill,
         fillOpacity: c.fill === "transparent" ? 0.25 : 0.9,
       });
-      marker.bindTooltip(`${p.name} — ${p.sub}`, { direction: "top", offset: [0, -6] });
+      marker.bindTooltip(
+        count > 1 ? `${p.name} — ${count} projects` : `${p.name} — ${p.sub}`,
+        { direction: "top", offset: [0, -6] },
+      );
+      if (count > 1) {
+        marker
+          .bindTooltip(String(count), {
+            permanent: true,
+            direction: "center",
+            className: "map-count-label",
+          })
+          .openTooltip();
+      }
       marker.on("click", () => onSelectGov(p.id));
       marker.addTo(group);
     }
+
   }, [govPoints, selectedId, onSelectGov]);
 
   useEffect(() => {

@@ -221,3 +221,19 @@
   text-transform: uppercase;
   color: var(--color-muted-foreground);
 }
+
+/* Count label shown on grouped map markers. */
+.leaflet-tooltip.map-count-label {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+.leaflet-tooltip.map-count-label::before {
+  display: none;
+}
