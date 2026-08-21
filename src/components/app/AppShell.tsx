@@ -13,6 +13,8 @@ import {
   Grid2x2,
 } from "lucide-react";
 import type { ReactNode } from "react";
+import { GlobalHeader } from "@/components/app/GlobalHeader";
+import { EvidenceDrawerProvider } from "@/components/app/EvidenceDrawer";
 
 const NAV = [
   { to: "/", label: "Overview", icon: LayoutDashboard },
@@ -30,8 +32,9 @@ const NAV = [
 
 export function AppShell({ children }: { children: ReactNode }) {
   return (
+    <EvidenceDrawerProvider>
     <div className="min-h-screen bg-background lg:flex">
-      <aside className="bg-sidebar text-sidebar-foreground lg:sticky lg:top-0 lg:h-screen lg:w-60 lg:shrink-0">
+      <aside className="bg-sidebar text-sidebar-foreground print:hidden lg:sticky lg:top-0 lg:h-screen lg:w-60 lg:shrink-0">
         <div className="border-b border-sidebar-border px-4 py-4">
           <p className="text-[11px] tracking-[0.12em] text-sidebar-foreground/60 uppercase">
             Government of India
@@ -60,7 +63,11 @@ export function AppShell({ children }: { children: ReactNode }) {
           source attached yet.
         </div>
       </aside>
-      <main className="min-w-0 flex-1 px-4 py-5 lg:px-8 lg:py-7">{children}</main>
+      <div className="min-w-0 flex-1">
+        <GlobalHeader />
+        <main className="px-4 py-5 lg:px-8 lg:py-7">{children}</main>
+      </div>
     </div>
+    </EvidenceDrawerProvider>
   );
 }
