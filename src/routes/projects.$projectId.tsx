@@ -352,7 +352,7 @@ function FundingTab({ p, funding }: { p: P; funding: ReturnType<typeof component
         {funding.length === 0 ? (
           <EmptyNote>No funding components recorded.</EmptyNote>
         ) : (
-          <table className="w-full text-sm">
+          <div className="-mx-3 overflow-x-auto px-3 sm:mx-0 sm:px-0"><table className="w-full text-sm">
             <thead>
               <tr className="bg-muted/60 text-left">
                 <th className="field-label px-3 py-2">Programme</th>
@@ -379,7 +379,7 @@ function FundingTab({ p, funding }: { p: P; funding: ReturnType<typeof component
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         )}
       </Panel>
 

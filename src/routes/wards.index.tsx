@@ -60,7 +60,7 @@ function WardsPage() {
         {areas.length === 0 ? (
           <EmptyNote>No records to group.</EmptyNote>
         ) : (
-          <table className="w-full text-sm">
+          <div className="-mx-3 overflow-x-auto px-3 sm:mx-0 sm:px-0"><table className="w-full text-sm">
             <thead>
               <tr className="bg-muted/60">
                 <th className="field-label px-3 py-2 text-left">Area</th>
@@ -91,7 +91,7 @@ function WardsPage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         )}
       </Panel>
     </>

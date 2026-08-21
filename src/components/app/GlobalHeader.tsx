@@ -128,9 +128,9 @@ export function GlobalHeader() {
   const freshness = freshnessOf(lastRefresh);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur print:hidden">
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-2.5 lg:px-8">
-        <div className="min-w-0">
+    <header className="z-40 border-b border-border bg-background/95 backdrop-blur print:hidden lg:sticky lg:top-0">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2.5 sm:px-4 lg:px-8">
+        <div className="hidden min-w-0 lg:block">
           <h1 className="truncate text-sm font-semibold text-foreground">
             Jalandhar City Intelligence
           </h1>
@@ -158,7 +158,7 @@ export function GlobalHeader() {
               setOpen(true);
             }}
             onFocus={() => setOpen(true)}
-            placeholder="Search projects, assets, schemes, agencies, contractors, wards"
+            placeholder="Search projects, assets, schemes, agencies"
             className="w-full rounded-sm border border-input bg-card py-1.5 pr-2 pl-8 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           />
           {open && query.trim().length >= 2 ? (
@@ -196,7 +196,7 @@ export function GlobalHeader() {
           ) : null}
         </div>
 
-        <dl className="flex items-center gap-4 text-xs">
+        <dl className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
           <div>
             <dt className="field-label">Last data refresh</dt>
             <dd className="num">
@@ -220,7 +220,7 @@ export function GlobalHeader() {
           </div>
         </dl>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={() => {

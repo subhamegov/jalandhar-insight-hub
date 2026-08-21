@@ -347,7 +347,7 @@ function CityMap() {
 
       <div className="grid gap-3 lg:grid-cols-[320px_minmax(0,1fr)] xl:grid-cols-[320px_minmax(0,1fr)_340px]">
         {/* LEFT PANEL */}
-        <aside className="flex max-h-[78vh] flex-col gap-3 overflow-y-auto rounded-md border border-border bg-card p-3">
+        <aside className="order-2 flex max-h-[60vh] min-w-0 flex-col gap-3 overflow-y-auto rounded-md border border-border bg-card p-3 lg:order-none lg:max-h-[78vh]">
           <section>
             <h2 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               Search
@@ -490,8 +490,8 @@ function CityMap() {
         </aside>
 
         {/* MAP */}
-        <div className="flex flex-col">
-          <div className="h-[78vh] overflow-hidden rounded-md border border-border">
+        <div className="order-1 flex min-w-0 flex-col lg:order-none">
+          <div className="h-[60vh] overflow-hidden rounded-md border border-border sm:h-[70vh] lg:h-[78vh]">
             <ClientOnly
               fallback={
                 <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
@@ -520,7 +520,7 @@ function CityMap() {
         </div>
 
         {/* RIGHT PANEL */}
-        <aside className="max-h-[78vh] overflow-y-auto rounded-md border border-border bg-card p-3 xl:block">
+        <aside className="order-3 max-h-[60vh] min-w-0 overflow-y-auto rounded-md border border-border bg-card p-3 lg:order-none lg:max-h-[78vh] xl:block">
           {selection === null ? (
             <p className="text-sm text-muted-foreground">
               Select a marker on the map to see the record, its linked projects and assets, and the

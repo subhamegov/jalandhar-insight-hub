@@ -39,6 +39,7 @@ export function DataTable<T>({
 }) {
   const [query, setQuery] = useState("");
   const [active, setActive] = useState<Record<string, string>>({});
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [sortKey, setSortKey] = useState<string | null>(null);
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
 
@@ -84,6 +85,8 @@ export function DataTable<T>({
     return out;
   }, [rows, columns, filters, active, query, sortKey, sortDir, searchValues]);
 
+  const activeCount = Object.values(active).filter((v) => v && v !== "all").length;
+
   function toggleSort(key: string) {
     if (sortKey === key) {
       setSortDir(sortDir === "asc" ? "desc" : "asc");
@@ -95,36 +98,65 @@ export function DataTable<T>({
 
   return (
     <div className="rounded-md border border-border bg-card">
-      <div className="flex flex-wrap items-center gap-2 border-b border-border p-2.5">
-        <div className="relative min-w-56 flex-1">
-          <Search className="pointer-events-none absolute top-2.5 left-2 h-3.5 w-3.5 text-muted-foreground" />
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder={searchPlaceholder}
-            className="h-8 w-full rounded-sm border border-input bg-background pr-2 pl-7 text-sm outline-none focus:ring-2 focus:ring-ring/40"
-          />
+      <div className="border-b border-border p-2.5">
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="relative min-w-0 flex-1 basis-56">
+            <Search className="pointer-events-none absolute top-2.5 left-2 h-3.5 w-3.5 text-muted-foreground" />
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={searchPlaceholder}
+              className="h-9 w-full rounded-sm border border-input bg-background pr-2 pl-7 text-sm outline-none focus:ring-2 focus:ring-ring/40 sm:h-8"
+            />
+          </div>
+          <span className="num text-xs whitespace-nowrap text-muted-foreground">
+            {visible.length} of {rows.length}
+          </span>
         </div>
-        {filters.map((f) => (
-          <label key={f.key} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            {f.label}
-            <select
-              value={active[f.key] ?? "all"}
-              onChange={(e) => setActive({ ...active, [f.key]: e.target.value })}
-              className="h-8 rounded-sm border border-input bg-background px-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring/40"
+        {filters.length ? (
+          <div className="mt-2">
+            <button
+              type="button"
+              onClick={() => setFiltersOpen((v) => !v)}
+              aria-expanded={filtersOpen}
+              className="inline-flex items-center gap-1.5 rounded-sm border border-input px-2.5 py-1.5 text-xs font-medium focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none lg:hidden"
             >
-              <option value="all">All</option>
-              {f.options.map((o) => (
-                <option key={o} value={o}>
-                  {o}
-                </option>
+              {filtersOpen ? "Hide filters" : "Filters"}
+              {activeCount ? (
+                <span className="num rounded-sm bg-primary px-1.5 text-primary-foreground">
+                  {activeCount}
+                </span>
+              ) : null}
+            </button>
+            <div
+              className={cn(
+                "mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:mt-0 lg:flex lg:flex-wrap lg:items-center",
+                !filtersOpen && "hidden lg:flex",
+              )}
+            >
+              {filters.map((f) => (
+                <label
+                  key={f.key}
+                  className="flex min-w-0 flex-col gap-1 text-xs text-muted-foreground lg:flex-row lg:items-center lg:gap-1.5"
+                >
+                  <span className="truncate">{f.label}</span>
+                  <select
+                    value={active[f.key] ?? "all"}
+                    onChange={(e) => setActive({ ...active, [f.key]: e.target.value })}
+                    className="h-9 w-full min-w-0 rounded-sm border border-input bg-background px-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring/40 sm:h-8 lg:w-auto"
+                  >
+                    <option value="all">All</option>
+                    {f.options.map((o) => (
+                      <option key={o} value={o}>
+                        {o}
+                      </option>
+                    ))}
+                  </select>
+                </label>
               ))}
-            </select>
-          </label>
-        ))}
-        <span className="num ml-auto text-xs text-muted-foreground">
-          {visible.length} of {rows.length}
-        </span>
+            </div>
+          </div>
+        ) : null}
       </div>
 
       <div className="overflow-x-auto">
