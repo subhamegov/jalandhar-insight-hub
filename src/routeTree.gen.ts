@@ -23,6 +23,7 @@ import { Route as ProjectsProjectIdRouteImport } from './routes/projects.$projec
 import { Route as SchemesIndexRouteImport } from './routes/schemes.index'
 import { Route as SchemesSchemeNameRouteImport } from './routes/schemes.$schemeName'
 import { Route as WardsIndexRouteImport } from './routes/wards.index'
+import { Route as WardsWardIdRouteImport } from './routes/wards.$wardId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -94,6 +95,11 @@ const WardsIndexRoute = WardsIndexRouteImport.update({
   path: '/wards/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WardsWardIdRoute = WardsWardIdRouteImport.update({
+  id: '/wards/$wardId',
+  path: '/wards/$wardId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
+  '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/schemes/': typeof SchemesIndexRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
+  '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies': typeof AgenciesIndexRoute
   '/projects': typeof ProjectsIndexRoute
   '/schemes': typeof SchemesIndexRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
+  '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/schemes/': typeof SchemesIndexRoute
@@ -157,6 +166,7 @@ export interface FileRouteTypes {
     | '/agencies/$agencyName'
     | '/projects/$projectId'
     | '/schemes/$schemeName'
+    | '/wards/$wardId'
     | '/agencies/'
     | '/projects/'
     | '/schemes/'
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/agencies/$agencyName'
     | '/projects/$projectId'
     | '/schemes/$schemeName'
+    | '/wards/$wardId'
     | '/agencies'
     | '/projects'
     | '/schemes'
@@ -189,6 +200,7 @@ export interface FileRouteTypes {
     | '/agencies/$agencyName'
     | '/projects/$projectId'
     | '/schemes/$schemeName'
+    | '/wards/$wardId'
     | '/agencies/'
     | '/projects/'
     | '/schemes/'
@@ -206,6 +218,7 @@ export interface RootRouteChildren {
   AgenciesAgencyNameRoute: typeof AgenciesAgencyNameRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
   SchemesSchemeNameRoute: typeof SchemesSchemeNameRoute
+  WardsWardIdRoute: typeof WardsWardIdRoute
   AgenciesIndexRoute: typeof AgenciesIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
   SchemesIndexRoute: typeof SchemesIndexRoute
@@ -312,6 +325,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WardsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/wards/$wardId': {
+      id: '/wards/$wardId'
+      path: '/wards/$wardId'
+      fullPath: '/wards/$wardId'
+      preLoaderRoute: typeof WardsWardIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -326,6 +346,7 @@ const rootRouteChildren: RootRouteChildren = {
   AgenciesAgencyNameRoute: AgenciesAgencyNameRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
   SchemesSchemeNameRoute: SchemesSchemeNameRoute,
+  WardsWardIdRoute: WardsWardIdRoute,
   AgenciesIndexRoute: AgenciesIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
   SchemesIndexRoute: SchemesIndexRoute,

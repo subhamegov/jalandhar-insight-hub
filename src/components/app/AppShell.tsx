@@ -9,6 +9,8 @@ import {
   Map,
   Scale,
   Target,
+  Flag,
+  Grid2x2,
 } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -18,6 +20,8 @@ const NAV = [
   { to: "/projects", label: "Projects", icon: ListChecks },
   { to: "/assets", label: "Assets", icon: Boxes },
   { to: "/outcomes", label: "Outcomes", icon: Target },
+  { to: "/attention", label: "Attention", icon: Flag },
+  { to: "/wards", label: "Ward View", icon: Grid2x2 },
   { to: "/schemes", label: "Schemes", icon: Scale },
   { to: "/agencies", label: "Agencies", icon: Building2 },
   { to: "/evidence", label: "Evidence", icon: FileSearch },
