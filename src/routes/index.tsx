@@ -21,7 +21,7 @@ import {
   projectsByAgency,
 } from "@/data/selectors";
 import { EMPTY, crore, dateText, labelise, percent, text } from "@/lib/format";
-import { freshnessOf, isStale } from "@/lib/freshness";
+import { isStale } from "@/lib/freshness";
 
 const MapCanvas = lazy(() => import("@/components/map/MapCanvas"));
 

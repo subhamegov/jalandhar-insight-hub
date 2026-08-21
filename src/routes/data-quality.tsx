@@ -10,7 +10,7 @@ import { assets, evidence, fieldCompleteness, projects } from "@/data/selectors"
 import type { Conflict } from "@/data/types";
 import { CONFLICT_SEVERITIES } from "@/data/types";
 import { EMPTY, dateText, labelise, text } from "@/lib/format";
-import { FRESHNESS_LABEL, FRESHNESS_RANGE, ageInDays, freshnessOf } from "@/lib/freshness";
+import { FRESHNESS_LABEL, FRESHNESS_RANGE, ageInDays } from "@/lib/freshness";
 import { downloadCsv, toCsv } from "@/lib/exportData";
 
 export const Route = createFileRoute("/data-quality")({
@@ -348,5 +348,3 @@ function sourceText(c: Conflict, i: number): string {
   const parts = [text(s.value), s.source ?? "Source not recorded", dateText(s.source_date)];
   return parts.join(" — ");
 }
-
-export { freshnessOf };

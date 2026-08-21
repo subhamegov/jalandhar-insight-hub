@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AssetsRouteImport } from './routes/assets'
 import { Route as AttentionRouteImport } from './routes/attention'
+import { Route as BriefRouteImport } from './routes/brief'
 import { Route as DataQualityRouteImport } from './routes/data-quality'
 import { Route as EvidenceRouteImport } from './routes/evidence'
 import { Route as MapRouteImport } from './routes/map'
@@ -38,6 +39,11 @@ const AssetsRoute = AssetsRouteImport.update({
 const AttentionRoute = AttentionRouteImport.update({
   id: '/attention',
   path: '/attention',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BriefRoute = BriefRouteImport.update({
+  id: '/brief',
+  path: '/brief',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DataQualityRoute = DataQualityRouteImport.update({
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/assets': typeof AssetsRoute
   '/attention': typeof AttentionRoute
+  '/brief': typeof BriefRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/assets': typeof AssetsRoute
   '/attention': typeof AttentionRoute
+  '/brief': typeof BriefRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
@@ -140,6 +148,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/assets': typeof AssetsRoute
   '/attention': typeof AttentionRoute
+  '/brief': typeof BriefRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
@@ -159,6 +168,7 @@ export interface FileRouteTypes {
     | '/'
     | '/assets'
     | '/attention'
+    | '/brief'
     | '/data-quality'
     | '/evidence'
     | '/map'
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
     | '/'
     | '/assets'
     | '/attention'
+    | '/brief'
     | '/data-quality'
     | '/evidence'
     | '/map'
@@ -193,6 +204,7 @@ export interface FileRouteTypes {
     | '/'
     | '/assets'
     | '/attention'
+    | '/brief'
     | '/data-quality'
     | '/evidence'
     | '/map'
@@ -211,6 +223,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AssetsRoute: typeof AssetsRoute
   AttentionRoute: typeof AttentionRoute
+  BriefRoute: typeof BriefRoute
   DataQualityRoute: typeof DataQualityRoute
   EvidenceRoute: typeof EvidenceRoute
   MapRoute: typeof MapRoute
@@ -246,6 +259,13 @@ declare module '@tanstack/react-router' {
       path: '/attention'
       fullPath: '/attention'
       preLoaderRoute: typeof AttentionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brief': {
+      id: '/brief'
+      path: '/brief'
+      fullPath: '/brief'
+      preLoaderRoute: typeof BriefRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/data-quality': {
@@ -339,6 +359,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AssetsRoute: AssetsRoute,
   AttentionRoute: AttentionRoute,
+  BriefRoute: BriefRoute,
   DataQualityRoute: DataQualityRoute,
   EvidenceRoute: EvidenceRoute,
   MapRoute: MapRoute,
