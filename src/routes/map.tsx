@@ -6,6 +6,7 @@ import { ClientOnly } from "@/components/map/ClientOnly";
 import { DEFAULT_SHARED_FILTERS, readSharedFilters, writeSharedFilters } from "@/lib/sharedFilters";
 import type { GovPoint, MarkerState } from "@/components/map/MapCanvas";
 import { assets, evidence, projects } from "@/data/selectors";
+import { LOCATION_QUALITY_LABEL, SCOPE_GROUPS, matchesScopeGroup } from "@/data/registerLogic";
 import { priorityLocations, LOCATION_CATEGORY_LABELS } from "@/data/mapFeatures";
 import {
   CATEGORY_LABELS,
@@ -130,6 +131,7 @@ function CityMap() {
   const [investment, setInvestment] = useState("all");
   const [completionYear, setCompletionYear] = useState("all");
   const [quality, setQuality] = useState("all");
+  const [scopeGroup, setScopeGroup] = useState("All relevant projects");
 
   // Filters carried over from the project register, and kept in step with it.
   useEffect(() => {
@@ -158,6 +160,7 @@ function CityMap() {
     setInvestment("all");
     setCompletionYear("all");
     setQuality("all");
+    setScopeGroup("All relevant projects");
     writeSharedFilters(DEFAULT_SHARED_FILTERS);
   }
 
@@ -193,6 +196,7 @@ function CityMap() {
       if (owning !== "all" && p.owning_agency !== owning) return false;
       if (ward !== "all" && (p.ward ?? "Not available") !== ward) return false;
       if (quality !== "all" && p.evidence_quality !== quality) return false;
+      if (!matchesScopeGroup(p, scopeGroup)) return false;
       if (investment === "unknown" && p.sanctioned_cost !== null) return false;
       if (range?.test) {
         if (p.sanctioned_cost === null || !range.test(p.sanctioned_cost)) return false;
@@ -221,6 +225,7 @@ function CityMap() {
     investment,
     completionYear,
     quality,
+    scopeGroup,
   ]);
 
   const govPoints: GovPoint[] = useMemo(() => {
@@ -390,6 +395,7 @@ function CityMap() {
               investment,
               completionYear,
               quality,
+              scopeGroup,
             }}
             set={{
               setSector,
@@ -401,8 +407,39 @@ function CityMap() {
               setInvestment,
               setCompletionYear,
               setQuality,
+              setScopeGroup,
             }}
           />
+
+          <section>
+            <h2 className="mb-1.5 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+              Records without a plotted point
+            </h2>
+            <p className="mb-1.5 text-[11px] text-muted-foreground">
+              These records have no official coordinate. They are listed rather than shown as a
+              false exact point.
+            </p>
+            <ul className="max-h-48 space-y-1 overflow-y-auto text-xs">
+              {filteredProjects
+                .filter((p) => p.latitude === null || p.longitude === null)
+                .slice(0, 40)
+                .map((p) => (
+                  <li key={p.project_id}>
+                    <Link
+                      to="/projects/$projectId"
+                      params={{ projectId: p.project_id }}
+                      className="text-primary hover:underline"
+                    >
+                      {p.project_name}
+                    </Link>
+                    <span className="block text-[11px] text-muted-foreground">
+                      {LOCATION_QUALITY_LABEL[p.location_quality ?? "no_coordinate"]} ·{" "}
+                      {p.geography_scope ?? "Scope not recorded"}
+                    </span>
+                  </li>
+                ))}
+            </ul>
+          </section>
 
           <section>
             <h2 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -580,6 +617,7 @@ interface FilterValues {
   investment: string;
   completionYear: string;
   quality: string;
+  scopeGroup: string;
 }
 
 interface FilterSetters {
@@ -592,6 +630,7 @@ interface FilterSetters {
   setInvestment: (v: string) => void;
   setCompletionYear: (v: string) => void;
   setQuality: (v: string) => void;
+  setScopeGroup: (v: string) => void;
 }
 
 function FilterSection({
@@ -615,6 +654,12 @@ function FilterSection({
         Filters
       </h2>
       <div className="grid grid-cols-2 gap-2">
+        <Select
+          label="Geographic scope"
+          value={values.scopeGroup}
+          onChange={set.setScopeGroup}
+          options={SCOPE_GROUPS.map((g) => ({ value: g, label: g }))}
+        />
         <Select
           label="Sector"
           value={values.sector}
