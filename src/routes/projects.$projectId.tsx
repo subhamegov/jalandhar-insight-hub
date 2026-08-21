@@ -414,17 +414,19 @@ function ReconciliationTab({ p }: { p: P }) {
 }
 
 function MapTab({ p }: { p: P }) {
+  const loc = resolveMapLocation(p);
   const point: GovPoint[] =
-    p.latitude !== null && p.longitude !== null
+    loc.map_latitude !== null && loc.map_longitude !== null
       ? [
           {
             id: p.project_id,
             kind: "project",
             name: p.project_name,
-            sub: text(p.sector),
-            lat: p.latitude,
-            lon: p.longitude,
+            sub: `${text(p.sector)} · ${MAP_LOCATION_UI[loc.map_location_status].label}`,
+            lat: loc.map_latitude,
+            lon: loc.map_longitude,
             state: "active",
+            path: loc.map_geometry,
           },
         ]
       : [];
@@ -446,13 +448,18 @@ function MapTab({ p }: { p: P }) {
           value={LOCATION_QUALITY_LABEL[p.location_quality ?? "no_coordinate"]}
         />
         <Field label="Scope group" value={scopeGroupOf(p)} />
+        <Field label="Map location status" value={MAP_LOCATION_UI[loc.map_location_status].label} />
+        <Field label="Map location confidence" value={loc.map_location_confidence} />
+        <Field label="How the position was set" value={loc.map_geocoding_method} />
+        <Field label="Position source" value={loc.map_location_source} />
       </div>
+      <p className="mt-2 text-xs text-muted-foreground">{loc.map_reconciliation_note}</p>
+
       <div className="mt-3 h-[420px] overflow-hidden rounded-sm border border-border">
         {point.length === 0 ? (
           <EmptyNote>
-            No official coordinates are published for this record. It is shown as{" "}
-            {LOCATION_QUALITY_LABEL[p.location_quality ?? "no_coordinate"]} rather than as a false
-            exact point.
+            No position could be resolved for this record. It is listed for review rather than shown
+            as a false exact point.
           </EmptyNote>
         ) : (
           <ClientOnly fallback={<div className="h-full w-full animate-pulse bg-muted" />}>
@@ -465,9 +472,14 @@ function MapTab({ p }: { p: P }) {
                 onSelectGov={() => {}}
                 onSelectOsm={() => {}}
                 fitSignal={0}
-                focus={{ lat: p.latitude as number, lon: p.longitude as number, nonce: 1 }}
+                focus={{
+                  lat: loc.map_latitude as number,
+                  lon: loc.map_longitude as number,
+                  nonce: 1,
+                }}
               />
             </Suspense>
+
           </ClientOnly>
         )}
       </div>

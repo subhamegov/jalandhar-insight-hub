@@ -7,7 +7,15 @@ import { DEFAULT_SHARED_FILTERS, readSharedFilters, writeSharedFilters } from "@
 import type { GovPoint, MarkerState } from "@/components/map/MapCanvas";
 import { assets, evidence, projects } from "@/data/selectors";
 import { LOCATION_QUALITY_LABEL, SCOPE_GROUPS, matchesScopeGroup } from "@/data/registerLogic";
+import {
+  MAP_LOCATION_UI,
+  MAP_STATUS_TABS,
+  buildMapGroups,
+  resolveMapLocation,
+  type MapLocationStatus,
+} from "@/data/mapLocations";
 import { priorityLocations, LOCATION_CATEGORY_LABELS } from "@/data/mapFeatures";
+
 import {
   CATEGORY_LABELS,
   MAP_LAYERS,
@@ -107,6 +115,8 @@ type Selection =
   | { kind: "project"; id: string }
   | { kind: "asset"; id: string }
   | { kind: "location"; id: string }
+  | { kind: "group"; id: string }
+
   | { kind: "osm"; feature: OsmFeature }
   | null;
 
@@ -132,6 +142,11 @@ function CityMap() {
   const [completionYear, setCompletionYear] = useState("all");
   const [quality, setQuality] = useState("all");
   const [scopeGroup, setScopeGroup] = useState("All relevant projects");
+  const [sourceAgency, setSourceAgency] = useState("all");
+  const [locStatus, setLocStatus] = useState("all");
+  const [locConfidence, setLocConfidence] = useState("all");
+  const [mapTab, setMapTab] = useState("all");
+
 
   // Filters carried over from the project register, and kept in step with it.
   useEffect(() => {
@@ -161,8 +176,13 @@ function CityMap() {
     setCompletionYear("all");
     setQuality("all");
     setScopeGroup("All relevant projects");
+    setSourceAgency("all");
+    setLocStatus("all");
+    setLocConfidence("all");
+    setMapTab("all");
     writeSharedFilters(DEFAULT_SHARED_FILTERS);
   }
+
 
   // Load OSM layers on demand.
   useEffect(() => {
@@ -185,17 +205,30 @@ function CityMap() {
     }
   }, [activeLayers, osmData, loadingLayers, layerErrors]);
 
+  // Resolved map location for every project in the register.
+  const locations = useMemo(
+    () => new Map(projects.map((p) => [p.project_id, resolveMapLocation(p)])),
+    [],
+  );
+
   const filteredProjects = useMemo(() => {
     const q = search.trim().toLowerCase();
     const range = INVESTMENT_RANGES.find((r) => r.id === investment);
+    const tab = MAP_STATUS_TABS.find((t) => t.id === mapTab);
     return projects.filter((p) => {
+      const loc = locations.get(p.project_id);
       if (sector !== "all" && p.sector !== sector) return false;
       if (scheme !== "all" && p.scheme !== scheme) return false;
       if (status !== "all" && p.status !== status) return false;
       if (implementing !== "all" && p.implementing_agency !== implementing) return false;
       if (owning !== "all" && p.owning_agency !== owning) return false;
+      if (sourceAgency !== "all" && p.source_agency !== sourceAgency) return false;
       if (ward !== "all" && (p.ward ?? "Not available") !== ward) return false;
       if (quality !== "all" && p.evidence_quality !== quality) return false;
+      if (locStatus !== "all" && loc?.map_location_status !== locStatus) return false;
+      if (locConfidence !== "all" && loc?.map_location_confidence !== locConfidence) return false;
+      if (tab?.statuses && !tab.statuses.includes(loc?.map_location_status as MapLocationStatus))
+        return false;
       if (!matchesScopeGroup(p, scopeGroup)) return false;
       if (investment === "unknown" && p.sanctioned_cost !== null) return false;
       if (range?.test) {
@@ -206,7 +239,15 @@ function CityMap() {
         if (completionYear === "unknown" ? year !== "" : year !== completionYear) return false;
       }
       if (q) {
-        const hay = [p.project_name, p.locality, p.sector, p.implementing_agency, p.scheme]
+        const hay = [
+          p.project_name,
+          p.project_id,
+          p.source_record_id ?? null,
+          p.locality,
+          p.sector,
+          p.implementing_agency,
+          p.scheme,
+        ]
           .filter(Boolean)
           .join(" ")
           .toLowerCase();
@@ -215,32 +256,67 @@ function CityMap() {
       return true;
     });
   }, [
+    locations,
     search,
     sector,
     scheme,
     status,
     implementing,
     owning,
+    sourceAgency,
     ward,
     investment,
     completionYear,
     quality,
     scopeGroup,
+    locStatus,
+    locConfidence,
+    mapTab,
   ]);
+
+  const locationCounts = useMemo(() => {
+    const c = { exact: 0, approximate: 0, corridor: 0, citywide: 0, unresolved: 0 };
+    for (const p of projects) {
+      const s = locations.get(p.project_id)?.map_location_status;
+      if (s === "exact") c.exact += 1;
+      else if (s === "corridor") c.corridor += 1;
+      else if (s === "citywide") c.citywide += 1;
+      else if (s === "unresolved") c.unresolved += 1;
+      else c.approximate += 1;
+    }
+    return c;
+  }, [locations]);
+
+
+  // Every project in the register is eligible for the map. Location quality
+  // decides how it is represented, never whether it is represented.
+  const mapGroups = useMemo(() => buildMapGroups(filteredProjects), [filteredProjects]);
+
+  const groupById = useMemo(() => new Map(mapGroups.map((g) => [g.key, g])), [mapGroups]);
 
   const govPoints: GovPoint[] = useMemo(() => {
     const points: GovPoint[] = [];
     if (activeLayers.includes("gov_projects")) {
-      for (const p of filteredProjects) {
-        if (p.latitude === null || p.longitude === null) continue;
+      for (const g of mapGroups) {
+        const first = projects.find((p) => p.project_id === g.projectIds[0]);
         points.push({
-          id: p.project_id,
-          kind: "project",
-          name: p.project_name,
-          sub: `${labelise(p.status)} · ${text(p.sector)}`,
-          lat: p.latitude,
-          lon: p.longitude,
-          state: markerState(p.status, isDelayedProject(p)),
+          id: `GRP:${g.key}`,
+          kind: "group",
+          name: g.label,
+          sub:
+            g.projectIds.length > 1
+              ? `${g.projectIds.length} projects · ${MAP_LOCATION_UI[g.status].label}`
+              : `${first ? labelise(first.status) : ""} · ${MAP_LOCATION_UI[g.status].label}`,
+          lat: g.lat,
+          lon: g.lon,
+          state:
+            g.projectIds.length > 1 || !first
+              ? g.status === "corridor"
+                ? "location"
+                : "asset"
+              : markerState(first.status, isDelayedProject(first)),
+          path: g.path,
+          count: g.projectIds.length,
         });
       }
     }
@@ -272,7 +348,8 @@ function CityMap() {
       }
     }
     return points;
-  }, [activeLayers, filteredProjects]);
+  }, [activeLayers, mapGroups]);
+
 
   const osmFeatures = useMemo(
     () => activeLayers.flatMap((id) => osmData[id] ?? []),
@@ -281,12 +358,20 @@ function CityMap() {
 
   const layerColors = useMemo(() => Object.fromEntries(MAP_LAYERS.map((l) => [l.id, l.color])), []);
 
-  const selectedId = selection && selection.kind !== "osm" ? selection.id : null;
+  const selectedId =
+    selection === null || selection.kind === "osm"
+      ? null
+      : selection.kind === "group"
+        ? `GRP:${selection.id}`
+        : selection.id;
+
 
   const handleSelectGov = useCallback((id: string) => {
-    if (id.startsWith("PRJ")) setSelection({ kind: "project", id });
-    else if (id.startsWith("AST")) setSelection({ kind: "asset", id });
-    else setSelection({ kind: "location", id });
+    if (id.startsWith("GRP:")) {
+      setSelection({ kind: "group", id: id.slice(4) });
+    } else if (id.startsWith("AST")) setSelection({ kind: "asset", id });
+    else if (id.startsWith("LOC")) setSelection({ kind: "location", id });
+    else setSelection({ kind: "project", id });
   }, []);
 
   const handleSelectOsm = useCallback((feature: OsmFeature) => {
@@ -298,37 +383,26 @@ function CityMap() {
     setFocus({ lat, lon, nonce: Date.now() });
   }
 
+  /** Selecting a project highlights its map representation and previews it. */
+  const selectProject = useCallback(
+    (id: string) => {
+      setSelection({ kind: "project", id });
+      const loc = locations.get(id);
+      if (loc?.map_latitude !== null && loc?.map_longitude != null) {
+        setFocus({ lat: loc.map_latitude as number, lon: loc.map_longitude, nonce: Date.now() });
+      }
+    },
+    [locations],
+  );
+
   const toggleLayer = (id: string) =>
     setActiveLayers((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+  const sourceAgencies = useMemo(
+    () =>
+      [...new Set(projects.map((p) => p.source_agency).filter((a): a is string => Boolean(a)))].sort(),
+    [],
+  );
 
-  const searchMatches = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    if (!q) return [];
-    const results: {
-      id: string;
-      label: string;
-      sub: string;
-      lat: number | null;
-      lon: number | null;
-    }[] = [];
-    for (const p of filteredProjects.slice(0, 6))
-      results.push({
-        id: p.project_id,
-        label: p.project_name,
-        sub: "Project",
-        lat: p.latitude,
-        lon: p.longitude,
-      });
-    for (const l of priorityLocations.filter((l) => l.name.toLowerCase().includes(q)).slice(0, 4))
-      results.push({
-        id: l.location_id,
-        label: l.name,
-        sub: "Location",
-        lat: l.latitude,
-        lon: l.longitude,
-      });
-    return results;
-  }, [search, filteredProjects]);
 
   return (
     <>
@@ -360,27 +434,49 @@ function CityMap() {
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Project, locality or location"
+              placeholder="Project, record ID, locality or agency"
               className="w-full rounded-sm border border-border bg-background px-2 py-1.5 text-sm"
             />
-            {searchMatches.length > 0 && (
-              <ul className="mt-1.5 divide-y divide-border rounded-sm border border-border">
-                {searchMatches.map((m) => (
-                  <li key={m.id}>
-                    <button
-                      onClick={() => {
-                        handleSelectGov(m.id);
-                        locate(m.lat, m.lon);
-                      }}
-                      className="w-full px-2 py-1.5 text-left text-xs hover:bg-muted"
-                    >
-                      <span className="block truncate">{m.label}</span>
-                      <span className="text-[11px] text-muted-foreground">{m.sub}</span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
+          </section>
+
+          <section>
+
+            <h2 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Map coverage
+            </h2>
+            <p className="text-[11px] text-muted-foreground">
+              Every project in the register is represented on the map. Location confidence is
+              recorded separately and never inferred as exact.
+            </p>
+            <dl className="mt-1.5 grid grid-cols-2 gap-1 text-[11px]">
+              <div className="rounded-sm border border-border px-2 py-1">
+                <dt className="text-muted-foreground">Register records</dt>
+                <dd className="text-sm font-semibold">{projects.length}</dd>
+              </div>
+              <div className="rounded-sm border border-border px-2 py-1">
+                <dt className="text-muted-foreground">Map visible</dt>
+                <dd className="text-sm font-semibold">{projects.length - locationCounts.unresolved}</dd>
+              </div>
+              <div className="rounded-sm border border-border px-2 py-1">
+                <dt className="text-muted-foreground">Exact coordinate</dt>
+                <dd className="text-sm font-semibold">{locationCounts.exact}</dd>
+              </div>
+              <div className="rounded-sm border border-border px-2 py-1">
+                <dt className="text-muted-foreground">Approximate</dt>
+                <dd className="text-sm font-semibold">{locationCounts.approximate}</dd>
+              </div>
+              <div className="rounded-sm border border-border px-2 py-1">
+                <dt className="text-muted-foreground">Corridor</dt>
+                <dd className="text-sm font-semibold">{locationCounts.corridor}</dd>
+              </div>
+              <div className="rounded-sm border border-border px-2 py-1">
+                <dt className="text-muted-foreground">City wide</dt>
+                <dd className="text-sm font-semibold">{locationCounts.citywide}</dd>
+              </div>
+            </dl>
+            <p className="mt-1 text-[11px] text-muted-foreground">
+              Unmapped records: {locationCounts.unresolved}
+            </p>
           </section>
 
           <FilterSection
@@ -411,35 +507,90 @@ function CityMap() {
             }}
           />
 
+          <section className="space-y-1.5">
+            <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Location filters
+            </h2>
+            <select
+              value={locStatus}
+              onChange={(e) => setLocStatus(e.target.value)}
+              className="w-full rounded-sm border border-border bg-background px-2 py-1 text-xs"
+            >
+              <option value="all">Location status: all</option>
+              {Object.entries(MAP_LOCATION_UI).map(([id, ui]) => (
+                <option key={id} value={id}>
+                  {ui.label}
+                </option>
+              ))}
+            </select>
+            <select
+              value={locConfidence}
+              onChange={(e) => setLocConfidence(e.target.value)}
+              className="w-full rounded-sm border border-border bg-background px-2 py-1 text-xs"
+            >
+              <option value="all">Location confidence: all</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <select
+              value={sourceAgency}
+              onChange={(e) => setSourceAgency(e.target.value)}
+              className="w-full rounded-sm border border-border bg-background px-2 py-1 text-xs"
+            >
+              <option value="all">Source agency: all</option>
+              {sourceAgencies.map((a) => (
+                <option key={a} value={a}>
+                  {a}
+                </option>
+              ))}
+            </select>
+          </section>
+
           <section>
             <h2 className="mb-1.5 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-              Records without a plotted point
+              Projects on the map
             </h2>
-            <p className="mb-1.5 text-[11px] text-muted-foreground">
-              These records have no official coordinate. They are listed rather than shown as a
-              false exact point.
+            <div className="mb-1.5 flex flex-wrap gap-1">
+              {MAP_STATUS_TABS.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => setMapTab(t.id)}
+                  className={`rounded-sm border px-2 py-0.5 text-[11px] ${
+                    mapTab === t.id
+                      ? "border-primary bg-primary text-primary-foreground"
+                      : "border-border"
+                  }`}
+                >
+                  {t.label}
+                </button>
+              ))}
+            </div>
+            <p className="mb-1 text-[11px] text-muted-foreground">
+              {filteredProjects.length} records match. Selecting a record moves the map to its
+              recorded or resolved position.
             </p>
-            <ul className="max-h-48 space-y-1 overflow-y-auto text-xs">
-              {filteredProjects
-                .filter((p) => p.latitude === null || p.longitude === null)
-                .slice(0, 40)
-                .map((p) => (
+            <ul className="max-h-64 space-y-1 overflow-y-auto text-xs">
+              {filteredProjects.slice(0, 120).map((p) => {
+                const loc = locations.get(p.project_id);
+                return (
                   <li key={p.project_id}>
-                    <Link
-                      to="/projects/$projectId"
-                      params={{ projectId: p.project_id }}
-                      className="text-primary hover:underline"
+                    <button
+                      onClick={() => selectProject(p.project_id)}
+                      className="w-full text-left text-primary hover:underline"
                     >
                       {p.project_name}
-                    </Link>
+                    </button>
                     <span className="block text-[11px] text-muted-foreground">
-                      {LOCATION_QUALITY_LABEL[p.location_quality ?? "no_coordinate"]} ·{" "}
-                      {p.geography_scope ?? "Scope not recorded"}
+                      {loc ? MAP_LOCATION_UI[loc.map_location_status].label : "Not available"} ·{" "}
+                      {loc?.map_geocoding_method ?? "Method not recorded"}
                     </span>
                   </li>
-                ))}
+                );
+              })}
             </ul>
           </section>
+
 
           <section>
             <h2 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -567,8 +718,54 @@ function CityMap() {
             <ProjectPanel id={selection.id} onLocate={locate} onSelect={handleSelectGov} />
           ) : selection.kind === "asset" ? (
             <AssetPanel id={selection.id} onLocate={locate} onSelect={handleSelectGov} />
+          ) : selection.kind === "group" ? (
+            (() => {
+              const group = groupById.get(selection.id);
+              if (!group) return <p className="text-sm text-muted-foreground">Not available</p>;
+              if (group.projectIds.length === 1 && group.projectIds[0])
+                return (
+                  <ProjectPanel
+                    id={group.projectIds[0]}
+                    onLocate={locate}
+                    onSelect={handleSelectGov}
+                  />
+                );
+              return (
+                <div className="space-y-2">
+                  <h2 className="text-sm font-semibold">{group.label}</h2>
+                  <p className="text-xs text-muted-foreground">
+                    {MAP_LOCATION_UI[group.status].label} ·{" "}
+                    {MAP_LOCATION_UI[group.status].explanation}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {group.projectIds.length} projects share this map position. Position confidence:{" "}
+                    {group.confidence}.
+                  </p>
+                  <ul className="space-y-1 text-xs">
+                    {group.projectIds.map((pid) => {
+                      const p = projects.find((x) => x.project_id === pid);
+                      if (!p) return null;
+                      return (
+                        <li key={pid}>
+                          <button
+                            onClick={() => selectProject(pid)}
+                            className="text-left text-primary hover:underline"
+                          >
+                            {p.project_name}
+                          </button>
+                          <span className="block text-[11px] text-muted-foreground">
+                            {labelise(p.status)} · {text(p.implementing_agency)}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              );
+            })()
           ) : selection.kind === "location" ? (
             <LocationPanel id={selection.id} onLocate={locate} onSelect={handleSelectGov} />
+
           ) : (
             <OsmPanel feature={selection.feature} />
           )}
@@ -799,6 +996,19 @@ function ProjectPanel({
         label="Location quality"
         value={LOCATION_QUALITY_LABEL[p.location_quality ?? "no_coordinate"]}
       />
+      {(() => {
+        const loc = resolveMapLocation(p);
+        return (
+          <>
+            <Row label="Map location status" value={MAP_LOCATION_UI[loc.map_location_status].label} />
+            <Row label="Map location confidence" value={labelise(loc.map_location_confidence)} />
+            <Row label="How the position was set" value={loc.map_geocoding_method} />
+            <Row label="Position source" value={loc.map_location_source} />
+            <Row label="Reconciliation" value={loc.map_reconciliation_note} />
+          </>
+        );
+      })()}
+
       <Row label="Source" value={text(p.source_agency)} />
       <Row label="Last verified" value={dateText(p.last_verified)} />
 
