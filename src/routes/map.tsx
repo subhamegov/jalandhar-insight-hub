@@ -3,6 +3,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/app/Primitives";
 import { StatusBadge, EvidenceBadge } from "@/components/app/StatusBadge";
 import { ClientOnly } from "@/components/map/ClientOnly";
+import {
+  DEFAULT_SHARED_FILTERS,
+  readSharedFilters,
+  writeSharedFilters,
+} from "@/lib/sharedFilters";
 import type { GovPoint, MarkerState } from "@/components/map/MapCanvas";
 import { assets, evidence, projects } from "@/data/selectors";
 import { priorityLocations, LOCATION_CATEGORY_LABELS } from "@/data/mapFeatures";
@@ -129,6 +134,23 @@ function CityMap() {
   const [completionYear, setCompletionYear] = useState("all");
   const [quality, setQuality] = useState("all");
 
+  // Filters carried over from the project register, and kept in step with it.
+  useEffect(() => {
+    const shared = readSharedFilters();
+    if (shared.sector !== "all") setSector(shared.sector);
+    if (shared.scheme !== "all") setScheme(shared.scheme);
+    if (shared.status !== "all") setStatus(shared.status);
+    if (shared.agency !== "all") setImplementing(shared.agency);
+    if (shared.ward !== "all") setWard(shared.ward);
+    if (shared.query) setSearch(shared.query);
+    // Applied once on entry so the review context is not lost.
+     
+  }, []);
+
+  useEffect(() => {
+    writeSharedFilters({ sector, scheme, status, agency: implementing, ward, query: search });
+  }, [sector, scheme, status, implementing, ward, search]);
+
   function resetFilters() {
     setSearch("");
     setSector("all");
@@ -140,6 +162,7 @@ function CityMap() {
     setInvestment("all");
     setCompletionYear("all");
     setQuality("all");
+    writeSharedFilters(DEFAULT_SHARED_FILTERS);
   }
 
   // Load OSM layers on demand.
