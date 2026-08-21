@@ -123,12 +123,12 @@ export function BarRow({
   label,
   value,
   max,
-  href,
+  valueLabel,
 }: {
   label: ReactNode;
   value: number;
   max: number;
-  href?: string;
+  valueLabel?: string;
 }) {
   const pct = max > 0 ? Math.round((value / max) * 100) : 0;
   return (
@@ -137,8 +137,14 @@ export function BarRow({
       <div className="h-2 flex-1 rounded-sm bg-muted">
         <div className="h-2 rounded-sm bg-primary" style={{ width: `${pct}%` }} />
       </div>
-      <div className="num w-8 shrink-0 text-right text-sm text-muted-foreground">{value}</div>
-      {href ? null : null}
+      <div
+        className={cn(
+          "num shrink-0 text-right text-sm text-muted-foreground",
+          valueLabel ? "w-24" : "w-8",
+        )}
+      >
+        {valueLabel ?? value}
+      </div>
     </div>
   );
 }
