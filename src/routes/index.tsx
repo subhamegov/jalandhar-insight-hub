@@ -261,7 +261,7 @@ function Overview() {
                 label={name}
                 value={n}
                 max={sourceAgencyCounts[0]?.[1] ?? 1}
-                display={String(n)}
+                valueLabel={String(n)}
               />
             ))}
           </div>
