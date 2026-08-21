@@ -111,16 +111,26 @@ export function DataTable<T>({
           </span>
         </div>
         {filters.length ? (
-          <details className="group mt-2 lg:open:mt-2" open={openFilters}>
-            <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 rounded-sm border border-input px-2.5 py-1.5 text-xs font-medium lg:hidden">
-              Filters
+          <div className="mt-2">
+            <button
+              type="button"
+              onClick={() => setFiltersOpen((v) => !v)}
+              aria-expanded={filtersOpen}
+              className="inline-flex items-center gap-1.5 rounded-sm border border-input px-2.5 py-1.5 text-xs font-medium focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none lg:hidden"
+            >
+              {filtersOpen ? "Hide filters" : "Filters"}
               {activeCount ? (
                 <span className="num rounded-sm bg-primary px-1.5 text-primary-foreground">
                   {activeCount}
                 </span>
               ) : null}
-            </summary>
-            <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:mt-0 lg:flex lg:flex-wrap lg:items-center">
+            </button>
+            <div
+              className={cn(
+                "mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:mt-0 lg:flex lg:flex-wrap lg:items-center",
+                !filtersOpen && "hidden lg:flex",
+              )}
+            >
               {filters.map((f) => (
                 <label
                   key={f.key}
