@@ -155,7 +155,7 @@ function WardDetail() {
         {area.projects.length === 0 ? (
           <EmptyNote>No projects recorded in this area.</EmptyNote>
         ) : (
-          <table className="w-full text-sm">
+          <div className="-mx-3 overflow-x-auto px-3 sm:mx-0 sm:px-0"><table className="w-full text-sm">
             <thead>
               <tr className="bg-muted/60">
                 <th className="field-label px-3 py-2 text-left">Project</th>
@@ -188,7 +188,7 @@ function WardDetail() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         )}
       </Panel>
 
