@@ -21,6 +21,10 @@ npm i
 npm run dev
 ```
 
+## Project documentation
+
+- [Data Model](./DATA_MODEL.md) — complete domain model, entities, relationships and data-quality rules for the Jalandhar City Intelligence application.
+
 ## Built with
 
 - TanStack Start
