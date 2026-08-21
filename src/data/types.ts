@@ -64,6 +64,7 @@ export type CitySystem =
   | "Roads"
   | "Air Quality"
   | "Public Realm"
+  | "Environment"
   | "Health Infrastructure";
 
 export const CITY_SYSTEMS: CitySystem[] = [
@@ -74,6 +75,7 @@ export const CITY_SYSTEMS: CitySystem[] = [
   "Roads",
   "Air Quality",
   "Public Realm",
+  "Environment",
   "Health Infrastructure",
 ];
 
@@ -128,6 +130,131 @@ export interface Project {
   conflict_note?: Nullable<string>;
   /** Date the record was last changed in this system. */
   record_updated: Nullable<string>;
+
+  // --- Register extensions (JALANDHAR_CITY_INTELLIGENCE_03) ---
+  /** Whether the physical intervention is a site, a network, or both. */
+  geography_type?: GeographyType;
+  /** Attention priority for senior review. */
+  priority?: Priority;
+  /** Date the physical progress figure was reported. */
+  progress_as_of?: Nullable<string>;
+  /** Known physical attributes (capacity, fleet size and similar). */
+  key_attributes?: KeyAttribute[];
+  /** Cost figures as reported by different government sources. */
+  cost_records?: ReportedValue[];
+  /** Completion dates as reported by different government sources. */
+  completion_date_records?: ReportedValue[];
+  /** Status as reported by different government sources. */
+  status_records?: ReportedValue[];
+}
+
+export type GeographyType = "site" | "network" | "site_and_network" | "city_wide";
+
+export type Priority = "critical" | "high" | "medium" | "low";
+
+export const PRIORITIES: Priority[] = ["critical", "high", "medium", "low"];
+
+export interface KeyAttribute {
+  label: string;
+  value: string;
+  source: Nullable<string>;
+}
+
+/** A single value as reported by one government source. */
+export interface ReportedValue {
+  label: string;
+  value: Nullable<string>;
+  source: Nullable<string>;
+  source_date: Nullable<string>;
+  evidence_quality: EvidenceQuality;
+}
+
+export type GovernmentLevel = "central" | "state" | "city";
+
+export const GOVERNMENT_LEVELS: GovernmentLevel[] = ["central", "state", "city"];
+
+export type TimelineEventType =
+  | "announced"
+  | "sanctioned"
+  | "dpr_approved"
+  | "tender_published"
+  | "contract_awarded"
+  | "work_started"
+  | "revised_deadline"
+  | "substantial_completion"
+  | "commissioned"
+  | "operational";
+
+export const TIMELINE_EVENT_ORDER: TimelineEventType[] = [
+  "announced",
+  "sanctioned",
+  "dpr_approved",
+  "tender_published",
+  "contract_awarded",
+  "work_started",
+  "revised_deadline",
+  "substantial_completion",
+  "commissioned",
+  "operational",
+];
+
+export const TIMELINE_EVENT_LABELS: Record<TimelineEventType, string> = {
+  announced: "Announced",
+  sanctioned: "Sanctioned",
+  dpr_approved: "DPR approved",
+  tender_published: "Tender published",
+  contract_awarded: "Contract awarded",
+  work_started: "Work started",
+  revised_deadline: "Revised deadline",
+  substantial_completion: "Substantial completion",
+  commissioned: "Commissioned",
+  operational: "Operational",
+};
+
+export interface TimelineEvent {
+  event_id: string;
+  project_id: string;
+  event_type: TimelineEventType;
+  event_date: Nullable<string>;
+  description: Nullable<string>;
+  source: Nullable<string>;
+  evidence_quality: EvidenceQuality;
+}
+
+/**
+ * A project may be funded by more than one programme. Funding components carry
+ * the money, so a project is never duplicated per scheme.
+ */
+export interface FundingComponent {
+  funding_component_id: string;
+  project_id: string;
+  programme: string;
+  government_level: GovernmentLevel;
+  ministry_or_department: Nullable<string>;
+  sanctioned_amount: Nullable<number>;
+  released_amount: Nullable<number>;
+  expenditure: Nullable<number>;
+  financial_year: Nullable<string>;
+  source: Nullable<string>;
+}
+
+export type ConflictSeverity = "informational" | "review_required" | "material_conflict";
+
+export const CONFLICT_SEVERITIES: ConflictSeverity[] = [
+  "informational",
+  "review_required",
+  "material_conflict",
+];
+
+export interface Conflict {
+  conflict_id: string;
+  project_id: string;
+  project_name: string;
+  rule: string;
+  rule_label: string;
+  severity: ConflictSeverity;
+  summary: string;
+  sources: ReportedValue[];
 }
 
 export interface Asset {

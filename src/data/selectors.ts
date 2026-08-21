@@ -99,4 +99,43 @@ export function fieldCompleteness() {
     .sort((a, b) => a.filled - b.filled);
 }
 
+export function projectYear(p: Project): string {
+  const d =
+    p.sanction_date ?? p.award_date ?? p.announcement_date ?? p.planned_end_date ?? null;
+  if (!d) return "Not available";
+  const y = d.slice(0, 4);
+  return /^\d{4}$/.test(y) ? y : "Not available";
+}
+
+export function costBand(p: Project): string {
+  const v = p.sanctioned_cost;
+  if (v === null || v === undefined) return "Not available";
+  if (v < 10) return "Under 10 cr";
+  if (v < 100) return "10 to 100 cr";
+  if (v < 500) return "100 to 500 cr";
+  return "Over 500 cr";
+}
+
+export const COST_BANDS = [
+  "Under 10 cr",
+  "10 to 100 cr",
+  "100 to 500 cr",
+  "Over 500 cr",
+  "Not available",
+];
+
+export function governmentLevelOf(p: Project): string {
+  if (p.central_ministry && p.state_department) return "Central and state";
+  if (p.central_ministry) return "Central";
+  if (p.state_department) return "State";
+  return "Not available";
+}
+
+export function projectsForAgency(agencyName: string) {
+  return {
+    owned: projects.filter((p) => p.owning_agency === agencyName),
+    implemented: projects.filter((p) => p.implementing_agency === agencyName),
+  };
+}
+
 export { agencies, assets, evidence, projects, schemes };

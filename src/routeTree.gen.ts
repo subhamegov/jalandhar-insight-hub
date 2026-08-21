@@ -10,24 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AgenciesRouteImport } from './routes/agencies'
 import { Route as AssetsRouteImport } from './routes/assets'
 import { Route as DataQualityRouteImport } from './routes/data-quality'
 import { Route as EvidenceRouteImport } from './routes/evidence'
 import { Route as MapRouteImport } from './routes/map'
 import { Route as OutcomesRouteImport } from './routes/outcomes'
-import { Route as SchemesRouteImport } from './routes/schemes'
+import { Route as AgenciesIndexRouteImport } from './routes/agencies.index'
+import { Route as AgenciesAgencyNameRouteImport } from './routes/agencies.$agencyName'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as ProjectsProjectIdRouteImport } from './routes/projects.$projectId'
+import { Route as SchemesIndexRouteImport } from './routes/schemes.index'
+import { Route as SchemesSchemeNameRouteImport } from './routes/schemes.$schemeName'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AgenciesRoute = AgenciesRouteImport.update({
-  id: '/agencies',
-  path: '/agencies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AssetsRoute = AssetsRouteImport.update({
@@ -55,9 +52,14 @@ const OutcomesRoute = OutcomesRouteImport.update({
   path: '/outcomes',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SchemesRoute = SchemesRouteImport.update({
-  id: '/schemes',
-  path: '/schemes',
+const AgenciesIndexRoute = AgenciesIndexRouteImport.update({
+  id: '/agencies/',
+  path: '/agencies/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgenciesAgencyNameRoute = AgenciesAgencyNameRouteImport.update({
+  id: '/agencies/$agencyName',
+  path: '/agencies/$agencyName',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
@@ -70,94 +72,118 @@ const ProjectsProjectIdRoute = ProjectsProjectIdRouteImport.update({
   path: '/projects/$projectId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SchemesIndexRoute = SchemesIndexRouteImport.update({
+  id: '/schemes/',
+  path: '/schemes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchemesSchemeNameRoute = SchemesSchemeNameRouteImport.update({
+  id: '/schemes/$schemeName',
+  path: '/schemes/$schemeName',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/agencies': typeof AgenciesRoute
   '/assets': typeof AssetsRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
   '/outcomes': typeof OutcomesRoute
-  '/schemes': typeof SchemesRoute
+  '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
+  '/schemes/$schemeName': typeof SchemesSchemeNameRoute
+  '/agencies/': typeof AgenciesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
+  '/schemes/': typeof SchemesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/agencies': typeof AgenciesRoute
   '/assets': typeof AssetsRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
   '/outcomes': typeof OutcomesRoute
-  '/schemes': typeof SchemesRoute
+  '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
+  '/schemes/$schemeName': typeof SchemesSchemeNameRoute
+  '/agencies': typeof AgenciesIndexRoute
   '/projects': typeof ProjectsIndexRoute
+  '/schemes': typeof SchemesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/agencies': typeof AgenciesRoute
   '/assets': typeof AssetsRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
   '/outcomes': typeof OutcomesRoute
-  '/schemes': typeof SchemesRoute
+  '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
+  '/schemes/$schemeName': typeof SchemesSchemeNameRoute
+  '/agencies/': typeof AgenciesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
+  '/schemes/': typeof SchemesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/agencies'
     | '/assets'
     | '/data-quality'
     | '/evidence'
     | '/map'
     | '/outcomes'
-    | '/schemes'
+    | '/agencies/$agencyName'
     | '/projects/$projectId'
+    | '/schemes/$schemeName'
+    | '/agencies/'
     | '/projects/'
+    | '/schemes/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/agencies'
     | '/assets'
     | '/data-quality'
     | '/evidence'
     | '/map'
     | '/outcomes'
-    | '/schemes'
+    | '/agencies/$agencyName'
     | '/projects/$projectId'
+    | '/schemes/$schemeName'
+    | '/agencies'
     | '/projects'
+    | '/schemes'
   id:
     | '__root__'
     | '/'
-    | '/agencies'
     | '/assets'
     | '/data-quality'
     | '/evidence'
     | '/map'
     | '/outcomes'
-    | '/schemes'
+    | '/agencies/$agencyName'
     | '/projects/$projectId'
+    | '/schemes/$schemeName'
+    | '/agencies/'
     | '/projects/'
+    | '/schemes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AgenciesRoute: typeof AgenciesRoute
   AssetsRoute: typeof AssetsRoute
   DataQualityRoute: typeof DataQualityRoute
   EvidenceRoute: typeof EvidenceRoute
   MapRoute: typeof MapRoute
   OutcomesRoute: typeof OutcomesRoute
-  SchemesRoute: typeof SchemesRoute
+  AgenciesAgencyNameRoute: typeof AgenciesAgencyNameRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
+  SchemesSchemeNameRoute: typeof SchemesSchemeNameRoute
+  AgenciesIndexRoute: typeof AgenciesIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
+  SchemesIndexRoute: typeof SchemesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -167,13 +193,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/agencies': {
-      id: '/agencies'
-      path: '/agencies'
-      fullPath: '/agencies'
-      preLoaderRoute: typeof AgenciesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/assets': {
@@ -211,11 +230,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OutcomesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/schemes': {
-      id: '/schemes'
-      path: '/schemes'
-      fullPath: '/schemes'
-      preLoaderRoute: typeof SchemesRouteImport
+    '/agencies/': {
+      id: '/agencies/'
+      path: '/agencies'
+      fullPath: '/agencies/'
+      preLoaderRoute: typeof AgenciesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agencies/$agencyName': {
+      id: '/agencies/$agencyName'
+      path: '/agencies/$agencyName'
+      fullPath: '/agencies/$agencyName'
+      preLoaderRoute: typeof AgenciesAgencyNameRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects/': {
@@ -232,20 +258,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsProjectIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/schemes/': {
+      id: '/schemes/'
+      path: '/schemes'
+      fullPath: '/schemes/'
+      preLoaderRoute: typeof SchemesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schemes/$schemeName': {
+      id: '/schemes/$schemeName'
+      path: '/schemes/$schemeName'
+      fullPath: '/schemes/$schemeName'
+      preLoaderRoute: typeof SchemesSchemeNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AgenciesRoute: AgenciesRoute,
   AssetsRoute: AssetsRoute,
   DataQualityRoute: DataQualityRoute,
   EvidenceRoute: EvidenceRoute,
   MapRoute: MapRoute,
   OutcomesRoute: OutcomesRoute,
-  SchemesRoute: SchemesRoute,
+  AgenciesAgencyNameRoute: AgenciesAgencyNameRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
+  SchemesSchemeNameRoute: SchemesSchemeNameRoute,
+  AgenciesIndexRoute: AgenciesIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
+  SchemesIndexRoute: SchemesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

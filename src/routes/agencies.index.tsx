@@ -5,7 +5,7 @@ import { agencies } from "@/data/selectors";
 import type { Agency } from "@/data/types";
 import { count, text } from "@/lib/format";
 
-export const Route = createFileRoute("/agencies")({
+export const Route = createFileRoute("/agencies/")({
   head: () => ({
     meta: [
       { title: "Agencies | Jalandhar City Intelligence" },

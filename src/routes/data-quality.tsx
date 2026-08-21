@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { MetricCard, PageHeader, Panel } from "@/components/app/Primitives";
 import { EvidenceBadge } from "@/components/app/StatusBadge";
 import { evidence, fieldCompleteness, hasConflict, projects } from "@/data/selectors";
+import { allConflicts, SEVERITY_RANK } from "@/data/conflicts";
+import { ConflictList } from "@/components/app/ConflictList";
 import { labelise, text } from "@/lib/format";
 
 export const Route = createFileRoute("/data-quality")({
@@ -24,6 +26,9 @@ export const Route = createFileRoute("/data-quality")({
 });
 
 function DataQualityPage() {
+  const detected = [...allConflicts()].sort(
+    (a, b) => SEVERITY_RANK[a.severity] - SEVERITY_RANK[b.severity],
+  );
   const completeness = fieldCompleteness();
   const conflicts = projects.filter(hasConflict);
   const unverified = projects.filter((p) => p.evidence_quality === "unverified");
@@ -129,6 +134,13 @@ function DataQualityPage() {
           </ul>
         </Panel>
       </div>
+      <Panel
+        title="Detected conflicts"
+        description="Rule based checks across every project record. Severity is informational, review required or material conflict."
+        className="mt-4"
+      >
+        <ConflictList conflicts={detected} showProject />
+      </Panel>
     </>
   );
 }

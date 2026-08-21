@@ -5,7 +5,7 @@ import { schemes } from "@/data/selectors";
 import type { Scheme } from "@/data/types";
 import { count, crore, labelise, text } from "@/lib/format";
 
-export const Route = createFileRoute("/schemes")({
+export const Route = createFileRoute("/schemes/")({
   head: () => ({
     meta: [
       { title: "Schemes | Jalandhar City Intelligence" },

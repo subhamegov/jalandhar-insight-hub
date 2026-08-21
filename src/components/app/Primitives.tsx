@@ -63,8 +63,8 @@ export function MetricCard({
 }: {
   label: string;
   value: string | number | null;
-  hint?: string;
-  tone?: "default" | "warning" | "critical";
+  hint?: string | undefined;
+  tone?: "default" | "warning" | "critical" | undefined;
 }) {
   const display = value === null || value === undefined ? NA : value;
   return (
