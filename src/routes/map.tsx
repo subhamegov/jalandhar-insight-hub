@@ -21,7 +21,7 @@ export const Route = createFileRoute("/map")({
       },
     ],
   }),
-  component: CityMap;
+  component: CityMap,
 });
 
 // Bounding box used to place points on the schematic plan view.
