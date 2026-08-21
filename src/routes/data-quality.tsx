@@ -3,7 +3,7 @@ import { MetricCard, PageHeader, Panel } from "@/components/app/Primitives";
 import { EvidenceBadge } from "@/components/app/StatusBadge";
 import { evidence, fieldCompleteness, hasConflict, projects } from "@/data/selectors";
 import { allConflicts, SEVERITY_RANK } from "@/data/conflicts";
-import { ConflictList } from "./projects.$projectId";
+import { ConflictList } from "@/components/app/ConflictList";
 import { labelise, text } from "@/lib/format";
 
 export const Route = createFileRoute("/data-quality")({
@@ -139,7 +139,7 @@ function DataQualityPage() {
         description="Rule based checks across every project record. Severity is informational, review required or material conflict."
         className="mt-4"
       >
-        <ConflictList conflicts={detected} />
+        <ConflictList conflicts={detected} showProject />
       </Panel>
     </>
   );
