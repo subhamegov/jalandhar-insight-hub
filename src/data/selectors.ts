@@ -85,7 +85,9 @@ export function projectsBySystem() {
 }
 
 export function fieldCompleteness() {
-  const fields = Object.keys(projects[0]) as (keyof Project)[];
+  const first = projects[0];
+  if (!first) return [];
+  const fields = Object.keys(first) as (keyof Project)[];
   return fields
     .map((field) => {
       const filled = projects.filter((p) => {
