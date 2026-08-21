@@ -26,6 +26,7 @@ export function DataTable<T>({
   searchPlaceholder = "Search",
   getRowKey,
   emptyMessage = "No records match the current filters.",
+  searchValues,
 }: {
   rows: T[];
   columns: Column<T>[];
@@ -33,6 +34,8 @@ export function DataTable<T>({
   searchPlaceholder?: string;
   getRowKey: (row: T) => string;
   emptyMessage?: string;
+  /** Extra fields included in free text search but not shown as columns. */
+  searchValues?: (row: T) => (string | number | null)[];
 }) {
   const [query, setQuery] = useState("");
   const [active, setActive] = useState<Record<string, string>>({});
@@ -47,7 +50,11 @@ export function DataTable<T>({
         if (selected && selected !== "all" && !f.match(row, selected)) return false;
       }
       if (!q) return true;
-      return columns.some((c) => String(c.value(row) ?? "").toLowerCase().includes(q));
+      const extra = searchValues ? searchValues(row) : [];
+      return (
+        columns.some((c) => String(c.value(row) ?? "").toLowerCase().includes(q)) ||
+        extra.some((v) => String(v ?? "").toLowerCase().includes(q))
+      );
     });
     if (sortKey) {
       const col = columns.find((c) => c.key === sortKey);
@@ -67,7 +74,7 @@ export function DataTable<T>({
       }
     }
     return out;
-  }, [rows, columns, filters, active, query, sortKey, sortDir]);
+  }, [rows, columns, filters, active, query, sortKey, sortDir, searchValues]);
 
   function toggleSort(key: string) {
     if (sortKey === key) {
