@@ -27,6 +27,8 @@ export function DataTable<T>({
   getRowKey,
   emptyMessage = "No records match the current filters.",
   searchValues,
+  defaultSort,
+  pageSize = 50,
 }: {
   rows: T[];
   columns: Column<T>[];
@@ -36,12 +38,17 @@ export function DataTable<T>({
   emptyMessage?: string;
   /** Extra fields included in free text search but not shown as columns. */
   searchValues?: (row: T) => (string | number | null)[];
+  /** Initial sort column and direction. Empty values always sort last. */
+  defaultSort?: { key: string; dir: "asc" | "desc" };
+  /** Rows shown per page. */
+  pageSize?: number;
 }) {
   const [query, setQuery] = useState("");
   const [active, setActive] = useState<Record<string, string>>({});
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [sortKey, setSortKey] = useState<string | null>(null);
-  const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+  const [sortKey, setSortKey] = useState<string | null>(defaultSort?.key ?? null);
+  const [sortDir, setSortDir] = useState<"asc" | "desc">(defaultSort?.dir ?? "asc");
+  const [page, setPage] = useState(1);
 
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -71,9 +78,11 @@ export function DataTable<T>({
         out = [...out].sort((a, b) => {
           const av = col.value(a);
           const bv = col.value(b);
-          if (av === null && bv === null) return 0;
-          if (av === null) return 1;
-          if (bv === null) return -1;
+          const aEmpty = av === null || av === "";
+          const bEmpty = bv === null || bv === "";
+          if (aEmpty && bEmpty) return 0;
+          if (aEmpty) return sortDir === "asc" ? 1 : -1;
+          if (bEmpty) return sortDir === "asc" ? -1 : 1;
           const r =
             typeof av === "number" && typeof bv === "number"
               ? av - bv
@@ -86,6 +95,9 @@ export function DataTable<T>({
   }, [rows, columns, filters, active, query, sortKey, sortDir, searchValues]);
 
   const activeCount = Object.values(active).filter((v) => v && v !== "all").length;
+  const pageCount = Math.max(1, Math.ceil(visible.length / pageSize));
+  const current = Math.min(page, pageCount);
+  const pageRows = visible.slice((current - 1) * pageSize, current * pageSize);
 
   function toggleSort(key: string) {
     if (sortKey === key) {
@@ -196,7 +208,7 @@ export function DataTable<T>({
             </tr>
           </thead>
           <tbody>
-            {visible.map((row) => (
+            {pageRows.map((row) => (
               <tr
                 key={getRowKey(row)}
                 className="border-b border-border last:border-0 hover:bg-muted/40"
@@ -219,7 +231,7 @@ export function DataTable<T>({
                 ))}
               </tr>
             ))}
-            {visible.length === 0 ? (
+            {pageRows.length === 0 ? (
               <tr>
                 <td
                   colSpan={columns.length}
@@ -232,6 +244,35 @@ export function DataTable<T>({
           </tbody>
         </table>
       </div>
+      {pageCount > 1 ? (
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border px-3 py-2 text-xs">
+          <span className="num text-muted-foreground">
+            Showing {(current - 1) * pageSize + 1} to {Math.min(current * pageSize, visible.length)}{" "}
+            of {visible.length}
+          </span>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setPage(Math.max(1, current - 1))}
+              disabled={current === 1}
+              className="rounded-sm border border-input px-2 py-1 disabled:opacity-40"
+            >
+              Previous
+            </button>
+            <span className="num">
+              Page {current} of {pageCount}
+            </span>
+            <button
+              type="button"
+              onClick={() => setPage(Math.min(pageCount, current + 1))}
+              disabled={current === pageCount}
+              className="rounded-sm border border-input px-2 py-1 disabled:opacity-40"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

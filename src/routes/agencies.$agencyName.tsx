@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { EmptyNote, Field, MetricCard, PageHeader, Panel } from "@/components/app/Primitives";
 import { EvidenceBadge, StatusBadge } from "@/components/app/StatusBadge";
 import { agencies, assets, evidence, isDelayed, projects } from "@/data/selectors";
+import { knownInrValue } from "@/data/registerLogic";
 import { crore, dateText, text } from "@/lib/format";
 
 export const Route = createFileRoute("/agencies/$agencyName")({
@@ -66,8 +67,28 @@ function AgencyPage() {
         <MetricCard label="Projects owned" value={owned.length} />
         <MetricCard label="Projects implemented" value={implemented.length} />
         <MetricCard
-          label="Total sanctioned value"
-          value={crore(sum(related.map((p) => p.sanctioned_cost)))}
+          label="Known INR project value"
+          value={crore(knownInrValue(related))}
+          hint="Identified records only. USD source values are not converted."
+        />
+        <MetricCard
+          label="Active projects"
+          value={
+            related.filter((p) =>
+              ["tendered", "awarded", "under_construction", "substantially_complete"].includes(
+                p.status,
+              ),
+            ).length
+          }
+        />
+        <MetricCard
+          label="Completed projects"
+          value={related.filter((p) => p.status === "completed").length}
+        />
+        <MetricCard
+          label="Requiring reconciliation"
+          value={related.filter((p) => p.dedupe_review_required).length}
+          tone={related.some((p) => p.dedupe_review_required) ? "warning" : "default"}
         />
         <MetricCard
           label="Delayed projects"

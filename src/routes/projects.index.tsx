@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { z } from "zod";
 import { DataTable, type Column } from "@/components/app/DataTable";
@@ -13,6 +13,12 @@ import { downloadCsv, toCsv } from "@/lib/exportData";
 import { projectCsv } from "@/lib/projectCsv";
 import { readSharedFilters, writeSharedFilters } from "@/lib/sharedFilters";
 import { conflictsForProject } from "@/data/conflicts";
+import {
+  ATTENTION_BANDS,
+  SCOPE_GROUPS,
+  attentionScore,
+  matchesScopeGroup,
+} from "@/data/registerLogic";
 import { programmesFor } from "@/data/programmes";
 import {
   COST_BANDS,
@@ -71,7 +77,10 @@ function ProjectsPage() {
     });
   }, [sector, scheme, agency]);
 
+  const [scope, setScope] = useState<string>("Jalandhar city");
+
   const rows = projects.filter((p) => {
+    if (!matchesScopeGroup(p, scope)) return false;
     if (sector && p.sector !== sector) return false;
     if (scheme && !programmesFor(p.project_id, p.scheme).includes(scheme)) return false;
     if (agency && p.implementing_agency !== agency && p.owning_agency !== agency) return false;
@@ -103,6 +112,21 @@ function ProjectsPage() {
       ),
     },
     { key: "sector", header: "Sector", value: (p) => p.sector, render: (p) => text(p.sector) },
+    {
+      key: "geography_scope",
+      header: "Geographic scope",
+      value: (p) => p.geography_scope ?? null,
+      render: (p) => (
+        <div className="min-w-32">
+          {text(p.geography_scope ?? null)}
+          {p.source_record_id ? (
+            <span className="num block text-[11px] text-muted-foreground">
+              Source record {p.source_record_id}
+            </span>
+          ) : null}
+        </div>
+      ),
+    },
     {
       key: "locality",
       header: "Location",
@@ -146,7 +170,16 @@ function ProjectsPage() {
       header: "Sanctioned cost",
       align: "right",
       value: (p) => p.sanctioned_cost,
-      render: (p) => <span className="num">{crore(p.sanctioned_cost)}</span>,
+      render: (p) => (
+        <span className="num block">
+          {crore(p.sanctioned_cost)}
+          {p.source_cost_text && !p.sanctioned_cost_cr ? (
+            <span className="block text-[11px] text-muted-foreground">
+              Source value {p.source_cost_text}
+            </span>
+          ) : null}
+        </span>
+      ),
     },
     {
       key: "status",
@@ -254,8 +287,8 @@ function ProjectsPage() {
   return (
     <>
       <PageHeader
-        title="Project register"
-        subtitle="Projects are organised by physical intervention and sector. Scheme and funding programme are metadata, so a project funded by several programmes appears once."
+        title="Government projects"
+        subtitle="Central government, national infrastructure and related public investments relevant to Jalandhar. Each row is one official source record. Records are not merged when scope overlap is uncertain."
         actions={
           <div className="flex items-center gap-2">
             <button
@@ -280,7 +313,30 @@ function ProjectsPage() {
           </div>
         }
       />
+      <div className="mb-3 flex flex-wrap items-center gap-2 rounded-md border border-border bg-card p-2.5">
+        <span className="field-label text-muted-foreground">Geographic scope</span>
+        {SCOPE_GROUPS.map((g) => (
+          <button
+            key={g}
+            type="button"
+            onClick={() => setScope(g)}
+            aria-pressed={scope === g}
+            className={
+              scope === g
+                ? "rounded-sm border border-primary bg-primary px-2.5 py-1 text-xs font-medium text-primary-foreground"
+                : "rounded-sm border border-input px-2.5 py-1 text-xs hover:bg-muted"
+            }
+          >
+            {g}
+          </button>
+        ))}
+        <span className="text-[11px] text-muted-foreground">
+          A district highway package, a central institution campus or a Cantonment work is not a
+          Municipal Corporation Jalandhar project.
+        </span>
+      </div>
       <DataTable
+        defaultSort={{ key: "sanctioned_cost", dir: "desc" }}
         rows={rows}
         columns={columns}
         getRowKey={(p) => p.project_id}
@@ -289,6 +345,10 @@ function ProjectsPage() {
           p.contractor,
           p.consultant,
           p.owning_agency,
+          p.short_description,
+          p.source_record_id ?? null,
+          p.source_agency,
+          p.geography_scope ?? null,
           p.central_ministry,
           p.state_department,
           ...programmesFor(p.project_id, p.scheme),
@@ -376,6 +436,51 @@ function ProjectsPage() {
             label: "Evidence quality",
             options: EVIDENCE_QUALITIES.map(labelise),
             match: (p, v) => labelise(p.evidence_quality) === v,
+          },
+          {
+            key: "scope",
+            label: "Geographic scope",
+            options: uniq(projects.map((p) => p.geography_scope ?? null)),
+            match: (p, v) => (p.geography_scope ?? "Not available") === v,
+          },
+          {
+            key: "asset_type",
+            label: "Asset type",
+            options: uniq(projects.map((p) => p.asset_type)),
+            match: (p, v) => (p.asset_type ?? "Not available") === v,
+          },
+          {
+            key: "funding_programme",
+            label: "Funding programme",
+            options: uniq(projects.map((p) => p.funding_programme)),
+            match: (p, v) => (p.funding_programme ?? "Not available") === v,
+          },
+          {
+            key: "source_agency",
+            label: "Source agency",
+            options: uniq(projects.map((p) => p.source_agency)),
+            match: (p, v) => (p.source_agency ?? "Not available") === v,
+          },
+          {
+            key: "operational_status",
+            label: "Operational status",
+            options: uniq(projects.map((p) => p.operational_status)),
+            match: (p, v) => (p.operational_status ?? "Not available") === v,
+          },
+          {
+            key: "reconciliation",
+            label: "Reconciliation",
+            options: ["Requires reconciliation", "No reconciliation flag"],
+            match: (p, v) =>
+              v === "Requires reconciliation"
+                ? Boolean(p.dedupe_review_required)
+                : !p.dedupe_review_required,
+          },
+          {
+            key: "prioritisation",
+            label: "System prioritisation",
+            options: [...ATTENTION_BANDS],
+            match: (p, v) => attentionScore(p).band === v,
           },
           {
             key: "year",

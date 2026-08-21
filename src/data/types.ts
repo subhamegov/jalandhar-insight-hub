@@ -65,7 +65,21 @@ export type CitySystem =
   | "Air Quality"
   | "Public Realm"
   | "Environment"
-  | "Health Infrastructure";
+  | "Health Infrastructure"
+  | "Education"
+  | "Energy & Environment"
+  | "Digital Governance"
+  | "Storm Water"
+  | "Urban Resilience"
+  | "Sanitation"
+  | "Sports & Public Realm"
+  | "Livelihoods & Public Realm"
+  | "Health"
+  | "Economic Infrastructure"
+  | "Railways"
+  | "Road Safety"
+  | "Water & Public Realm"
+  | "Housing";
 
 export const CITY_SYSTEMS: CitySystem[] = [
   "Water",
@@ -77,6 +91,20 @@ export const CITY_SYSTEMS: CitySystem[] = [
   "Public Realm",
   "Environment",
   "Health Infrastructure",
+  "Education",
+  "Energy & Environment",
+  "Digital Governance",
+  "Storm Water",
+  "Urban Resilience",
+  "Sanitation",
+  "Sports & Public Realm",
+  "Livelihoods & Public Realm",
+  "Health",
+  "Economic Infrastructure",
+  "Railways",
+  "Road Safety",
+  "Water & Public Realm",
+  "Housing",
 ];
 
 export type Nullable<T> = T | null;
@@ -146,7 +174,42 @@ export interface Project {
   completion_date_records?: ReportedValue[];
   /** Status as reported by different government sources. */
   status_records?: ReportedValue[];
+
+  // --- National register extensions (JALANDHAR_CITY_INTELLIGENCE_06) ---
+  /** Identifier used by the publishing portal or document. */
+  source_record_id?: Nullable<string>;
+  /** Status wording exactly as published by the source. */
+  source_status?: Nullable<string>;
+  /** Cost exactly as published, including currency. Never converted. */
+  source_cost_text?: Nullable<string>;
+  /** Cost in INR crore where the source publishes an INR figure. */
+  sanctioned_cost_cr?: Nullable<number>;
+  /** True when the record may describe the same physical work as another record. */
+  dedupe_review_required?: boolean;
+  /** Group key shared by records that may describe the same physical work. */
+  same_asset_group?: Nullable<string>;
+  /** Geographic scope as published, e.g. "Jalandhar city" or a corridor. */
+  geography_scope?: Nullable<string>;
+  /** How trustworthy the plotted position is. */
+  location_quality?: LocationQuality;
 }
+
+export type LocationQuality =
+  | "official_coordinate"
+  | "approximate"
+  | "corridor"
+  | "city_wide"
+  | "no_coordinate";
+
+export const GEOGRAPHY_SCOPE_GROUPS = [
+  "Jalandhar city",
+  "Jalandhar Cantt",
+  "District and regional corridors",
+  "Central institutions in Jalandhar",
+  "All relevant projects",
+] as const;
+
+export type GeographyScopeGroup = (typeof GEOGRAPHY_SCOPE_GROUPS)[number];
 
 export type GeographyType = "site" | "network" | "site_and_network" | "city_wide";
 

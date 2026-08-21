@@ -4,6 +4,7 @@ import { MetricCard, PageHeader, Panel } from "@/components/app/Primitives";
 import { SourceBadge } from "@/components/app/SourceBadge";
 import { FreshnessBadge } from "@/components/app/FreshnessBadge";
 import { ConflictList } from "@/components/app/ConflictList";
+import { ReconciliationQueue } from "@/components/app/ReconciliationQueue";
 import { EvidenceLink } from "@/components/app/EvidenceDrawer";
 import { allConflicts, SEVERITY_RANK } from "@/data/conflicts";
 import { assets, evidence, fieldCompleteness, projects } from "@/data/selectors";
@@ -84,6 +85,10 @@ function DataQualityPage() {
       (p.status === "completed" || p.status === "substantially_complete") &&
       p.operational_status !== "Operational",
   );
+  const needsReconciliation = projects.filter((p) => p.dedupe_review_required);
+  const noCost = projects.filter((p) => p.sanctioned_cost === null && p.contracted_cost === null);
+  const noContractor = projects.filter((p) => !p.contractor);
+  const historicalOnly = projects.filter((p) => p.evidence_quality === "official_historical");
   const noAgency = projects.filter((p) => !p.implementing_agency);
   const assetsNoOwner = assets.filter((a) => !a.owning_agency);
 
@@ -126,6 +131,30 @@ function DataQualityPage() {
       />
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <MetricCard
+          label="Projects requiring reconciliation"
+          value={needsReconciliation.length}
+          tone="critical"
+          hint="Scope may overlap another record"
+        />
+        <MetricCard
+          label="Projects without known cost"
+          value={noCost.length}
+          tone="warning"
+          hint="No INR value published"
+        />
+        <MetricCard
+          label="Projects without contractor"
+          value={noContractor.length}
+          tone="warning"
+          hint="Delivery party not published"
+        />
+        <MetricCard
+          label="Historical-only evidence"
+          value={historicalOnly.length}
+          tone="warning"
+          hint="No current official source"
+        />
         <MetricCard
           label="Projects without coordinates"
           value={noCoords.length}
@@ -175,6 +204,8 @@ function DataQualityPage() {
           hint="Ownership unclear"
         />
       </div>
+
+      <ReconciliationQueue />
 
       <Panel
         title="Conflicts requiring reconciliation"

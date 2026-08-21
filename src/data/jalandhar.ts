@@ -1,3 +1,4 @@
+import { registerProjects } from "./register";
 import type { Agency, Asset, Evidence, Project, Scheme } from "./types";
 
 // NOTE ON DATA
@@ -7,7 +8,7 @@ import type { Agency, Asset, Evidence, Project, Scheme } from "./types";
 // a later pass, and the UI renders them as "Not available".
 // Coordinates are approximate city-level placements for orientation only.
 
-export const projects: Project[] = [
+const seedProjects: Project[] = [
   {
     project_id: "PRJ-JAL-001",
     project_name: "Jalandhar Surface Water Project",
@@ -376,6 +377,15 @@ export const projects: Project[] = [
     progress_as_of: null,
   },
 ];
+
+/**
+ * The uploaded national government register is the primary dataset. The earlier
+ * city seed records are retained because they carry timeline, funding component
+ * and outcome links that the national register does not publish.
+ */
+export const projects: Project[] = [...registerProjects, ...seedProjects];
+
+export { seedProjects };
 
 export const assets: Asset[] = [
   {

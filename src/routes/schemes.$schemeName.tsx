@@ -3,6 +3,7 @@ import { EmptyNote, Field, MetricCard, PageHeader, Panel } from "@/components/ap
 import { EvidenceBadge, StatusBadge } from "@/components/app/StatusBadge";
 import { componentsFor, fundingComponents, programmesFor } from "@/data/programmes";
 import { evidence, projects, schemes } from "@/data/selectors";
+import { knownInrValue } from "@/data/registerLogic";
 import { crore, dateText, labelise, text } from "@/lib/format";
 
 export const Route = createFileRoute("/schemes/$schemeName")({
@@ -67,7 +68,12 @@ function SchemePage() {
       />
 
       <div className="mb-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        <MetricCard label="Projects in Jalandhar" value={linked.length} />
+        <MetricCard label="Project records identified" value={linked.length} />
+        <MetricCard
+          label="Known INR project value"
+          value={crore(knownInrValue(linked))}
+          hint="Identified records only, reconciliation records excluded"
+        />
         <MetricCard label="Sanctioned through this programme" value={crore(sanctioned)} />
         <MetricCard label="Expenditure recorded" value={crore(spent)} />
         <MetricCard
@@ -76,6 +82,11 @@ function SchemePage() {
           hint={scheme?.ministry ?? undefined}
         />
       </div>
+
+      <p className="mb-4 rounded-sm border border-border bg-muted/40 px-3 py-2 text-xs text-muted-foreground">
+        Totals shown here come from the project records identified so far. They should not be read
+        as the complete allocation of this programme for Jalandhar.
+      </p>
 
       <div className="grid gap-4 xl:grid-cols-3">
         <Panel title="Programme record">

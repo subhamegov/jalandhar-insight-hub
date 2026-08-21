@@ -24,6 +24,7 @@ import { EMPTY, crore, dateText, labelise, percent, text } from "@/lib/format";
 import { sortByOrder, usePriorityOrder } from "@/lib/priorityOrder";
 import { PriorityHandle, PriorityNotice, usePriorityDrag } from "@/components/app/PriorityControl";
 import { isStale } from "@/lib/freshness";
+import { attentionScore, knownInrValue } from "@/data/registerLogic";
 
 const MapCanvas = lazy(() => import("@/components/map/MapCanvas"));
 
@@ -71,6 +72,7 @@ function Overview() {
     [],
   );
   const [fitSignal] = useState(0);
+  const [includeReconciliation, setIncludeReconciliation] = useState(false);
 
   // The computed ranking is the default; the reviewer can reorder it.
   const attentionPriority = usePriorityOrder(
@@ -109,6 +111,22 @@ function Overview() {
   );
   const operational = projects.filter((p) => p.operational_status === "Operational");
   const staleCount = projects.filter((p) => isStale(p.last_verified)).length;
+  const underConstruction = projects.filter((p) => p.status === "under_construction");
+  const completed = projects.filter((p) => p.status === "completed");
+  const reconciliation = projects.filter((p) => p.dedupe_review_required);
+  const officialCurrent = projects.filter((p) => p.evidence_quality === "official_current");
+  const knownInr = knownInrValue(projects, includeReconciliation);
+  const usdOnly = projects.filter(
+    (p) => p.source_cost_text && /USD/i.test(p.source_cost_text) && !p.sanctioned_cost_cr,
+  );
+  const sourceAgencyCounts = [
+    ...projects
+      .reduce((m, p) => {
+        const k = p.source_agency ?? "Source agency not recorded";
+        return m.set(k, (m.get(k) ?? 0) + 1);
+      }, new Map<string, number>())
+      .entries(),
+  ].sort((a, b) => b[1] - a[1]);
 
   const govPoints: GovPoint[] = [
     ...projects
@@ -163,38 +181,122 @@ function Overview() {
         </h2>
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-6">
           <MetricCard
-            label="Projects tracked"
+            label="Identified projects"
             value={projects.length}
-            hint="Physical interventions, not funding lines"
+            hint="One record per official source record"
           />
           <MetricCard
-            label="Sanctioned investment"
-            value={sanctioned === null ? null : crore(sanctioned)}
-            hint={sanctioned === null ? EMPTY.unavailable : "Sum of verified sanction values"}
+            label="Under construction"
+            value={underConstruction.length}
+            hint="Work reported in progress"
           />
           <MetricCard
-            label="Reported expenditure"
-            value={spent === null ? null : crore(spent)}
-            hint={spent === null ? EMPTY.unavailable : "Sum of verified expenditure"}
+            label="Completed projects"
+            value={completed.length}
+            hint="Construction reported complete, not proof of operation"
+          />
+          <MetricCard
+            label="Requiring reconciliation"
+            value={reconciliation.length}
+            tone="warning"
+            hint="Scope may overlap another record"
+          />
+          <MetricCard
+            label="Current official evidence"
+            value={officialCurrent.length}
+            hint="Source is current, not historical"
+          />
+          <MetricCard
+            label="Stale evidence"
+            value={staleCount}
+            tone="warning"
+            hint="Not verified in the last 180 days"
+          />
+        </div>
+        <div className="mt-3 grid gap-3 lg:grid-cols-3">
+          <MetricCard
+            label="Known INR project value"
+            value={crore(knownInr)}
+            hint="Based only on identified records with a published INR value"
+          />
+          <MetricCard
+            label="Records with USD values only"
+            value={usdOnly.length}
+            hint="Never converted and never added to the INR total"
           />
           <MetricCard
             label="Under execution"
             value={inExecution.length}
             hint="Tendered to substantially complete"
           />
-          <MetricCard
-            label="Critical projects"
-            value={critical.length}
-            tone="critical"
-            hint="Stalled, high risk, long delayed or conflicted"
-          />
-          <MetricCard
-            label="Records requiring refresh"
-            value={staleCount}
-            tone="warning"
-            hint="Not verified in the last 180 days"
-          />
         </div>
+        <p className="mt-2 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+          <label className="flex items-center gap-1.5">
+            <input
+              type="checkbox"
+              checked={includeReconciliation}
+              onChange={(e) => setIncludeReconciliation(e.target.checked)}
+            />
+            Include records flagged for reconciliation in the INR total
+          </label>
+          <span>
+            This is not the total of all investment in Jalandhar. It is the value of the records
+            identified so far. Reported expenditure on record: {spent === null ? EMPTY.unavailable : crore(spent)}. Sanctioned values
+            recorded: {sanctioned === null ? EMPTY.unavailable : crore(sanctioned)}. Critical
+            projects: {critical.length}.
+          </span>
+        </p>
+      </section>
+
+      {/* 1b. Source coverage and reconciliation */}
+      <section className="mt-6 grid gap-4 xl:grid-cols-2">
+        <Panel
+          title="Projects by source agency"
+          description="Which government source each record comes from"
+        >
+          <div className="space-y-1.5">
+            {sourceAgencyCounts.slice(0, 8).map(([name, n]) => (
+              <BarRow
+                key={name}
+                label={name}
+                value={n}
+                max={sourceAgencyCounts[0]?.[1] ?? 1}
+                valueLabel={String(n)}
+              />
+            ))}
+          </div>
+        </Panel>
+        <Panel
+          title="Data requiring reconciliation"
+          description="Records that may describe the same physical work. They are kept separate."
+          right={
+            <Link to="/data-quality" className="text-xs text-primary underline underline-offset-2">
+              Reconciliation queue
+            </Link>
+          }
+        >
+          {reconciliation.length === 0 ? (
+            <p className="text-sm text-muted-foreground">No record is flagged for reconciliation.</p>
+          ) : (
+            <ul className="space-y-2 text-sm">
+              {reconciliation.map((p) => (
+                <li key={p.project_id} className="flex flex-wrap items-center gap-2">
+                  <Link
+                    to="/projects/$projectId"
+                    params={{ projectId: p.project_id }}
+                    className="text-primary hover:underline"
+                  >
+                    {p.project_name}
+                  </Link>
+                  <span className="num text-xs text-muted-foreground">
+                    {p.same_asset_group} · {text(p.source_cost_text ?? null)} ·{" "}
+                    {attentionScore(p).band}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </Panel>
       </section>
 
       {/* 2. What requires attention now */}
