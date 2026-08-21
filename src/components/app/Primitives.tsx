@@ -41,9 +41,9 @@ export function Panel({
   className?: string;
 }) {
   return (
-    <section className={cn("digit-card", className)}>
+    <section className={cn("digit-card min-w-0", className)}>
       {title ? (
-        <div className="flex items-center justify-between gap-3 border-b border-border px-4 py-2.5">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-3 py-2.5 sm:px-4">
           <div>
             <h2 className="text-sm font-semibold text-foreground">{title}</h2>
             {description ? <p className="text-xs text-muted-foreground">{description}</p> : null}
@@ -51,7 +51,7 @@ export function Panel({
           {right}
         </div>
       ) : null}
-      <div className="p-4">{children}</div>
+      <div className="min-w-0 p-3 sm:p-4">{children}</div>
     </section>
   );
 }
@@ -73,7 +73,7 @@ export function MetricCard({
       <p className="field-label">{label}</p>
       <p
         className={cn(
-          "num mt-1.5 text-2xl font-semibold",
+          "num mt-1.5 text-xl font-semibold break-words sm:text-2xl",
           value === null && "text-base font-normal text-muted-foreground",
           tone === "warning" && value !== null && "text-warning",
           tone === "critical" && value !== null && "text-destructive",
@@ -126,7 +126,7 @@ export function BarRow({
   const pct = max > 0 ? Math.round((value / max) * 100) : 0;
   return (
     <div className="flex items-center gap-3 py-1.5">
-      <div className="w-56 shrink-0 truncate text-sm text-foreground">{label}</div>
+      <div className="w-32 shrink-0 truncate text-sm text-foreground sm:w-56">{label}</div>
       <div className="h-2 flex-1 rounded-sm bg-muted">
         <div className="h-2 rounded-sm bg-primary" style={{ width: `${pct}%` }} />
       </div>
