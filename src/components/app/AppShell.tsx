@@ -17,6 +17,8 @@ import {
 import { useEffect, useState, type ReactNode } from "react";
 import { GlobalHeader } from "@/components/app/GlobalHeader";
 import { EvidenceDrawerProvider } from "@/components/app/EvidenceDrawer";
+import { CityProvider, useCity } from "@/lib/cityContext";
+import { CityGate } from "@/components/app/CityGate";
 
 const NAV = [
   { to: "/", label: "Overview", icon: LayoutDashboard },
