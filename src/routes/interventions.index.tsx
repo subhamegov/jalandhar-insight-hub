@@ -72,7 +72,7 @@ function InterventionsIndex() {
       <Breadcrumbs trail={[{ label: "Planning interventions" }]} />
       <PageHeader
         title={`${city.name} — what government could consider doing`}
-        subtitle="Each record states a problem observed in the data, the geography and people it would cover, the agencies involved, an illustrative cost and the decision sought."
+        subtitle="Supplied intervention records: the problem observed, who it covers and the decision sought."
       />
 
       <div className="rounded-sm border border-border bg-muted/40 p-3 text-xs leading-relaxed text-muted-foreground">

@@ -106,6 +106,7 @@ function buildIndex(
 export function GlobalHeader() {
   const navigate = useNavigate();
   const { city, cities, selection, portfolio, setCityId, dataset } = useCity();
+  const authority = portfolio ? NATIONAL_AUTHORITY : CITY_AUTHORITIES[city.city_id];
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const { projects, assets, schemes, agencies } = dataset;
   const index = useMemo(
