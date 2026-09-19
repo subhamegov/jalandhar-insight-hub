@@ -15,6 +15,7 @@ import { Route as AttentionRouteImport } from './routes/attention'
 import { Route as BriefRouteImport } from './routes/brief'
 import { Route as BriefingRouteImport } from './routes/briefing'
 import { Route as CompareRouteImport } from './routes/compare'
+import { Route as DataIntegrityRouteImport } from './routes/data-integrity'
 import { Route as DataLayerRouteImport } from './routes/data-layer'
 import { Route as DataQualityRouteImport } from './routes/data-quality'
 import { Route as EvidenceRouteImport } from './routes/evidence'
@@ -70,6 +71,11 @@ const BriefingRoute = BriefingRouteImport.update({
 const CompareRoute = CompareRouteImport.update({
   id: '/compare',
   path: '/compare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DataIntegrityRoute = DataIntegrityRouteImport.update({
+  id: '/data-integrity',
+  path: '/data-integrity',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DataLayerRoute = DataLayerRouteImport.update({
@@ -211,6 +217,7 @@ export interface FileRoutesByFullPath {
   '/brief': typeof BriefRoute
   '/briefing': typeof BriefingRoute
   '/compare': typeof CompareRoute
+  '/data-integrity': typeof DataIntegrityRoute
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
@@ -245,6 +252,7 @@ export interface FileRoutesByTo {
   '/brief': typeof BriefRoute
   '/briefing': typeof BriefingRoute
   '/compare': typeof CompareRoute
+  '/data-integrity': typeof DataIntegrityRoute
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
@@ -280,6 +288,7 @@ export interface FileRoutesById {
   '/brief': typeof BriefRoute
   '/briefing': typeof BriefingRoute
   '/compare': typeof CompareRoute
+  '/data-integrity': typeof DataIntegrityRoute
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
@@ -316,6 +325,7 @@ export interface FileRouteTypes {
     | '/brief'
     | '/briefing'
     | '/compare'
+    | '/data-integrity'
     | '/data-layer'
     | '/data-quality'
     | '/evidence'
@@ -350,6 +360,7 @@ export interface FileRouteTypes {
     | '/brief'
     | '/briefing'
     | '/compare'
+    | '/data-integrity'
     | '/data-layer'
     | '/data-quality'
     | '/evidence'
@@ -384,6 +395,7 @@ export interface FileRouteTypes {
     | '/brief'
     | '/briefing'
     | '/compare'
+    | '/data-integrity'
     | '/data-layer'
     | '/data-quality'
     | '/evidence'
@@ -419,6 +431,7 @@ export interface RootRouteChildren {
   BriefRoute: typeof BriefRoute
   BriefingRoute: typeof BriefingRoute
   CompareRoute: typeof CompareRoute
+  DataIntegrityRoute: typeof DataIntegrityRoute
   DataLayerRoute: typeof DataLayerRoute
   DataQualityRoute: typeof DataQualityRoute
   EvidenceRoute: typeof EvidenceRoute
@@ -489,6 +502,13 @@ declare module '@tanstack/react-router' {
       path: '/compare'
       fullPath: '/compare'
       preLoaderRoute: typeof CompareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/data-integrity': {
+      id: '/data-integrity'
+      path: '/data-integrity'
+      fullPath: '/data-integrity'
+      preLoaderRoute: typeof DataIntegrityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/data-layer': {
@@ -683,6 +703,7 @@ const rootRouteChildren: RootRouteChildren = {
   BriefRoute: BriefRoute,
   BriefingRoute: BriefingRoute,
   CompareRoute: CompareRoute,
+  DataIntegrityRoute: DataIntegrityRoute,
   DataLayerRoute: DataLayerRoute,
   DataQualityRoute: DataQualityRoute,
   EvidenceRoute: EvidenceRoute,

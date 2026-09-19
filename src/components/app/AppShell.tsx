@@ -11,6 +11,7 @@ import {
   Map,
   Menu,
   Scale,
+  ShieldCheck,
   Target,
   Flag,
   Globe,
@@ -52,6 +53,7 @@ const NAV = [
   { to: "/agencies", label: "Agencies", icon: Building2 },
   { to: "/evidence", label: "Evidence", icon: FileSearch },
   { to: "/data-quality", label: "Data Quality", icon: AlertTriangle },
+  { to: "/data-integrity", label: "Data Integrity", icon: ShieldCheck },
   { to: "/data-layer", label: "Data Layer", icon: Database },
 ] as const;
 
