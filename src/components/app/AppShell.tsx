@@ -14,6 +14,7 @@ import {
   Flag,
   Globe,
   Grid2x2,
+  Home,
   MapPin,
   X,
 } from "lucide-react";
