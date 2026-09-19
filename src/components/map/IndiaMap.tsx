@@ -20,7 +20,7 @@ export interface IndiaMapProps {
 /** India extent with a small ocean margin; the view can never leave it. */
 const INDIA_BOUNDS = L.latLngBounds([5.5, 66.0], [38.5, 99.5]);
 /** States large enough to carry a readable label at national zoom. */
-const LABEL_SPAN_DEGREES = 2.2;
+const LABEL_SPAN_DEGREES = 2.8;
 
 export default function IndiaMap({ points, selectedId = null, onSelect }: IndiaMapProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
