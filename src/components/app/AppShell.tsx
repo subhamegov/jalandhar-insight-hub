@@ -16,6 +16,7 @@ import {
   Globe,
   Grid2x2,
   Home,
+  IndianRupee,
   MapPin,
   X,
 } from "lucide-react";
@@ -33,6 +34,7 @@ const NAV = [
   { to: "/localities", label: "Localities", icon: MapPin },
   { to: "/housing", label: "Housing", icon: Home },
   { to: "/livelihoods", label: "Livelihoods & Mobility", icon: Briefcase },
+  { to: "/investment", label: "Investment & Outcomes", icon: IndianRupee },
   { to: "/projects", label: "Projects", icon: ListChecks },
   { to: "/assets", label: "Assets", icon: Boxes },
   { to: "/outcomes", label: "Outcomes", icon: Target },
