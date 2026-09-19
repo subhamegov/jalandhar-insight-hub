@@ -131,7 +131,7 @@ function SignalsIndex() {
             placeholder="Search signal, condition, locality or mission"
             className="w-full max-w-sm rounded-sm border border-border bg-background px-2 py-1.5 text-sm"
           />
-          <select
+          <select aria-label="Filter signals by pattern"
             value={pattern}
             onChange={(e) => setPattern(e.target.value)}
             className="rounded-sm border border-border bg-background px-2 py-1.5 text-sm"

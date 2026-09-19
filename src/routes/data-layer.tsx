@@ -280,7 +280,7 @@ function DataLayerPage() {
       {bundle ? (
         <section className="rounded-sm border border-border bg-card p-4 shadow-sm">
           <h2 className="text-sm font-semibold text-foreground">Locality drill-down</h2>
-          <select
+          <select aria-label="Choose a locality"
             value={localityId}
             onChange={(e) => setLocalityId(e.target.value)}
             className="mt-3 w-full max-w-sm rounded-sm border border-input bg-background px-3 py-2 text-sm"

@@ -147,7 +147,7 @@ function InvestmentIndex() {
           />
           <label className="text-sm">
             <span className="field-label mr-2">Sort</span>
-            <select
+            <select aria-label="Sort projects"
               value={sort}
               onChange={(e) => setSort(e.target.value as Sort)}
               className="rounded-sm border border-border bg-background px-2 py-1 text-sm"

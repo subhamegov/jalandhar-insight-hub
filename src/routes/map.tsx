@@ -526,7 +526,7 @@ function CityMap() {
             <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               Location filters
             </h2>
-            <select
+            <select aria-label="Filter by location status"
               value={locStatus}
               onChange={(e) => setLocStatus(e.target.value)}
               className="w-full rounded-sm border border-border bg-background px-2 py-1 text-xs"
@@ -538,7 +538,7 @@ function CityMap() {
                 </option>
               ))}
             </select>
-            <select
+            <select aria-label="Filter by location confidence"
               value={locConfidence}
               onChange={(e) => setLocConfidence(e.target.value)}
               className="w-full rounded-sm border border-border bg-background px-2 py-1 text-xs"
@@ -548,7 +548,7 @@ function CityMap() {
               <option value="medium">Medium</option>
               <option value="low">Low</option>
             </select>
-            <select
+            <select aria-label="Filter by source agency"
               value={sourceAgency}
               onChange={(e) => setSourceAgency(e.target.value)}
               className="w-full rounded-sm border border-border bg-background px-2 py-1 text-xs"
@@ -806,7 +806,7 @@ function Select({
   return (
     <label className="block text-[11px]">
       <span className="text-muted-foreground">{label}</span>
-      <select
+      <select aria-label="Choose an option"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="mt-0.5 w-full rounded-sm border border-border bg-background px-1.5 py-1 text-xs"
