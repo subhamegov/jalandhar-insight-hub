@@ -324,7 +324,7 @@ function LivelihoodsPage() {
   );
 }
 
-function LocalityCell({ id, name }: { id?: string; name?: string }) {
+function LocalityCell({ id, name }: { id?: string | undefined; name?: string | undefined }) {
   if (!id || !name) return <>Not available</>;
   return (
     <Link to="/localities/$localityId" params={{ localityId: id }} className="underline underline-offset-2">
