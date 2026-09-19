@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Download, FileText, Search } from "lucide-react";
 import type { Agency, Asset, Project, Scheme } from "@/data/types";
-import { useCity } from "@/lib/cityContext";
+import { useCity, ALL_CITIES } from "@/lib/cityContext";
 import { isCityId } from "@/data/cities/registry";
 import { dateText } from "@/lib/format";
 import { AS_OF, freshnessOf, latestDate } from "@/lib/freshness";
@@ -103,7 +103,7 @@ function buildIndex(
 
 export function GlobalHeader() {
   const navigate = useNavigate();
-  const { city, cities, cityId, setCityId, dataset } = useCity();
+  const { city, cities, selection, portfolio, setCityId, dataset } = useCity();
   const { projects, assets, schemes, agencies } = dataset;
   const index = useMemo(
     () => buildIndex(projects, assets, schemes, agencies),
@@ -157,13 +157,18 @@ export function GlobalHeader() {
           </label>
           <select
             id="city-select"
-            value={cityId}
+            value={selection}
             onChange={(e) => {
               const next = e.target.value;
+              if (next === ALL_CITIES) {
+                setCityId(ALL_CITIES);
+                return;
+              }
               if (isCityId(next)) setCityId(next);
             }}
             className="mt-0.5 block w-full rounded-sm border border-input bg-card px-2 py-1 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
+            <option value={ALL_CITIES}>All cities — four-city prototype</option>
             {cities.map((c) => (
               <option key={c.city_id} value={c.city_id}>
                 {c.name}, {c.state}
@@ -171,7 +176,9 @@ export function GlobalHeader() {
               </option>
             ))}
           </select>
-          <p className="sr-only">Active city {city.city_id}</p>
+          <p className="mt-0.5 truncate text-xs text-muted-foreground">
+            {portfolio ? "Four-city prototype coverage" : `${city.name} · ${city.city_id}`}
+          </p>
         </div>
 
 
