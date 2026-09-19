@@ -9,9 +9,10 @@
  *
  * Joins use canonical identifiers only.
  */
-import { fourCityBundle, lookupEntity, type EntityKind } from "./dataset";
+import { fourCityBundle, lookupEntity } from "./dataset";
 import type {
   DecisionSignal,
+  EntityKind,
   GrievanceAggregate,
   HousingRecord,
   Locality,
