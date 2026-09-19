@@ -256,26 +256,31 @@ export function GlobalHeader() {
           </div>
         </dl>
 
-        <div className="flex flex-wrap items-center gap-2">
-          <button
-            type="button"
-            onClick={() => {
-              const { headers, rows } = projectCsv();
-              downloadCsv(`jalandhar-projects-${AS_OF}`, toCsv(headers, rows));
-            }}
-            className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-          >
-            <Download className="h-3.5 w-3.5" aria-hidden="true" />
-            Export CSV
-          </button>
-          <Link
-            to="/brief"
-            className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-          >
-            <FileText className="h-3.5 w-3.5" aria-hidden="true" />
-            City brief
-          </Link>
-        </div>
+        {projects.length ? (
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                const { headers, rows } = projectCsv();
+                downloadCsv(
+                  `${city.name.toLowerCase()}-projects-${AS_OF}`,
+                  toCsv(headers, rows),
+                );
+              }}
+              className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
+              <Download className="h-3.5 w-3.5" aria-hidden="true" />
+              Export CSV
+            </button>
+            <Link
+              to="/brief"
+              className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
+              <FileText className="h-3.5 w-3.5" aria-hidden="true" />
+              City brief
+            </Link>
+          </div>
+        ) : null}
       </div>
     </header>
   );
