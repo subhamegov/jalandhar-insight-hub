@@ -103,7 +103,12 @@ function buildIndex(
 
 export function GlobalHeader() {
   const navigate = useNavigate();
-  const index = useMemo(buildIndex, []);
+  const { city, cities, cityId, setCityId, dataset } = useCity();
+  const { projects, assets, schemes, agencies } = dataset;
+  const index = useMemo(
+    () => buildIndex(projects, assets, schemes, agencies),
+    [projects, assets, schemes, agencies],
+  );
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
