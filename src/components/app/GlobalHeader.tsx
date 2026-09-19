@@ -178,15 +178,14 @@ export function GlobalHeader() {
             ))}
           </select>
           <p className="mt-0.5 truncate text-xs text-muted-foreground">
-            {portfolio ? "India · NATIONAL" : `${city.name} · ${city.city_id}`}
+            {portfolio ? "India · National" : `${city.name} · ${city.city_id}`}
           </p>
+          </div>
         </div>
 
-
-        <div
-          ref={boxRef}
-          className="relative order-last w-full min-w-0 flex-1 md:order-none md:w-auto md:max-w-md"
-        >
+        {/* Utility region: search, status, actions — one row, never overlapping. */}
+        <div className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-3 lg:justify-end">
+        <div ref={boxRef} className="relative w-full min-w-0 sm:w-64 lg:w-72">
           <label htmlFor="global-search" className="sr-only">
             Search projects, assets, schemes, agencies, contractors, wards and localities
           </label>
