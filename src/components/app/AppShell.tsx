@@ -231,9 +231,7 @@ function CityShell({ children }: { children: ReactNode }) {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const current = NAV.find((n) =>
-    n.to === "/" ? pathname === "/" : pathname.startsWith(n.to),
-  )?.label;
+  const current = ALL_DESTINATIONS.find((n) => matches(n.to, pathname))?.label;
 
   return (
     <EvidenceDrawerProvider>
