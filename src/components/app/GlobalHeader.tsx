@@ -144,12 +144,36 @@ export function GlobalHeader() {
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2.5 sm:px-4 lg:px-8">
         <div className="hidden min-w-0 lg:block">
           <h1 className="truncate text-sm font-semibold text-foreground">
-            Jalandhar City Intelligence
+            MoHUA Urban Intelligence
           </h1>
           <p className="truncate text-xs text-muted-foreground">
-            Government projects, infrastructure and service outcomes
+            From investments made to lives improved
           </p>
         </div>
+
+        <div className="min-w-0">
+          <label htmlFor="city-select" className="field-label">
+            City
+          </label>
+          <select
+            id="city-select"
+            value={cityId}
+            onChange={(e) => {
+              const next = e.target.value;
+              if (isCityId(next)) setCityId(next);
+            }}
+            className="mt-0.5 block w-full rounded-sm border border-input bg-card px-2 py-1 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          >
+            {cities.map((c) => (
+              <option key={c.city_id} value={c.city_id}>
+                {c.name}, {c.state}
+                {c.data_loaded ? "" : " — records pending"}
+              </option>
+            ))}
+          </select>
+          <p className="sr-only">Active city {city.city_id}</p>
+        </div>
+
 
         <div
           ref={boxRef}
