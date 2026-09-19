@@ -26,6 +26,7 @@ import { Route as AgenciesAgencyNameRouteImport } from './routes/agencies.$agenc
 import { Route as HousingIndexRouteImport } from './routes/housing.index'
 import { Route as HousingHousingIdRouteImport } from './routes/housing.$housingId'
 import { Route as InterventionsIndexRouteImport } from './routes/interventions.index'
+import { Route as InterventionsInterventionIdRouteImport } from './routes/interventions.$interventionId'
 import { Route as InvestmentIndexRouteImport } from './routes/investment.index'
 import { Route as InvestmentProjectIdRouteImport } from './routes/investment.$projectId'
 import { Route as LocalitiesIndexRouteImport } from './routes/localities.index'
@@ -125,6 +126,12 @@ const InterventionsIndexRoute = InterventionsIndexRouteImport.update({
   path: '/interventions/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InterventionsInterventionIdRoute =
+  InterventionsInterventionIdRouteImport.update({
+    id: '/interventions/$interventionId',
+    path: '/interventions/$interventionId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InvestmentIndexRoute = InvestmentIndexRouteImport.update({
   id: '/investment/',
   path: '/investment/',
@@ -206,6 +213,7 @@ export interface FileRoutesByFullPath {
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/housing/$housingId': typeof HousingHousingIdRoute
+  '/interventions/$interventionId': typeof InterventionsInterventionIdRoute
   '/investment/$projectId': typeof InvestmentProjectIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
@@ -238,6 +246,7 @@ export interface FileRoutesByTo {
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/housing/$housingId': typeof HousingHousingIdRoute
+  '/interventions/$interventionId': typeof InterventionsInterventionIdRoute
   '/investment/$projectId': typeof InvestmentProjectIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
@@ -271,6 +280,7 @@ export interface FileRoutesById {
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/housing/$housingId': typeof HousingHousingIdRoute
+  '/interventions/$interventionId': typeof InterventionsInterventionIdRoute
   '/investment/$projectId': typeof InvestmentProjectIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
@@ -305,6 +315,7 @@ export interface FileRouteTypes {
     | '/outcomes'
     | '/agencies/$agencyName'
     | '/housing/$housingId'
+    | '/interventions/$interventionId'
     | '/investment/$projectId'
     | '/localities/$localityId'
     | '/projects/$projectId'
@@ -337,6 +348,7 @@ export interface FileRouteTypes {
     | '/outcomes'
     | '/agencies/$agencyName'
     | '/housing/$housingId'
+    | '/interventions/$interventionId'
     | '/investment/$projectId'
     | '/localities/$localityId'
     | '/projects/$projectId'
@@ -369,6 +381,7 @@ export interface FileRouteTypes {
     | '/outcomes'
     | '/agencies/$agencyName'
     | '/housing/$housingId'
+    | '/interventions/$interventionId'
     | '/investment/$projectId'
     | '/localities/$localityId'
     | '/projects/$projectId'
@@ -402,6 +415,7 @@ export interface RootRouteChildren {
   OutcomesRoute: typeof OutcomesRoute
   AgenciesAgencyNameRoute: typeof AgenciesAgencyNameRoute
   HousingHousingIdRoute: typeof HousingHousingIdRoute
+  InterventionsInterventionIdRoute: typeof InterventionsInterventionIdRoute
   InvestmentProjectIdRoute: typeof InvestmentProjectIdRoute
   LocalitiesLocalityIdRoute: typeof LocalitiesLocalityIdRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
@@ -541,6 +555,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InterventionsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/interventions/$interventionId': {
+      id: '/interventions/$interventionId'
+      path: '/interventions/$interventionId'
+      fullPath: '/interventions/$interventionId'
+      preLoaderRoute: typeof InterventionsInterventionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/investment/': {
       id: '/investment/'
       path: '/investment'
@@ -650,6 +671,7 @@ const rootRouteChildren: RootRouteChildren = {
   OutcomesRoute: OutcomesRoute,
   AgenciesAgencyNameRoute: AgenciesAgencyNameRoute,
   HousingHousingIdRoute: HousingHousingIdRoute,
+  InterventionsInterventionIdRoute: InterventionsInterventionIdRoute,
   InvestmentProjectIdRoute: InvestmentProjectIdRoute,
   LocalitiesLocalityIdRoute: LocalitiesLocalityIdRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
