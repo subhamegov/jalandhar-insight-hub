@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Download, FileText, Search } from "lucide-react";
-import { agencies, assets, projects, schemes } from "@/data/selectors";
+import type { Agency, Asset, Project, Scheme } from "@/data/types";
+import { useCity } from "@/lib/cityContext";
+import { isCityId } from "@/data/cities/registry";
 import { dateText } from "@/lib/format";
 import { AS_OF, freshnessOf, latestDate } from "@/lib/freshness";
 import { downloadCsv, toCsv } from "@/lib/exportData";
