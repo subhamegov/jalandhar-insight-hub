@@ -68,9 +68,9 @@ function NationalView() {
   }));
 
   const open = (id: (typeof CITIES)[number]["city_id"]) => {
-    setCityId(id);
     setLocalityId(null);
-    void navigate({ to: "/" });
+    // One scope change: the city becomes the active scope and its overview opens.
+    setCityId(id, "/");
   };
 
   return (
