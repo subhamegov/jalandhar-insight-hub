@@ -18,7 +18,7 @@ export type Drill =
   | { kind: "record"; id: string; label: string }
   | { kind: "route"; to: DrillRoute; label: string };
 
-export type DrillRoute = "/localities" | "/projects" | "/assets" | "/data-layer" | "/evidence";
+export type DrillRoute = "/housing" | "/localities" | "/projects" | "/assets" | "/data-layer" | "/evidence";
 
 export interface Indicator {
   id: string;
