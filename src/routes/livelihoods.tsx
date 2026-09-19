@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/app/Breadcrumbs";
 import { RecordLink } from "@/routes/localities.$localityId";
 import { livelihoodMobility } from "@/data/four-city/livelihoods";
 import { useCity } from "@/lib/cityContext";
-import { count, labelise, percent, text } from "@/lib/format";
+import { count, labelise, text } from "@/lib/format";
 
 export const Route = createFileRoute("/livelihoods")({
   head: () => ({
@@ -380,6 +380,3 @@ function Table({
     </div>
   );
 }
-
-const _unused = percent;
-void _unused;
