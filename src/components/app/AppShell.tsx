@@ -29,6 +29,7 @@ const NAV = [
   { to: "/", label: "Overview", icon: LayoutDashboard },
   { to: "/map", label: "City Map", icon: Map },
   { to: "/localities", label: "Localities", icon: MapPin },
+  { to: "/housing", label: "Housing", icon: Home },
   { to: "/projects", label: "Projects", icon: ListChecks },
   { to: "/assets", label: "Assets", icon: Boxes },
   { to: "/outcomes", label: "Outcomes", icon: Target },
