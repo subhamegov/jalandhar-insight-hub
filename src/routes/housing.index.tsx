@@ -147,9 +147,11 @@ function HousingIndex() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search housing, project, mission or locality"
+            aria-label="Search housing records"
             className="w-full min-w-0 rounded-sm border border-border bg-background px-3 py-2 text-sm sm:w-72"
           />
           <select
+            aria-label="Sort housing records"
             value={sort}
             onChange={(e) => setSort(e.target.value as SortKey)}
             className="rounded-sm border border-border bg-background px-3 py-2 text-sm"
