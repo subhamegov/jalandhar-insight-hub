@@ -78,7 +78,7 @@ export function CitizenDomainSection({ domain }: { domain: CitizenDomain }) {
               <thead>
                 <tr className="border-b border-border text-left">
                   <th className="field-label py-2">Locality</th>
-                  <th className="field-label py-2 text-right">Measure</th>
+                  <th className="field-label py-2 pr-3 text-right">Measure</th>
                   <th className="field-label py-2">Records behind it</th>
                 </tr>
               </thead>
