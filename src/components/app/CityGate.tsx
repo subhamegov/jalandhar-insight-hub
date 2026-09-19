@@ -17,9 +17,14 @@ import type { ReactNode } from "react";
 /** Pages whose analysis is built on Jalandhar-specific reference work. */
 const JALANDHAR_ONLY = ["/outcomes", "/attention", "/wards"];
 
+/** Pages that sit above the city level and always render. */
+const CITY_INDEPENDENT = ["/national"];
+
 export function CityGate({ children }: { children: ReactNode }) {
   const { city, dataset } = useCity();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  if (CITY_INDEPENDENT.some((p) => pathname.startsWith(p))) return <>{children}</>;
 
   if (dataset.projects.length === 0) return <NoRecords />;
 

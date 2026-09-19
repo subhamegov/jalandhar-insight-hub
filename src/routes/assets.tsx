@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { DataTable, type Column } from "@/components/app/DataTable";
 import { PageHeader } from "@/components/app/Primitives";
+import { lookupEntity } from "@/data/four-city/dataset";
+import { Breadcrumbs } from "@/components/app/Breadcrumbs";
 import { assets } from "@/data/selectors";
 import type { Asset } from "@/data/types";
 import { CITY_SYSTEMS } from "@/data/types";
@@ -27,7 +29,23 @@ export const Route = createFileRoute("/assets")({
 
 function AssetsPage() {
   const columns: Column<Asset>[] = [
-    { key: "asset_name", header: "Asset", value: (a) => a.asset_name },
+    {
+      key: "asset_name",
+      header: "Asset",
+      value: (a) => a.asset_name,
+      render: (a) =>
+        lookupEntity(a.asset_id) ? (
+          <Link
+            to="/records/$recordId"
+            params={{ recordId: a.asset_id }}
+            className="underline underline-offset-2"
+          >
+            {a.asset_name}
+          </Link>
+        ) : (
+          a.asset_name
+        ),
+    },
     {
       key: "asset_type",
       header: "Type",
@@ -96,6 +114,7 @@ function AssetsPage() {
 
   return (
     <>
+      <Breadcrumbs trail={[{ label: "Assets" }]} />
       <PageHeader
         title="Assets"
         subtitle="Physical infrastructure in the city, independent of the project that created it."
