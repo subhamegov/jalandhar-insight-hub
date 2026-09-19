@@ -126,6 +126,7 @@ function SignalsIndex() {
       <Panel title="Signals">
         <div className="mb-3 flex flex-wrap items-center gap-3">
           <input
+            aria-label="Search decision signals"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search signal, condition, locality or mission"

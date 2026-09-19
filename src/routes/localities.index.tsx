@@ -131,6 +131,7 @@ function LocalitiesIndex() {
 
       <Panel title="All localities" description="Search by locality name or identifier.">
         <input
+          aria-label="Search localities"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search localities"

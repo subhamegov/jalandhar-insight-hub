@@ -106,6 +106,7 @@ function InterventionsIndex() {
       <Panel title="Interventions">
         <div className="mb-3 flex flex-wrap items-center gap-3">
           <input
+            aria-label="Search interventions"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search problem, agency, locality or mission"

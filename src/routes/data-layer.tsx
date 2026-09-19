@@ -184,6 +184,7 @@ function DataLayerPage() {
           decision signal identifier.
         </p>
         <input
+          aria-label="Search by canonical record id"
           value={lookupId}
           onChange={(e) => setLookupId(e.target.value)}
           placeholder="PRJ-THANE-001"

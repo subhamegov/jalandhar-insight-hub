@@ -115,6 +115,7 @@ export function DataTable<T>({
           <div className="relative min-w-0 flex-1 basis-56">
             <Search className="pointer-events-none absolute top-2.5 left-2 h-3.5 w-3.5 text-muted-foreground" />
             <input
+              aria-label={searchPlaceholder}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={searchPlaceholder}

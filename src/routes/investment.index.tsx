@@ -139,6 +139,7 @@ function InvestmentIndex() {
       <Panel title="Projects and their chain">
         <div className="mb-3 flex flex-wrap items-center gap-3">
           <input
+            aria-label="Search projects"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search project, mission or agency"

@@ -447,6 +447,7 @@ function CityMap() {
               Search
             </h2>
             <input
+              aria-label="Search the map"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Project, record ID, locality or agency"
