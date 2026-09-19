@@ -1,3 +1,5 @@
+import { AuthorityIdentity } from "@/components/app/AuthorityIdentity";
+import { CITY_AUTHORITIES, NATIONAL_AUTHORITY } from "@/data/governmentAssets";
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
   AlertTriangle,
@@ -201,7 +203,7 @@ function NavList({ tree, onNavigate }: { tree: NavTree; onNavigate?: () => void 
                 type="button"
                 onClick={() => setOpenId(expanded ? null : group.id)}
                 aria-expanded={expanded}
-                className="flex w-full items-center justify-between gap-2 rounded-sm px-3 py-1.5 text-[11px] font-semibold tracking-[0.12em] text-sidebar-foreground/60 uppercase transition-colors hover:text-sidebar-foreground"
+                className="flex w-full items-center justify-between gap-2 rounded-sm px-3 py-1.5 text-xs font-semibold text-sidebar-foreground/70 transition-colors hover:text-sidebar-foreground"
               >
                 <span className="truncate">{group.label}</span>
                 <ChevronDown
@@ -247,11 +249,12 @@ function SyntheticNotice() {
   const { dataset } = useCity();
   if (!dataset.synthetic || dataset.projects.length === 0) return null;
   return (
-    <p className="mb-4 rounded-sm border border-border bg-muted/60 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
-      <span className="font-medium text-foreground">Synthetic prototype data.</span> Records for
-      this city come from the MoHUA four-city synthetic dataset. They are not government
-      statistics, are not citywide totals, and must be validated against official records before
-      any decision.
+    <p className="mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-sm border border-border bg-muted/60 px-3 py-2 text-xs text-muted-foreground">
+      <span className="font-medium text-foreground">Prototype data</span>
+      <span>Synthetic observations · Not official statistics</span>
+      <Link to="/data-quality" className="font-medium text-primary underline-offset-2 hover:underline">
+        View data provenance
+      </Link>
     </p>
   );
 }
@@ -260,6 +263,7 @@ function CityShell({ children }: { children: ReactNode }) {
   const { city, scope } = useCity();
   const national = scope.type === "NATIONAL";
   const tree = national ? NATIONAL_NAV : CITY_NAV;
+  const authority = national ? NATIONAL_AUTHORITY : CITY_AUTHORITIES[city.city_id];
   const scopeLine = national ? "India · National" : `${city.name}, ${city.state}`;
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -294,7 +298,7 @@ function CityShell({ children }: { children: ReactNode }) {
             <Menu className="h-5 w-5" aria-hidden="true" />
           </button>
           <div className="min-w-0">
-            <p className="truncate text-[10px] tracking-[0.12em] text-sidebar-foreground/60 uppercase">
+            <p className="truncate text-[11px] text-sidebar-foreground/70">
               MoHUA Urban Intelligence · {national ? "India · National" : city.name}
             </p>
             <p className="truncate text-sm leading-tight font-semibold">{current ?? "Overview"}</p>
@@ -319,6 +323,7 @@ function CityShell({ children }: { children: ReactNode }) {
                     MoHUA Urban Intelligence
                   </p>
                   <p className="text-xs text-sidebar-foreground/60">{scopeLine}</p>
+                  {national ? null : <AuthorityIdentity asset={authority} tone="sidebar" className="mt-2" />}
                 </div>
                 <button
                   type="button"
@@ -341,6 +346,7 @@ function CityShell({ children }: { children: ReactNode }) {
             </p>
             <p className="mt-1 text-sm leading-tight font-semibold">MoHUA Urban Intelligence</p>
             <p className="text-[11px] text-sidebar-foreground/60">{scopeLine}</p>
+            {national ? null : <AuthorityIdentity asset={authority} tone="sidebar" className="mt-2" />}
           </div>
           <NavList tree={tree} />
           <div className="px-4 py-4 text-[11px] leading-relaxed text-sidebar-foreground/90">

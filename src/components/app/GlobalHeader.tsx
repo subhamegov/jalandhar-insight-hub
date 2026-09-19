@@ -104,7 +104,7 @@ function buildIndex(
 export function GlobalHeader() {
   const navigate = useNavigate();
   const { city, cities, selection, portfolio, setCityId, dataset } = useCity();
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+    const pathname = useRouterState({ select: (s) => s.location.pathname });
   const { projects, assets, schemes, agencies } = dataset;
   const index = useMemo(
     () => buildIndex(projects, assets, schemes, agencies),
@@ -142,17 +142,11 @@ export function GlobalHeader() {
 
   return (
     <header className="z-40 border-b border-border bg-background/95 backdrop-blur print:hidden lg:sticky lg:top-0">
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2.5 sm:px-4 lg:px-8">
-        <div className="hidden min-w-0 lg:block">
-          <h1 className="truncate text-sm font-semibold text-foreground">
-            MoHUA Urban Intelligence
-          </h1>
-          <p className="truncate text-xs text-muted-foreground">
-            From investments made to lives improved
-          </p>
-        </div>
-
+      {/* One grid: context region on the left, utility region on the right.
+          Every control sits in the grid, so nothing can overlap. */}
+      <div className="grid grid-cols-1 items-center gap-x-6 gap-y-3 px-3 py-3 sm:px-4 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] lg:px-8">
         <div className="min-w-0">
+          <div className="min-w-0">
           <label htmlFor="scope-select" className="field-label">
             Scope
           </label>
@@ -172,7 +166,7 @@ export function GlobalHeader() {
                 setCityId(next, fromNational ? "/" : undefined);
               }
             }}
-            className="mt-0.5 block w-full rounded-sm border border-input bg-card px-2 py-1 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            className="mt-0.5 block w-full max-w-xs min-h-9 rounded-sm border border-input bg-card px-2 py-1 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
             <option value={ALL_CITIES}>National</option>
             {cities.map((c) => (
@@ -183,15 +177,14 @@ export function GlobalHeader() {
             ))}
           </select>
           <p className="mt-0.5 truncate text-xs text-muted-foreground">
-            {portfolio ? "India · NATIONAL" : `${city.name} · ${city.city_id}`}
+            {portfolio ? "India · National" : `${city.name} · ${city.city_id}`}
           </p>
+          </div>
         </div>
 
-
-        <div
-          ref={boxRef}
-          className="relative order-last w-full min-w-0 flex-1 md:order-none md:w-auto md:max-w-md"
-        >
+        {/* Utility region: search, status, actions — one row, never overlapping. */}
+        <div className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-3 lg:justify-end">
+        <div ref={boxRef} className="relative w-full min-w-0 sm:w-64 lg:w-72">
           <label htmlFor="global-search" className="sr-only">
             Search projects, assets, schemes, agencies, contractors, wards and localities
           </label>
@@ -245,27 +238,27 @@ export function GlobalHeader() {
           ) : null}
         </div>
 
-        <dl className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
-          <div>
-            <dt className="field-label">Last data refresh</dt>
-            <dd className="num">
+        {/* Compact status metadata — subordinate to scope and page content. */}
+        <dl className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-1 text-xs">
+          <div className="min-w-0">
+            <dt className="field-label">Last refresh</dt>
+            <dd className="num truncate">
               {dateText(lastRefresh)}{" "}
               <span
                 className={cn(
+                  "text-muted-foreground",
                   freshness === "current" && "text-positive",
                   freshness === "ageing" && "text-warning",
                   (freshness === "stale" || freshness === "very_stale") && "text-destructive",
                 )}
               >
-                ({freshness === "current" ? "current" : freshness.replace("_", " ")})
+                · {freshness === "current" ? "Current" : freshness.replace("_", " ")}
               </span>
             </dd>
           </div>
-          <div>
-            <dt className="field-label">Evidence completeness</dt>
-            <dd className="num">
-              {completeness}% <span className="text-muted-foreground">of projects sourced</span>
-            </dd>
+          <div className="min-w-0">
+            <dt className="field-label">Evidence coverage</dt>
+            <dd className="num truncate">{completeness}%</dd>
           </div>
         </dl>
 
@@ -280,20 +273,21 @@ export function GlobalHeader() {
                   toCsv(headers, rows),
                 );
               }}
-              className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              className="inline-flex min-h-9 items-center gap-1.5 rounded-sm border border-input bg-card px-3 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
-              <Download className="h-3.5 w-3.5" aria-hidden="true" />
-              Export CSV
+              <Download className="h-4 w-4" aria-hidden="true" />
+              Export data
             </button>
             <Link
               to="/brief"
-              className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              className="inline-flex min-h-9 items-center gap-1.5 rounded-sm border border-input bg-card px-3 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
-              <FileText className="h-3.5 w-3.5" aria-hidden="true" />
+              <FileText className="h-4 w-4" aria-hidden="true" />
               City brief
             </Link>
           </div>
         ) : null}
+        </div>
       </div>
     </header>
   );

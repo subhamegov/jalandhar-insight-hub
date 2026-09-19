@@ -48,7 +48,7 @@ function OutcomesPage() {
     <>
       <PageHeader
         title="Outcomes"
-        subtitle="Whether investment is producing working city services. Construction progress and service performance are kept apart. Every indicator shows its source and the date it refers to; unverified values stay marked as not available."
+        subtitle="Whether investment is producing working city services."
       />
 
       <Panel
