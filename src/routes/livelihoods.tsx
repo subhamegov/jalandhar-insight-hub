@@ -314,6 +314,13 @@ function LivelihoodsPage() {
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    to="/signals/$signalId"
+                    params={{ signalId: s.signal_id }}
+                    className="mt-2 inline-block text-sm underline underline-offset-2"
+                  >
+                    Open signal with its evidence
+                  </Link>
                 </li>
               ))}
             </ul>
