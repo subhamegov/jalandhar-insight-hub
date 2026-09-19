@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { PageHeader, Panel } from "@/components/app/Primitives";
+import { PageHeader, Panel, PrototypeNote } from "@/components/app/Primitives";
 import { CITIES, type CityId } from "@/data/cities/registry";
 import { datasetFor } from "@/data/cities/datasets";
 import { useCity } from "@/lib/cityContext";
@@ -50,7 +50,8 @@ function StatesView() {
     <div className="space-y-5">
       <PageHeader
         title="States"
-        subtitle="India → state → city. Only states holding a prototype city are listed. This is the coverage of the prototype, not a statement about all states or all urban local bodies."
+        subtitle="States holding a prototype city. Select a city to open its records."
+        note={<PrototypeNote text="Prototype coverage only · Not all states or urban local bodies" />}
       />
 
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">

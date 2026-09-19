@@ -1,6 +1,6 @@
 import { lazy, useMemo } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHeader, Panel } from "@/components/app/Primitives";
+import { PageHeader, Panel, PrototypeNote } from "@/components/app/Primitives";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { MapPoint } from "@/components/map/PointMap";
 import { CITIES } from "@/data/cities/registry";
@@ -76,7 +76,8 @@ function NationalView() {
     <div className="space-y-5">
       <PageHeader
         title="National view"
-        subtitle="India → state → city → locality → project, asset or service area. Select a city to open its records. Coverage here is a prototype across five cities; it is not a national statistic and does not represent all urban local bodies."
+        subtitle="Explore urban systems and delivery across the prototype cities."
+        note={<PrototypeNote text="Five cities · Not a national statistic" />}
       />
 
       <Panel
