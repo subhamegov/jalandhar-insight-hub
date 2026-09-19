@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Download, FileText, Search } from "lucide-react";
-import { agencies, assets, projects, schemes } from "@/data/selectors";
+import type { Agency, Asset, Project, Scheme } from "@/data/types";
+import { useCity } from "@/lib/cityContext";
+import { isCityId } from "@/data/cities/registry";
 import { dateText } from "@/lib/format";
 import { AS_OF, freshnessOf, latestDate } from "@/lib/freshness";
 import { downloadCsv, toCsv } from "@/lib/exportData";
@@ -17,7 +19,12 @@ type Hit = {
   params?: Record<string, string>;
 };
 
-function buildIndex(): Hit[] {
+function buildIndex(
+  projects: Project[],
+  assets: Asset[],
+  schemes: Scheme[],
+  agencies: Agency[],
+): Hit[] {
   const hits: Hit[] = [];
   for (const p of projects) {
     hits.push({
@@ -96,7 +103,12 @@ function buildIndex(): Hit[] {
 
 export function GlobalHeader() {
   const navigate = useNavigate();
-  const index = useMemo(buildIndex, []);
+  const { city, cities, cityId, setCityId, dataset } = useCity();
+  const { projects, assets, schemes, agencies } = dataset;
+  const index = useMemo(
+    () => buildIndex(projects, assets, schemes, agencies),
+    [projects, assets, schemes, agencies],
+  );
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
@@ -132,12 +144,36 @@ export function GlobalHeader() {
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2.5 sm:px-4 lg:px-8">
         <div className="hidden min-w-0 lg:block">
           <h1 className="truncate text-sm font-semibold text-foreground">
-            Jalandhar City Intelligence
+            MoHUA Urban Intelligence
           </h1>
           <p className="truncate text-xs text-muted-foreground">
-            Government projects, infrastructure and service outcomes
+            From investments made to lives improved
           </p>
         </div>
+
+        <div className="min-w-0">
+          <label htmlFor="city-select" className="field-label">
+            City
+          </label>
+          <select
+            id="city-select"
+            value={cityId}
+            onChange={(e) => {
+              const next = e.target.value;
+              if (isCityId(next)) setCityId(next);
+            }}
+            className="mt-0.5 block w-full rounded-sm border border-input bg-card px-2 py-1 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          >
+            {cities.map((c) => (
+              <option key={c.city_id} value={c.city_id}>
+                {c.name}, {c.state}
+                {c.data_loaded ? "" : " — records pending"}
+              </option>
+            ))}
+          </select>
+          <p className="sr-only">Active city {city.city_id}</p>
+        </div>
+
 
         <div
           ref={boxRef}
@@ -220,26 +256,31 @@ export function GlobalHeader() {
           </div>
         </dl>
 
-        <div className="flex flex-wrap items-center gap-2">
-          <button
-            type="button"
-            onClick={() => {
-              const { headers, rows } = projectCsv();
-              downloadCsv(`jalandhar-projects-${AS_OF}`, toCsv(headers, rows));
-            }}
-            className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-          >
-            <Download className="h-3.5 w-3.5" aria-hidden="true" />
-            Export CSV
-          </button>
-          <Link
-            to="/brief"
-            className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-          >
-            <FileText className="h-3.5 w-3.5" aria-hidden="true" />
-            City brief
-          </Link>
-        </div>
+        {projects.length ? (
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                const { headers, rows } = projectCsv();
+                downloadCsv(
+                  `${city.name.toLowerCase()}-projects-${AS_OF}`,
+                  toCsv(headers, rows),
+                );
+              }}
+              className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
+              <Download className="h-3.5 w-3.5" aria-hidden="true" />
+              Export CSV
+            </button>
+            <Link
+              to="/brief"
+              className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
+              <FileText className="h-3.5 w-3.5" aria-hidden="true" />
+              City brief
+            </Link>
+          </div>
+        ) : null}
       </div>
     </header>
   );

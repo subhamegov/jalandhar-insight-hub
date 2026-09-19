@@ -17,6 +17,8 @@ import {
 import { useEffect, useState, type ReactNode } from "react";
 import { GlobalHeader } from "@/components/app/GlobalHeader";
 import { EvidenceDrawerProvider } from "@/components/app/EvidenceDrawer";
+import { CityProvider, useCity } from "@/lib/cityContext";
+import { CityGate } from "@/components/app/CityGate";
 
 const NAV = [
   { to: "/", label: "Overview", icon: LayoutDashboard },
@@ -56,6 +58,15 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
 }
 
 export function AppShell({ children }: { children: ReactNode }) {
+  return (
+    <CityProvider>
+      <CityShell>{children}</CityShell>
+    </CityProvider>
+  );
+}
+
+function CityShell({ children }: { children: ReactNode }) {
+  const { city } = useCity();
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
@@ -92,7 +103,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           </button>
           <div className="min-w-0">
             <p className="truncate text-[10px] tracking-[0.12em] text-sidebar-foreground/60 uppercase">
-              Jalandhar City Intelligence
+              MoHUA Urban Intelligence · {city.name}
             </p>
             <p className="truncate text-sm leading-tight font-semibold">{current ?? "Overview"}</p>
           </div>
@@ -113,7 +124,10 @@ export function AppShell({ children }: { children: ReactNode }) {
                     Government of India
                   </p>
                   <p className="mt-1 text-sm leading-tight font-semibold">
-                    Jalandhar City Intelligence
+                    MoHUA Urban Intelligence
+                  </p>
+                  <p className="text-xs text-sidebar-foreground/60">
+                    {city.name}, {city.state}
                   </p>
                 </div>
                 <button
@@ -135,7 +149,10 @@ export function AppShell({ children }: { children: ReactNode }) {
             <p className="text-[11px] tracking-[0.12em] text-sidebar-foreground/60 uppercase">
               Government of India
             </p>
-            <p className="mt-1 text-sm leading-tight font-semibold">Jalandhar City Intelligence</p>
+            <p className="mt-1 text-sm leading-tight font-semibold">MoHUA Urban Intelligence</p>
+            <p className="text-[11px] text-sidebar-foreground/60">
+              {city.name}, {city.state}
+            </p>
           </div>
           <NavList />
           <div className="px-4 py-4 text-[11px] leading-relaxed text-sidebar-foreground/50">
@@ -145,7 +162,9 @@ export function AppShell({ children }: { children: ReactNode }) {
         </aside>
         <div className="min-w-0 flex-1">
           <GlobalHeader />
-          <main className="px-3 py-4 sm:px-4 sm:py-5 lg:px-8 lg:py-7">{children}</main>
+          <main className="px-3 py-4 sm:px-4 sm:py-5 lg:px-8 lg:py-7">
+            <CityGate>{children}</CityGate>
+          </main>
         </div>
       </div>
     </EvidenceDrawerProvider>
