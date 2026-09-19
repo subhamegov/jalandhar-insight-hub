@@ -332,7 +332,13 @@ function SignalDetail() {
             {v.interventions.map((i) => (
               <li key={i.intervention_id} className="rounded-sm border border-border p-3 text-sm">
                 <p className="font-medium text-foreground">
-                  {i.intervention_id} — {i.problem_statement}
+                  <Link
+                    to="/interventions/$interventionId"
+                    params={{ interventionId: i.intervention_id }}
+                    className="underline underline-offset-2"
+                  >
+                    {i.intervention_id} — {i.problem_statement}
+                  </Link>
                 </p>
                 <div className="mt-2 grid gap-2 md:grid-cols-2">
                   <Field label="Lead agency" value={text(i.lead_agency)} />

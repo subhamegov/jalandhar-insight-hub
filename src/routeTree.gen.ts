@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AssetsRouteImport } from './routes/assets'
 import { Route as AttentionRouteImport } from './routes/attention'
 import { Route as BriefRouteImport } from './routes/brief'
+import { Route as BriefingRouteImport } from './routes/briefing'
 import { Route as CompareRouteImport } from './routes/compare'
 import { Route as DataLayerRouteImport } from './routes/data-layer'
 import { Route as DataQualityRouteImport } from './routes/data-quality'
@@ -25,6 +26,8 @@ import { Route as AgenciesIndexRouteImport } from './routes/agencies.index'
 import { Route as AgenciesAgencyNameRouteImport } from './routes/agencies.$agencyName'
 import { Route as HousingIndexRouteImport } from './routes/housing.index'
 import { Route as HousingHousingIdRouteImport } from './routes/housing.$housingId'
+import { Route as InterventionsIndexRouteImport } from './routes/interventions.index'
+import { Route as InterventionsInterventionIdRouteImport } from './routes/interventions.$interventionId'
 import { Route as InvestmentIndexRouteImport } from './routes/investment.index'
 import { Route as InvestmentProjectIdRouteImport } from './routes/investment.$projectId'
 import { Route as LocalitiesIndexRouteImport } from './routes/localities.index'
@@ -57,6 +60,11 @@ const AttentionRoute = AttentionRouteImport.update({
 const BriefRoute = BriefRouteImport.update({
   id: '/brief',
   path: '/brief',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BriefingRoute = BriefingRouteImport.update({
+  id: '/briefing',
+  path: '/briefing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CompareRoute = CompareRouteImport.update({
@@ -119,6 +127,17 @@ const HousingHousingIdRoute = HousingHousingIdRouteImport.update({
   path: '/housing/$housingId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InterventionsIndexRoute = InterventionsIndexRouteImport.update({
+  id: '/interventions/',
+  path: '/interventions/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InterventionsInterventionIdRoute =
+  InterventionsInterventionIdRouteImport.update({
+    id: '/interventions/$interventionId',
+    path: '/interventions/$interventionId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InvestmentIndexRoute = InvestmentIndexRouteImport.update({
   id: '/investment/',
   path: '/investment/',
@@ -190,6 +209,7 @@ export interface FileRoutesByFullPath {
   '/assets': typeof AssetsRoute
   '/attention': typeof AttentionRoute
   '/brief': typeof BriefRoute
+  '/briefing': typeof BriefingRoute
   '/compare': typeof CompareRoute
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
@@ -200,6 +220,7 @@ export interface FileRoutesByFullPath {
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/housing/$housingId': typeof HousingHousingIdRoute
+  '/interventions/$interventionId': typeof InterventionsInterventionIdRoute
   '/investment/$projectId': typeof InvestmentProjectIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
@@ -209,6 +230,7 @@ export interface FileRoutesByFullPath {
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
   '/housing/': typeof HousingIndexRoute
+  '/interventions/': typeof InterventionsIndexRoute
   '/investment/': typeof InvestmentIndexRoute
   '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
@@ -221,6 +243,7 @@ export interface FileRoutesByTo {
   '/assets': typeof AssetsRoute
   '/attention': typeof AttentionRoute
   '/brief': typeof BriefRoute
+  '/briefing': typeof BriefingRoute
   '/compare': typeof CompareRoute
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
@@ -231,6 +254,7 @@ export interface FileRoutesByTo {
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/housing/$housingId': typeof HousingHousingIdRoute
+  '/interventions/$interventionId': typeof InterventionsInterventionIdRoute
   '/investment/$projectId': typeof InvestmentProjectIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
@@ -240,6 +264,7 @@ export interface FileRoutesByTo {
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies': typeof AgenciesIndexRoute
   '/housing': typeof HousingIndexRoute
+  '/interventions': typeof InterventionsIndexRoute
   '/investment': typeof InvestmentIndexRoute
   '/localities': typeof LocalitiesIndexRoute
   '/projects': typeof ProjectsIndexRoute
@@ -253,6 +278,7 @@ export interface FileRoutesById {
   '/assets': typeof AssetsRoute
   '/attention': typeof AttentionRoute
   '/brief': typeof BriefRoute
+  '/briefing': typeof BriefingRoute
   '/compare': typeof CompareRoute
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
@@ -263,6 +289,7 @@ export interface FileRoutesById {
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/housing/$housingId': typeof HousingHousingIdRoute
+  '/interventions/$interventionId': typeof InterventionsInterventionIdRoute
   '/investment/$projectId': typeof InvestmentProjectIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
@@ -272,6 +299,7 @@ export interface FileRoutesById {
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
   '/housing/': typeof HousingIndexRoute
+  '/interventions/': typeof InterventionsIndexRoute
   '/investment/': typeof InvestmentIndexRoute
   '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
@@ -286,6 +314,7 @@ export interface FileRouteTypes {
     | '/assets'
     | '/attention'
     | '/brief'
+    | '/briefing'
     | '/compare'
     | '/data-layer'
     | '/data-quality'
@@ -296,6 +325,7 @@ export interface FileRouteTypes {
     | '/outcomes'
     | '/agencies/$agencyName'
     | '/housing/$housingId'
+    | '/interventions/$interventionId'
     | '/investment/$projectId'
     | '/localities/$localityId'
     | '/projects/$projectId'
@@ -305,6 +335,7 @@ export interface FileRouteTypes {
     | '/wards/$wardId'
     | '/agencies/'
     | '/housing/'
+    | '/interventions/'
     | '/investment/'
     | '/localities/'
     | '/projects/'
@@ -317,6 +348,7 @@ export interface FileRouteTypes {
     | '/assets'
     | '/attention'
     | '/brief'
+    | '/briefing'
     | '/compare'
     | '/data-layer'
     | '/data-quality'
@@ -327,6 +359,7 @@ export interface FileRouteTypes {
     | '/outcomes'
     | '/agencies/$agencyName'
     | '/housing/$housingId'
+    | '/interventions/$interventionId'
     | '/investment/$projectId'
     | '/localities/$localityId'
     | '/projects/$projectId'
@@ -336,6 +369,7 @@ export interface FileRouteTypes {
     | '/wards/$wardId'
     | '/agencies'
     | '/housing'
+    | '/interventions'
     | '/investment'
     | '/localities'
     | '/projects'
@@ -348,6 +382,7 @@ export interface FileRouteTypes {
     | '/assets'
     | '/attention'
     | '/brief'
+    | '/briefing'
     | '/compare'
     | '/data-layer'
     | '/data-quality'
@@ -358,6 +393,7 @@ export interface FileRouteTypes {
     | '/outcomes'
     | '/agencies/$agencyName'
     | '/housing/$housingId'
+    | '/interventions/$interventionId'
     | '/investment/$projectId'
     | '/localities/$localityId'
     | '/projects/$projectId'
@@ -367,6 +403,7 @@ export interface FileRouteTypes {
     | '/wards/$wardId'
     | '/agencies/'
     | '/housing/'
+    | '/interventions/'
     | '/investment/'
     | '/localities/'
     | '/projects/'
@@ -380,6 +417,7 @@ export interface RootRouteChildren {
   AssetsRoute: typeof AssetsRoute
   AttentionRoute: typeof AttentionRoute
   BriefRoute: typeof BriefRoute
+  BriefingRoute: typeof BriefingRoute
   CompareRoute: typeof CompareRoute
   DataLayerRoute: typeof DataLayerRoute
   DataQualityRoute: typeof DataQualityRoute
@@ -390,6 +428,7 @@ export interface RootRouteChildren {
   OutcomesRoute: typeof OutcomesRoute
   AgenciesAgencyNameRoute: typeof AgenciesAgencyNameRoute
   HousingHousingIdRoute: typeof HousingHousingIdRoute
+  InterventionsInterventionIdRoute: typeof InterventionsInterventionIdRoute
   InvestmentProjectIdRoute: typeof InvestmentProjectIdRoute
   LocalitiesLocalityIdRoute: typeof LocalitiesLocalityIdRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
@@ -399,6 +438,7 @@ export interface RootRouteChildren {
   WardsWardIdRoute: typeof WardsWardIdRoute
   AgenciesIndexRoute: typeof AgenciesIndexRoute
   HousingIndexRoute: typeof HousingIndexRoute
+  InterventionsIndexRoute: typeof InterventionsIndexRoute
   InvestmentIndexRoute: typeof InvestmentIndexRoute
   LocalitiesIndexRoute: typeof LocalitiesIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
@@ -435,6 +475,13 @@ declare module '@tanstack/react-router' {
       path: '/brief'
       fullPath: '/brief'
       preLoaderRoute: typeof BriefRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/briefing': {
+      id: '/briefing'
+      path: '/briefing'
+      fullPath: '/briefing'
+      preLoaderRoute: typeof BriefingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/compare': {
@@ -519,6 +566,20 @@ declare module '@tanstack/react-router' {
       path: '/housing/$housingId'
       fullPath: '/housing/$housingId'
       preLoaderRoute: typeof HousingHousingIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interventions/': {
+      id: '/interventions/'
+      path: '/interventions'
+      fullPath: '/interventions/'
+      preLoaderRoute: typeof InterventionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interventions/$interventionId': {
+      id: '/interventions/$interventionId'
+      path: '/interventions/$interventionId'
+      fullPath: '/interventions/$interventionId'
+      preLoaderRoute: typeof InterventionsInterventionIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/investment/': {
@@ -620,6 +681,7 @@ const rootRouteChildren: RootRouteChildren = {
   AssetsRoute: AssetsRoute,
   AttentionRoute: AttentionRoute,
   BriefRoute: BriefRoute,
+  BriefingRoute: BriefingRoute,
   CompareRoute: CompareRoute,
   DataLayerRoute: DataLayerRoute,
   DataQualityRoute: DataQualityRoute,
@@ -630,6 +692,7 @@ const rootRouteChildren: RootRouteChildren = {
   OutcomesRoute: OutcomesRoute,
   AgenciesAgencyNameRoute: AgenciesAgencyNameRoute,
   HousingHousingIdRoute: HousingHousingIdRoute,
+  InterventionsInterventionIdRoute: InterventionsInterventionIdRoute,
   InvestmentProjectIdRoute: InvestmentProjectIdRoute,
   LocalitiesLocalityIdRoute: LocalitiesLocalityIdRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
@@ -639,6 +702,7 @@ const rootRouteChildren: RootRouteChildren = {
   WardsWardIdRoute: WardsWardIdRoute,
   AgenciesIndexRoute: AgenciesIndexRoute,
   HousingIndexRoute: HousingIndexRoute,
+  InterventionsIndexRoute: InterventionsIndexRoute,
   InvestmentIndexRoute: InvestmentIndexRoute,
   LocalitiesIndexRoute: LocalitiesIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
