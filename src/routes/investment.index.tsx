@@ -85,7 +85,7 @@ function InvestmentIndex() {
       <Breadcrumbs trail={[{ label: "Investment and outcomes" }]} />
       <PageHeader
         title={`${city.name} — investment to outcome`}
-        subtitle="Are investments across different missions collectively improving life for citizens? Each project is followed from mission and funding through expenditure, the infrastructure created, whether it is operating, and the service and complaint records observed around it. Sampled synthetic records, not government statistics."
+        subtitle="Are investments across different missions collectively improving life for citizens? Each project is followed from mission and funding through expenditure, the infrastructure created, whether it is operating, and the service and complaint records observed around it."
       />
 
       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">

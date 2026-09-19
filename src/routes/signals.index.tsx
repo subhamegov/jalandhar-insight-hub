@@ -92,7 +92,7 @@ function SignalsIndex() {
       <Breadcrumbs trail={[{ label: "Decision signals" }]} />
       <PageHeader
         title={`${city.name} — what requires attention, and why`}
-        subtitle="These are the supplied synthetic decision signals for this prototype. They are not live government alerts and carry no urgency score or confidence percentage. Each signal states an observed condition; the patterns listed beside it are read from the records the signal names, and any evidence that cannot be resolved is shown as a gap."
+        subtitle="These are the supplied synthetic decision signals for this prototype."
       />
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-5">

@@ -42,7 +42,7 @@ function AttentionPage() {
     <>
       <PageHeader
         title="Projects Requiring Attention"
-        subtitle="Ranked by consequence, not by count. The score combines project value, delay, service criticality, public health and environmental risk, dependency on other work, evidence conflict and operational readiness."
+        subtitle="Ranked by consequence, not by count."
       />
 
       <div className="grid gap-3 md:grid-cols-4">
