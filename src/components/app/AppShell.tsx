@@ -4,6 +4,7 @@ import {
   Boxes,
   Briefcase,
   Building2,
+  ChevronDown,
   Database,
   FileSearch,
   LayoutDashboard,
