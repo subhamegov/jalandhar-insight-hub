@@ -18,7 +18,7 @@ export type Drill =
   | { kind: "record"; id: string; label: string }
   | { kind: "route"; to: DrillRoute; label: string };
 
-export type DrillRoute = "/housing" | "/localities" | "/projects" | "/assets" | "/data-layer" | "/evidence";
+export type DrillRoute = "/livelihoods" | "/housing" | "/localities" | "/projects" | "/assets" | "/data-layer" | "/evidence";
 
 export interface Indicator {
   id: string;
@@ -544,7 +544,10 @@ function livelihoodDomain(b: FourCityBundle): CitizenDomain {
         basis: `${num(applications)} applications, ${num(sanctions)} sanctioned, ${num(disbursements)} disbursed`,
         period: periodsOf(liv),
         nature: "observed",
-        drills: [{ kind: "route", to: "/localities", label: "Disbursement by locality" }],
+        drills: [
+          { kind: "route", to: "/livelihoods", label: "Livelihood and mobility intelligence" },
+          { kind: "route", to: "/localities", label: "Disbursement by locality" },
+        ],
       },
       {
         id: "vendors",

@@ -16,6 +16,7 @@ import { Route as BriefRouteImport } from './routes/brief'
 import { Route as DataLayerRouteImport } from './routes/data-layer'
 import { Route as DataQualityRouteImport } from './routes/data-quality'
 import { Route as EvidenceRouteImport } from './routes/evidence'
+import { Route as LivelihoodsRouteImport } from './routes/livelihoods'
 import { Route as MapRouteImport } from './routes/map'
 import { Route as NationalRouteImport } from './routes/national'
 import { Route as OutcomesRouteImport } from './routes/outcomes'
@@ -66,6 +67,11 @@ const DataQualityRoute = DataQualityRouteImport.update({
 const EvidenceRoute = EvidenceRouteImport.update({
   id: '/evidence',
   path: '/evidence',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LivelihoodsRoute = LivelihoodsRouteImport.update({
+  id: '/livelihoods',
+  path: '/livelihoods',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MapRoute = MapRouteImport.update({
@@ -157,6 +163,7 @@ export interface FileRoutesByFullPath {
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
+  '/livelihoods': typeof LivelihoodsRoute
   '/map': typeof MapRoute
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
@@ -182,6 +189,7 @@ export interface FileRoutesByTo {
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
+  '/livelihoods': typeof LivelihoodsRoute
   '/map': typeof MapRoute
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
@@ -208,6 +216,7 @@ export interface FileRoutesById {
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
+  '/livelihoods': typeof LivelihoodsRoute
   '/map': typeof MapRoute
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
@@ -235,6 +244,7 @@ export interface FileRouteTypes {
     | '/data-layer'
     | '/data-quality'
     | '/evidence'
+    | '/livelihoods'
     | '/map'
     | '/national'
     | '/outcomes'
@@ -260,6 +270,7 @@ export interface FileRouteTypes {
     | '/data-layer'
     | '/data-quality'
     | '/evidence'
+    | '/livelihoods'
     | '/map'
     | '/national'
     | '/outcomes'
@@ -285,6 +296,7 @@ export interface FileRouteTypes {
     | '/data-layer'
     | '/data-quality'
     | '/evidence'
+    | '/livelihoods'
     | '/map'
     | '/national'
     | '/outcomes'
@@ -311,6 +323,7 @@ export interface RootRouteChildren {
   DataLayerRoute: typeof DataLayerRoute
   DataQualityRoute: typeof DataQualityRoute
   EvidenceRoute: typeof EvidenceRoute
+  LivelihoodsRoute: typeof LivelihoodsRoute
   MapRoute: typeof MapRoute
   NationalRoute: typeof NationalRoute
   OutcomesRoute: typeof OutcomesRoute
@@ -378,6 +391,13 @@ declare module '@tanstack/react-router' {
       path: '/evidence'
       fullPath: '/evidence'
       preLoaderRoute: typeof EvidenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/livelihoods': {
+      id: '/livelihoods'
+      path: '/livelihoods'
+      fullPath: '/livelihoods'
+      preLoaderRoute: typeof LivelihoodsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/map': {
@@ -503,6 +523,7 @@ const rootRouteChildren: RootRouteChildren = {
   DataLayerRoute: DataLayerRoute,
   DataQualityRoute: DataQualityRoute,
   EvidenceRoute: EvidenceRoute,
+  LivelihoodsRoute: LivelihoodsRoute,
   MapRoute: MapRoute,
   NationalRoute: NationalRoute,
   OutcomesRoute: OutcomesRoute,
