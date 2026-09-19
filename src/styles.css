@@ -99,11 +99,13 @@
   --muted-foreground: var(--ux4g-text-neutral-secondary);
   --accent: var(--ux4g-bg-primary-soft);
   --accent-foreground: var(--ux4g-text-brand-primary-default);
-  --destructive: var(--ux4g-bg-error-strong);
+  /* Status colours use the UX4G text-status steps so small text on tinted
+     backgrounds meets WCAG 2.1 AA. */
+  --destructive: var(--ux4g-text-status-error);
   --destructive-foreground: var(--ux4g-color-neutral-0);
-  --warning: var(--ux4g-bg-warning-strong);
+  --warning: var(--ux4g-text-status-warning);
   --warning-foreground: var(--ux4g-color-neutral-950);
-  --positive: var(--ux4g-bg-success-strong);
+  --positive: var(--ux4g-text-status-success);
   --positive-foreground: var(--ux4g-color-neutral-0);
   --neutral-status: var(--ux4g-text-neutral-secondary);
   --overlay: var(--ux4g-bg-overlay);
