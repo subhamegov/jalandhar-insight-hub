@@ -212,7 +212,7 @@ function DataIntegrityPage() {
         <Stat label="Dataset reference date" value={summary.referenceDate} />
       </div>
 
-      <Panel title="Checks" note="Referential, geographic, numerical, temporal, financial, funnel, provenance, reconciliation and city-filtering checks.">
+      <Panel title="Checks" description="Referential, geographic, numerical, temporal, financial, funnel, provenance, reconciliation and city-filtering checks.">
         <div className="mb-2 flex flex-wrap items-center gap-3 text-sm">
           <label className="flex items-center gap-1.5">
             <input
@@ -256,7 +256,7 @@ function DataIntegrityPage() {
 
       <Panel
         title={`Indicator definitions — ${city.name}`}
-        note="One definition per indicator, used wherever the indicator appears. Every value can be re-created from the records listed."
+        description="One definition per indicator, used wherever the indicator appears. Every value can be re-created from the records listed."
       >
         {contracts.length === 0 ? (
           <EmptyNote>
@@ -271,7 +271,7 @@ function DataIntegrityPage() {
         )}
       </Panel>
 
-      <Panel title="Unresolved data limitations" note="What these figures cannot tell you.">
+      <Panel title="Unresolved data limitations" description="What these figures cannot tell you.">
         <ul className="list-disc space-y-1 pl-5 text-sm text-foreground">
           {summary.limitations.map((l) => (
             <li key={l}>{l}</li>
