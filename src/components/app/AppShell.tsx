@@ -322,7 +322,7 @@ function CityShell({ children }: { children: ReactNode }) {
                     MoHUA Urban Intelligence
                   </p>
                   <p className="text-xs text-sidebar-foreground/60">{scopeLine}</p>
-                  <AuthorityIdentity asset={authority} tone="sidebar" className="mt-2" />
+                  {national ? null : <AuthorityIdentity asset={authority} tone="sidebar" className="mt-2" />}
                 </div>
                 <button
                   type="button"
@@ -345,7 +345,7 @@ function CityShell({ children }: { children: ReactNode }) {
             </p>
             <p className="mt-1 text-sm leading-tight font-semibold">MoHUA Urban Intelligence</p>
             <p className="text-[11px] text-sidebar-foreground/60">{scopeLine}</p>
-            <AuthorityIdentity asset={authority} tone="sidebar" className="mt-2" />
+            {national ? null : <AuthorityIdentity asset={authority} tone="sidebar" className="mt-2" />}
           </div>
           <NavList tree={tree} />
           <div className="px-4 py-4 text-[11px] leading-relaxed text-sidebar-foreground/90">

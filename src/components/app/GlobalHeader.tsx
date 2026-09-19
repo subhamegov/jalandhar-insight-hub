@@ -4,8 +4,6 @@ import { Download, FileText, Search } from "lucide-react";
 import type { Agency, Asset, Project, Scheme } from "@/data/types";
 import { useCity, ALL_CITIES } from "@/lib/cityContext";
 import { isCityId } from "@/data/cities/registry";
-import { AuthorityIdentity } from "@/components/app/AuthorityIdentity";
-import { CITY_AUTHORITIES, NATIONAL_AUTHORITY } from "@/data/governmentAssets";
 import { dateText } from "@/lib/format";
 import { AS_OF, freshnessOf, latestDate } from "@/lib/freshness";
 import { downloadCsv, toCsv } from "@/lib/exportData";
@@ -106,8 +104,7 @@ function buildIndex(
 export function GlobalHeader() {
   const navigate = useNavigate();
   const { city, cities, selection, portfolio, setCityId, dataset } = useCity();
-  const authority = portfolio ? NATIONAL_AUTHORITY : CITY_AUTHORITIES[city.city_id];
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+    const pathname = useRouterState({ select: (s) => s.location.pathname });
   const { projects, assets, schemes, agencies } = dataset;
   const index = useMemo(
     () => buildIndex(projects, assets, schemes, agencies),
@@ -149,7 +146,6 @@ export function GlobalHeader() {
           Every control sits in the grid, so nothing can overlap. */}
       <div className="grid grid-cols-1 items-center gap-x-6 gap-y-3 px-3 py-3 sm:px-4 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] lg:px-8">
         <div className="min-w-0">
-          <AuthorityIdentity asset={authority} className="mb-1.5" />
           <div className="min-w-0">
           <label htmlFor="scope-select" className="field-label">
             Scope
@@ -170,7 +166,7 @@ export function GlobalHeader() {
                 setCityId(next, fromNational ? "/" : undefined);
               }
             }}
-            className="mt-0.5 block w-full rounded-sm border border-input bg-card px-2 py-1 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            className="mt-0.5 block w-full max-w-xs min-h-9 rounded-sm border border-input bg-card px-2 py-1 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
             <option value={ALL_CITIES}>National</option>
             {cities.map((c) => (
