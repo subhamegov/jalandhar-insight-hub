@@ -294,7 +294,7 @@ export function Table({
 }) {
   if (rows.length === 0) return <p className="text-sm text-muted-foreground">{empty}</p>;
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
       <table className="w-full min-w-[60rem] text-sm">
         <thead>
           <tr className="border-b border-border text-left">
