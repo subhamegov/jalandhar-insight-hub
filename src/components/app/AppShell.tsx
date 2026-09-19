@@ -33,87 +33,127 @@ import { CityProvider, useCity } from "@/lib/cityContext";
 import { GeoProvider } from "@/lib/geoContext";
 import { CityGate } from "@/components/app/CityGate";
 
-// Primary destinations, always visible.
-const PRIMARY = [
-  { to: "/national", label: "National View", icon: Globe },
-  { to: "/", label: "Regional Overview", icon: LayoutDashboard },
-] as const;
+// Navigation is contextual to the active scope. Both trees reuse the exact
+// existing routes; only the grouping and labels differ.
+type NavItem = { to: string; label: string; icon: typeof Globe };
+type NavGroup = { id: string; label: string; emphasis: boolean; items: NavItem[] };
+type NavTree = { primary: NavItem[]; groups: NavGroup[] };
 
-// Grouped destinations. Every existing route is kept; only grouping changes.
-const GROUPS = [
-  {
-    id: "decide",
-    label: "Decide",
-    emphasis: true,
-    items: [
-      { to: "/attention", label: "Attention", icon: Flag },
-      { to: "/signals", label: "Decision Signals", icon: Radar },
-      { to: "/interventions", label: "Planning Interventions", icon: ClipboardList },
-      { to: "/briefing", label: "Executive Briefing", icon: Gavel },
-    ],
-  },
-  {
-    id: "explore",
-    label: "Explore",
-    emphasis: false,
-    items: [
-      { to: "/map", label: "City Map", icon: Map },
-      { to: "/localities", label: "Localities", icon: MapPin },
-      { to: "/wards", label: "Ward View", icon: Grid2x2 },
-      { to: "/compare", label: "Compare Cities", icon: GitCompare },
-    ],
-  },
-  {
-    id: "systems",
-    label: "Urban systems",
-    emphasis: false,
-    items: [
-      { to: "/housing", label: "Housing", icon: Home },
-      { to: "/livelihoods", label: "Livelihoods & Mobility", icon: Briefcase },
-      { to: "/investment", label: "Investment", icon: IndianRupee },
-    ],
-  },
-  {
-    id: "delivery",
-    label: "Delivery",
-    emphasis: false,
-    items: [
-      { to: "/projects", label: "Projects", icon: ListChecks },
-      { to: "/assets", label: "Assets", icon: Boxes },
-      { to: "/schemes", label: "Schemes", icon: Scale },
-      { to: "/agencies", label: "Agencies", icon: Building2 },
-    ],
-  },
-  {
-    id: "measure",
-    label: "Measure & trust",
-    emphasis: false,
-    items: [
-      { to: "/outcomes", label: "Outcomes", icon: Target },
-      { to: "/evidence", label: "Evidence", icon: FileSearch },
-      { to: "/data-quality", label: "Data Quality", icon: AlertTriangle },
-      { to: "/data-integrity", label: "Data Integrity", icon: ShieldCheck },
-    ],
-  },
-  {
-    id: "more",
-    label: "More",
-    emphasis: false,
-    items: [{ to: "/data-layer", label: "Data Layer", icon: Database }],
-  },
-] as const;
+const DECIDE: NavGroup = {
+  id: "decide",
+  label: "Decide",
+  emphasis: true,
+  items: [
+    { to: "/attention", label: "Attention", icon: Flag },
+    { to: "/signals", label: "Decision Signals", icon: Radar },
+    { to: "/interventions", label: "Planning Interventions", icon: ClipboardList },
+    { to: "/briefing", label: "Executive Briefing", icon: Gavel },
+  ],
+};
+
+const SYSTEMS: NavGroup = {
+  id: "systems",
+  label: "Urban systems",
+  emphasis: false,
+  items: [
+    { to: "/housing", label: "Housing", icon: Home },
+    { to: "/livelihoods", label: "Livelihoods & Mobility", icon: Briefcase },
+    { to: "/investment", label: "Investment", icon: IndianRupee },
+  ],
+};
+
+const DELIVERY: NavGroup = {
+  id: "delivery",
+  label: "Delivery",
+  emphasis: false,
+  items: [
+    { to: "/projects", label: "Projects", icon: ListChecks },
+    { to: "/assets", label: "Assets", icon: Boxes },
+    { to: "/schemes", label: "Schemes", icon: Scale },
+    { to: "/agencies", label: "Agencies", icon: Building2 },
+  ],
+};
+
+const MEASURE: NavGroup = {
+  id: "measure",
+  label: "Measure & trust",
+  emphasis: false,
+  items: [
+    { to: "/outcomes", label: "Outcomes", icon: Target },
+    { to: "/evidence", label: "Evidence", icon: FileSearch },
+    { to: "/data-quality", label: "Data Quality", icon: AlertTriangle },
+    { to: "/data-integrity", label: "Data Integrity", icon: ShieldCheck },
+  ],
+};
+
+const MORE: NavGroup = {
+  id: "more",
+  label: "More",
+  emphasis: false,
+  items: [{ to: "/data-layer", label: "Data Layer", icon: Database }],
+};
+
+const NATIONAL_NAV: NavTree = {
+  primary: [
+    { to: "/national", label: "National View", icon: Globe },
+    { to: "/", label: "Overview", icon: LayoutDashboard },
+  ],
+  groups: [
+    DECIDE,
+    {
+      id: "explore",
+      label: "Explore",
+      emphasis: false,
+      items: [
+        { to: "/national", label: "India Map", icon: Map },
+        { to: "/states", label: "States", icon: MapPin },
+        { to: "/compare", label: "Cities", icon: GitCompare },
+      ],
+    },
+    SYSTEMS,
+    DELIVERY,
+    MEASURE,
+    MORE,
+  ],
+};
+
+const CITY_NAV: NavTree = {
+  primary: [
+    { to: "/", label: "City Overview", icon: LayoutDashboard },
+    { to: "/map", label: "City Map", icon: Map },
+  ],
+  groups: [
+    DECIDE,
+    {
+      id: "explore",
+      label: "Explore",
+      emphasis: false,
+      items: [
+        { to: "/localities", label: "Localities", icon: MapPin },
+        { to: "/wards", label: "Ward View", icon: Grid2x2 },
+      ],
+    },
+    SYSTEMS,
+    DELIVERY,
+    MEASURE,
+    MORE,
+  ],
+};
 
 const ALL_DESTINATIONS: { to: string; label: string }[] = [
-  ...PRIMARY.map((i) => ({ to: i.to as string, label: i.label as string })),
-  ...GROUPS.flatMap((g) => g.items.map((i) => ({ to: i.to as string, label: i.label as string }))),
-];
+  ...NATIONAL_NAV.primary,
+  ...NATIONAL_NAV.groups.flatMap((g) => g.items),
+  ...CITY_NAV.primary,
+  ...CITY_NAV.groups.flatMap((g) => g.items),
+].map((i) => ({ to: i.to, label: i.label }));
 
 function matches(to: string, pathname: string) {
   return to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(`${to}/`);
 }
 
-function activeGroupId(pathname: string) {
-  return GROUPS.find((g) => g.items.some((i) => matches(i.to, pathname)))?.id ?? null;
+function activeGroupId(tree: NavTree, pathname: string) {
+  if (tree.primary.some((i) => matches(i.to, pathname))) return null;
+  return tree.groups.find((g) => g.items.some((i) => matches(i.to, pathname)))?.id ?? null;
 }
 
 const ITEM_CLASS =
