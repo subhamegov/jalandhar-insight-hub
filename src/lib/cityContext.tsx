@@ -111,28 +111,40 @@ export function CityProvider({ children }: { children: ReactNode }) {
   }, [urlCity, pathname, selection, restored, apply, navigate]);
 
   const setCityId = useCallback(
-    (next: CitySelection) => {
+    (next: CitySelection, to?: string) => {
       apply(next);
       navigate({
-        to: pathname,
+        to: to ?? pathname,
         search: (prev: Record<string, unknown>) => ({ ...prev, city: next }),
       } as never);
     },
     [apply, navigate, pathname],
   );
 
+  const setScope = useCallback(
+    (next: Scope, to?: string) => {
+      setCityId(next.type === "NATIONAL" ? NATIONAL : next.cityId, to);
+    },
+    [setCityId],
+  );
+
   const value = useMemo<CityContextValue>(() => {
     const dataset = datasetFor(cityId);
+    const national = selection === ALL_CITIES;
     return {
       cityId,
       city: dataset.profile,
       dataset,
       cities: CITIES,
       selection,
-      portfolio: selection === ALL_CITIES,
+      portfolio: national,
+      scope: national
+        ? { type: "NATIONAL", cityId: null }
+        : { type: "CITY", cityId: selection as CityId },
       setCityId,
+      setScope,
     };
-  }, [cityId, selection, setCityId]);
+  }, [cityId, selection, setCityId, setScope]);
 
   return <CityContext.Provider value={value}>{children}</CityContext.Provider>;
 }
