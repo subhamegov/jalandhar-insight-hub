@@ -24,6 +24,7 @@ import {
   type MapLayer,
 } from "@/data/mapLayers";
 import { fetchLayer, type OsmFeature } from "@/lib/overpass";
+import { useCity } from "@/lib/cityContext";
 import { crore, dateText, labelise, percent, text } from "@/lib/format";
 import type { Project, ProjectStatus } from "@/data/types";
 
@@ -121,6 +122,9 @@ type Selection =
   | null;
 
 function CityMap() {
+  const { city, dataset } = useCity();
+  // Jalandhar's hand-curated priority locations do not apply to other cities.
+  const showPriorityLocations = !dataset.synthetic;
   const [search, setSearch] = useState("");
   const [activeLayers, setActiveLayers] = useState<string[]>(
     MAP_LAYERS.filter((l) => l.defaultOn).map((l) => l.id),
@@ -193,7 +197,7 @@ function CityMap() {
     if (pending.length === 0) return;
     setLoadingLayers((prev) => [...prev, ...pending.map((l) => l.id)]);
     for (const layer of pending) {
-      fetchLayer(layer)
+      fetchLayer(layer, undefined, city.bbox)
         .then((features) => setOsmData((prev) => ({ ...prev, [layer.id]: features })))
         .catch((err: unknown) =>
           setLayerErrors((prev) => ({
@@ -334,7 +338,7 @@ function CityMap() {
         });
       }
     }
-    if (activeLayers.includes("gov_locations")) {
+    if (showPriorityLocations && activeLayers.includes("gov_locations")) {
       for (const l of priorityLocations) {
         points.push({
           id: l.location_id,
@@ -696,6 +700,8 @@ function CityMap() {
                 onSelectOsm={handleSelectOsm}
                 fitSignal={fitSignal}
                 focus={focus}
+                centre={city.centre}
+                bbox={city.bbox}
               />
             </ClientOnly>
           </div>
