@@ -103,7 +103,10 @@ const GROUPS = [
   },
 ] as const;
 
-const ALL_DESTINATIONS = [...PRIMARY, ...GROUPS.flatMap((g) => g.items)];
+const ALL_DESTINATIONS: { to: string; label: string }[] = [
+  ...PRIMARY.map((i) => ({ to: i.to as string, label: i.label as string })),
+  ...GROUPS.flatMap((g) => g.items.map((i) => ({ to: i.to as string, label: i.label as string }))),
+];
 
 function matches(to: string, pathname: string) {
   return to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(`${to}/`);
