@@ -92,8 +92,8 @@ export function FourCityOverview() {
           {bundle.signals.slice(0, 8).map((s) => (
             <li key={s.signal_id} className="rounded-sm border border-border/70 p-3">
               <Link
-                to="/records/$recordId"
-                params={{ recordId: s.signal_id }}
+                to="/signals/$signalId"
+                params={{ signalId: s.signal_id }}
                 className="num field-label underline underline-offset-2"
               >
                 {s.signal_id}

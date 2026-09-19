@@ -18,6 +18,7 @@ import {
   Home,
   IndianRupee,
   MapPin,
+  Radar,
   X,
 } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
@@ -35,6 +36,7 @@ const NAV = [
   { to: "/housing", label: "Housing", icon: Home },
   { to: "/livelihoods", label: "Livelihoods & Mobility", icon: Briefcase },
   { to: "/investment", label: "Investment & Outcomes", icon: IndianRupee },
+  { to: "/signals", label: "Decision Signals", icon: Radar },
   { to: "/projects", label: "Projects", icon: ListChecks },
   { to: "/assets", label: "Assets", icon: Boxes },
   { to: "/outcomes", label: "Outcomes", icon: Target },
