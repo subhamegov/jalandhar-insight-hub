@@ -21,7 +21,7 @@ export const ALL_CITIES = "ALL" as const;
 export type CitySelection = CityId | typeof ALL_CITIES;
 
 function isSelection(value: unknown): value is CitySelection {
-  return value === ALL_CITIES || isCityId(value);
+  return value === ALL_CITIES || (typeof value === "string" && isCityId(value));
 }
 
 interface CityContextValue {
