@@ -249,3 +249,14 @@
 .leaflet-tooltip.map-count-label::before {
   display: none;
 }
+
+/* State and union territory names on the national map. */
+.india-state-label {
+  color: var(--color-muted-foreground);
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}

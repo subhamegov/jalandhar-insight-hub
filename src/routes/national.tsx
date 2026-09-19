@@ -10,7 +10,7 @@ import { useCity } from "@/lib/cityContext";
 import { useGeo } from "@/lib/geoContext";
 import { count, crore } from "@/lib/format";
 
-const PointMap = lazy(() => import("@/components/map/PointMap"));
+const IndiaMap = lazy(() => import("@/components/map/IndiaMap"));
 
 export const Route = createFileRoute("/national")({
   head: () => ({
@@ -34,7 +34,6 @@ export const Route = createFileRoute("/national")({
   component: NationalView,
 });
 
-const INDIA_CENTRE: [number, number] = [22.5, 79.0];
 
 function NationalView() {
   const { cityId, setCityId } = useCity();
@@ -93,13 +92,10 @@ function NationalView() {
               </div>
             }
           >
-            <PointMap
+            <IndiaMap
               points={points}
-              centre={INDIA_CENTRE}
-              zoom={4}
               selectedId={cityId}
               onSelect={(id) => open(id as (typeof CITIES)[number]["city_id"])}
-              fitToPoints
             />
           </ClientOnly>
         </div>
