@@ -135,7 +135,6 @@ function LocalitiesIndex() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search localities"
-          aria-label="Search localities"
           className="mb-3 w-full max-w-sm rounded-sm border border-border bg-background px-3 py-2 text-sm"
         />
         <div className="overflow-x-auto">
