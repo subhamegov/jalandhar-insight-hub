@@ -33,6 +33,7 @@ import { Route as ProjectsProjectIdRouteImport } from './routes/projects.$projec
 import { Route as RecordsRecordIdRouteImport } from './routes/records.$recordId'
 import { Route as SchemesIndexRouteImport } from './routes/schemes.index'
 import { Route as SchemesSchemeNameRouteImport } from './routes/schemes.$schemeName'
+import { Route as SignalsIndexRouteImport } from './routes/signals.index'
 import { Route as WardsIndexRouteImport } from './routes/wards.index'
 import { Route as WardsWardIdRouteImport } from './routes/wards.$wardId'
 
@@ -156,6 +157,11 @@ const SchemesSchemeNameRoute = SchemesSchemeNameRouteImport.update({
   path: '/schemes/$schemeName',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SignalsIndexRoute = SignalsIndexRouteImport.update({
+  id: '/signals/',
+  path: '/signals/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WardsIndexRoute = WardsIndexRouteImport.update({
   id: '/wards/',
   path: '/wards/',
@@ -193,6 +199,7 @@ export interface FileRoutesByFullPath {
   '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/schemes/': typeof SchemesIndexRoute
+  '/signals/': typeof SignalsIndexRoute
   '/wards/': typeof WardsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -221,6 +228,7 @@ export interface FileRoutesByTo {
   '/localities': typeof LocalitiesIndexRoute
   '/projects': typeof ProjectsIndexRoute
   '/schemes': typeof SchemesIndexRoute
+  '/signals': typeof SignalsIndexRoute
   '/wards': typeof WardsIndexRoute
 }
 export interface FileRoutesById {
@@ -250,6 +258,7 @@ export interface FileRoutesById {
   '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/schemes/': typeof SchemesIndexRoute
+  '/signals/': typeof SignalsIndexRoute
   '/wards/': typeof WardsIndexRoute
 }
 export interface FileRouteTypes {
@@ -280,6 +289,7 @@ export interface FileRouteTypes {
     | '/localities/'
     | '/projects/'
     | '/schemes/'
+    | '/signals/'
     | '/wards/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -308,6 +318,7 @@ export interface FileRouteTypes {
     | '/localities'
     | '/projects'
     | '/schemes'
+    | '/signals'
     | '/wards'
   id:
     | '__root__'
@@ -336,6 +347,7 @@ export interface FileRouteTypes {
     | '/localities/'
     | '/projects/'
     | '/schemes/'
+    | '/signals/'
     | '/wards/'
   fileRoutesById: FileRoutesById
 }
@@ -365,6 +377,7 @@ export interface RootRouteChildren {
   LocalitiesIndexRoute: typeof LocalitiesIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
   SchemesIndexRoute: typeof SchemesIndexRoute
+  SignalsIndexRoute: typeof SignalsIndexRoute
   WardsIndexRoute: typeof WardsIndexRoute
 }
 
@@ -538,6 +551,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SchemesSchemeNameRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/signals/': {
+      id: '/signals/'
+      path: '/signals'
+      fullPath: '/signals/'
+      preLoaderRoute: typeof SignalsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/wards/': {
       id: '/wards/'
       path: '/wards'
@@ -581,6 +601,7 @@ const rootRouteChildren: RootRouteChildren = {
   LocalitiesIndexRoute: LocalitiesIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
   SchemesIndexRoute: SchemesIndexRoute,
+  SignalsIndexRoute: SignalsIndexRoute,
   WardsIndexRoute: WardsIndexRoute,
 }
 export const routeTree = rootRouteImport
