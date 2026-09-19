@@ -1,0 +1,58 @@
+[
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "DERIVED",
+    "derived_from": "synthetic project, housing, sanitation and grievance records",
+    "project_sample_count": 20,
+    "asset_sample_count": 100,
+    "property_aggregate_sample_count": 120,
+    "housing_units_completed_sample": 1792,
+    "housing_units_occupied_sample": 1066,
+    "grievance_count_sample": 1350,
+    "waste_generated_tpd_sample": 251.55,
+    "waste_processed_tpd_sample": 162.19,
+    "warning": "Sample totals, not citywide estimates or actual city performance"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "DERIVED",
+    "derived_from": "synthetic project, housing, sanitation and grievance records",
+    "project_sample_count": 20,
+    "asset_sample_count": 100,
+    "property_aggregate_sample_count": 120,
+    "housing_units_completed_sample": 1073,
+    "housing_units_occupied_sample": 759,
+    "grievance_count_sample": 1420,
+    "waste_generated_tpd_sample": 275.23,
+    "waste_processed_tpd_sample": 154.28,
+    "warning": "Sample totals, not citywide estimates or actual city performance"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "DERIVED",
+    "derived_from": "synthetic project, housing, sanitation and grievance records",
+    "project_sample_count": 20,
+    "asset_sample_count": 100,
+    "property_aggregate_sample_count": 120,
+    "housing_units_completed_sample": 1839,
+    "housing_units_occupied_sample": 1198,
+    "grievance_count_sample": 1413,
+    "waste_generated_tpd_sample": 243.52,
+    "waste_processed_tpd_sample": 126.53,
+    "warning": "Sample totals, not citywide estimates or actual city performance"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "DERIVED",
+    "derived_from": "synthetic project, housing, sanitation and grievance records",
+    "project_sample_count": 20,
+    "asset_sample_count": 100,
+    "property_aggregate_sample_count": 120,
+    "housing_units_completed_sample": 1585,
+    "housing_units_occupied_sample": 1177,
+    "grievance_count_sample": 1300,
+    "waste_generated_tpd_sample": 218.9,
+    "waste_processed_tpd_sample": 140.65,
+    "warning": "Sample totals, not citywide estimates or actual city performance"
+  }
+]

@@ -1,0 +1,2522 @@
+[
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-01",
+    "signal_id": "SIG-THANE-01",
+    "geography_ids": [
+      "LOC-THANE-01"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-THANE-001",
+      "PRJ-THANE-005"
+    ],
+    "related_assets": [
+      "AST-THANE-002"
+    ],
+    "observed_condition": "Drainage complaints and asset condition warrant review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-THANE-001"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-THANE-01"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-THANE-001"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 172,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-THANE-01"
+    ],
+    "responsible_agencies": [
+      "Thane Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-02",
+    "signal_id": "SIG-THANE-02",
+    "geography_ids": [
+      "LOC-THANE-02"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-THANE-003",
+      "PRJ-THANE-007"
+    ],
+    "related_assets": [
+      "AST-THANE-012"
+    ],
+    "observed_condition": "Infrastructure commissioning does not ensure service availability",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-THANE-002"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-THANE-02"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-THANE-006"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 176,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-THANE-02"
+    ],
+    "responsible_agencies": [
+      "Thane Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-03",
+    "signal_id": "SIG-THANE-03",
+    "geography_ids": [
+      "LOC-THANE-03"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-THANE-005",
+      "PRJ-THANE-009"
+    ],
+    "related_assets": [
+      "AST-THANE-022"
+    ],
+    "observed_condition": "Drainage complaints and asset condition warrant review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-THANE-003"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-THANE-03"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-THANE-011"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 272,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-THANE-03"
+    ],
+    "responsible_agencies": [
+      "Thane Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-04",
+    "signal_id": "SIG-THANE-04",
+    "geography_ids": [
+      "LOC-THANE-04"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-THANE-007",
+      "PRJ-THANE-011"
+    ],
+    "related_assets": [
+      "AST-THANE-032"
+    ],
+    "observed_condition": "Capital project and service outcome require joint review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-THANE-004"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-THANE-04"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-THANE-016"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 44,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-THANE-04"
+    ],
+    "responsible_agencies": [
+      "Thane Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-05",
+    "signal_id": "SIG-THANE-05",
+    "geography_ids": [
+      "LOC-THANE-05"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-THANE-009",
+      "PRJ-THANE-013"
+    ],
+    "related_assets": [
+      "AST-THANE-042"
+    ],
+    "observed_condition": "Infrastructure commissioning does not ensure service availability",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-THANE-005"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-THANE-05"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-THANE-021"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 80,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-THANE-05"
+    ],
+    "responsible_agencies": [
+      "Thane Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-06",
+    "signal_id": "SIG-THANE-06",
+    "geography_ids": [
+      "LOC-THANE-06"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-THANE-011",
+      "PRJ-THANE-015"
+    ],
+    "related_assets": [
+      "AST-THANE-052"
+    ],
+    "observed_condition": "Capital project and service outcome require joint review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-THANE-006"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-THANE-06"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-THANE-026"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 480,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Thane Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-07",
+    "signal_id": "SIG-THANE-07",
+    "geography_ids": [
+      "LOC-THANE-07"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-THANE-013",
+      "PRJ-THANE-017"
+    ],
+    "related_assets": [
+      "AST-THANE-062"
+    ],
+    "observed_condition": "Capital project and service outcome require joint review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-THANE-007"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-THANE-07"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-THANE-031"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 176,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Thane Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-08",
+    "signal_id": "SIG-THANE-08",
+    "geography_ids": [
+      "LOC-THANE-08"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-THANE-015",
+      "PRJ-THANE-019"
+    ],
+    "related_assets": [
+      "AST-THANE-072"
+    ],
+    "observed_condition": "Drainage complaints and asset condition warrant review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-THANE-008"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-THANE-08"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-THANE-036"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 264,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Thane Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-09",
+    "signal_id": "SIG-THANE-09",
+    "geography_ids": [
+      "LOC-THANE-09"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-THANE-017",
+      "PRJ-THANE-001"
+    ],
+    "related_assets": [
+      "AST-THANE-082"
+    ],
+    "observed_condition": "Capital project and service outcome require joint review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-THANE-009"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-THANE-09"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-THANE-041"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 236,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Thane Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-10",
+    "signal_id": "SIG-THANE-10",
+    "geography_ids": [
+      "LOC-THANE-10"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-THANE-019",
+      "PRJ-THANE-003"
+    ],
+    "related_assets": [
+      "AST-THANE-092"
+    ],
+    "observed_condition": "Infrastructure commissioning does not ensure service availability",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-THANE-010"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-THANE-10"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-THANE-046"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 256,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Thane Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-01",
+    "signal_id": "SIG-SURAT-01",
+    "geography_ids": [
+      "LOC-SURAT-01"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-SURAT-001",
+      "PRJ-SURAT-005"
+    ],
+    "related_assets": [
+      "AST-SURAT-002"
+    ],
+    "observed_condition": "Housing completions exceed sewer-ready homes",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-SURAT-001"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-SURAT-01"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-SURAT-001"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 316,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-SURAT-01"
+    ],
+    "responsible_agencies": [
+      "Surat Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-02",
+    "signal_id": "SIG-SURAT-02",
+    "geography_ids": [
+      "LOC-SURAT-02"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-SURAT-003",
+      "PRJ-SURAT-007"
+    ],
+    "related_assets": [
+      "AST-SURAT-012"
+    ],
+    "observed_condition": "Infrastructure commissioning does not ensure service availability",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-SURAT-002"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-SURAT-02"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-SURAT-006"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 120,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-SURAT-02"
+    ],
+    "responsible_agencies": [
+      "Surat Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-03",
+    "signal_id": "SIG-SURAT-03",
+    "geography_ids": [
+      "LOC-SURAT-03"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-SURAT-005",
+      "PRJ-SURAT-009"
+    ],
+    "related_assets": [
+      "AST-SURAT-022"
+    ],
+    "observed_condition": "Drainage complaints and asset condition warrant review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-SURAT-003"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-SURAT-03"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-SURAT-011"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 48,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-SURAT-03"
+    ],
+    "responsible_agencies": [
+      "Surat Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-04",
+    "signal_id": "SIG-SURAT-04",
+    "geography_ids": [
+      "LOC-SURAT-04"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-SURAT-007",
+      "PRJ-SURAT-011"
+    ],
+    "related_assets": [
+      "AST-SURAT-032"
+    ],
+    "observed_condition": "Housing completions exceed sewer-ready homes",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-SURAT-004"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-SURAT-04"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-SURAT-016"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 108,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-SURAT-04"
+    ],
+    "responsible_agencies": [
+      "Surat Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-05",
+    "signal_id": "SIG-SURAT-05",
+    "geography_ids": [
+      "LOC-SURAT-05"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-SURAT-009",
+      "PRJ-SURAT-013"
+    ],
+    "related_assets": [
+      "AST-SURAT-042"
+    ],
+    "observed_condition": "Waste segregation lags door-to-door collection",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-SURAT-005"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-SURAT-05"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-SURAT-021"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 80,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-SURAT-05"
+    ],
+    "responsible_agencies": [
+      "Surat Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-06",
+    "signal_id": "SIG-SURAT-06",
+    "geography_ids": [
+      "LOC-SURAT-06"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-SURAT-011",
+      "PRJ-SURAT-015"
+    ],
+    "related_assets": [
+      "AST-SURAT-052"
+    ],
+    "observed_condition": "Waste segregation lags door-to-door collection",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-SURAT-006"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-SURAT-06"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-SURAT-026"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 192,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Surat Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-07",
+    "signal_id": "SIG-SURAT-07",
+    "geography_ids": [
+      "LOC-SURAT-07"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-SURAT-013",
+      "PRJ-SURAT-017"
+    ],
+    "related_assets": [
+      "AST-SURAT-062"
+    ],
+    "observed_condition": "Infrastructure commissioning does not ensure service availability",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-SURAT-007"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-SURAT-07"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-SURAT-031"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 328,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Surat Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-08",
+    "signal_id": "SIG-SURAT-08",
+    "geography_ids": [
+      "LOC-SURAT-08"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-SURAT-015",
+      "PRJ-SURAT-019"
+    ],
+    "related_assets": [
+      "AST-SURAT-072"
+    ],
+    "observed_condition": "Infrastructure commissioning does not ensure service availability",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-SURAT-008"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-SURAT-08"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-SURAT-036"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 180,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Surat Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-09",
+    "signal_id": "SIG-SURAT-09",
+    "geography_ids": [
+      "LOC-SURAT-09"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-SURAT-017",
+      "PRJ-SURAT-001"
+    ],
+    "related_assets": [
+      "AST-SURAT-082"
+    ],
+    "observed_condition": "Housing completions exceed sewer-ready homes",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-SURAT-009"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-SURAT-09"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-SURAT-041"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 60,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Surat Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-10",
+    "signal_id": "SIG-SURAT-10",
+    "geography_ids": [
+      "LOC-SURAT-10"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-SURAT-019",
+      "PRJ-SURAT-003"
+    ],
+    "related_assets": [
+      "AST-SURAT-092"
+    ],
+    "observed_condition": "Waste segregation lags door-to-door collection",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-SURAT-010"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-SURAT-10"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-SURAT-046"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 76,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Surat Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-01",
+    "signal_id": "SIG-AHMEDABAD-01",
+    "geography_ids": [
+      "LOC-AHMEDABAD-01"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-AHMEDABAD-001",
+      "PRJ-AHMEDABAD-005"
+    ],
+    "related_assets": [
+      "AST-AHMEDABAD-002"
+    ],
+    "observed_condition": "Drainage complaints and asset condition warrant review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-AHMEDABAD-001"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-AHMEDABAD-01"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-AHMEDABAD-001"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 456,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-AHMEDABAD-01"
+    ],
+    "responsible_agencies": [
+      "Ahmedabad Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-02",
+    "signal_id": "SIG-AHMEDABAD-02",
+    "geography_ids": [
+      "LOC-AHMEDABAD-02"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-AHMEDABAD-003",
+      "PRJ-AHMEDABAD-007"
+    ],
+    "related_assets": [
+      "AST-AHMEDABAD-012"
+    ],
+    "observed_condition": "Infrastructure commissioning does not ensure service availability",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-AHMEDABAD-002"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-AHMEDABAD-02"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-AHMEDABAD-006"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 268,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-AHMEDABAD-02"
+    ],
+    "responsible_agencies": [
+      "Ahmedabad Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-03",
+    "signal_id": "SIG-AHMEDABAD-03",
+    "geography_ids": [
+      "LOC-AHMEDABAD-03"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-AHMEDABAD-005",
+      "PRJ-AHMEDABAD-009"
+    ],
+    "related_assets": [
+      "AST-AHMEDABAD-022"
+    ],
+    "observed_condition": "Capital project and service outcome require joint review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-AHMEDABAD-003"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-AHMEDABAD-03"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-AHMEDABAD-011"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 100,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-AHMEDABAD-03"
+    ],
+    "responsible_agencies": [
+      "Ahmedabad Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-04",
+    "signal_id": "SIG-AHMEDABAD-04",
+    "geography_ids": [
+      "LOC-AHMEDABAD-04"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-AHMEDABAD-007",
+      "PRJ-AHMEDABAD-011"
+    ],
+    "related_assets": [
+      "AST-AHMEDABAD-032"
+    ],
+    "observed_condition": "Waste segregation lags door-to-door collection",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-AHMEDABAD-004"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-AHMEDABAD-04"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-AHMEDABAD-016"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 124,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-AHMEDABAD-04"
+    ],
+    "responsible_agencies": [
+      "Ahmedabad Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-05",
+    "signal_id": "SIG-AHMEDABAD-05",
+    "geography_ids": [
+      "LOC-AHMEDABAD-05"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-AHMEDABAD-009",
+      "PRJ-AHMEDABAD-013"
+    ],
+    "related_assets": [
+      "AST-AHMEDABAD-042"
+    ],
+    "observed_condition": "Drainage complaints and asset condition warrant review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-AHMEDABAD-005"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-AHMEDABAD-05"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-AHMEDABAD-021"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 324,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-AHMEDABAD-05"
+    ],
+    "responsible_agencies": [
+      "Ahmedabad Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-06",
+    "signal_id": "SIG-AHMEDABAD-06",
+    "geography_ids": [
+      "LOC-AHMEDABAD-06"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-AHMEDABAD-011",
+      "PRJ-AHMEDABAD-015"
+    ],
+    "related_assets": [
+      "AST-AHMEDABAD-052"
+    ],
+    "observed_condition": "Waste segregation lags door-to-door collection",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-AHMEDABAD-006"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-AHMEDABAD-06"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-AHMEDABAD-026"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 200,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Ahmedabad Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-07",
+    "signal_id": "SIG-AHMEDABAD-07",
+    "geography_ids": [
+      "LOC-AHMEDABAD-07"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-AHMEDABAD-013",
+      "PRJ-AHMEDABAD-017"
+    ],
+    "related_assets": [
+      "AST-AHMEDABAD-062"
+    ],
+    "observed_condition": "Infrastructure commissioning does not ensure service availability",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-AHMEDABAD-007"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-AHMEDABAD-07"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-AHMEDABAD-031"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 156,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Ahmedabad Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-08",
+    "signal_id": "SIG-AHMEDABAD-08",
+    "geography_ids": [
+      "LOC-AHMEDABAD-08"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-AHMEDABAD-015",
+      "PRJ-AHMEDABAD-019"
+    ],
+    "related_assets": [
+      "AST-AHMEDABAD-072"
+    ],
+    "observed_condition": "Housing completions exceed sewer-ready homes",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-AHMEDABAD-008"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-AHMEDABAD-08"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-AHMEDABAD-036"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 304,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Ahmedabad Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-09",
+    "signal_id": "SIG-AHMEDABAD-09",
+    "geography_ids": [
+      "LOC-AHMEDABAD-09"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-AHMEDABAD-017",
+      "PRJ-AHMEDABAD-001"
+    ],
+    "related_assets": [
+      "AST-AHMEDABAD-082"
+    ],
+    "observed_condition": "Housing completions exceed sewer-ready homes",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-AHMEDABAD-009"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-AHMEDABAD-09"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-AHMEDABAD-041"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 116,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Ahmedabad Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-10",
+    "signal_id": "SIG-AHMEDABAD-10",
+    "geography_ids": [
+      "LOC-AHMEDABAD-10"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-AHMEDABAD-019",
+      "PRJ-AHMEDABAD-003"
+    ],
+    "related_assets": [
+      "AST-AHMEDABAD-092"
+    ],
+    "observed_condition": "Housing completions exceed sewer-ready homes",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-AHMEDABAD-010"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-AHMEDABAD-10"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-AHMEDABAD-046"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 456,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Ahmedabad Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-01",
+    "signal_id": "SIG-GUWAHATI-01",
+    "geography_ids": [
+      "LOC-GUWAHATI-01"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-GUWAHATI-001",
+      "PRJ-GUWAHATI-005"
+    ],
+    "related_assets": [
+      "AST-GUWAHATI-002"
+    ],
+    "observed_condition": "Housing completions exceed sewer-ready homes",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-GUWAHATI-001"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-GUWAHATI-01"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-GUWAHATI-001"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 552,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-GUWAHATI-01"
+    ],
+    "responsible_agencies": [
+      "Guwahati Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-02",
+    "signal_id": "SIG-GUWAHATI-02",
+    "geography_ids": [
+      "LOC-GUWAHATI-02"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-GUWAHATI-003",
+      "PRJ-GUWAHATI-007"
+    ],
+    "related_assets": [
+      "AST-GUWAHATI-012"
+    ],
+    "observed_condition": "Housing completions exceed sewer-ready homes",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-GUWAHATI-002"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-GUWAHATI-02"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-GUWAHATI-006"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 32,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-GUWAHATI-02"
+    ],
+    "responsible_agencies": [
+      "Guwahati Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-03",
+    "signal_id": "SIG-GUWAHATI-03",
+    "geography_ids": [
+      "LOC-GUWAHATI-03"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-GUWAHATI-005",
+      "PRJ-GUWAHATI-009"
+    ],
+    "related_assets": [
+      "AST-GUWAHATI-022"
+    ],
+    "observed_condition": "Infrastructure commissioning does not ensure service availability",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-GUWAHATI-003"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-GUWAHATI-03"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-GUWAHATI-011"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 308,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-GUWAHATI-03"
+    ],
+    "responsible_agencies": [
+      "Guwahati Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-04",
+    "signal_id": "SIG-GUWAHATI-04",
+    "geography_ids": [
+      "LOC-GUWAHATI-04"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-GUWAHATI-007",
+      "PRJ-GUWAHATI-011"
+    ],
+    "related_assets": [
+      "AST-GUWAHATI-032"
+    ],
+    "observed_condition": "Capital project and service outcome require joint review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-GUWAHATI-004"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-GUWAHATI-04"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-GUWAHATI-016"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 24,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-GUWAHATI-04"
+    ],
+    "responsible_agencies": [
+      "Guwahati Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-05",
+    "signal_id": "SIG-GUWAHATI-05",
+    "geography_ids": [
+      "LOC-GUWAHATI-05"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-GUWAHATI-009",
+      "PRJ-GUWAHATI-013"
+    ],
+    "related_assets": [
+      "AST-GUWAHATI-042"
+    ],
+    "observed_condition": "Housing completions exceed sewer-ready homes",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-GUWAHATI-005"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-GUWAHATI-05"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-GUWAHATI-021"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 164,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [
+      "INT-GUWAHATI-05"
+    ],
+    "responsible_agencies": [
+      "Guwahati Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-06",
+    "signal_id": "SIG-GUWAHATI-06",
+    "geography_ids": [
+      "LOC-GUWAHATI-06"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-GUWAHATI-011",
+      "PRJ-GUWAHATI-015"
+    ],
+    "related_assets": [
+      "AST-GUWAHATI-052"
+    ],
+    "observed_condition": "Waste segregation lags door-to-door collection",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-GUWAHATI-006"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-GUWAHATI-06"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-GUWAHATI-026"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 64,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Guwahati Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-07",
+    "signal_id": "SIG-GUWAHATI-07",
+    "geography_ids": [
+      "LOC-GUWAHATI-07"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-GUWAHATI-013",
+      "PRJ-GUWAHATI-017"
+    ],
+    "related_assets": [
+      "AST-GUWAHATI-062"
+    ],
+    "observed_condition": "Infrastructure commissioning does not ensure service availability",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-GUWAHATI-007"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-GUWAHATI-07"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-GUWAHATI-031"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 292,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Guwahati Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-08",
+    "signal_id": "SIG-GUWAHATI-08",
+    "geography_ids": [
+      "LOC-GUWAHATI-08"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-GUWAHATI-015",
+      "PRJ-GUWAHATI-019"
+    ],
+    "related_assets": [
+      "AST-GUWAHATI-072"
+    ],
+    "observed_condition": "Housing completions exceed sewer-ready homes",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-GUWAHATI-008"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-GUWAHATI-08"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-GUWAHATI-036"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 172,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Guwahati Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-09",
+    "signal_id": "SIG-GUWAHATI-09",
+    "geography_ids": [
+      "LOC-GUWAHATI-09"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-GUWAHATI-017",
+      "PRJ-GUWAHATI-001"
+    ],
+    "related_assets": [
+      "AST-GUWAHATI-082"
+    ],
+    "observed_condition": "Waste segregation lags door-to-door collection",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-GUWAHATI-009"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-GUWAHATI-09"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-GUWAHATI-041"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 384,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Guwahati Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-10",
+    "signal_id": "SIG-GUWAHATI-10",
+    "geography_ids": [
+      "LOC-GUWAHATI-10"
+    ],
+    "related_missions": [
+      "PMAY_U",
+      "AMRUT_2",
+      "SBM_U_2",
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-GUWAHATI-019",
+      "PRJ-GUWAHATI-003"
+    ],
+    "related_assets": [
+      "AST-GUWAHATI-092"
+    ],
+    "observed_condition": "Capital project and service outcome require joint review",
+    "supporting_records": [
+      {
+        "entity": "housing",
+        "id": "HSG-GUWAHATI-010"
+      },
+      {
+        "entity": "sanitation",
+        "id": "SAN-GUWAHATI-10"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-GUWAHATI-046"
+      }
+    ],
+    "potential_implications": "Potential mismatch between physical investments and citizen-facing service readiness; synthetic demonstration only.",
+    "data_gaps": [
+      "Verified asset commissioning",
+      "Actual service area boundaries",
+      "Household-level connections (restricted)"
+    ],
+    "affected_population_estimate": 240,
+    "affected_population_method": "Synthetic service gap in completed houses multiplied by assumed four persons per household; not a census estimate",
+    "possible_interventions": [],
+    "responsible_agencies": [
+      "Guwahati Municipal Corporation",
+      "Relevant state mission directorate"
+    ],
+    "coordination_required": [
+      "Municipal engineering",
+      "Housing mission",
+      "Sanitation operations"
+    ],
+    "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
+    "last_updated": "2026-09-19"
+  }
+]

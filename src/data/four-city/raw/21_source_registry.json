@@ -1,0 +1,58 @@
+[
+  {
+    "source_id": "SRC-001",
+    "title": "Surat Municipal Corporation property tax FAQ",
+    "url": "https://www.suratmunicipal.gov.in/departments/propertytaxfaqs",
+    "publication_date": null,
+    "accessed_date": "2026-09-19",
+    "verified_context": "Property-tax assessment wards and tenement identifiers differ from election wards."
+  },
+  {
+    "source_id": "SRC-002",
+    "title": "Surat Municipal Corporation election wards map 2020",
+    "url": "https://www.suratmunicipal.gov.in/Content/Documents/Departments/ElectionAndCensus/SuratCityElectionMapYear2020.pdf?ver=5897",
+    "publication_date": "2020",
+    "accessed_date": "2026-09-19",
+    "verified_context": "Election wards and municipal zones are distinct administrative geographies."
+  },
+  {
+    "source_id": "SRC-003",
+    "title": "GMC final delimitation 60 wards",
+    "url": "https://gmc.assam.gov.in/latest/final-delimitation-of-60-wards-map-of-guwahati-municipal-corporation",
+    "publication_date": null,
+    "accessed_date": "2026-09-19",
+    "verified_context": "Published map of 60 GMC wards."
+  },
+  {
+    "source_id": "SRC-004",
+    "title": "GMC historical municipal profile",
+    "url": "https://gmc.assam.gov.in/about-us/what-we-do",
+    "publication_date": null,
+    "accessed_date": "2026-09-19",
+    "verified_context": "Legacy profile describes 31 wards and distinct revenue and engineering divisions; do not use legacy count as current."
+  },
+  {
+    "source_id": "SRC-005",
+    "title": "GMC engineering divisions",
+    "url": "https://gmc.assam.gov.in/about-us/detail/our-divisions-1",
+    "publication_date": null,
+    "accessed_date": "2026-09-19",
+    "verified_context": "GMC publishes six engineering divisions covering numbered wards."
+  },
+  {
+    "source_id": "SRC-006",
+    "title": "Surat Citizen Connect municipal services",
+    "url": "https://www.suratmunicipal.gov.in/EServices/SMCApp",
+    "publication_date": "2026-02-16",
+    "accessed_date": "2026-09-19",
+    "verified_context": "Property tax, water billing, complaint and municipal service channels."
+  },
+  {
+    "source_id": "SRC-007",
+    "title": "Surat property tax calculator",
+    "url": "https://www.suratmunicipal.gov.in/departments/propertytaxcalculator",
+    "publication_date": null,
+    "accessed_date": "2026-09-19",
+    "verified_context": "Property-tax ward, zone, usage and water meter are separate fields."
+  }
+]

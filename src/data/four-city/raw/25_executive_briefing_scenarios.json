@@ -1,0 +1,82 @@
+[
+  {
+    "scenario_id": "BRIEF-THANE",
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "title": "Service readiness and infrastructure delivery joint review",
+    "signal_ids": [
+      "SIG-THANE-01",
+      "SIG-THANE-02",
+      "SIG-THANE-03",
+      "SIG-THANE-04",
+      "SIG-THANE-05"
+    ],
+    "decision_question": "Which completed or progressing assets require operational follow-through?",
+    "required_validation": [
+      "Official project registry",
+      "Verified municipal asset register",
+      "Actual geographic service boundaries"
+    ],
+    "not_a_real_government_finding": true
+  },
+  {
+    "scenario_id": "BRIEF-SURAT",
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "title": "Service readiness and infrastructure delivery joint review",
+    "signal_ids": [
+      "SIG-SURAT-01",
+      "SIG-SURAT-02",
+      "SIG-SURAT-03",
+      "SIG-SURAT-04",
+      "SIG-SURAT-05"
+    ],
+    "decision_question": "Which completed or progressing assets require operational follow-through?",
+    "required_validation": [
+      "Official project registry",
+      "Verified municipal asset register",
+      "Actual geographic service boundaries"
+    ],
+    "not_a_real_government_finding": true
+  },
+  {
+    "scenario_id": "BRIEF-AHMEDABAD",
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "title": "Service readiness and infrastructure delivery joint review",
+    "signal_ids": [
+      "SIG-AHMEDABAD-01",
+      "SIG-AHMEDABAD-02",
+      "SIG-AHMEDABAD-03",
+      "SIG-AHMEDABAD-04",
+      "SIG-AHMEDABAD-05"
+    ],
+    "decision_question": "Which completed or progressing assets require operational follow-through?",
+    "required_validation": [
+      "Official project registry",
+      "Verified municipal asset register",
+      "Actual geographic service boundaries"
+    ],
+    "not_a_real_government_finding": true
+  },
+  {
+    "scenario_id": "BRIEF-GUWAHATI",
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "title": "Service readiness and infrastructure delivery joint review",
+    "signal_ids": [
+      "SIG-GUWAHATI-01",
+      "SIG-GUWAHATI-02",
+      "SIG-GUWAHATI-03",
+      "SIG-GUWAHATI-04",
+      "SIG-GUWAHATI-05"
+    ],
+    "decision_question": "Which completed or progressing assets require operational follow-through?",
+    "required_validation": [
+      "Official project registry",
+      "Verified municipal asset register",
+      "Actual geographic service boundaries"
+    ],
+    "not_a_real_government_finding": true
+  }
+]

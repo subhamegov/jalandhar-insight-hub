@@ -1,0 +1,98 @@
+[
+  {
+    "city_id": "CITY-THANE",
+    "name": "Thane",
+    "state": "Maharashtra",
+    "ulb_name": "Thane Municipal Corporation",
+    "country": "India",
+    "record_type": "VERIFIED",
+    "source_id": null,
+    "verified_scope": "City and ULB names only",
+    "city_center_approximate": [
+      72.9781,
+      19.2183
+    ],
+    "center_record_type": "ASSUMED",
+    "geography_caveat": "Approximate visualization anchor, not municipal boundary",
+    "reference_date": "2026-09-19",
+    "locality_count_sampled": 10,
+    "issue_context_synthetic": [
+      "lake rejuvenation",
+      "creek flooding",
+      "high-density housing"
+    ],
+    "source_record_id": null
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "name": "Surat",
+    "state": "Gujarat",
+    "ulb_name": "Surat Municipal Corporation",
+    "country": "India",
+    "record_type": "VERIFIED",
+    "source_id": null,
+    "verified_scope": "City and ULB names only",
+    "city_center_approximate": [
+      72.8311,
+      21.1702
+    ],
+    "center_record_type": "ASSUMED",
+    "geography_caveat": "Approximate visualization anchor, not municipal boundary",
+    "reference_date": "2026-09-19",
+    "locality_count_sampled": 10,
+    "issue_context_synthetic": [
+      "Tapi floodplain",
+      "textile industry",
+      "diamond economy"
+    ],
+    "source_record_id": null
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "name": "Ahmedabad",
+    "state": "Gujarat",
+    "ulb_name": "Ahmedabad Municipal Corporation",
+    "country": "India",
+    "record_type": "VERIFIED",
+    "source_id": null,
+    "verified_scope": "City and ULB names only",
+    "city_center_approximate": [
+      72.5714,
+      23.0225
+    ],
+    "center_record_type": "ASSUMED",
+    "geography_caveat": "Approximate visualization anchor, not municipal boundary",
+    "reference_date": "2026-09-19",
+    "locality_count_sampled": 10,
+    "issue_context_synthetic": [
+      "Sabarmati river",
+      "heat exposure",
+      "industrial corridors"
+    ],
+    "source_record_id": null
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "name": "Guwahati",
+    "state": "Assam",
+    "ulb_name": "Guwahati Municipal Corporation",
+    "country": "India",
+    "record_type": "VERIFIED",
+    "source_id": null,
+    "verified_scope": "City and ULB names only",
+    "city_center_approximate": [
+      91.7362,
+      26.1445
+    ],
+    "center_record_type": "ASSUMED",
+    "geography_caveat": "Approximate visualization anchor, not municipal boundary",
+    "reference_date": "2026-09-19",
+    "locality_count_sampled": 10,
+    "issue_context_synthetic": [
+      "Brahmaputra flood exposure",
+      "hill runoff",
+      "wetlands"
+    ],
+    "source_record_id": null
+  }
+]
