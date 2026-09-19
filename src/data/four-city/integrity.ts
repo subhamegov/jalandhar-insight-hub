@@ -672,7 +672,7 @@ function datasetChecks(): IntegrityCheck[] {
         byId.project.has(r.id) ||
         byId.asset.has(r.id) ||
         byId.housing.has(r.id) ||
-        byId.serviceObservation.has(r.id) ||
+        byId.service_observation.has(r.id) ||
         byId.grievance.has(r.id) ||
         byId.locality.has(r.id) ||
         byId.finance.has(r.id);
