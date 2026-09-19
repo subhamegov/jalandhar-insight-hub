@@ -58,6 +58,15 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
 }
 
 export function AppShell({ children }: { children: ReactNode }) {
+  return (
+    <CityProvider>
+      <CityShell>{children}</CityShell>
+    </CityProvider>
+  );
+}
+
+function CityShell({ children }: { children: ReactNode }) {
+  const { city } = useCity();
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
