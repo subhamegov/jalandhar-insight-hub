@@ -5,6 +5,7 @@ import { StatusBadge, EvidenceBadge } from "@/components/app/StatusBadge";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import { DEFAULT_SHARED_FILTERS, readSharedFilters, writeSharedFilters } from "@/lib/sharedFilters";
 import type { GovPoint, MarkerState } from "@/components/map/MapCanvas";
+import { mapStateColors, ux4g } from "@/lib/ux4gPalette";
 import { assets, evidence, projects } from "@/data/selectors";
 import { LOCATION_QUALITY_LABEL, SCOPE_GROUPS, matchesScopeGroup } from "@/data/registerLogic";
 import {
@@ -74,14 +75,14 @@ const MARKER_LEGEND: { state: MarkerState; label: string }[] = [
 ];
 
 const LEGEND_COLORS: Record<MarkerState, string> = {
-  announced: "#ffffff",
-  active: "#1d4ed8",
-  completed: "#0f766e",
-  operational: "#15803d",
-  warning: "#d97706",
-  critical: "#b91c1c",
-  asset: "#0369a1",
-  location: "#b45309",
+  announced: ux4g.neutral0,
+  active: mapStateColors.active.fill,
+  completed: mapStateColors.completed.fill,
+  operational: mapStateColors.operational.fill,
+  warning: mapStateColors.warning.fill,
+  critical: mapStateColors.critical.fill,
+  asset: mapStateColors.asset.fill,
+  location: mapStateColors.location.fill,
 };
 
 const CATEGORY_ORDER: LayerCategory[] = [
@@ -677,7 +678,7 @@ function CityMap() {
                     className="inline-block h-3 w-3 rounded-full border-2"
                     style={{
                       background: LEGEND_COLORS[m.state],
-                      borderColor: m.state === "announced" ? "#1d4ed8" : LEGEND_COLORS[m.state],
+                      borderColor: m.state === "announced" ? mapStateColors.announced.stroke : LEGEND_COLORS[m.state],
                     }}
                   />
                   {m.label}
