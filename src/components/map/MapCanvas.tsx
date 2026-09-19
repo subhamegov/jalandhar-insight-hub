@@ -30,16 +30,7 @@ export interface GovPoint {
 }
 
 
-const STATE_COLORS: Record<MarkerState, { fill: string; stroke: string }> = {
-  announced: { fill: "transparent", stroke: "#1d4ed8" },
-  active: { fill: "#1d4ed8", stroke: "#1e3a8a" },
-  completed: { fill: "#0f766e", stroke: "#134e4a" },
-  operational: { fill: "#15803d", stroke: "#14532d" },
-  warning: { fill: "#d97706", stroke: "#92400e" },
-  critical: { fill: "#b91c1c", stroke: "#7f1d1d" },
-  asset: { fill: "#0369a1", stroke: "#0c4a6e" },
-  location: { fill: "#b45309", stroke: "#78350f" },
-};
+const STATE_COLORS: Record<MarkerState, { fill: string; stroke: string }> = mapStateColors;
 
 export interface MapCanvasProps {
   govPoints: GovPoint[];
