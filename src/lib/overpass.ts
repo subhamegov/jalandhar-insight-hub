@@ -105,6 +105,6 @@ export async function fetchLayer(
     });
   }
 
-  cache.set(layer.id, features);
+  cache.set(cacheKey, features);
   return features;
 }
