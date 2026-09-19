@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { Download, FileText, Search } from "lucide-react";
 import type { Agency, Asset, Project, Scheme } from "@/data/types";
 import { useCity, ALL_CITIES } from "@/lib/cityContext";
@@ -104,6 +104,7 @@ function buildIndex(
 export function GlobalHeader() {
   const navigate = useNavigate();
   const { city, cities, selection, portfolio, setCityId, dataset } = useCity();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   const { projects, assets, schemes, agencies } = dataset;
   const index = useMemo(
     () => buildIndex(projects, assets, schemes, agencies),
