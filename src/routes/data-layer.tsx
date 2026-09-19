@@ -65,7 +65,7 @@ function DataLayerPage() {
     <div className="space-y-6">
       <PageHeader
         title="Data Layer"
-        description="The connected cross-mission dataset behind the four-city views: data products as supplied, canonical identifiers, relationships, provenance and validation."
+        subtitle="The connected cross-mission dataset behind the four-city views: data products as supplied, canonical identifiers, relationships, provenance and validation."
       />
 
       <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

@@ -226,13 +226,13 @@ function kindOrNull(id: string | null | undefined): EntityKind | null {
 function buildEdges(): Edge[] {
   const edges: Edge[] = [];
   const push = (
-    from: string,
+    from: string | null | undefined,
     to: string | null | undefined,
     relationship_type: string,
     basis: string,
     allocation_pct: number | null = null,
   ) => {
-    if (!to) return;
+    if (!to || !from) return;
     const from_kind = kindOrNull(from);
     const to_kind = kindOrNull(to);
     if (!from_kind || !to_kind) return;
