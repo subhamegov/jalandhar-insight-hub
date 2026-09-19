@@ -40,9 +40,13 @@ interface CityContextValue {
   cities: CityProfile[];
   /** What the header shows: a city id, or ALL for the four-city portfolio. */
   selection: CitySelection;
-  /** True when the explicit All Cities portfolio context is active. */
+  /** True when the national scope is active (no city is selected). */
   portfolio: boolean;
-  setCityId: (id: CitySelection) => void;
+  /** The one scope state: national, or a canonical city. */
+  scope: Scope;
+  /** Change scope. `to` optionally moves to a destination valid in that scope. */
+  setCityId: (id: CitySelection, to?: string) => void;
+  setScope: (scope: Scope, to?: string) => void;
 }
 
 const CityContext = createContext<CityContextValue | null>(null);
