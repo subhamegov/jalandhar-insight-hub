@@ -54,6 +54,7 @@
   --color-positive: var(--positive);
   --color-positive-foreground: var(--positive-foreground);
   --color-neutral-status: var(--neutral-status);
+  --color-overlay: var(--overlay);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -105,6 +106,7 @@
   --positive: var(--ux4g-bg-success-strong);
   --positive-foreground: var(--ux4g-color-neutral-0);
   --neutral-status: var(--ux4g-text-neutral-secondary);
+  --overlay: var(--ux4g-bg-overlay);
   --border: var(--ux4g-border-color-neutral-default);
   --input: var(--ux4g-border-color-neutral-default);
   --ring: var(--ux4g-bg-primary-strong);
