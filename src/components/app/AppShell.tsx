@@ -161,9 +161,9 @@ const ITEM_CLASS =
 const ACTIVE_CLASS =
   "bg-sidebar-accent text-sidebar-accent-foreground font-medium border-l-2 border-sidebar-primary";
 
-function NavList({ onNavigate }: { onNavigate?: () => void }) {
+function NavList({ tree, onNavigate }: { tree: NavTree; onNavigate?: () => void }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const current = activeGroupId(pathname);
+  const current = activeGroupId(tree, pathname);
   // Only the group holding the current page is open; the user can change this
   // and the choice is kept while navigating within the session.
   const [openId, setOpenId] = useState<string | null>(current);
@@ -175,7 +175,7 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <nav className="flex flex-col p-2">
       <div className="flex flex-col gap-1">
-        {PRIMARY.map(({ to, label, icon: Icon }) => (
+        {tree.primary.map(({ to, label, icon: Icon }) => (
           <Link
             key={to}
             to={to}
@@ -193,7 +193,7 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
       <div className="my-2 border-t border-sidebar-border" />
 
       <div className="flex flex-col gap-1">
-        {GROUPS.map((group) => {
+        {tree.groups.map((group) => {
           const expanded = openId === group.id;
           return (
             <div key={group.id}>
