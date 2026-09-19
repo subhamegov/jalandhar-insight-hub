@@ -212,12 +212,12 @@ function patternsFor(
   );
 
   const agencies = new Set<string>([
-    ...(signal.responsible_agencies as string[] | undefined ?? []),
+    ...(signal["responsible_agencies"] as string[] | undefined ?? []),
     ...ctx.interventions.flatMap((i) => [i.lead_agency ?? "", ...i.supporting_agencies]),
   ]);
   agencies.delete("");
   const deps = ctx.interventions.flatMap((i) => i.dependencies ?? []);
-  const coordination = (signal.coordination_required as string[] | undefined) ?? [];
+  const coordination = (signal["coordination_required"] as string[] | undefined) ?? [];
   add(
     "agency_dependencies",
     "Dependency between more than one agency or function",
@@ -236,8 +236,8 @@ function coordinationFor(
   interventions: PlanningIntervention[],
 ): CoordinationContext[] {
   const out: CoordinationContext[] = [];
-  const agencies = (signal.responsible_agencies as string[] | undefined) ?? [];
-  const coordination = (signal.coordination_required as string[] | undefined) ?? [];
+  const agencies = (signal["responsible_agencies"] as string[] | undefined) ?? [];
+  const coordination = (signal["coordination_required"] as string[] | undefined) ?? [];
   const missions = signal.related_missions ?? [];
 
   const municipal = agencies.filter((a) => /municipal|corporation|nagar|council/i.test(a));
@@ -336,14 +336,14 @@ export function signalIntelligence(cityId: string): SignalIntelligence | null {
     const interventions = bundle.interventions.filter(
       (i) =>
         i.signal_id === signal.signal_id ||
-        (signal.possible_interventions as string[] | undefined ?? []).includes(i.intervention_id),
+        (signal["possible_interventions"] as string[] | undefined ?? []).includes(i.intervention_id),
     );
 
     const evidence = evidenceOf(signal);
     const missingLinks = [
       ...[...projectIds].filter((id) => !projects.some((p) => p.project_id === id)),
       ...[...assetIds].filter((id) => !assetIdSet.has(id)),
-      ...((signal.possible_interventions as string[] | undefined) ?? []).filter(
+      ...((signal["possible_interventions"] as string[] | undefined) ?? []).filter(
         (id) => !interventions.some((i) => i.intervention_id === id),
       ),
     ];
