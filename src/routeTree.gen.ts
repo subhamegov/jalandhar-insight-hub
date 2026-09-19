@@ -25,6 +25,7 @@ import { Route as AgenciesIndexRouteImport } from './routes/agencies.index'
 import { Route as AgenciesAgencyNameRouteImport } from './routes/agencies.$agencyName'
 import { Route as HousingIndexRouteImport } from './routes/housing.index'
 import { Route as HousingHousingIdRouteImport } from './routes/housing.$housingId'
+import { Route as InterventionsIndexRouteImport } from './routes/interventions.index'
 import { Route as InvestmentIndexRouteImport } from './routes/investment.index'
 import { Route as InvestmentProjectIdRouteImport } from './routes/investment.$projectId'
 import { Route as LocalitiesIndexRouteImport } from './routes/localities.index'
@@ -119,6 +120,11 @@ const HousingHousingIdRoute = HousingHousingIdRouteImport.update({
   path: '/housing/$housingId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InterventionsIndexRoute = InterventionsIndexRouteImport.update({
+  id: '/interventions/',
+  path: '/interventions/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InvestmentIndexRoute = InvestmentIndexRouteImport.update({
   id: '/investment/',
   path: '/investment/',
@@ -209,6 +215,7 @@ export interface FileRoutesByFullPath {
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
   '/housing/': typeof HousingIndexRoute
+  '/interventions/': typeof InterventionsIndexRoute
   '/investment/': typeof InvestmentIndexRoute
   '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
@@ -240,6 +247,7 @@ export interface FileRoutesByTo {
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies': typeof AgenciesIndexRoute
   '/housing': typeof HousingIndexRoute
+  '/interventions': typeof InterventionsIndexRoute
   '/investment': typeof InvestmentIndexRoute
   '/localities': typeof LocalitiesIndexRoute
   '/projects': typeof ProjectsIndexRoute
@@ -272,6 +280,7 @@ export interface FileRoutesById {
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
   '/housing/': typeof HousingIndexRoute
+  '/interventions/': typeof InterventionsIndexRoute
   '/investment/': typeof InvestmentIndexRoute
   '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
@@ -305,6 +314,7 @@ export interface FileRouteTypes {
     | '/wards/$wardId'
     | '/agencies/'
     | '/housing/'
+    | '/interventions/'
     | '/investment/'
     | '/localities/'
     | '/projects/'
@@ -336,6 +346,7 @@ export interface FileRouteTypes {
     | '/wards/$wardId'
     | '/agencies'
     | '/housing'
+    | '/interventions'
     | '/investment'
     | '/localities'
     | '/projects'
@@ -367,6 +378,7 @@ export interface FileRouteTypes {
     | '/wards/$wardId'
     | '/agencies/'
     | '/housing/'
+    | '/interventions/'
     | '/investment/'
     | '/localities/'
     | '/projects/'
@@ -399,6 +411,7 @@ export interface RootRouteChildren {
   WardsWardIdRoute: typeof WardsWardIdRoute
   AgenciesIndexRoute: typeof AgenciesIndexRoute
   HousingIndexRoute: typeof HousingIndexRoute
+  InterventionsIndexRoute: typeof InterventionsIndexRoute
   InvestmentIndexRoute: typeof InvestmentIndexRoute
   LocalitiesIndexRoute: typeof LocalitiesIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
@@ -521,6 +534,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HousingHousingIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/interventions/': {
+      id: '/interventions/'
+      path: '/interventions'
+      fullPath: '/interventions/'
+      preLoaderRoute: typeof InterventionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/investment/': {
       id: '/investment/'
       path: '/investment'
@@ -639,6 +659,7 @@ const rootRouteChildren: RootRouteChildren = {
   WardsWardIdRoute: WardsWardIdRoute,
   AgenciesIndexRoute: AgenciesIndexRoute,
   HousingIndexRoute: HousingIndexRoute,
+  InterventionsIndexRoute: InterventionsIndexRoute,
   InvestmentIndexRoute: InvestmentIndexRoute,
   LocalitiesIndexRoute: LocalitiesIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
