@@ -16,9 +16,17 @@ import { setActiveCityRecords } from "@/data/selectors";
 
 const KEY = "mohua.activeCity.v1";
 
-/** Explicit portfolio context covering the four prototype cities. */
+/**
+ * Geographic scope. The application operates either nationally (no city is
+ * active) or inside one canonical city. The stored value "ALL" is the national
+ * scope; it is kept as the URL token so existing links stay valid.
+ */
 export const ALL_CITIES = "ALL" as const;
+export const NATIONAL = ALL_CITIES;
 export type CitySelection = CityId | typeof ALL_CITIES;
+
+/** Single scope state the header, sidebar and routing all derive from. */
+export type Scope = { type: "NATIONAL"; cityId: null } | { type: "CITY"; cityId: CityId };
 
 function isSelection(value: unknown): value is CitySelection {
   return value === ALL_CITIES || (typeof value === "string" && isCityId(value));
