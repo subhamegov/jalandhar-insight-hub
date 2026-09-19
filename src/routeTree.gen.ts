@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AssetsRouteImport } from './routes/assets'
 import { Route as AttentionRouteImport } from './routes/attention'
 import { Route as BriefRouteImport } from './routes/brief'
+import { Route as BriefingRouteImport } from './routes/briefing'
 import { Route as CompareRouteImport } from './routes/compare'
 import { Route as DataLayerRouteImport } from './routes/data-layer'
 import { Route as DataQualityRouteImport } from './routes/data-quality'
@@ -59,6 +60,11 @@ const AttentionRoute = AttentionRouteImport.update({
 const BriefRoute = BriefRouteImport.update({
   id: '/brief',
   path: '/brief',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BriefingRoute = BriefingRouteImport.update({
+  id: '/briefing',
+  path: '/briefing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CompareRoute = CompareRouteImport.update({
@@ -203,6 +209,7 @@ export interface FileRoutesByFullPath {
   '/assets': typeof AssetsRoute
   '/attention': typeof AttentionRoute
   '/brief': typeof BriefRoute
+  '/briefing': typeof BriefingRoute
   '/compare': typeof CompareRoute
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
@@ -236,6 +243,7 @@ export interface FileRoutesByTo {
   '/assets': typeof AssetsRoute
   '/attention': typeof AttentionRoute
   '/brief': typeof BriefRoute
+  '/briefing': typeof BriefingRoute
   '/compare': typeof CompareRoute
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
@@ -270,6 +278,7 @@ export interface FileRoutesById {
   '/assets': typeof AssetsRoute
   '/attention': typeof AttentionRoute
   '/brief': typeof BriefRoute
+  '/briefing': typeof BriefingRoute
   '/compare': typeof CompareRoute
   '/data-layer': typeof DataLayerRoute
   '/data-quality': typeof DataQualityRoute
@@ -305,6 +314,7 @@ export interface FileRouteTypes {
     | '/assets'
     | '/attention'
     | '/brief'
+    | '/briefing'
     | '/compare'
     | '/data-layer'
     | '/data-quality'
@@ -338,6 +348,7 @@ export interface FileRouteTypes {
     | '/assets'
     | '/attention'
     | '/brief'
+    | '/briefing'
     | '/compare'
     | '/data-layer'
     | '/data-quality'
@@ -371,6 +382,7 @@ export interface FileRouteTypes {
     | '/assets'
     | '/attention'
     | '/brief'
+    | '/briefing'
     | '/compare'
     | '/data-layer'
     | '/data-quality'
@@ -405,6 +417,7 @@ export interface RootRouteChildren {
   AssetsRoute: typeof AssetsRoute
   AttentionRoute: typeof AttentionRoute
   BriefRoute: typeof BriefRoute
+  BriefingRoute: typeof BriefingRoute
   CompareRoute: typeof CompareRoute
   DataLayerRoute: typeof DataLayerRoute
   DataQualityRoute: typeof DataQualityRoute
@@ -462,6 +475,13 @@ declare module '@tanstack/react-router' {
       path: '/brief'
       fullPath: '/brief'
       preLoaderRoute: typeof BriefRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/briefing': {
+      id: '/briefing'
+      path: '/briefing'
+      fullPath: '/briefing'
+      preLoaderRoute: typeof BriefingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/compare': {
@@ -661,6 +681,7 @@ const rootRouteChildren: RootRouteChildren = {
   AssetsRoute: AssetsRoute,
   AttentionRoute: AttentionRoute,
   BriefRoute: BriefRoute,
+  BriefingRoute: BriefingRoute,
   CompareRoute: CompareRoute,
   DataLayerRoute: DataLayerRoute,
   DataQualityRoute: DataQualityRoute,
