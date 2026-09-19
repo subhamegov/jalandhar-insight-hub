@@ -32,6 +32,7 @@ const NAV = [
   { to: "/agencies", label: "Agencies", icon: Building2 },
   { to: "/evidence", label: "Evidence", icon: FileSearch },
   { to: "/data-quality", label: "Data Quality", icon: AlertTriangle },
+  { to: "/data-layer", label: "Data Layer", icon: Database },
 ] as const;
 
 function NavList({ onNavigate }: { onNavigate?: () => void }) {
