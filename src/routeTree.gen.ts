@@ -22,6 +22,7 @@ import { Route as OutcomesRouteImport } from './routes/outcomes'
 import { Route as AgenciesIndexRouteImport } from './routes/agencies.index'
 import { Route as AgenciesAgencyNameRouteImport } from './routes/agencies.$agencyName'
 import { Route as HousingIndexRouteImport } from './routes/housing.index'
+import { Route as HousingHousingIdRouteImport } from './routes/housing.$housingId'
 import { Route as LocalitiesIndexRouteImport } from './routes/localities.index'
 import { Route as LocalitiesLocalityIdRouteImport } from './routes/localities.$localityId'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
@@ -97,6 +98,11 @@ const HousingIndexRoute = HousingIndexRouteImport.update({
   path: '/housing/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HousingHousingIdRoute = HousingHousingIdRouteImport.update({
+  id: '/housing/$housingId',
+  path: '/housing/$housingId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LocalitiesIndexRoute = LocalitiesIndexRouteImport.update({
   id: '/localities/',
   path: '/localities/',
@@ -155,6 +161,7 @@ export interface FileRoutesByFullPath {
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
+  '/housing/$housingId': typeof HousingHousingIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/records/$recordId': typeof RecordsRecordIdRoute
@@ -179,6 +186,7 @@ export interface FileRoutesByTo {
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
+  '/housing/$housingId': typeof HousingHousingIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/records/$recordId': typeof RecordsRecordIdRoute
@@ -204,6 +212,7 @@ export interface FileRoutesById {
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
+  '/housing/$housingId': typeof HousingHousingIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/records/$recordId': typeof RecordsRecordIdRoute
@@ -230,6 +239,7 @@ export interface FileRouteTypes {
     | '/national'
     | '/outcomes'
     | '/agencies/$agencyName'
+    | '/housing/$housingId'
     | '/localities/$localityId'
     | '/projects/$projectId'
     | '/records/$recordId'
@@ -254,6 +264,7 @@ export interface FileRouteTypes {
     | '/national'
     | '/outcomes'
     | '/agencies/$agencyName'
+    | '/housing/$housingId'
     | '/localities/$localityId'
     | '/projects/$projectId'
     | '/records/$recordId'
@@ -278,6 +289,7 @@ export interface FileRouteTypes {
     | '/national'
     | '/outcomes'
     | '/agencies/$agencyName'
+    | '/housing/$housingId'
     | '/localities/$localityId'
     | '/projects/$projectId'
     | '/records/$recordId'
@@ -303,6 +315,7 @@ export interface RootRouteChildren {
   NationalRoute: typeof NationalRoute
   OutcomesRoute: typeof OutcomesRoute
   AgenciesAgencyNameRoute: typeof AgenciesAgencyNameRoute
+  HousingHousingIdRoute: typeof HousingHousingIdRoute
   LocalitiesLocalityIdRoute: typeof LocalitiesLocalityIdRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
   RecordsRecordIdRoute: typeof RecordsRecordIdRoute
@@ -409,6 +422,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HousingIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/housing/$housingId': {
+      id: '/housing/$housingId'
+      path: '/housing/$housingId'
+      fullPath: '/housing/$housingId'
+      preLoaderRoute: typeof HousingHousingIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/localities/': {
       id: '/localities/'
       path: '/localities'
@@ -487,6 +507,7 @@ const rootRouteChildren: RootRouteChildren = {
   NationalRoute: NationalRoute,
   OutcomesRoute: OutcomesRoute,
   AgenciesAgencyNameRoute: AgenciesAgencyNameRoute,
+  HousingHousingIdRoute: HousingHousingIdRoute,
   LocalitiesLocalityIdRoute: LocalitiesLocalityIdRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
   RecordsRecordIdRoute: RecordsRecordIdRoute,
