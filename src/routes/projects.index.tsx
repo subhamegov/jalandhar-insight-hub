@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { z } from "zod";
 import { DataTable, type Column } from "@/components/app/DataTable";
 import { PageHeader } from "@/components/app/Primitives";
+import { Breadcrumbs } from "@/components/app/Breadcrumbs";
 import { StatusBadge } from "@/components/app/StatusBadge";
 import { SourceBadge } from "@/components/app/SourceBadge";
 import { FreshnessBadge } from "@/components/app/FreshnessBadge";
@@ -291,6 +292,7 @@ function ProjectsPage() {
 
   return (
     <>
+      <Breadcrumbs trail={[{ label: "Projects" }]} />
       <PageHeader
         title="Government projects"
         subtitle={

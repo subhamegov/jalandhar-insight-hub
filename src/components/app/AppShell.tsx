@@ -12,18 +12,23 @@ import {
   Scale,
   Target,
   Flag,
+  Globe,
   Grid2x2,
+  MapPin,
   X,
 } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { GlobalHeader } from "@/components/app/GlobalHeader";
 import { EvidenceDrawerProvider } from "@/components/app/EvidenceDrawer";
 import { CityProvider, useCity } from "@/lib/cityContext";
+import { GeoProvider } from "@/lib/geoContext";
 import { CityGate } from "@/components/app/CityGate";
 
 const NAV = [
+  { to: "/national", label: "National View", icon: Globe },
   { to: "/", label: "Overview", icon: LayoutDashboard },
   { to: "/map", label: "City Map", icon: Map },
+  { to: "/localities", label: "Localities", icon: MapPin },
   { to: "/projects", label: "Projects", icon: ListChecks },
   { to: "/assets", label: "Assets", icon: Boxes },
   { to: "/outcomes", label: "Outcomes", icon: Target },
@@ -62,7 +67,9 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
 export function AppShell({ children }: { children: ReactNode }) {
   return (
     <CityProvider>
-      <CityShell>{children}</CityShell>
+      <GeoProvider>
+        <CityShell>{children}</CityShell>
+      </GeoProvider>
     </CityProvider>
   );
 }

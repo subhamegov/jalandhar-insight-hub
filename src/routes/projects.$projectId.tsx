@@ -3,6 +3,8 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { GovPoint } from "@/components/map/MapCanvas";
 import { EmptyNote, Field, MetricCard, PageHeader, Panel } from "@/components/app/Primitives";
+import { lookupEntity } from "@/data/four-city/dataset";
+import { Breadcrumbs } from "@/components/app/Breadcrumbs";
 import { ConflictList } from "@/components/app/ConflictList";
 import { EvidenceBadge, StatusBadge } from "@/components/app/StatusBadge";
 import { SourceBadge } from "@/components/app/SourceBadge";
@@ -85,6 +87,7 @@ function ProjectDetail() {
 
   return (
     <>
+      <Breadcrumbs trail={[{ label: "Projects", to: "/projects" }, { label: p.project_name }]} />
       <div className="mb-2 text-xs text-muted-foreground">
         <Link to="/projects" search={{}} className="hover:underline">
           Project register
@@ -92,6 +95,18 @@ function ProjectDetail() {
         <span className="px-1">/</span>
         <span className="num">{p.project_id}</span>
       </div>
+
+      {lookupEntity(p.project_id) ? (
+        <p className="mb-2 text-xs">
+          <Link
+            to="/records/$recordId"
+            params={{ recordId: p.project_id }}
+            className="underline underline-offset-2"
+          >
+            Connected records: assets, service areas, housing and finance for this project
+          </Link>
+        </p>
+      ) : null}
 
       <PageHeader
         title={p.project_name}

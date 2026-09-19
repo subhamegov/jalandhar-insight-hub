@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/app/Primitives";
+import { Breadcrumbs } from "@/components/app/Breadcrumbs";
 import { fourCityBundle } from "@/data/four-city/dataset";
 import { missionLabel } from "@/data/four-city/adapter";
 import { useCity } from "@/lib/cityContext";
@@ -55,6 +56,7 @@ export function FourCityOverview() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs />
       <PageHeader
         title={`${city.name} at a glance`}
         subtitle={`Synthetic prototype records for ${city.urban_local_body}, observed ${dateText(bundle.city.reference_date)}. Every figure covers the sampled records only and is not a citywide total.`}

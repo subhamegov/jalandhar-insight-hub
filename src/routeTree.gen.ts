@@ -17,11 +17,15 @@ import { Route as DataLayerRouteImport } from './routes/data-layer'
 import { Route as DataQualityRouteImport } from './routes/data-quality'
 import { Route as EvidenceRouteImport } from './routes/evidence'
 import { Route as MapRouteImport } from './routes/map'
+import { Route as NationalRouteImport } from './routes/national'
 import { Route as OutcomesRouteImport } from './routes/outcomes'
 import { Route as AgenciesIndexRouteImport } from './routes/agencies.index'
 import { Route as AgenciesAgencyNameRouteImport } from './routes/agencies.$agencyName'
+import { Route as LocalitiesIndexRouteImport } from './routes/localities.index'
+import { Route as LocalitiesLocalityIdRouteImport } from './routes/localities.$localityId'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as ProjectsProjectIdRouteImport } from './routes/projects.$projectId'
+import { Route as RecordsRecordIdRouteImport } from './routes/records.$recordId'
 import { Route as SchemesIndexRouteImport } from './routes/schemes.index'
 import { Route as SchemesSchemeNameRouteImport } from './routes/schemes.$schemeName'
 import { Route as WardsIndexRouteImport } from './routes/wards.index'
@@ -67,6 +71,11 @@ const MapRoute = MapRouteImport.update({
   path: '/map',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NationalRoute = NationalRouteImport.update({
+  id: '/national',
+  path: '/national',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OutcomesRoute = OutcomesRouteImport.update({
   id: '/outcomes',
   path: '/outcomes',
@@ -82,6 +91,16 @@ const AgenciesAgencyNameRoute = AgenciesAgencyNameRouteImport.update({
   path: '/agencies/$agencyName',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocalitiesIndexRoute = LocalitiesIndexRouteImport.update({
+  id: '/localities/',
+  path: '/localities/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocalitiesLocalityIdRoute = LocalitiesLocalityIdRouteImport.update({
+  id: '/localities/$localityId',
+  path: '/localities/$localityId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
   id: '/projects/',
   path: '/projects/',
@@ -90,6 +109,11 @@ const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
 const ProjectsProjectIdRoute = ProjectsProjectIdRouteImport.update({
   id: '/projects/$projectId',
   path: '/projects/$projectId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecordsRecordIdRoute = RecordsRecordIdRouteImport.update({
+  id: '/records/$recordId',
+  path: '/records/$recordId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SchemesIndexRoute = SchemesIndexRouteImport.update({
@@ -122,12 +146,16 @@ export interface FileRoutesByFullPath {
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
+  '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
+  '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
+  '/records/$recordId': typeof RecordsRecordIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
+  '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/schemes/': typeof SchemesIndexRoute
   '/wards/': typeof WardsIndexRoute
@@ -141,12 +169,16 @@ export interface FileRoutesByTo {
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
+  '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
+  '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
+  '/records/$recordId': typeof RecordsRecordIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies': typeof AgenciesIndexRoute
+  '/localities': typeof LocalitiesIndexRoute
   '/projects': typeof ProjectsIndexRoute
   '/schemes': typeof SchemesIndexRoute
   '/wards': typeof WardsIndexRoute
@@ -161,12 +193,16 @@ export interface FileRoutesById {
   '/data-quality': typeof DataQualityRoute
   '/evidence': typeof EvidenceRoute
   '/map': typeof MapRoute
+  '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
+  '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
+  '/records/$recordId': typeof RecordsRecordIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
+  '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/schemes/': typeof SchemesIndexRoute
   '/wards/': typeof WardsIndexRoute
@@ -182,12 +218,16 @@ export interface FileRouteTypes {
     | '/data-quality'
     | '/evidence'
     | '/map'
+    | '/national'
     | '/outcomes'
     | '/agencies/$agencyName'
+    | '/localities/$localityId'
     | '/projects/$projectId'
+    | '/records/$recordId'
     | '/schemes/$schemeName'
     | '/wards/$wardId'
     | '/agencies/'
+    | '/localities/'
     | '/projects/'
     | '/schemes/'
     | '/wards/'
@@ -201,12 +241,16 @@ export interface FileRouteTypes {
     | '/data-quality'
     | '/evidence'
     | '/map'
+    | '/national'
     | '/outcomes'
     | '/agencies/$agencyName'
+    | '/localities/$localityId'
     | '/projects/$projectId'
+    | '/records/$recordId'
     | '/schemes/$schemeName'
     | '/wards/$wardId'
     | '/agencies'
+    | '/localities'
     | '/projects'
     | '/schemes'
     | '/wards'
@@ -220,12 +264,16 @@ export interface FileRouteTypes {
     | '/data-quality'
     | '/evidence'
     | '/map'
+    | '/national'
     | '/outcomes'
     | '/agencies/$agencyName'
+    | '/localities/$localityId'
     | '/projects/$projectId'
+    | '/records/$recordId'
     | '/schemes/$schemeName'
     | '/wards/$wardId'
     | '/agencies/'
+    | '/localities/'
     | '/projects/'
     | '/schemes/'
     | '/wards/'
@@ -240,12 +288,16 @@ export interface RootRouteChildren {
   DataQualityRoute: typeof DataQualityRoute
   EvidenceRoute: typeof EvidenceRoute
   MapRoute: typeof MapRoute
+  NationalRoute: typeof NationalRoute
   OutcomesRoute: typeof OutcomesRoute
   AgenciesAgencyNameRoute: typeof AgenciesAgencyNameRoute
+  LocalitiesLocalityIdRoute: typeof LocalitiesLocalityIdRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
+  RecordsRecordIdRoute: typeof RecordsRecordIdRoute
   SchemesSchemeNameRoute: typeof SchemesSchemeNameRoute
   WardsWardIdRoute: typeof WardsWardIdRoute
   AgenciesIndexRoute: typeof AgenciesIndexRoute
+  LocalitiesIndexRoute: typeof LocalitiesIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
   SchemesIndexRoute: typeof SchemesIndexRoute
   WardsIndexRoute: typeof WardsIndexRoute
@@ -309,6 +361,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MapRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/national': {
+      id: '/national'
+      path: '/national'
+      fullPath: '/national'
+      preLoaderRoute: typeof NationalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/outcomes': {
       id: '/outcomes'
       path: '/outcomes'
@@ -330,6 +389,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AgenciesAgencyNameRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/localities/': {
+      id: '/localities/'
+      path: '/localities'
+      fullPath: '/localities/'
+      preLoaderRoute: typeof LocalitiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/localities/$localityId': {
+      id: '/localities/$localityId'
+      path: '/localities/$localityId'
+      fullPath: '/localities/$localityId'
+      preLoaderRoute: typeof LocalitiesLocalityIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects/': {
       id: '/projects/'
       path: '/projects'
@@ -342,6 +415,13 @@ declare module '@tanstack/react-router' {
       path: '/projects/$projectId'
       fullPath: '/projects/$projectId'
       preLoaderRoute: typeof ProjectsProjectIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/records/$recordId': {
+      id: '/records/$recordId'
+      path: '/records/$recordId'
+      fullPath: '/records/$recordId'
+      preLoaderRoute: typeof RecordsRecordIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/schemes/': {
@@ -384,12 +464,16 @@ const rootRouteChildren: RootRouteChildren = {
   DataQualityRoute: DataQualityRoute,
   EvidenceRoute: EvidenceRoute,
   MapRoute: MapRoute,
+  NationalRoute: NationalRoute,
   OutcomesRoute: OutcomesRoute,
   AgenciesAgencyNameRoute: AgenciesAgencyNameRoute,
+  LocalitiesLocalityIdRoute: LocalitiesLocalityIdRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
+  RecordsRecordIdRoute: RecordsRecordIdRoute,
   SchemesSchemeNameRoute: SchemesSchemeNameRoute,
   WardsWardIdRoute: WardsWardIdRoute,
   AgenciesIndexRoute: AgenciesIndexRoute,
+  LocalitiesIndexRoute: LocalitiesIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
   SchemesIndexRoute: SchemesIndexRoute,
   WardsIndexRoute: WardsIndexRoute,
