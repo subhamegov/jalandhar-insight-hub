@@ -188,6 +188,13 @@ function CityMap() {
   }
 
 
+  // Reference features are city-specific: clear them when the city changes.
+  useEffect(() => {
+    setOsmData({});
+    setLayerErrors({});
+    setLoadingLayers([]);
+  }, [city.city_id]);
+
   // Load OSM layers on demand.
   useEffect(() => {
     const pending = activeLayers
