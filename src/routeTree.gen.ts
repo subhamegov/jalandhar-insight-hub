@@ -21,6 +21,7 @@ import { Route as NationalRouteImport } from './routes/national'
 import { Route as OutcomesRouteImport } from './routes/outcomes'
 import { Route as AgenciesIndexRouteImport } from './routes/agencies.index'
 import { Route as AgenciesAgencyNameRouteImport } from './routes/agencies.$agencyName'
+import { Route as HousingIndexRouteImport } from './routes/housing.index'
 import { Route as LocalitiesIndexRouteImport } from './routes/localities.index'
 import { Route as LocalitiesLocalityIdRouteImport } from './routes/localities.$localityId'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
@@ -91,6 +92,11 @@ const AgenciesAgencyNameRoute = AgenciesAgencyNameRouteImport.update({
   path: '/agencies/$agencyName',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HousingIndexRoute = HousingIndexRouteImport.update({
+  id: '/housing/',
+  path: '/housing/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LocalitiesIndexRoute = LocalitiesIndexRouteImport.update({
   id: '/localities/',
   path: '/localities/',
@@ -155,6 +161,7 @@ export interface FileRoutesByFullPath {
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
+  '/housing/': typeof HousingIndexRoute
   '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/schemes/': typeof SchemesIndexRoute
@@ -178,6 +185,7 @@ export interface FileRoutesByTo {
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies': typeof AgenciesIndexRoute
+  '/housing': typeof HousingIndexRoute
   '/localities': typeof LocalitiesIndexRoute
   '/projects': typeof ProjectsIndexRoute
   '/schemes': typeof SchemesIndexRoute
@@ -202,6 +210,7 @@ export interface FileRoutesById {
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
+  '/housing/': typeof HousingIndexRoute
   '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/schemes/': typeof SchemesIndexRoute
@@ -227,6 +236,7 @@ export interface FileRouteTypes {
     | '/schemes/$schemeName'
     | '/wards/$wardId'
     | '/agencies/'
+    | '/housing/'
     | '/localities/'
     | '/projects/'
     | '/schemes/'
@@ -250,6 +260,7 @@ export interface FileRouteTypes {
     | '/schemes/$schemeName'
     | '/wards/$wardId'
     | '/agencies'
+    | '/housing'
     | '/localities'
     | '/projects'
     | '/schemes'
@@ -273,6 +284,7 @@ export interface FileRouteTypes {
     | '/schemes/$schemeName'
     | '/wards/$wardId'
     | '/agencies/'
+    | '/housing/'
     | '/localities/'
     | '/projects/'
     | '/schemes/'
@@ -297,6 +309,7 @@ export interface RootRouteChildren {
   SchemesSchemeNameRoute: typeof SchemesSchemeNameRoute
   WardsWardIdRoute: typeof WardsWardIdRoute
   AgenciesIndexRoute: typeof AgenciesIndexRoute
+  HousingIndexRoute: typeof HousingIndexRoute
   LocalitiesIndexRoute: typeof LocalitiesIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
   SchemesIndexRoute: typeof SchemesIndexRoute
@@ -389,6 +402,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AgenciesAgencyNameRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/housing/': {
+      id: '/housing/'
+      path: '/housing'
+      fullPath: '/housing/'
+      preLoaderRoute: typeof HousingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/localities/': {
       id: '/localities/'
       path: '/localities'
@@ -473,6 +493,7 @@ const rootRouteChildren: RootRouteChildren = {
   SchemesSchemeNameRoute: SchemesSchemeNameRoute,
   WardsWardIdRoute: WardsWardIdRoute,
   AgenciesIndexRoute: AgenciesIndexRoute,
+  HousingIndexRoute: HousingIndexRoute,
   LocalitiesIndexRoute: LocalitiesIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
   SchemesIndexRoute: SchemesIndexRoute,
