@@ -4,6 +4,7 @@ import {
   Boxes,
   Briefcase,
   Building2,
+  ChevronDown,
   Database,
   FileSearch,
   LayoutDashboard,
@@ -32,50 +33,162 @@ import { CityProvider, useCity } from "@/lib/cityContext";
 import { GeoProvider } from "@/lib/geoContext";
 import { CityGate } from "@/components/app/CityGate";
 
-const NAV = [
+// Primary destinations, always visible.
+const PRIMARY = [
   { to: "/national", label: "National View", icon: Globe },
-  { to: "/compare", label: "Compare Cities", icon: GitCompare },
   { to: "/", label: "Overview", icon: LayoutDashboard },
-  { to: "/map", label: "City Map", icon: Map },
-  { to: "/localities", label: "Localities", icon: MapPin },
-  { to: "/housing", label: "Housing", icon: Home },
-  { to: "/livelihoods", label: "Livelihoods & Mobility", icon: Briefcase },
-  { to: "/investment", label: "Investment & Outcomes", icon: IndianRupee },
-  { to: "/signals", label: "Decision Signals", icon: Radar },
-  { to: "/interventions", label: "Planning Interventions", icon: ClipboardList },
-  { to: "/briefing", label: "Executive Briefing", icon: Gavel },
-  { to: "/projects", label: "Projects", icon: ListChecks },
-  { to: "/assets", label: "Assets", icon: Boxes },
-  { to: "/outcomes", label: "Outcomes", icon: Target },
-  { to: "/attention", label: "Attention", icon: Flag },
-  { to: "/wards", label: "Ward View", icon: Grid2x2 },
-  { to: "/schemes", label: "Schemes", icon: Scale },
-  { to: "/agencies", label: "Agencies", icon: Building2 },
-  { to: "/evidence", label: "Evidence", icon: FileSearch },
-  { to: "/data-quality", label: "Data Quality", icon: AlertTriangle },
-  { to: "/data-integrity", label: "Data Integrity", icon: ShieldCheck },
-  { to: "/data-layer", label: "Data Layer", icon: Database },
 ] as const;
 
+// Grouped destinations. Every existing route is kept; only grouping changes.
+const GROUPS = [
+  {
+    id: "decide",
+    label: "Decide",
+    emphasis: true,
+    items: [
+      { to: "/attention", label: "Attention", icon: Flag },
+      { to: "/signals", label: "Decision Signals", icon: Radar },
+      { to: "/interventions", label: "Planning Interventions", icon: ClipboardList },
+      { to: "/briefing", label: "Executive Briefing", icon: Gavel },
+    ],
+  },
+  {
+    id: "explore",
+    label: "Explore",
+    emphasis: false,
+    items: [
+      { to: "/map", label: "City Map", icon: Map },
+      { to: "/localities", label: "Localities", icon: MapPin },
+      { to: "/wards", label: "Ward View", icon: Grid2x2 },
+      { to: "/compare", label: "Compare Cities", icon: GitCompare },
+    ],
+  },
+  {
+    id: "systems",
+    label: "Urban systems",
+    emphasis: false,
+    items: [
+      { to: "/housing", label: "Housing", icon: Home },
+      { to: "/livelihoods", label: "Livelihoods & Mobility", icon: Briefcase },
+      { to: "/investment", label: "Investment", icon: IndianRupee },
+    ],
+  },
+  {
+    id: "delivery",
+    label: "Delivery",
+    emphasis: false,
+    items: [
+      { to: "/projects", label: "Projects", icon: ListChecks },
+      { to: "/assets", label: "Assets", icon: Boxes },
+      { to: "/schemes", label: "Schemes", icon: Scale },
+      { to: "/agencies", label: "Agencies", icon: Building2 },
+    ],
+  },
+  {
+    id: "measure",
+    label: "Measure & trust",
+    emphasis: false,
+    items: [
+      { to: "/outcomes", label: "Outcomes", icon: Target },
+      { to: "/evidence", label: "Evidence", icon: FileSearch },
+      { to: "/data-quality", label: "Data Quality", icon: AlertTriangle },
+      { to: "/data-integrity", label: "Data Integrity", icon: ShieldCheck },
+    ],
+  },
+  {
+    id: "more",
+    label: "More",
+    emphasis: false,
+    items: [{ to: "/data-layer", label: "Data Layer", icon: Database }],
+  },
+] as const;
+
+const ALL_DESTINATIONS: { to: string; label: string }[] = [
+  ...PRIMARY.map((i) => ({ to: i.to as string, label: i.label as string })),
+  ...GROUPS.flatMap((g) => g.items.map((i) => ({ to: i.to as string, label: i.label as string }))),
+];
+
+function matches(to: string, pathname: string) {
+  return to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(`${to}/`);
+}
+
+function activeGroupId(pathname: string) {
+  return GROUPS.find((g) => g.items.some((i) => matches(i.to, pathname)))?.id ?? null;
+}
+
+const ITEM_CLASS =
+  "flex items-center gap-2 rounded-sm px-3 py-2.5 text-sm text-sidebar-foreground/85 transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground lg:py-2";
+const ACTIVE_CLASS =
+  "bg-sidebar-accent text-sidebar-accent-foreground font-medium border-l-2 border-sidebar-primary";
+
 function NavList({ onNavigate }: { onNavigate?: () => void }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const current = activeGroupId(pathname);
+  // Only the group holding the current page is open; the user can change this
+  // and the choice is kept while navigating within the session.
+  const [openId, setOpenId] = useState<string | null>(current);
+
+  useEffect(() => {
+    if (current) setOpenId(current);
+  }, [current]);
+
   return (
-    <nav className="flex flex-col gap-1 p-2">
-      {NAV.map(({ to, label, icon: Icon }) => (
-        <Link
-          key={to}
-          to={to}
-          onClick={onNavigate}
-          activeOptions={{ exact: to === "/" }}
-          className="flex items-center gap-2 rounded-sm px-3 py-2.5 text-sm text-sidebar-foreground/85 transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground lg:py-2"
-          activeProps={{
-            className:
-              "bg-sidebar-accent text-sidebar-accent-foreground font-medium border-l-2 border-sidebar-primary",
-          }}
-        >
-          <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
-          <span className="truncate">{label}</span>
-        </Link>
-      ))}
+    <nav className="flex flex-col p-2">
+      <div className="flex flex-col gap-1">
+        {PRIMARY.map(({ to, label, icon: Icon }) => (
+          <Link
+            key={to}
+            to={to}
+            onClick={onNavigate}
+            activeOptions={{ exact: to === "/" }}
+            className={`${ITEM_CLASS} font-medium`}
+            activeProps={{ className: ACTIVE_CLASS }}
+          >
+            <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span className="truncate">{label}</span>
+          </Link>
+        ))}
+      </div>
+
+      <div className="my-2 border-t border-sidebar-border" />
+
+      <div className="flex flex-col gap-1">
+        {GROUPS.map((group) => {
+          const expanded = openId === group.id;
+          return (
+            <div key={group.id}>
+              <button
+                type="button"
+                onClick={() => setOpenId(expanded ? null : group.id)}
+                aria-expanded={expanded}
+                className="flex w-full items-center justify-between gap-2 rounded-sm px-3 py-1.5 text-[11px] font-semibold tracking-[0.12em] text-sidebar-foreground/60 uppercase transition-colors hover:text-sidebar-foreground"
+              >
+                <span className="truncate">{group.label}</span>
+                <ChevronDown
+                  className={`h-3.5 w-3.5 shrink-0 transition-transform ${expanded ? "" : "-rotate-90"}`}
+                  aria-hidden="true"
+                />
+              </button>
+              {expanded ? (
+                <div className="mt-0.5 mb-1 flex flex-col gap-1">
+                  {group.items.map(({ to, label, icon: Icon }) => (
+                    <Link
+                      key={to}
+                      to={to}
+                      onClick={onNavigate}
+                      className={`${ITEM_CLASS} ${group.emphasis ? "font-medium" : ""}`}
+                      activeProps={{ className: ACTIVE_CLASS }}
+                    >
+                      <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
+                      <span className="truncate">{label}</span>
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
     </nav>
   );
 }
@@ -121,9 +234,7 @@ function CityShell({ children }: { children: ReactNode }) {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const current = NAV.find((n) =>
-    n.to === "/" ? pathname === "/" : pathname.startsWith(n.to),
-  )?.label;
+  const current = ALL_DESTINATIONS.find((n) => matches(n.to, pathname))?.label;
 
   return (
     <EvidenceDrawerProvider>
