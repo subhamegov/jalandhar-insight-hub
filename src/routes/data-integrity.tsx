@@ -32,7 +32,7 @@ export const Route = createFileRoute("/data-integrity")({
   component: DataIntegrityPage,
 });
 
-function Stat({ label, value, tone }: { label: string; value: string; tone?: "bad" }) {
+function Stat({ label, value, tone }: { label: string; value: string; tone?: "bad" | undefined }) {
   return (
     <div className="rounded-sm border border-border bg-card p-3 shadow-sm">
       <p className="field-label">{label}</p>
