@@ -1,0 +1,1402 @@
+[
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-01",
+    "intervention_id": "INT-THANE-01",
+    "signal_id": "SIG-THANE-01",
+    "problem_statement": "Drainage complaints and asset condition warrant review",
+    "supporting_evidence": [
+      "HSG-THANE-001",
+      "SAN-THANE-01",
+      "GRV-THANE-001"
+    ],
+    "target_geography": [
+      "LOC-THANE-01"
+    ],
+    "target_population": 172,
+    "linked_assets": [
+      "AST-THANE-002"
+    ],
+    "linked_projects": [
+      "PRJ-THANE-001",
+      "PRJ-THANE-005"
+    ],
+    "lead_agency": "Thane Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 214,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-02",
+    "intervention_id": "INT-THANE-02",
+    "signal_id": "SIG-THANE-02",
+    "problem_statement": "Infrastructure commissioning does not ensure service availability",
+    "supporting_evidence": [
+      "HSG-THANE-002",
+      "SAN-THANE-02",
+      "GRV-THANE-006"
+    ],
+    "target_geography": [
+      "LOC-THANE-02"
+    ],
+    "target_population": 176,
+    "linked_assets": [
+      "AST-THANE-012"
+    ],
+    "linked_projects": [
+      "PRJ-THANE-003",
+      "PRJ-THANE-007"
+    ],
+    "lead_agency": "Thane Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 155,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-03",
+    "intervention_id": "INT-THANE-03",
+    "signal_id": "SIG-THANE-03",
+    "problem_statement": "Drainage complaints and asset condition warrant review",
+    "supporting_evidence": [
+      "HSG-THANE-003",
+      "SAN-THANE-03",
+      "GRV-THANE-011"
+    ],
+    "target_geography": [
+      "LOC-THANE-03"
+    ],
+    "target_population": 272,
+    "linked_assets": [
+      "AST-THANE-022"
+    ],
+    "linked_projects": [
+      "PRJ-THANE-005",
+      "PRJ-THANE-009"
+    ],
+    "lead_agency": "Thane Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 83,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-04",
+    "intervention_id": "INT-THANE-04",
+    "signal_id": "SIG-THANE-04",
+    "problem_statement": "Capital project and service outcome require joint review",
+    "supporting_evidence": [
+      "HSG-THANE-004",
+      "SAN-THANE-04",
+      "GRV-THANE-016"
+    ],
+    "target_geography": [
+      "LOC-THANE-04"
+    ],
+    "target_population": 44,
+    "linked_assets": [
+      "AST-THANE-032"
+    ],
+    "linked_projects": [
+      "PRJ-THANE-007",
+      "PRJ-THANE-011"
+    ],
+    "lead_agency": "Thane Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 87,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-THANE",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-THANE-05",
+    "intervention_id": "INT-THANE-05",
+    "signal_id": "SIG-THANE-05",
+    "problem_statement": "Infrastructure commissioning does not ensure service availability",
+    "supporting_evidence": [
+      "HSG-THANE-005",
+      "SAN-THANE-05",
+      "GRV-THANE-021"
+    ],
+    "target_geography": [
+      "LOC-THANE-05"
+    ],
+    "target_population": 80,
+    "linked_assets": [
+      "AST-THANE-042"
+    ],
+    "linked_projects": [
+      "PRJ-THANE-009",
+      "PRJ-THANE-013"
+    ],
+    "lead_agency": "Thane Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 194,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-01",
+    "intervention_id": "INT-SURAT-01",
+    "signal_id": "SIG-SURAT-01",
+    "problem_statement": "Housing completions exceed sewer-ready homes",
+    "supporting_evidence": [
+      "HSG-SURAT-001",
+      "SAN-SURAT-01",
+      "GRV-SURAT-001"
+    ],
+    "target_geography": [
+      "LOC-SURAT-01"
+    ],
+    "target_population": 316,
+    "linked_assets": [
+      "AST-SURAT-002"
+    ],
+    "linked_projects": [
+      "PRJ-SURAT-001",
+      "PRJ-SURAT-005"
+    ],
+    "lead_agency": "Surat Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 183,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-02",
+    "intervention_id": "INT-SURAT-02",
+    "signal_id": "SIG-SURAT-02",
+    "problem_statement": "Infrastructure commissioning does not ensure service availability",
+    "supporting_evidence": [
+      "HSG-SURAT-002",
+      "SAN-SURAT-02",
+      "GRV-SURAT-006"
+    ],
+    "target_geography": [
+      "LOC-SURAT-02"
+    ],
+    "target_population": 120,
+    "linked_assets": [
+      "AST-SURAT-012"
+    ],
+    "linked_projects": [
+      "PRJ-SURAT-003",
+      "PRJ-SURAT-007"
+    ],
+    "lead_agency": "Surat Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 212,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-03",
+    "intervention_id": "INT-SURAT-03",
+    "signal_id": "SIG-SURAT-03",
+    "problem_statement": "Drainage complaints and asset condition warrant review",
+    "supporting_evidence": [
+      "HSG-SURAT-003",
+      "SAN-SURAT-03",
+      "GRV-SURAT-011"
+    ],
+    "target_geography": [
+      "LOC-SURAT-03"
+    ],
+    "target_population": 48,
+    "linked_assets": [
+      "AST-SURAT-022"
+    ],
+    "linked_projects": [
+      "PRJ-SURAT-005",
+      "PRJ-SURAT-009"
+    ],
+    "lead_agency": "Surat Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 15,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-04",
+    "intervention_id": "INT-SURAT-04",
+    "signal_id": "SIG-SURAT-04",
+    "problem_statement": "Housing completions exceed sewer-ready homes",
+    "supporting_evidence": [
+      "HSG-SURAT-004",
+      "SAN-SURAT-04",
+      "GRV-SURAT-016"
+    ],
+    "target_geography": [
+      "LOC-SURAT-04"
+    ],
+    "target_population": 108,
+    "linked_assets": [
+      "AST-SURAT-032"
+    ],
+    "linked_projects": [
+      "PRJ-SURAT-007",
+      "PRJ-SURAT-011"
+    ],
+    "lead_agency": "Surat Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 188,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-SURAT",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-SURAT-05",
+    "intervention_id": "INT-SURAT-05",
+    "signal_id": "SIG-SURAT-05",
+    "problem_statement": "Waste segregation lags door-to-door collection",
+    "supporting_evidence": [
+      "HSG-SURAT-005",
+      "SAN-SURAT-05",
+      "GRV-SURAT-021"
+    ],
+    "target_geography": [
+      "LOC-SURAT-05"
+    ],
+    "target_population": 80,
+    "linked_assets": [
+      "AST-SURAT-042"
+    ],
+    "linked_projects": [
+      "PRJ-SURAT-009",
+      "PRJ-SURAT-013"
+    ],
+    "lead_agency": "Surat Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 24,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-01",
+    "intervention_id": "INT-AHMEDABAD-01",
+    "signal_id": "SIG-AHMEDABAD-01",
+    "problem_statement": "Drainage complaints and asset condition warrant review",
+    "supporting_evidence": [
+      "HSG-AHMEDABAD-001",
+      "SAN-AHMEDABAD-01",
+      "GRV-AHMEDABAD-001"
+    ],
+    "target_geography": [
+      "LOC-AHMEDABAD-01"
+    ],
+    "target_population": 456,
+    "linked_assets": [
+      "AST-AHMEDABAD-002"
+    ],
+    "linked_projects": [
+      "PRJ-AHMEDABAD-001",
+      "PRJ-AHMEDABAD-005"
+    ],
+    "lead_agency": "Ahmedabad Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 204,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-02",
+    "intervention_id": "INT-AHMEDABAD-02",
+    "signal_id": "SIG-AHMEDABAD-02",
+    "problem_statement": "Infrastructure commissioning does not ensure service availability",
+    "supporting_evidence": [
+      "HSG-AHMEDABAD-002",
+      "SAN-AHMEDABAD-02",
+      "GRV-AHMEDABAD-006"
+    ],
+    "target_geography": [
+      "LOC-AHMEDABAD-02"
+    ],
+    "target_population": 268,
+    "linked_assets": [
+      "AST-AHMEDABAD-012"
+    ],
+    "linked_projects": [
+      "PRJ-AHMEDABAD-003",
+      "PRJ-AHMEDABAD-007"
+    ],
+    "lead_agency": "Ahmedabad Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 72,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-03",
+    "intervention_id": "INT-AHMEDABAD-03",
+    "signal_id": "SIG-AHMEDABAD-03",
+    "problem_statement": "Capital project and service outcome require joint review",
+    "supporting_evidence": [
+      "HSG-AHMEDABAD-003",
+      "SAN-AHMEDABAD-03",
+      "GRV-AHMEDABAD-011"
+    ],
+    "target_geography": [
+      "LOC-AHMEDABAD-03"
+    ],
+    "target_population": 100,
+    "linked_assets": [
+      "AST-AHMEDABAD-022"
+    ],
+    "linked_projects": [
+      "PRJ-AHMEDABAD-005",
+      "PRJ-AHMEDABAD-009"
+    ],
+    "lead_agency": "Ahmedabad Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 112,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-04",
+    "intervention_id": "INT-AHMEDABAD-04",
+    "signal_id": "SIG-AHMEDABAD-04",
+    "problem_statement": "Waste segregation lags door-to-door collection",
+    "supporting_evidence": [
+      "HSG-AHMEDABAD-004",
+      "SAN-AHMEDABAD-04",
+      "GRV-AHMEDABAD-016"
+    ],
+    "target_geography": [
+      "LOC-AHMEDABAD-04"
+    ],
+    "target_population": 124,
+    "linked_assets": [
+      "AST-AHMEDABAD-032"
+    ],
+    "linked_projects": [
+      "PRJ-AHMEDABAD-007",
+      "PRJ-AHMEDABAD-011"
+    ],
+    "lead_agency": "Ahmedabad Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 30,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-AHMEDABAD",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-AHMEDABAD-05",
+    "intervention_id": "INT-AHMEDABAD-05",
+    "signal_id": "SIG-AHMEDABAD-05",
+    "problem_statement": "Drainage complaints and asset condition warrant review",
+    "supporting_evidence": [
+      "HSG-AHMEDABAD-005",
+      "SAN-AHMEDABAD-05",
+      "GRV-AHMEDABAD-021"
+    ],
+    "target_geography": [
+      "LOC-AHMEDABAD-05"
+    ],
+    "target_population": 324,
+    "linked_assets": [
+      "AST-AHMEDABAD-042"
+    ],
+    "linked_projects": [
+      "PRJ-AHMEDABAD-009",
+      "PRJ-AHMEDABAD-013"
+    ],
+    "lead_agency": "Ahmedabad Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 15,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-01",
+    "intervention_id": "INT-GUWAHATI-01",
+    "signal_id": "SIG-GUWAHATI-01",
+    "problem_statement": "Housing completions exceed sewer-ready homes",
+    "supporting_evidence": [
+      "HSG-GUWAHATI-001",
+      "SAN-GUWAHATI-01",
+      "GRV-GUWAHATI-001"
+    ],
+    "target_geography": [
+      "LOC-GUWAHATI-01"
+    ],
+    "target_population": 552,
+    "linked_assets": [
+      "AST-GUWAHATI-002"
+    ],
+    "linked_projects": [
+      "PRJ-GUWAHATI-001",
+      "PRJ-GUWAHATI-005"
+    ],
+    "lead_agency": "Guwahati Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 37,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-02",
+    "intervention_id": "INT-GUWAHATI-02",
+    "signal_id": "SIG-GUWAHATI-02",
+    "problem_statement": "Housing completions exceed sewer-ready homes",
+    "supporting_evidence": [
+      "HSG-GUWAHATI-002",
+      "SAN-GUWAHATI-02",
+      "GRV-GUWAHATI-006"
+    ],
+    "target_geography": [
+      "LOC-GUWAHATI-02"
+    ],
+    "target_population": 32,
+    "linked_assets": [
+      "AST-GUWAHATI-012"
+    ],
+    "linked_projects": [
+      "PRJ-GUWAHATI-003",
+      "PRJ-GUWAHATI-007"
+    ],
+    "lead_agency": "Guwahati Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 245,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-03",
+    "intervention_id": "INT-GUWAHATI-03",
+    "signal_id": "SIG-GUWAHATI-03",
+    "problem_statement": "Infrastructure commissioning does not ensure service availability",
+    "supporting_evidence": [
+      "HSG-GUWAHATI-003",
+      "SAN-GUWAHATI-03",
+      "GRV-GUWAHATI-011"
+    ],
+    "target_geography": [
+      "LOC-GUWAHATI-03"
+    ],
+    "target_population": 308,
+    "linked_assets": [
+      "AST-GUWAHATI-022"
+    ],
+    "linked_projects": [
+      "PRJ-GUWAHATI-005",
+      "PRJ-GUWAHATI-009"
+    ],
+    "lead_agency": "Guwahati Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 16,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-04",
+    "intervention_id": "INT-GUWAHATI-04",
+    "signal_id": "SIG-GUWAHATI-04",
+    "problem_statement": "Capital project and service outcome require joint review",
+    "supporting_evidence": [
+      "HSG-GUWAHATI-004",
+      "SAN-GUWAHATI-04",
+      "GRV-GUWAHATI-016"
+    ],
+    "target_geography": [
+      "LOC-GUWAHATI-04"
+    ],
+    "target_population": 24,
+    "linked_assets": [
+      "AST-GUWAHATI-032"
+    ],
+    "linked_projects": [
+      "PRJ-GUWAHATI-007",
+      "PRJ-GUWAHATI-011"
+    ],
+    "lead_agency": "Guwahati Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 52,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-GUWAHATI",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": null,
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-GUWAHATI-05",
+    "intervention_id": "INT-GUWAHATI-05",
+    "signal_id": "SIG-GUWAHATI-05",
+    "problem_statement": "Housing completions exceed sewer-ready homes",
+    "supporting_evidence": [
+      "HSG-GUWAHATI-005",
+      "SAN-GUWAHATI-05",
+      "GRV-GUWAHATI-021"
+    ],
+    "target_geography": [
+      "LOC-GUWAHATI-05"
+    ],
+    "target_population": 164,
+    "linked_assets": [
+      "AST-GUWAHATI-042"
+    ],
+    "linked_projects": [
+      "PRJ-GUWAHATI-009",
+      "PRJ-GUWAHATI-013"
+    ],
+    "lead_agency": "Guwahati Municipal Corporation",
+    "supporting_agencies": [
+      "State mission directorate"
+    ],
+    "indicative_cost_inr_lakh": 176,
+    "cost_basis": "Illustrative scenario placeholder, not a DPR or market estimate",
+    "funding_options": [
+      "ULB budget",
+      "Mission convergence subject to eligibility"
+    ],
+    "dependencies": [
+      "Confirm asset ownership",
+      "Verify service coverage",
+      "Approve scope"
+    ],
+    "implementation_sequence": [
+      "Field verification",
+      "Joint agency review",
+      "Detailed estimate",
+      "Execution",
+      "Outcome monitoring"
+    ],
+    "expected_outputs": [
+      "Verified connections or repaired service asset"
+    ],
+    "expected_outcomes": [
+      "Improved service readiness"
+    ],
+    "assumptions": [
+      "Synthetic data only"
+    ],
+    "risks": [
+      "Agency coordination",
+      "Budget availability"
+    ],
+    "monitoring_indicators": [
+      "Households served",
+      "Complaint recurrence",
+      "Operational uptime"
+    ],
+    "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  }
+]

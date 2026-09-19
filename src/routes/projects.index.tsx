@@ -28,6 +28,7 @@ import {
   projectYear,
   projects,
 } from "@/data/selectors";
+import { useCity } from "@/lib/cityContext";
 import type { Project } from "@/data/types";
 import { CITY_SYSTEMS, EVIDENCE_QUALITIES, PROJECT_STATUSES } from "@/data/types";
 import { EMPTY, crore, dateText, labelise, percent, text } from "@/lib/format";
@@ -67,6 +68,10 @@ function uniq(values: (string | null | undefined)[]): string[] {
 
 function ProjectsPage() {
   const { sector, scheme, agency } = Route.useSearch();
+  const { city, dataset } = useCity();
+  // The geographic scope groups are Jalandhar reference work. Cities served by
+  // the four-city dataset carry their own locality scope instead.
+  const scopeGroupsApply = !dataset.synthetic;
 
   // Filters persist when moving between the register and the map.
   useEffect(() => {
@@ -80,7 +85,7 @@ function ProjectsPage() {
   const [scope, setScope] = useState<string>("Jalandhar city");
 
   const rows = projects.filter((p) => {
-    if (!matchesScopeGroup(p, scope)) return false;
+    if (scopeGroupsApply && !matchesScopeGroup(p, scope)) return false;
     if (sector && p.sector !== sector) return false;
     if (scheme && !programmesFor(p.project_id, p.scheme).includes(scheme)) return false;
     if (agency && p.implementing_agency !== agency && p.owning_agency !== agency) return false;
@@ -288,14 +293,18 @@ function ProjectsPage() {
     <>
       <PageHeader
         title="Government projects"
-        subtitle="Central government, national infrastructure and related public investments relevant to Jalandhar. Each row is one official source record. Records are not merged when scope overlap is uncertain."
+        subtitle={
+          scopeGroupsApply
+            ? "Central government, national infrastructure and related public investments relevant to Jalandhar. Each row is one official source record. Records are not merged when scope overlap is uncertain."
+            : `Mission-linked projects recorded for ${city.name}. Each row is one record in the four-city dataset, with its mission, implementing agency and reported progress as supplied.`
+        }
         actions={
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={() => {
                 const { headers, rows: data } = projectCsv(rows);
-                downloadCsv("jalandhar-project-register", toCsv(headers, data));
+                downloadCsv(`${city.name.toLowerCase()}-project-register`, toCsv(headers, data));
               }}
               className="rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
@@ -313,6 +322,7 @@ function ProjectsPage() {
           </div>
         }
       />
+      {scopeGroupsApply ? (
       <div className="mb-3 flex flex-wrap items-center gap-2 rounded-md border border-border bg-card p-2.5">
         <span className="field-label text-muted-foreground">Geographic scope</span>
         {SCOPE_GROUPS.map((g) => (
@@ -335,6 +345,7 @@ function ProjectsPage() {
           Municipal Corporation Jalandhar project.
         </span>
       </div>
+      ) : null}
       <DataTable
         defaultSort={{ key: "sanctioned_cost", dir: "desc" }}
         rows={rows}

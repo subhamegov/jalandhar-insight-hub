@@ -1,0 +1,1165 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9481,
+          19.2093
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-01",
+        "id": "LOC-THANE-01",
+        "name": "Naupada",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9631,
+          19.2093
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-02",
+        "id": "LOC-THANE-02",
+        "name": "Wagle Estate",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9781,
+          19.2093
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-03",
+        "id": "LOC-THANE-03",
+        "name": "Majiwada",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9931,
+          19.2093
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-04",
+        "id": "LOC-THANE-04",
+        "name": "Kalwa",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0081,
+          19.2093
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-05",
+        "id": "LOC-THANE-05",
+        "name": "Mumbra",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9481,
+          19.2273
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-06",
+        "id": "LOC-THANE-06",
+        "name": "Kopri",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9631,
+          19.2273
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-07",
+        "id": "LOC-THANE-07",
+        "name": "Vartak Nagar",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9781,
+          19.2273
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-08",
+        "id": "LOC-THANE-08",
+        "name": "Ghodbunder Road",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9931,
+          19.2273
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-09",
+        "id": "LOC-THANE-09",
+        "name": "Kolshet",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0081,
+          19.2273
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-10",
+        "id": "LOC-THANE-10",
+        "name": "Balkum",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8011,
+          21.1612
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-01",
+        "id": "LOC-SURAT-01",
+        "name": "Adajan",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8161,
+          21.1612
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-02",
+        "id": "LOC-SURAT-02",
+        "name": "Rander",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8311,
+          21.1612
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-03",
+        "id": "LOC-SURAT-03",
+        "name": "Katargam",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8461,
+          21.1612
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-04",
+        "id": "LOC-SURAT-04",
+        "name": "Varachha",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8611,
+          21.1612
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-05",
+        "id": "LOC-SURAT-05",
+        "name": "Udhna",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8011,
+          21.1792
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-06",
+        "id": "LOC-SURAT-06",
+        "name": "Limbayat",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8161,
+          21.1792
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-07",
+        "id": "LOC-SURAT-07",
+        "name": "Athwa",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8311,
+          21.1792
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-08",
+        "id": "LOC-SURAT-08",
+        "name": "Pandesara",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8461,
+          21.1792
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-09",
+        "id": "LOC-SURAT-09",
+        "name": "Pal",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8611,
+          21.1792
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-10",
+        "id": "LOC-SURAT-10",
+        "name": "Dindoli",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5414,
+          23.0135
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-01",
+        "id": "LOC-AHMEDABAD-01",
+        "name": "Navrangpura",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5564,
+          23.0135
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-02",
+        "id": "LOC-AHMEDABAD-02",
+        "name": "Maninagar",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5714,
+          23.0135
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-03",
+        "id": "LOC-AHMEDABAD-03",
+        "name": "Vastral",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5864,
+          23.0135
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-04",
+        "id": "LOC-AHMEDABAD-04",
+        "name": "Naroda",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.6014,
+          23.0135
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-05",
+        "id": "LOC-AHMEDABAD-05",
+        "name": "Chandkheda",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5414,
+          23.0315
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-06",
+        "id": "LOC-AHMEDABAD-06",
+        "name": "Bopal",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5564,
+          23.0315
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-07",
+        "id": "LOC-AHMEDABAD-07",
+        "name": "Vatva",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5714,
+          23.0315
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-08",
+        "id": "LOC-AHMEDABAD-08",
+        "name": "Sarkhej",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5864,
+          23.0315
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-09",
+        "id": "LOC-AHMEDABAD-09",
+        "name": "Shahibaug",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.6014,
+          23.0315
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-10",
+        "id": "LOC-AHMEDABAD-10",
+        "name": "Nikol",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7062,
+          26.1355
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-01",
+        "id": "LOC-GUWAHATI-01",
+        "name": "Pan Bazaar",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7212,
+          26.1355
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-02",
+        "id": "LOC-GUWAHATI-02",
+        "name": "Fancy Bazaar",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7362,
+          26.1355
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-03",
+        "id": "LOC-GUWAHATI-03",
+        "name": "Dispur",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7512,
+          26.1355
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-04",
+        "id": "LOC-GUWAHATI-04",
+        "name": "Beltola",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7662,
+          26.1355
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-05",
+        "id": "LOC-GUWAHATI-05",
+        "name": "Six Mile",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7062,
+          26.1535
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-06",
+        "id": "LOC-GUWAHATI-06",
+        "name": "Maligaon",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7212,
+          26.1535
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-07",
+        "id": "LOC-GUWAHATI-07",
+        "name": "Jalukbari",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7362,
+          26.1535
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-08",
+        "id": "LOC-GUWAHATI-08",
+        "name": "Uzan Bazaar",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7512,
+          26.1535
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-09",
+        "id": "LOC-GUWAHATI-09",
+        "name": "Lakhra",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7662,
+          26.1535
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-10",
+        "id": "LOC-GUWAHATI-10",
+        "name": "Bamunimaidam",
+        "geometry_type": "illustrative_locality_anchor",
+        "official_ward_id": null,
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "approximate; synthetic displacement",
+        "is_official_boundary": false
+      }
+    }
+  ]
+}

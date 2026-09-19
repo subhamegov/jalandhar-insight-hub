@@ -4,7 +4,8 @@
 // inferred about the world: a rule only fires when the recorded evidence is
 // missing, stale, or when two government sources disagree.
 
-import { projects } from "./jalandhar";
+// Conflicts are computed against whichever city is active.
+import { projects } from "./selectors";
 import { componentsFor, programmesFor } from "./programmes";
 import type { Conflict, ConflictSeverity, Project, ReportedValue } from "./types";
 

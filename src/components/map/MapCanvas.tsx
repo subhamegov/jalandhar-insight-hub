@@ -52,6 +52,9 @@ export interface MapCanvasProps {
   fitSignal: number;
   /** Coordinates to fly to, with a nonce so repeats work. */
   focus: { lat: number; lon: number; nonce: number } | null;
+  /** Reference geography of the active city. */
+  centre?: [number, number];
+  bbox?: [number, number, number, number];
 }
 
 export default function MapCanvas({
@@ -63,6 +66,8 @@ export default function MapCanvas({
   onSelectOsm,
   fitSignal,
   focus,
+  centre = JALANDHAR_CENTER,
+  bbox: cityBbox = JALANDHAR_BBOX,
 }: MapCanvasProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
@@ -71,17 +76,20 @@ export default function MapCanvas({
 
   const bounds = useMemo(
     () =>
-      L.latLngBounds(
-        [JALANDHAR_BBOX[0], JALANDHAR_BBOX[1]],
-        [JALANDHAR_BBOX[2], JALANDHAR_BBOX[3]],
-      ),
-    [],
+      L.latLngBounds([cityBbox[0], cityBbox[1]], [cityBbox[2], cityBbox[3]]),
+    [cityBbox],
   );
+
+  // Recentre when the user switches city.
+  useEffect(() => {
+    if (!mapRef.current) return;
+    mapRef.current.setView(centre, CITY_ZOOM, { animate: false });
+  }, [centre]);
 
   useEffect(() => {
     if (mapRef.current || !containerRef.current) return;
     const map = L.map(containerRef.current, {
-      center: JALANDHAR_CENTER,
+      center: centre,
       zoom: CITY_ZOOM,
       zoomControl: true,
       preferCanvas: true,

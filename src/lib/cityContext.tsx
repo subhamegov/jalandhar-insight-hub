@@ -8,6 +8,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import type { ReactNode } from "react";
 import { CITIES, DEFAULT_CITY_ID, isCityId, type CityId, type CityProfile } from "@/data/cities/registry";
 import { datasetFor, type CityDataset } from "@/data/cities/datasets";
+import { setActiveCityRecords } from "@/data/selectors";
 
 const KEY = "mohua.activeCity.v1";
 
@@ -23,6 +24,10 @@ const CityContext = createContext<CityContextValue | null>(null);
 
 export function CityProvider({ children }: { children: ReactNode }) {
   const [cityId, setCity] = useState<CityId>(DEFAULT_CITY_ID);
+
+  // Point the shared record selectors at the active city before children render,
+  // so every view reads that city's records and never another city's.
+  setActiveCityRecords(cityId);
 
   useEffect(() => {
     try {

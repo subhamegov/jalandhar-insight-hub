@@ -22,8 +22,8 @@ const ENDPOINTS = [
 ];
 const cache = new Map<string, OsmFeature[]>();
 
-function bboxString() {
-  const [s, w, n, e] = JALANDHAR_BBOX;
+function bboxString(box: [number, number, number, number] = JALANDHAR_BBOX) {
+  const [s, w, n, e] = box;
   return `${s},${w},${n},${e}`;
 }
 
@@ -37,12 +37,18 @@ interface OverpassElement {
   tags?: Record<string, string>;
 }
 
-export async function fetchLayer(layer: MapLayer, signal?: AbortSignal): Promise<OsmFeature[]> {
+export async function fetchLayer(
+  layer: MapLayer,
+  signal?: AbortSignal,
+  box?: [number, number, number, number],
+): Promise<OsmFeature[]> {
   if (layer.source !== "osm" || layer.query.length === 0) return [];
-  const cached = cache.get(layer.id);
+  // Cache per city: the same layer covers different features in each bbox.
+  const cacheKey = `${layer.id}@${(box ?? JALANDHAR_BBOX).join(",")}`;
+  const cached = cache.get(cacheKey);
   if (cached) return cached;
 
-  const bbox = bboxString();
+  const bbox = bboxString(box);
   const body =
     `[out:json][timeout:45];(` +
     layer.query.map((q) => `${q}(${bbox});`).join("") +
@@ -99,6 +105,6 @@ export async function fetchLayer(layer: MapLayer, signal?: AbortSignal): Promise
     });
   }
 
-  cache.set(layer.id, features);
+  cache.set(cacheKey, features);
   return features;
 }

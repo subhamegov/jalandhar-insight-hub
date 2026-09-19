@@ -1,0 +1,174 @@
+{
+  "dataset_name": "MoHUA four-city cross-mission synthetic urban intelligence",
+  "version": "1.0",
+  "reference_date": "2026-09-19",
+  "cities": [
+    "Thane",
+    "Surat",
+    "Ahmedabad",
+    "Guwahati"
+  ],
+  "synthetic_operational_data": true,
+  "file_count": 28,
+  "files": [
+    {
+      "filename": "01_city_registry.json",
+      "bytes": 2676,
+      "sha256": "0c94ab4a302f5279c8b70333476e58d2358fcd1b2380055a2531a1c8b1f4c032",
+      "record_count": 4
+    },
+    {
+      "filename": "02_geography_registry.geojson",
+      "bytes": 35535,
+      "sha256": "70ad9ef7de93bb8d512b271c8fc23e5c1b2e983c101f1f2c308596d5557a99db",
+      "record_count": 40
+    },
+    {
+      "filename": "03_mission_registry.json",
+      "bytes": 2609,
+      "sha256": "1df193898eb29536f761de667c13a7ca6a794401d63d43b63c2e8033e0be3dae",
+      "record_count": 13
+    },
+    {
+      "filename": "04_projects.json",
+      "bytes": 88655,
+      "sha256": "e58db46561f61dc1fd55c76f84c72506987a24440260d3e9309ac25e5ad8949c",
+      "record_count": 80
+    },
+    {
+      "filename": "05_project_components.json",
+      "bytes": 48015,
+      "sha256": "8418fcdc0621a165162682677d9bbb04e4743f48fdf444e73cedbc2ebcde48a6",
+      "record_count": 80
+    },
+    {
+      "filename": "06_assets.geojson",
+      "bytes": 484766,
+      "sha256": "a16f9b1793e2d274c72e83eeaa35cda662ab42de5ed44eb4fb633abccdd75731",
+      "record_count": 400
+    },
+    {
+      "filename": "07_asset_service_areas.geojson",
+      "bytes": 36814,
+      "sha256": "06b2ef2bef61128c9508d8f5b8d744e950b5adeb4391ec83e27e12eda85efa81",
+      "record_count": 40
+    },
+    {
+      "filename": "08_property_service_aggregates.json",
+      "bytes": 478702,
+      "sha256": "059fd62b1a26544552b82da61395c56469d2eb208331ac760425232dd8af1382",
+      "record_count": 480
+    },
+    {
+      "filename": "09_housing.json",
+      "bytes": 32304,
+      "sha256": "1775cb2dabad171161dcf89914b20583797a630c55f3a24a86c84c99594e2558",
+      "record_count": 40
+    },
+    {
+      "filename": "10_water_and_sewerage.json",
+      "bytes": 397995,
+      "sha256": "a4c9139279aac3d7d012eb044532c123ac2eaa12063c82187eedee317a633f07",
+      "record_count": 480
+    },
+    {
+      "filename": "11_sanitation.json",
+      "bytes": 29454,
+      "sha256": "fc094960a16db1b7466a38e672f08e0cdb1f9129de371bf421b524dfa3201ee1",
+      "record_count": 40
+    },
+    {
+      "filename": "12_livelihoods.json",
+      "bytes": 26454,
+      "sha256": "e27409589ac8f7f5964cf742e0326bd1b1186004234218ffdbd3c279ba014fa6",
+      "record_count": 40
+    },
+    {
+      "filename": "13_street_vendors.json",
+      "bytes": 24432,
+      "sha256": "9b64c51d714a4772823bb72db6b61b964a694d4d07f73d77a975a6c04d1786e1",
+      "record_count": 40
+    },
+    {
+      "filename": "14_transport.json",
+      "bytes": 23023,
+      "sha256": "a0ac742b9770d17e79b7518731bc23b1f75d38a6d4d4d229f61c395ed4393ef8",
+      "record_count": 40
+    },
+    {
+      "filename": "15_municipal_finance.json",
+      "bytes": 51783,
+      "sha256": "884fabe83baab3408a9a601653733a3c69e1086d2ec23bd73479397b0f590d12",
+      "record_count": 80
+    },
+    {
+      "filename": "16_service_delivery.json",
+      "bytes": 264833,
+      "sha256": "a84517c8f65ffe8367717ac15ed6aa319c87822effafacb98d5c8fd124dcdd76",
+      "record_count": 400
+    },
+    {
+      "filename": "17_grievances.json",
+      "bytes": 131035,
+      "sha256": "d1266c99132e271bbd60a0ebc8cece0d32598461b033ecbbce9a479d48776e99",
+      "record_count": 200
+    },
+    {
+      "filename": "18_cross_mission_relationships.json",
+      "bytes": 216703,
+      "sha256": "2b66a761f22cc86796a33686b754a412f8104df307a2cbca2383ecb7662249e1",
+      "record_count": 400
+    },
+    {
+      "filename": "19_decision_signals.json",
+      "bytes": 75767,
+      "sha256": "6218133c1b40a6729c1b713a76c3234b7013d841bcadd19283eb739ef2241b63",
+      "record_count": 40
+    },
+    {
+      "filename": "20_planning_interventions.json",
+      "bytes": 38882,
+      "sha256": "d31e6f252e6f242501eddac7e6d98b84a095677843c33a85169a135239288abc",
+      "record_count": 20
+    },
+    {
+      "filename": "21_source_registry.json",
+      "bytes": 2398,
+      "sha256": "20a5d5706a010d6fc0e4576dc3390b2e55d0b1296028e8047d5c3f160ec125ca",
+      "record_count": 7
+    },
+    {
+      "filename": "22_data_dictionary.json",
+      "bytes": 17264,
+      "sha256": "79df369178fbad7473818efe6c7386ecb33ab9e6ddad400e357f7b593138b870"
+    },
+    {
+      "filename": "23_data_quality_report.json",
+      "bytes": 2068,
+      "sha256": "2dafb53afd4f1fb7e8d025115dfd6c28c0b4ff7d38bb672a8948f7ffcad709ed"
+    },
+    {
+      "filename": "24_city_comparison.json",
+      "bytes": 2200,
+      "sha256": "53cf65b4c49823689faa2b27a9def88db6ba2d147171a438b7b215223eead9b2",
+      "record_count": 4
+    },
+    {
+      "filename": "25_executive_briefing_scenarios.json",
+      "bytes": 2524,
+      "sha256": "98e79bc3d990efebe9adf9048e23e9ea112e46e791564213eef375870a724857",
+      "record_count": 4
+    },
+    {
+      "filename": "README.md",
+      "bytes": 2619,
+      "sha256": "5b074c00f10bfa3258e59c88316e2f01a1d2afa6c50f04a4253ed3b6df942aba"
+    },
+    {
+      "filename": "validation_report.json",
+      "bytes": 2068,
+      "sha256": "2dafb53afd4f1fb7e8d025115dfd6c28c0b4ff7d38bb672a8948f7ffcad709ed"
+    }
+  ],
+  "all_validation_checks_passed": true
+}

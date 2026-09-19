@@ -3,6 +3,7 @@ import {
   AlertTriangle,
   Boxes,
   Building2,
+  Database,
   FileSearch,
   LayoutDashboard,
   ListChecks,
@@ -32,6 +33,7 @@ const NAV = [
   { to: "/agencies", label: "Agencies", icon: Building2 },
   { to: "/evidence", label: "Evidence", icon: FileSearch },
   { to: "/data-quality", label: "Data Quality", icon: AlertTriangle },
+  { to: "/data-layer", label: "Data Layer", icon: Database },
 ] as const;
 
 function NavList({ onNavigate }: { onNavigate?: () => void }) {
@@ -62,6 +64,19 @@ export function AppShell({ children }: { children: ReactNode }) {
     <CityProvider>
       <CityShell>{children}</CityShell>
     </CityProvider>
+  );
+}
+
+function SyntheticNotice() {
+  const { dataset } = useCity();
+  if (!dataset.synthetic || dataset.projects.length === 0) return null;
+  return (
+    <p className="mb-4 rounded-sm border border-border bg-muted/60 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
+      <span className="font-medium text-foreground">Synthetic prototype data.</span> Records for
+      this city come from the MoHUA four-city synthetic dataset. They are not government
+      statistics, are not citywide totals, and must be validated against official records before
+      any decision.
+    </p>
   );
 }
 
@@ -163,6 +178,7 @@ function CityShell({ children }: { children: ReactNode }) {
         <div className="min-w-0 flex-1">
           <GlobalHeader />
           <main className="px-3 py-4 sm:px-4 sm:py-5 lg:px-8 lg:py-7">
+            <SyntheticNotice />
             <CityGate>{children}</CityGate>
           </main>
         </div>

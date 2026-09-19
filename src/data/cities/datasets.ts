@@ -1,11 +1,13 @@
 // Per-city datasets.
 //
-// The Jalandhar dataset is the existing, unchanged Jalandhar record set. The
-// other cities are registered with empty record sets until their government
-// registers are ingested — records are never copied or inferred between
-// cities.
+// Jalandhar is the existing, unchanged Jalandhar record set built from
+// government sources. Thane, Surat, Ahmedabad and Guwahati are served by the
+// MoHUA four-city dataset, which is synthetic prototype data — it is adapted
+// into the same application model, never mixed with Jalandhar records and
+// never presented as government statistics.
 
 import { agencies, assets, evidence, projects, schemes } from "../jalandhar";
+import { adaptedRecords } from "../four-city/adapter";
 import type { Agency, Asset, Evidence, Project, Scheme } from "../types";
 import { CITIES, type CityId, type CityProfile, cityProfile } from "./registry";
 
@@ -16,6 +18,8 @@ export interface CityDataset {
   schemes: Scheme[];
   agencies: Agency[];
   evidence: Evidence[];
+  /** True when the records come from the synthetic four-city dataset. */
+  synthetic: boolean;
 }
 
 const EMPTY = {
@@ -26,6 +30,15 @@ const EMPTY = {
   evidence: [] as Evidence[],
 };
 
+function fourCity(id: CityId): CityDataset {
+  const records = adaptedRecords(id);
+  return {
+    profile: cityProfile(id),
+    ...(records ?? EMPTY),
+    synthetic: true,
+  };
+}
+
 const DATASETS: Record<CityId, CityDataset> = {
   "CITY-JALANDHAR": {
     profile: cityProfile("CITY-JALANDHAR"),
@@ -34,11 +47,12 @@ const DATASETS: Record<CityId, CityDataset> = {
     schemes,
     agencies,
     evidence,
+    synthetic: false,
   },
-  "CITY-THANE": { profile: cityProfile("CITY-THANE"), ...EMPTY },
-  "CITY-SURAT": { profile: cityProfile("CITY-SURAT"), ...EMPTY },
-  "CITY-AHMEDABAD": { profile: cityProfile("CITY-AHMEDABAD"), ...EMPTY },
-  "CITY-GUWAHATI": { profile: cityProfile("CITY-GUWAHATI"), ...EMPTY },
+  "CITY-THANE": fourCity("CITY-THANE"),
+  "CITY-SURAT": fourCity("CITY-SURAT"),
+  "CITY-AHMEDABAD": fourCity("CITY-AHMEDABAD"),
+  "CITY-GUWAHATI": fourCity("CITY-GUWAHATI"),
 };
 
 export function datasetFor(id: CityId): CityDataset {

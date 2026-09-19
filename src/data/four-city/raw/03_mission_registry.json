@@ -1,0 +1,80 @@
+[
+  {
+    "mission_id": "AMRUT",
+    "name": "AMRUT",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "AMRUT_2",
+    "name": "AMRUT 2",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "SMART_CITIES",
+    "name": "SMART CITIES",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "LDO_CONTEXT",
+    "name": "LDO CONTEXT",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "DAY_NULM",
+    "name": "DAY NULM",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "PM_SVANIDHI",
+    "name": "PM SVANIDHI",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "PMAY_U",
+    "name": "PMAY U",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "PMAY_U_2",
+    "name": "PMAY U 2",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "SBM_U",
+    "name": "SBM U",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "SBM_U_2",
+    "name": "SBM U 2",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "URBAN_TRANSPORT",
+    "name": "URBAN TRANSPORT",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "NBO",
+    "name": "NBO",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  },
+  {
+    "mission_id": "MUNICIPAL",
+    "name": "MUNICIPAL",
+    "record_type": "ASSUMED",
+    "description": "Synthetic dataset coverage label; confirm jurisdiction and period before interpreting"
+  }
+]

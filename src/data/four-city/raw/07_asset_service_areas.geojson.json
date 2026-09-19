@@ -1,0 +1,1365 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9481,
+          19.2093
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-01",
+        "service_area_id": "AREA-THANE-01",
+        "locality_ids": [
+          "LOC-THANE-01"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-THANE-001",
+          "AST-THANE-001"
+        ],
+        "sewer_asset_ids": [
+          "AST-THANE-005",
+          "AST-THANE-002"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9631,
+          19.2093
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-02",
+        "service_area_id": "AREA-THANE-02",
+        "locality_ids": [
+          "LOC-THANE-02"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-THANE-001",
+          "AST-THANE-011"
+        ],
+        "sewer_asset_ids": [
+          "AST-THANE-005",
+          "AST-THANE-012"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9781,
+          19.2093
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-03",
+        "service_area_id": "AREA-THANE-03",
+        "locality_ids": [
+          "LOC-THANE-03"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-THANE-001",
+          "AST-THANE-021"
+        ],
+        "sewer_asset_ids": [
+          "AST-THANE-005",
+          "AST-THANE-022"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9931,
+          19.2093
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-04",
+        "service_area_id": "AREA-THANE-04",
+        "locality_ids": [
+          "LOC-THANE-04"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-THANE-001",
+          "AST-THANE-031"
+        ],
+        "sewer_asset_ids": [
+          "AST-THANE-005",
+          "AST-THANE-032"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0081,
+          19.2093
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-05",
+        "service_area_id": "AREA-THANE-05",
+        "locality_ids": [
+          "LOC-THANE-05"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-THANE-001",
+          "AST-THANE-041"
+        ],
+        "sewer_asset_ids": [
+          "AST-THANE-005",
+          "AST-THANE-042"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9481,
+          19.2273
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-06",
+        "service_area_id": "AREA-THANE-06",
+        "locality_ids": [
+          "LOC-THANE-06"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-THANE-001",
+          "AST-THANE-051"
+        ],
+        "sewer_asset_ids": [
+          "AST-THANE-005",
+          "AST-THANE-052"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9631,
+          19.2273
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-07",
+        "service_area_id": "AREA-THANE-07",
+        "locality_ids": [
+          "LOC-THANE-07"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-THANE-001",
+          "AST-THANE-061"
+        ],
+        "sewer_asset_ids": [
+          "AST-THANE-005",
+          "AST-THANE-062"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9781,
+          19.2273
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-08",
+        "service_area_id": "AREA-THANE-08",
+        "locality_ids": [
+          "LOC-THANE-08"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-THANE-001",
+          "AST-THANE-071"
+        ],
+        "sewer_asset_ids": [
+          "AST-THANE-005",
+          "AST-THANE-072"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9931,
+          19.2273
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-09",
+        "service_area_id": "AREA-THANE-09",
+        "locality_ids": [
+          "LOC-THANE-09"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-THANE-001",
+          "AST-THANE-081"
+        ],
+        "sewer_asset_ids": [
+          "AST-THANE-005",
+          "AST-THANE-082"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0081,
+          19.2273
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-THANE",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-THANE-10",
+        "service_area_id": "AREA-THANE-10",
+        "locality_ids": [
+          "LOC-THANE-10"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-THANE-001",
+          "AST-THANE-091"
+        ],
+        "sewer_asset_ids": [
+          "AST-THANE-005",
+          "AST-THANE-092"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8011,
+          21.1612
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-01",
+        "service_area_id": "AREA-SURAT-01",
+        "locality_ids": [
+          "LOC-SURAT-01"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-SURAT-001",
+          "AST-SURAT-001"
+        ],
+        "sewer_asset_ids": [
+          "AST-SURAT-005",
+          "AST-SURAT-002"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8161,
+          21.1612
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-02",
+        "service_area_id": "AREA-SURAT-02",
+        "locality_ids": [
+          "LOC-SURAT-02"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-SURAT-001",
+          "AST-SURAT-011"
+        ],
+        "sewer_asset_ids": [
+          "AST-SURAT-005",
+          "AST-SURAT-012"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8311,
+          21.1612
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-03",
+        "service_area_id": "AREA-SURAT-03",
+        "locality_ids": [
+          "LOC-SURAT-03"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-SURAT-001",
+          "AST-SURAT-021"
+        ],
+        "sewer_asset_ids": [
+          "AST-SURAT-005",
+          "AST-SURAT-022"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8461,
+          21.1612
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-04",
+        "service_area_id": "AREA-SURAT-04",
+        "locality_ids": [
+          "LOC-SURAT-04"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-SURAT-001",
+          "AST-SURAT-031"
+        ],
+        "sewer_asset_ids": [
+          "AST-SURAT-005",
+          "AST-SURAT-032"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8611,
+          21.1612
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-05",
+        "service_area_id": "AREA-SURAT-05",
+        "locality_ids": [
+          "LOC-SURAT-05"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-SURAT-001",
+          "AST-SURAT-041"
+        ],
+        "sewer_asset_ids": [
+          "AST-SURAT-005",
+          "AST-SURAT-042"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8011,
+          21.1792
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-06",
+        "service_area_id": "AREA-SURAT-06",
+        "locality_ids": [
+          "LOC-SURAT-06"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-SURAT-001",
+          "AST-SURAT-051"
+        ],
+        "sewer_asset_ids": [
+          "AST-SURAT-005",
+          "AST-SURAT-052"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8161,
+          21.1792
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-07",
+        "service_area_id": "AREA-SURAT-07",
+        "locality_ids": [
+          "LOC-SURAT-07"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-SURAT-001",
+          "AST-SURAT-061"
+        ],
+        "sewer_asset_ids": [
+          "AST-SURAT-005",
+          "AST-SURAT-062"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8311,
+          21.1792
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-08",
+        "service_area_id": "AREA-SURAT-08",
+        "locality_ids": [
+          "LOC-SURAT-08"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-SURAT-001",
+          "AST-SURAT-071"
+        ],
+        "sewer_asset_ids": [
+          "AST-SURAT-005",
+          "AST-SURAT-072"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8461,
+          21.1792
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-09",
+        "service_area_id": "AREA-SURAT-09",
+        "locality_ids": [
+          "LOC-SURAT-09"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-SURAT-001",
+          "AST-SURAT-081"
+        ],
+        "sewer_asset_ids": [
+          "AST-SURAT-005",
+          "AST-SURAT-082"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8611,
+          21.1792
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-SURAT",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-SURAT-10",
+        "service_area_id": "AREA-SURAT-10",
+        "locality_ids": [
+          "LOC-SURAT-10"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-SURAT-001",
+          "AST-SURAT-091"
+        ],
+        "sewer_asset_ids": [
+          "AST-SURAT-005",
+          "AST-SURAT-092"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5414,
+          23.0135
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-01",
+        "service_area_id": "AREA-AHMEDABAD-01",
+        "locality_ids": [
+          "LOC-AHMEDABAD-01"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-AHMEDABAD-001",
+          "AST-AHMEDABAD-001"
+        ],
+        "sewer_asset_ids": [
+          "AST-AHMEDABAD-005",
+          "AST-AHMEDABAD-002"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5564,
+          23.0135
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-02",
+        "service_area_id": "AREA-AHMEDABAD-02",
+        "locality_ids": [
+          "LOC-AHMEDABAD-02"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-AHMEDABAD-001",
+          "AST-AHMEDABAD-011"
+        ],
+        "sewer_asset_ids": [
+          "AST-AHMEDABAD-005",
+          "AST-AHMEDABAD-012"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5714,
+          23.0135
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-03",
+        "service_area_id": "AREA-AHMEDABAD-03",
+        "locality_ids": [
+          "LOC-AHMEDABAD-03"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-AHMEDABAD-001",
+          "AST-AHMEDABAD-021"
+        ],
+        "sewer_asset_ids": [
+          "AST-AHMEDABAD-005",
+          "AST-AHMEDABAD-022"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5864,
+          23.0135
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-04",
+        "service_area_id": "AREA-AHMEDABAD-04",
+        "locality_ids": [
+          "LOC-AHMEDABAD-04"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-AHMEDABAD-001",
+          "AST-AHMEDABAD-031"
+        ],
+        "sewer_asset_ids": [
+          "AST-AHMEDABAD-005",
+          "AST-AHMEDABAD-032"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.6014,
+          23.0135
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-05",
+        "service_area_id": "AREA-AHMEDABAD-05",
+        "locality_ids": [
+          "LOC-AHMEDABAD-05"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-AHMEDABAD-001",
+          "AST-AHMEDABAD-041"
+        ],
+        "sewer_asset_ids": [
+          "AST-AHMEDABAD-005",
+          "AST-AHMEDABAD-042"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5414,
+          23.0315
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-06",
+        "service_area_id": "AREA-AHMEDABAD-06",
+        "locality_ids": [
+          "LOC-AHMEDABAD-06"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-AHMEDABAD-001",
+          "AST-AHMEDABAD-051"
+        ],
+        "sewer_asset_ids": [
+          "AST-AHMEDABAD-005",
+          "AST-AHMEDABAD-052"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5564,
+          23.0315
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-07",
+        "service_area_id": "AREA-AHMEDABAD-07",
+        "locality_ids": [
+          "LOC-AHMEDABAD-07"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-AHMEDABAD-001",
+          "AST-AHMEDABAD-061"
+        ],
+        "sewer_asset_ids": [
+          "AST-AHMEDABAD-005",
+          "AST-AHMEDABAD-062"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5714,
+          23.0315
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-08",
+        "service_area_id": "AREA-AHMEDABAD-08",
+        "locality_ids": [
+          "LOC-AHMEDABAD-08"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-AHMEDABAD-001",
+          "AST-AHMEDABAD-071"
+        ],
+        "sewer_asset_ids": [
+          "AST-AHMEDABAD-005",
+          "AST-AHMEDABAD-072"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5864,
+          23.0315
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-09",
+        "service_area_id": "AREA-AHMEDABAD-09",
+        "locality_ids": [
+          "LOC-AHMEDABAD-09"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-AHMEDABAD-001",
+          "AST-AHMEDABAD-081"
+        ],
+        "sewer_asset_ids": [
+          "AST-AHMEDABAD-005",
+          "AST-AHMEDABAD-082"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.6014,
+          23.0315
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-AHMEDABAD",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-AHMEDABAD-10",
+        "service_area_id": "AREA-AHMEDABAD-10",
+        "locality_ids": [
+          "LOC-AHMEDABAD-10"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-AHMEDABAD-001",
+          "AST-AHMEDABAD-091"
+        ],
+        "sewer_asset_ids": [
+          "AST-AHMEDABAD-005",
+          "AST-AHMEDABAD-092"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7062,
+          26.1355
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-01",
+        "service_area_id": "AREA-GUWAHATI-01",
+        "locality_ids": [
+          "LOC-GUWAHATI-01"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-GUWAHATI-001",
+          "AST-GUWAHATI-001"
+        ],
+        "sewer_asset_ids": [
+          "AST-GUWAHATI-005",
+          "AST-GUWAHATI-002"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7212,
+          26.1355
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-02",
+        "service_area_id": "AREA-GUWAHATI-02",
+        "locality_ids": [
+          "LOC-GUWAHATI-02"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-GUWAHATI-001",
+          "AST-GUWAHATI-011"
+        ],
+        "sewer_asset_ids": [
+          "AST-GUWAHATI-005",
+          "AST-GUWAHATI-012"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7362,
+          26.1355
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-03",
+        "service_area_id": "AREA-GUWAHATI-03",
+        "locality_ids": [
+          "LOC-GUWAHATI-03"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-GUWAHATI-001",
+          "AST-GUWAHATI-021"
+        ],
+        "sewer_asset_ids": [
+          "AST-GUWAHATI-005",
+          "AST-GUWAHATI-022"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7512,
+          26.1355
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-04",
+        "service_area_id": "AREA-GUWAHATI-04",
+        "locality_ids": [
+          "LOC-GUWAHATI-04"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-GUWAHATI-001",
+          "AST-GUWAHATI-031"
+        ],
+        "sewer_asset_ids": [
+          "AST-GUWAHATI-005",
+          "AST-GUWAHATI-032"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7662,
+          26.1355
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-05",
+        "service_area_id": "AREA-GUWAHATI-05",
+        "locality_ids": [
+          "LOC-GUWAHATI-05"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-GUWAHATI-001",
+          "AST-GUWAHATI-041"
+        ],
+        "sewer_asset_ids": [
+          "AST-GUWAHATI-005",
+          "AST-GUWAHATI-042"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7062,
+          26.1535
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-06",
+        "service_area_id": "AREA-GUWAHATI-06",
+        "locality_ids": [
+          "LOC-GUWAHATI-06"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-GUWAHATI-001",
+          "AST-GUWAHATI-051"
+        ],
+        "sewer_asset_ids": [
+          "AST-GUWAHATI-005",
+          "AST-GUWAHATI-052"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7212,
+          26.1535
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-07",
+        "service_area_id": "AREA-GUWAHATI-07",
+        "locality_ids": [
+          "LOC-GUWAHATI-07"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-GUWAHATI-001",
+          "AST-GUWAHATI-061"
+        ],
+        "sewer_asset_ids": [
+          "AST-GUWAHATI-005",
+          "AST-GUWAHATI-062"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7362,
+          26.1535
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-08",
+        "service_area_id": "AREA-GUWAHATI-08",
+        "locality_ids": [
+          "LOC-GUWAHATI-08"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-GUWAHATI-001",
+          "AST-GUWAHATI-071"
+        ],
+        "sewer_asset_ids": [
+          "AST-GUWAHATI-005",
+          "AST-GUWAHATI-072"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7512,
+          26.1535
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-09",
+        "service_area_id": "AREA-GUWAHATI-09",
+        "locality_ids": [
+          "LOC-GUWAHATI-09"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-GUWAHATI-001",
+          "AST-GUWAHATI-081"
+        ],
+        "sewer_asset_ids": [
+          "AST-GUWAHATI-005",
+          "AST-GUWAHATI-082"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.7662,
+          26.1535
+        ]
+      },
+      "properties": {
+        "city_id": "CITY-GUWAHATI",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": null,
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-GUWAHATI-10",
+        "service_area_id": "AREA-GUWAHATI-10",
+        "locality_ids": [
+          "LOC-GUWAHATI-10"
+        ],
+        "area_type": "water_supply_service_area",
+        "geometry_precision": "illustrative anchor only",
+        "water_asset_ids": [
+          "AST-GUWAHATI-001",
+          "AST-GUWAHATI-091"
+        ],
+        "sewer_asset_ids": [
+          "AST-GUWAHATI-005",
+          "AST-GUWAHATI-092"
+        ]
+      }
+    }
+  ]
+}

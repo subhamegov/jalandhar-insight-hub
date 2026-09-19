@@ -1,5 +1,31 @@
-import { agencies, assets, evidence, projects, schemes } from "./jalandhar";
-import type { Project, ProjectStatus } from "./types";
+import {
+  agencies as jalandharAgencies,
+  assets as jalandharAssets,
+  evidence as jalandharEvidence,
+  projects as jalandharProjects,
+  schemes as jalandharSchemes,
+} from "./jalandhar";
+import { datasetFor } from "./cities/datasets";
+import type { CityId } from "./cities/registry";
+import type { Agency, Asset, Evidence, Project, ProjectStatus, Scheme } from "./types";
+
+// The record set these selectors read follows the active city. Jalandhar is the
+// default; CityProvider switches it when the user changes city. Records are
+// never mixed between cities.
+export let projects: Project[] = jalandharProjects;
+export let assets: Asset[] = jalandharAssets;
+export let schemes: Scheme[] = jalandharSchemes;
+export let agencies: Agency[] = jalandharAgencies;
+export let evidence: Evidence[] = jalandharEvidence;
+
+export function setActiveCityRecords(id: CityId): void {
+  const dataset = datasetFor(id);
+  projects = dataset.projects;
+  assets = dataset.assets;
+  schemes = dataset.schemes;
+  agencies = dataset.agencies;
+  evidence = dataset.evidence;
+}
 
 export const IN_EXECUTION: ProjectStatus[] = [
   "tendered",
@@ -132,5 +158,3 @@ export function projectsForAgency(agencyName: string) {
     implemented: projects.filter((p) => p.implementing_agency === agencyName),
   };
 }
-
-export { agencies, assets, evidence, projects, schemes };
