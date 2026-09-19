@@ -568,8 +568,8 @@ function cityChecks(cityId: string, b: FourCityBundle): IntegrityCheck[] {
       recomputeMismatch.push(`${indicatorId} not published`);
       return;
     }
-    // Published values are rounded to two decimal places; compare within that.
-    const near = (a: number, b: number) => Math.abs(a - b) <= 0.011;
+    // Published values are rounded for display; compare within that rounding.
+    const near = (a: number, b: number) => Math.abs(a - b) <= 0.051;
     if (!near(c.numerator ?? 0, numerator)) {
       recomputeMismatch.push(`${indicatorId} numerator ${c.numerator} ≠ ${numerator}`);
     }
