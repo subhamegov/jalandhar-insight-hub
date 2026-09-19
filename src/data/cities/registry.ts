@@ -44,7 +44,7 @@ export const CITIES: CityProfile[] = [
     urban_local_body: "Thane Municipal Corporation",
     centre: [19.2183, 72.9781],
     bbox: [19.13, 72.89, 19.32, 73.08],
-    data_loaded: false,
+    data_loaded: true,
   },
   {
     city_id: "CITY-SURAT",
@@ -53,7 +53,7 @@ export const CITIES: CityProfile[] = [
     urban_local_body: "Surat Municipal Corporation",
     centre: [21.1702, 72.8311],
     bbox: [21.05, 72.7, 21.29, 72.96],
-    data_loaded: false,
+    data_loaded: true,
   },
   {
     city_id: "CITY-AHMEDABAD",
@@ -62,7 +62,7 @@ export const CITIES: CityProfile[] = [
     urban_local_body: "Ahmedabad Municipal Corporation",
     centre: [23.0225, 72.5714],
     bbox: [22.91, 72.45, 23.15, 72.71],
-    data_loaded: false,
+    data_loaded: true,
   },
   {
     city_id: "CITY-GUWAHATI",
@@ -71,7 +71,7 @@ export const CITIES: CityProfile[] = [
     urban_local_body: "Guwahati Municipal Corporation",
     centre: [26.1445, 91.7362],
     bbox: [26.05, 91.6, 26.24, 91.9],
-    data_loaded: false,
+    data_loaded: true,
   },
 ];
 
