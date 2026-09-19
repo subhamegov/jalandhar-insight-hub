@@ -249,11 +249,12 @@ function SyntheticNotice() {
   const { dataset } = useCity();
   if (!dataset.synthetic || dataset.projects.length === 0) return null;
   return (
-    <p className="mb-4 rounded-sm border border-border bg-muted/60 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
-      <span className="font-medium text-foreground">Synthetic prototype data.</span> Records for
-      this city come from the MoHUA four-city synthetic dataset. They are not government
-      statistics, are not citywide totals, and must be validated against official records before
-      any decision.
+    <p className="mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-sm border border-border bg-muted/60 px-3 py-2 text-xs text-muted-foreground">
+      <span className="font-medium text-foreground">Prototype data</span>
+      <span>Synthetic observations · Not official statistics</span>
+      <Link to="/data-quality" className="font-medium text-primary underline-offset-2 hover:underline">
+        View data provenance
+      </Link>
     </p>
   );
 }
