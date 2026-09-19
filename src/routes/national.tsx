@@ -34,7 +34,6 @@ export const Route = createFileRoute("/national")({
   component: NationalView,
 });
 
-const INDIA_CENTRE: [number, number] = [22.5, 79.0];
 
 function NationalView() {
   const { cityId, setCityId } = useCity();
