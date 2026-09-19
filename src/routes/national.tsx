@@ -1,5 +1,5 @@
 import { lazy, useMemo } from "react";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader, Panel } from "@/components/app/Primitives";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { MapPoint } from "@/components/map/PointMap";
@@ -36,9 +36,8 @@ export const Route = createFileRoute("/national")({
 
 
 function NationalView() {
-  const { cityId, setCityId } = useCity();
+  const { setCityId } = useCity();
   const { setLocalityId } = useGeo();
-  const navigate = useNavigate();
 
   const cards = useMemo(
     () =>
@@ -94,7 +93,7 @@ function NationalView() {
           >
             <IndiaMap
               points={points}
-              selectedId={cityId}
+              
               onSelect={(id) => open(id as (typeof CITIES)[number]["city_id"])}
             />
           </ClientOnly>
@@ -109,7 +108,7 @@ function NationalView() {
         {cards.map((c) => (
           <article
             key={c.profile.city_id}
-            className={`digit-card p-4 ${c.profile.city_id === cityId ? "border-primary" : ""}`}
+            className="digit-card p-4"
           >
             <p className="field-label">{c.profile.city_id}</p>
             <h2 className="mt-1 text-base font-semibold text-foreground">
