@@ -121,6 +121,24 @@ export function CityProvider({ children }: { children: ReactNode }) {
     [apply, navigate, pathname],
   );
 
+  // National destinations carry no city. Landing on one clears the city scope
+  // so the header and sidebar never imply a city while operating nationally.
+  useEffect(() => {
+    if (!restored) return;
+    const nationalRoute =
+      pathname.startsWith("/national") ||
+      pathname.startsWith("/states") ||
+      pathname.startsWith("/compare");
+    if (nationalRoute && selection !== ALL_CITIES) {
+      apply(ALL_CITIES);
+      navigate({
+        to: pathname,
+        search: (prev: Record<string, unknown>) => ({ ...prev, city: ALL_CITIES }),
+        replace: true,
+      } as never);
+    }
+  }, [pathname, selection, restored, apply, navigate]);
+
   const setScope = useCallback(
     (next: Scope, to?: string) => {
       setCityId(next.type === "NATIONAL" ? NATIONAL : next.cityId, to);
