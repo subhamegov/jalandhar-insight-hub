@@ -103,7 +103,7 @@ function buildIndex(
 
 export function GlobalHeader() {
   const navigate = useNavigate();
-  const { city, cities, cityId, setCityId, dataset } = useCity();
+  const { city, cities, selection, portfolio, setCityId, dataset } = useCity();
   const { projects, assets, schemes, agencies } = dataset;
   const index = useMemo(
     () => buildIndex(projects, assets, schemes, agencies),
