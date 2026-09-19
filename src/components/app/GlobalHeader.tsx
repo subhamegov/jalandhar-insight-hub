@@ -152,23 +152,28 @@ export function GlobalHeader() {
         </div>
 
         <div className="min-w-0">
-          <label htmlFor="city-select" className="field-label">
-            City
+          <label htmlFor="scope-select" className="field-label">
+            Scope
           </label>
           <select
-            id="city-select"
+            id="scope-select"
             value={selection}
             onChange={(e) => {
               const next = e.target.value;
               if (next === ALL_CITIES) {
-                setCityId(ALL_CITIES);
+                // Leaving a city: city-only pages are not valid nationally.
+                const stay = pathname === "/" || pathname.startsWith("/compare");
+                setCityId(ALL_CITIES, stay ? undefined : "/national");
                 return;
               }
-              if (isCityId(next)) setCityId(next);
+              if (isCityId(next)) {
+                const fromNational = pathname.startsWith("/national") || pathname.startsWith("/compare");
+                setCityId(next, fromNational ? "/" : undefined);
+              }
             }}
             className="mt-0.5 block w-full rounded-sm border border-input bg-card px-2 py-1 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
-            <option value={ALL_CITIES}>All cities — four-city prototype</option>
+            <option value={ALL_CITIES}>National</option>
             {cities.map((c) => (
               <option key={c.city_id} value={c.city_id}>
                 {c.name}, {c.state}
@@ -177,7 +182,7 @@ export function GlobalHeader() {
             ))}
           </select>
           <p className="mt-0.5 truncate text-xs text-muted-foreground">
-            {portfolio ? "Four-city prototype coverage" : `${city.name} · ${city.city_id}`}
+            {portfolio ? "India · NATIONAL" : `${city.name} · ${city.city_id}`}
           </p>
         </div>
 
