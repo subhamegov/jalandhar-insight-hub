@@ -18,7 +18,7 @@ export type Drill =
   | { kind: "record"; id: string; label: string }
   | { kind: "route"; to: DrillRoute; label: string };
 
-export type DrillRoute = "/localities" | "/projects" | "/assets" | "/data-layer" | "/evidence";
+export type DrillRoute = "/housing" | "/localities" | "/projects" | "/assets" | "/data-layer" | "/evidence";
 
 export interface Indicator {
   id: string;
@@ -163,7 +163,10 @@ function housingDomain(b: FourCityBundle): CitizenDomain {
         basis: `Water ready ${num(waterReady)}, sewer ready ${num(sewerReady)}, waste collection ready ${num(wasteReady)} of ${num(completed)} completed`,
         period,
         nature: "observed",
-        drills: [{ kind: "route", to: "/localities", label: "Readiness by locality" }],
+        drills: [
+          { kind: "route", to: "/housing", label: "Housing service readiness" },
+          { kind: "route", to: "/localities", label: "Readiness by locality" },
+        ],
       },
       {
         id: "housing-infrastructure",

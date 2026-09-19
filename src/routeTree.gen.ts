@@ -21,6 +21,8 @@ import { Route as NationalRouteImport } from './routes/national'
 import { Route as OutcomesRouteImport } from './routes/outcomes'
 import { Route as AgenciesIndexRouteImport } from './routes/agencies.index'
 import { Route as AgenciesAgencyNameRouteImport } from './routes/agencies.$agencyName'
+import { Route as HousingIndexRouteImport } from './routes/housing.index'
+import { Route as HousingHousingIdRouteImport } from './routes/housing.$housingId'
 import { Route as LocalitiesIndexRouteImport } from './routes/localities.index'
 import { Route as LocalitiesLocalityIdRouteImport } from './routes/localities.$localityId'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
@@ -91,6 +93,16 @@ const AgenciesAgencyNameRoute = AgenciesAgencyNameRouteImport.update({
   path: '/agencies/$agencyName',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HousingIndexRoute = HousingIndexRouteImport.update({
+  id: '/housing/',
+  path: '/housing/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HousingHousingIdRoute = HousingHousingIdRouteImport.update({
+  id: '/housing/$housingId',
+  path: '/housing/$housingId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LocalitiesIndexRoute = LocalitiesIndexRouteImport.update({
   id: '/localities/',
   path: '/localities/',
@@ -149,12 +161,14 @@ export interface FileRoutesByFullPath {
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
+  '/housing/$housingId': typeof HousingHousingIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/records/$recordId': typeof RecordsRecordIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
+  '/housing/': typeof HousingIndexRoute
   '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/schemes/': typeof SchemesIndexRoute
@@ -172,12 +186,14 @@ export interface FileRoutesByTo {
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
+  '/housing/$housingId': typeof HousingHousingIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/records/$recordId': typeof RecordsRecordIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies': typeof AgenciesIndexRoute
+  '/housing': typeof HousingIndexRoute
   '/localities': typeof LocalitiesIndexRoute
   '/projects': typeof ProjectsIndexRoute
   '/schemes': typeof SchemesIndexRoute
@@ -196,12 +212,14 @@ export interface FileRoutesById {
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
+  '/housing/$housingId': typeof HousingHousingIdRoute
   '/localities/$localityId': typeof LocalitiesLocalityIdRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/records/$recordId': typeof RecordsRecordIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
+  '/housing/': typeof HousingIndexRoute
   '/localities/': typeof LocalitiesIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/schemes/': typeof SchemesIndexRoute
@@ -221,12 +239,14 @@ export interface FileRouteTypes {
     | '/national'
     | '/outcomes'
     | '/agencies/$agencyName'
+    | '/housing/$housingId'
     | '/localities/$localityId'
     | '/projects/$projectId'
     | '/records/$recordId'
     | '/schemes/$schemeName'
     | '/wards/$wardId'
     | '/agencies/'
+    | '/housing/'
     | '/localities/'
     | '/projects/'
     | '/schemes/'
@@ -244,12 +264,14 @@ export interface FileRouteTypes {
     | '/national'
     | '/outcomes'
     | '/agencies/$agencyName'
+    | '/housing/$housingId'
     | '/localities/$localityId'
     | '/projects/$projectId'
     | '/records/$recordId'
     | '/schemes/$schemeName'
     | '/wards/$wardId'
     | '/agencies'
+    | '/housing'
     | '/localities'
     | '/projects'
     | '/schemes'
@@ -267,12 +289,14 @@ export interface FileRouteTypes {
     | '/national'
     | '/outcomes'
     | '/agencies/$agencyName'
+    | '/housing/$housingId'
     | '/localities/$localityId'
     | '/projects/$projectId'
     | '/records/$recordId'
     | '/schemes/$schemeName'
     | '/wards/$wardId'
     | '/agencies/'
+    | '/housing/'
     | '/localities/'
     | '/projects/'
     | '/schemes/'
@@ -291,12 +315,14 @@ export interface RootRouteChildren {
   NationalRoute: typeof NationalRoute
   OutcomesRoute: typeof OutcomesRoute
   AgenciesAgencyNameRoute: typeof AgenciesAgencyNameRoute
+  HousingHousingIdRoute: typeof HousingHousingIdRoute
   LocalitiesLocalityIdRoute: typeof LocalitiesLocalityIdRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
   RecordsRecordIdRoute: typeof RecordsRecordIdRoute
   SchemesSchemeNameRoute: typeof SchemesSchemeNameRoute
   WardsWardIdRoute: typeof WardsWardIdRoute
   AgenciesIndexRoute: typeof AgenciesIndexRoute
+  HousingIndexRoute: typeof HousingIndexRoute
   LocalitiesIndexRoute: typeof LocalitiesIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
   SchemesIndexRoute: typeof SchemesIndexRoute
@@ -389,6 +415,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AgenciesAgencyNameRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/housing/': {
+      id: '/housing/'
+      path: '/housing'
+      fullPath: '/housing/'
+      preLoaderRoute: typeof HousingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/housing/$housingId': {
+      id: '/housing/$housingId'
+      path: '/housing/$housingId'
+      fullPath: '/housing/$housingId'
+      preLoaderRoute: typeof HousingHousingIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/localities/': {
       id: '/localities/'
       path: '/localities'
@@ -467,12 +507,14 @@ const rootRouteChildren: RootRouteChildren = {
   NationalRoute: NationalRoute,
   OutcomesRoute: OutcomesRoute,
   AgenciesAgencyNameRoute: AgenciesAgencyNameRoute,
+  HousingHousingIdRoute: HousingHousingIdRoute,
   LocalitiesLocalityIdRoute: LocalitiesLocalityIdRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
   RecordsRecordIdRoute: RecordsRecordIdRoute,
   SchemesSchemeNameRoute: SchemesSchemeNameRoute,
   WardsWardIdRoute: WardsWardIdRoute,
   AgenciesIndexRoute: AgenciesIndexRoute,
+  HousingIndexRoute: HousingIndexRoute,
   LocalitiesIndexRoute: LocalitiesIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
   SchemesIndexRoute: SchemesIndexRoute,
