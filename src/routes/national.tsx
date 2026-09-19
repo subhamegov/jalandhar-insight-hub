@@ -145,9 +145,8 @@ function NationalView() {
                 <button
                   type="button"
                   onClick={() => {
-                    setCityId(c.profile.city_id);
                     setLocalityId(null);
-                    void navigate({ to: "/localities" });
+                    setCityId(c.profile.city_id, "/localities");
                   }}
                   className="rounded-sm border border-border px-3 py-1.5 text-xs font-medium text-foreground"
                 >
