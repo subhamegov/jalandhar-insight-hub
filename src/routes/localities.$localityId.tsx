@@ -227,7 +227,13 @@ function LocalityDetail() {
                   ))}
                 </ul>
                 <div className="mt-2">
-                  <RecordLink id={s.signal_id} label="Open signal" />
+                  <Link
+                    to="/signals/$signalId"
+                    params={{ signalId: s.signal_id }}
+                    className="text-sm underline underline-offset-2"
+                  >
+                    Open signal with its evidence
+                  </Link>
                 </div>
               </li>
             ))}
