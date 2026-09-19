@@ -144,7 +144,6 @@ function InvestmentIndex() {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search project, mission or agency"
             className="w-64 rounded-sm border border-border bg-background px-2 py-1 text-sm"
-            aria-label="Search projects"
           />
           <label className="text-sm">
             <span className="field-label mr-2">Sort</span>
