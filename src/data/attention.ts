@@ -7,7 +7,7 @@
 // project record and are treated as zero contribution when not verified.
 
 import { conflictsForProject } from "./conflicts";
-import { projects } from "./jalandhar";
+import { projects } from "./selectors";
 import type { Project } from "./types";
 
 export interface RiskProfile {
