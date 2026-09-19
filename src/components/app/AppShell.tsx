@@ -162,7 +162,9 @@ function CityShell({ children }: { children: ReactNode }) {
         </aside>
         <div className="min-w-0 flex-1">
           <GlobalHeader />
-          <main className="px-3 py-4 sm:px-4 sm:py-5 lg:px-8 lg:py-7">{children}</main>
+          <main className="px-3 py-4 sm:px-4 sm:py-5 lg:px-8 lg:py-7">
+            <CityGate>{children}</CityGate>
+          </main>
         </div>
       </div>
     </EvidenceDrawerProvider>
