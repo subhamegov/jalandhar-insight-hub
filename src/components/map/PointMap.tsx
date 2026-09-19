@@ -8,6 +8,7 @@
 
 import { useEffect, useMemo, useRef } from "react";
 import L from "leaflet";
+import { ux4g } from "@/lib/ux4gPalette";
 import "leaflet/dist/leaflet.css";
 import { OSM_ATTRIBUTION } from "@/data/mapLayers";
 
@@ -114,8 +115,8 @@ export default function PointMap({
       const marker = L.circleMarker([p.lat, p.lon], {
         radius: active ? 10 : 7,
         weight: active ? 3 : 2,
-        color: p.verified ? "#134e4a" : "#92400e",
-        fillColor: p.verified ? "#0f766e" : "#d97706",
+        color: p.verified ? ux4g.green900 : ux4g.orange900,
+        fillColor: p.verified ? ux4g.green700 : ux4g.gold800,
         fillOpacity: p.verified ? 0.85 : 0.55,
         dashArray: p.verified ? undefined : "3 2",
       });

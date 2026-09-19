@@ -5,6 +5,7 @@ import { StatusBadge, EvidenceBadge } from "@/components/app/StatusBadge";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import { DEFAULT_SHARED_FILTERS, readSharedFilters, writeSharedFilters } from "@/lib/sharedFilters";
 import type { GovPoint, MarkerState } from "@/components/map/MapCanvas";
+import { mapStateColors, ux4g } from "@/lib/ux4gPalette";
 import { assets, evidence, projects } from "@/data/selectors";
 import { LOCATION_QUALITY_LABEL, SCOPE_GROUPS, matchesScopeGroup } from "@/data/registerLogic";
 import {
@@ -74,14 +75,14 @@ const MARKER_LEGEND: { state: MarkerState; label: string }[] = [
 ];
 
 const LEGEND_COLORS: Record<MarkerState, string> = {
-  announced: "#ffffff",
-  active: "#1d4ed8",
-  completed: "#0f766e",
-  operational: "#15803d",
-  warning: "#d97706",
-  critical: "#b91c1c",
-  asset: "#0369a1",
-  location: "#b45309",
+  announced: ux4g.neutral0,
+  active: mapStateColors.active.fill,
+  completed: mapStateColors.completed.fill,
+  operational: mapStateColors.operational.fill,
+  warning: mapStateColors.warning.fill,
+  critical: mapStateColors.critical.fill,
+  asset: mapStateColors.asset.fill,
+  location: mapStateColors.location.fill,
 };
 
 const CATEGORY_ORDER: LayerCategory[] = [
@@ -446,6 +447,7 @@ function CityMap() {
               Search
             </h2>
             <input
+              aria-label="Search the map"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Project, record ID, locality or agency"
@@ -525,7 +527,7 @@ function CityMap() {
             <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               Location filters
             </h2>
-            <select
+            <select aria-label="Filter by location status"
               value={locStatus}
               onChange={(e) => setLocStatus(e.target.value)}
               className="w-full rounded-sm border border-border bg-background px-2 py-1 text-xs"
@@ -537,7 +539,7 @@ function CityMap() {
                 </option>
               ))}
             </select>
-            <select
+            <select aria-label="Filter by location confidence"
               value={locConfidence}
               onChange={(e) => setLocConfidence(e.target.value)}
               className="w-full rounded-sm border border-border bg-background px-2 py-1 text-xs"
@@ -547,7 +549,7 @@ function CityMap() {
               <option value="medium">Medium</option>
               <option value="low">Low</option>
             </select>
-            <select
+            <select aria-label="Filter by source agency"
               value={sourceAgency}
               onChange={(e) => setSourceAgency(e.target.value)}
               className="w-full rounded-sm border border-border bg-background px-2 py-1 text-xs"
@@ -677,7 +679,7 @@ function CityMap() {
                     className="inline-block h-3 w-3 rounded-full border-2"
                     style={{
                       background: LEGEND_COLORS[m.state],
-                      borderColor: m.state === "announced" ? "#1d4ed8" : LEGEND_COLORS[m.state],
+                      borderColor: m.state === "announced" ? mapStateColors.announced.stroke : LEGEND_COLORS[m.state],
                     }}
                   />
                   {m.label}
@@ -805,7 +807,7 @@ function Select({
   return (
     <label className="block text-[11px]">
       <span className="text-muted-foreground">{label}</span>
-      <select
+      <select aria-label="Choose an option"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="mt-0.5 w-full rounded-sm border border-border bg-background px-1.5 py-1 text-xs"

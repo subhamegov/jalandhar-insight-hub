@@ -131,10 +131,10 @@ function LocalitiesIndex() {
 
       <Panel title="All localities" description="Search by locality name or identifier.">
         <input
+          aria-label="Search localities"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search localities"
-          aria-label="Search localities"
           className="mb-3 w-full max-w-sm rounded-sm border border-border bg-background px-3 py-2 text-sm"
         />
         <div className="overflow-x-auto">

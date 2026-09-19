@@ -4,6 +4,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { CITY_ZOOM, JALANDHAR_BBOX, JALANDHAR_CENTER, OSM_ATTRIBUTION } from "@/data/mapLayers";
 import type { OsmFeature } from "@/lib/overpass";
+import { mapStateColors, ux4g } from "@/lib/ux4gPalette";
 
 export type MarkerState =
   | "announced"
@@ -30,16 +31,7 @@ export interface GovPoint {
 }
 
 
-const STATE_COLORS: Record<MarkerState, { fill: string; stroke: string }> = {
-  announced: { fill: "transparent", stroke: "#1d4ed8" },
-  active: { fill: "#1d4ed8", stroke: "#1e3a8a" },
-  completed: { fill: "#0f766e", stroke: "#134e4a" },
-  operational: { fill: "#15803d", stroke: "#14532d" },
-  warning: { fill: "#d97706", stroke: "#92400e" },
-  critical: { fill: "#b91c1c", stroke: "#7f1d1d" },
-  asset: { fill: "#0369a1", stroke: "#0c4a6e" },
-  location: { fill: "#b45309", stroke: "#78350f" },
-};
+const STATE_COLORS: Record<MarkerState, { fill: string; stroke: string }> = mapStateColors;
 
 export interface MapCanvasProps {
   govPoints: GovPoint[];
@@ -113,7 +105,7 @@ export default function MapCanvas({
     if (!group) return;
     group.clearLayers();
     for (const f of osmFeatures) {
-      const color = layerColors[f.layerId] ?? "#64748b";
+      const color = layerColors[f.layerId] ?? ux4g.neutral500;
       if (f.path && f.path.length > 1) {
         const shape = f.isArea
           ? L.polygon(f.path, { color, weight: 1, fillOpacity: 0.18 })
@@ -145,7 +137,7 @@ export default function MapCanvas({
       const count = p.count ?? 1;
       if (p.path && p.path.length > 1) {
         const line = L.polyline(p.path, {
-          color: isSelected ? "#0f172a" : c.stroke,
+          color: isSelected ? ux4g.neutral900 : c.stroke,
           weight: isSelected ? 7 : 5,
           opacity: 0.85,
           dashArray: "8 5",
@@ -156,9 +148,9 @@ export default function MapCanvas({
       }
       const marker = L.circleMarker([p.lat, p.lon], {
         radius: count > 1 ? Math.min(9 + Math.round(Math.sqrt(count) * 2.5), 20) : 9,
-        color: isSelected ? "#0f172a" : c.stroke,
+        color: isSelected ? ux4g.neutral900 : c.stroke,
         weight: isSelected ? 4 : 2,
-        fillColor: c.fill === "transparent" ? "#ffffff" : c.fill,
+        fillColor: c.fill === "transparent" ? ux4g.neutral0 : c.fill,
         fillOpacity: c.fill === "transparent" ? 0.25 : 0.9,
       });
       marker.bindTooltip(

@@ -139,15 +139,15 @@ function InvestmentIndex() {
       <Panel title="Projects and their chain">
         <div className="mb-3 flex flex-wrap items-center gap-3">
           <input
+            aria-label="Search projects"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search project, mission or agency"
             className="w-64 rounded-sm border border-border bg-background px-2 py-1 text-sm"
-            aria-label="Search projects"
           />
           <label className="text-sm">
             <span className="field-label mr-2">Sort</span>
-            <select
+            <select aria-label="Sort projects"
               value={sort}
               onChange={(e) => setSort(e.target.value as Sort)}
               className="rounded-sm border border-border bg-background px-2 py-1 text-sm"
@@ -294,7 +294,7 @@ export function Table({
 }) {
   if (rows.length === 0) return <p className="text-sm text-muted-foreground">{empty}</p>;
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
       <table className="w-full min-w-[60rem] text-sm">
         <thead>
           <tr className="border-b border-border text-left">

@@ -115,6 +115,7 @@ export function DataTable<T>({
           <div className="relative min-w-0 flex-1 basis-56">
             <Search className="pointer-events-none absolute top-2.5 left-2 h-3.5 w-3.5 text-muted-foreground" />
             <input
+              aria-label={searchPlaceholder}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={searchPlaceholder}
@@ -152,7 +153,7 @@ export function DataTable<T>({
                   className="flex min-w-0 flex-col gap-1 text-xs text-muted-foreground lg:flex-row lg:items-center lg:gap-1.5"
                 >
                   <span className="truncate">{f.label}</span>
-                  <select
+                  <select aria-label="Filter list"
                     value={active[f.key] ?? "all"}
                     onChange={(e) => setActive({ ...active, [f.key]: e.target.value })}
                     className="h-9 w-full min-w-0 rounded-sm border border-input bg-background px-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring/40 sm:h-8 lg:w-auto"
