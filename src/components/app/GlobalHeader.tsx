@@ -269,7 +269,7 @@ export function GlobalHeader() {
           </div>
         </dl>
 
-        {projects.length ? (
+        {!portfolio && projects.length ? (
           <div className="flex flex-wrap items-center gap-2">
             <button
               type="button"
