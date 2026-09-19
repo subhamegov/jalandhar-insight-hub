@@ -11,6 +11,7 @@ import {
   DATASET_REFERENCE_DATE,
   decisionSignals,
   fourCityBundle,
+  lookupEntity,
   localities,
   planningInterventions,
   type FourCityBundle,
@@ -567,10 +568,12 @@ function cityChecks(cityId: string, b: FourCityBundle): IntegrityCheck[] {
       recomputeMismatch.push(`${indicatorId} not published`);
       return;
     }
-    if ((c.numerator ?? 0) !== numerator) {
+    // Published values are rounded to two decimal places; compare within that.
+    const near = (a: number, b: number) => Math.abs(a - b) <= 0.011;
+    if (!near(c.numerator ?? 0, numerator)) {
       recomputeMismatch.push(`${indicatorId} numerator ${c.numerator} ≠ ${numerator}`);
     }
-    if (denominator !== null && (c.denominator ?? 0) !== denominator) {
+    if (denominator !== null && !near(c.denominator ?? 0, denominator)) {
       recomputeMismatch.push(`${indicatorId} denominator ${c.denominator} ≠ ${denominator}`);
     }
   };
@@ -589,7 +592,13 @@ function cityChecks(cityId: string, b: FourCityBundle): IntegrityCheck[] {
     sum(b.serviceObservations.map((o) => o.applications_resolved)),
     sum(b.serviceObservations.map((o) => o.applications_received)),
   );
-  expect("IND-MUNICIPAL-INVESTMENT", sum(b.finance.map((f) => f.expenditure_inr_lakh)), null);
+  // Municipal investment publishes funds released, kept separate from expenditure.
+  expect("IND-MUNICIPAL-INVESTMENT", sum(b.finance.map((f) => f.fund_released_inr_lakh)), null);
+  expect(
+    "IND-FINANCIAL-PROGRESS",
+    sum(b.finance.map((f) => f.expenditure_inr_lakh)),
+    sum(b.finance.map((f) => f.fund_released_inr_lakh)),
+  );
   checks.push(
     make(
       `${cityId}-reconcile`,
@@ -668,15 +677,7 @@ function datasetChecks(): IntegrityCheck[] {
   const unresolvedEvidence: string[] = [];
   for (const s of decisionSignals) {
     for (const r of s.supporting_records ?? []) {
-      const found =
-        byId.project.has(r.id) ||
-        byId.asset.has(r.id) ||
-        byId.housing.has(r.id) ||
-        byId.service_observation.has(r.id) ||
-        byId.grievance.has(r.id) ||
-        byId.locality.has(r.id) ||
-        byId.finance.has(r.id);
-      if (!found) unresolvedEvidence.push(`${s.signal_id} → ${r.id}`);
+      if (!lookupEntity(r.id)) unresolvedEvidence.push(`${s.signal_id} → ${r.id}`);
     }
   }
   checks.push(
