@@ -239,27 +239,27 @@ export function GlobalHeader() {
           ) : null}
         </div>
 
-        <dl className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
-          <div>
-            <dt className="field-label">Last data refresh</dt>
-            <dd className="num">
+        {/* Compact status metadata — subordinate to scope and page content. */}
+        <dl className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-1 text-xs">
+          <div className="min-w-0">
+            <dt className="field-label">Last refresh</dt>
+            <dd className="num truncate">
               {dateText(lastRefresh)}{" "}
               <span
                 className={cn(
+                  "text-muted-foreground",
                   freshness === "current" && "text-positive",
                   freshness === "ageing" && "text-warning",
                   (freshness === "stale" || freshness === "very_stale") && "text-destructive",
                 )}
               >
-                ({freshness === "current" ? "current" : freshness.replace("_", " ")})
+                · {freshness === "current" ? "Current" : freshness.replace("_", " ")}
               </span>
             </dd>
           </div>
-          <div>
-            <dt className="field-label">Evidence completeness</dt>
-            <dd className="num">
-              {completeness}% <span className="text-muted-foreground">of projects sourced</span>
-            </dd>
+          <div className="min-w-0">
+            <dt className="field-label">Evidence coverage</dt>
+            <dd className="num truncate">{completeness}%</dd>
           </div>
         </dl>
 
@@ -274,20 +274,21 @@ export function GlobalHeader() {
                   toCsv(headers, rows),
                 );
               }}
-              className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              className="inline-flex min-h-9 items-center gap-1.5 rounded-sm border border-input bg-card px-3 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
-              <Download className="h-3.5 w-3.5" aria-hidden="true" />
-              Export CSV
+              <Download className="h-4 w-4" aria-hidden="true" />
+              Export data
             </button>
             <Link
               to="/brief"
-              className="inline-flex items-center gap-1.5 rounded-sm border border-input bg-card px-2.5 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              className="inline-flex min-h-9 items-center gap-1.5 rounded-sm border border-input bg-card px-3 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
-              <FileText className="h-3.5 w-3.5" aria-hidden="true" />
+              <FileText className="h-4 w-4" aria-hidden="true" />
               City brief
             </Link>
           </div>
         ) : null}
+        </div>
       </div>
     </header>
   );
