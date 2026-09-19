@@ -36,7 +36,7 @@ import { CityGate } from "@/components/app/CityGate";
 // Primary destinations, always visible.
 const PRIMARY = [
   { to: "/national", label: "National View", icon: Globe },
-  { to: "/", label: "Overview", icon: LayoutDashboard },
+  { to: "/", label: "Regional Overview", icon: LayoutDashboard },
 ] as const;
 
 // Grouped destinations. Every existing route is kept; only grouping changes.
