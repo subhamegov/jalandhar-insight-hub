@@ -163,7 +163,10 @@ function housingDomain(b: FourCityBundle): CitizenDomain {
         basis: `Water ready ${num(waterReady)}, sewer ready ${num(sewerReady)}, waste collection ready ${num(wasteReady)} of ${num(completed)} completed`,
         period,
         nature: "observed",
-        drills: [{ kind: "route", to: "/localities", label: "Readiness by locality" }],
+        drills: [
+          { kind: "route", to: "/housing", label: "Housing service readiness" },
+          { kind: "route", to: "/localities", label: "Readiness by locality" },
+        ],
       },
       {
         id: "housing-infrastructure",
