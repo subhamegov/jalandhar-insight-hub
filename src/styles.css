@@ -1,26 +1,37 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "./styles/ux4g-tokens.css";
 
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Jalandhar City Intelligence, aligned to the DIGIT design system.
- * DIGIT primitives: Roboto typeface, near black text (#0B0C0C), secondary text
- * (#505A5F), paper grey page (#FAFAFA) with white surfaces, hairline grey
- * borders (#D6D5D4), a single orange action colour (#F47738 family) and GOV
- * status colours for success (#00703C) and error (#D4351C). All values are
- * expressed as oklch semantic tokens; components never hardcode colour.
+ * MoHUA Urban Intelligence — UX4G Design System.
+ *
+ * Colour, typography, spacing, radius and elevation come from the official
+ * UX4G tokens generated into src/styles/ux4g-tokens.css from
+ * ux4g-web-components (see scripts/extract-ux4g-tokens.mjs). This file only
+ * maps the application's semantic tokens onto those UX4G tokens, so every
+ * component keeps its existing class names while rendering UX4G values.
+ * Components never hardcode colour.
+ *
+ * This is an application built on the published UX4G tokens. It is not
+ * certified or endorsed by UX4G or the Ministry.
  */
 
 @theme inline {
-  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Roboto Mono", ui-monospace, monospace;
-  --radius-sm: calc(var(--radius) - 2px);
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 2px);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
+  --font-sans: var(--ux4g-font-family-base);
+  --font-mono: "Noto Sans Mono", ui-monospace, monospace;
+  --radius-sm: var(--ux4g-radius-xs);
+  --radius-md: var(--ux4g-radius-sm);
+  --radius-lg: var(--ux4g-radius-md);
+  --radius-xl: var(--ux4g-radius-lg);
+  --radius-2xl: var(--ux4g-radius-xl);
+  --shadow-xs: var(--ux4g-shadow-l1);
+  --shadow-sm: var(--ux4g-shadow-l1);
+  --shadow-md: var(--ux4g-shadow-l2);
+  --shadow-lg: var(--ux4g-shadow-l3);
+  --shadow-xl: var(--ux4g-shadow-l4);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
@@ -62,89 +73,72 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/*
+ * Semantic mapping. Every value below is a reference to an official UX4G
+ * token — no colour is written by hand. UX4G ships its own dark values for
+ * these tokens, so most of the mapping flips automatically under .dark.
+ */
 :root {
-  --radius: 0.125rem;
-  --background: oklch(0.985 0 90);
-  --foreground: oklch(0.153 0.002 197);
-  --surface: oklch(1 0 90);
-  --card: oklch(1 0 90);
-  --card-foreground: oklch(0.153 0.002 197);
-  --popover: oklch(1 0 90);
-  --popover-foreground: oklch(0.153 0.002 197);
-  --primary: oklch(0.552 0.163 43);
-  --primary-foreground: oklch(1 0 90);
-  --digit-orange: oklch(0.706 0.171 44.8);
-  --secondary: oklch(0.949 0 90);
-  --secondary-foreground: oklch(0.276 0.005 248);
-  --muted: oklch(0.958 0 90);
-  --muted-foreground: oklch(0.461 0.015 229);
-  --accent: oklch(0.971 0.013 48.6);
-  --accent-foreground: oklch(0.42 0.13 43);
-  --destructive: oklch(0.529 0.194 31.7);
-  --destructive-foreground: oklch(1 0 90);
-  --warning: oklch(0.706 0.171 44.8);
-  --warning-foreground: oklch(0.24 0.05 44);
-  --positive: oklch(0.478 0.121 154.1);
-  --positive-foreground: oklch(1 0 90);
-  --neutral-status: oklch(0.461 0.015 229);
-  --border: oklch(0.874 0.002 67.8);
-  --input: oklch(0.874 0.002 67.8);
-  --ring: oklch(0.706 0.171 44.8);
-  --chart-1: oklch(0.552 0.163 43);
-  --chart-2: oklch(0.535 0.136 249.9);
-  --chart-3: oklch(0.706 0.171 44.8);
-  --chart-4: oklch(0.478 0.121 154.1);
-  --chart-5: oklch(0.529 0.194 31.7);
-  --sidebar: oklch(0.153 0.002 197);
-  --sidebar-foreground: oklch(0.88 0.003 229);
-  --sidebar-primary: oklch(0.706 0.171 44.8);
-  --sidebar-primary-foreground: oklch(0.153 0.002 197);
-  --sidebar-accent: oklch(0.276 0.005 248);
-  --sidebar-accent-foreground: oklch(1 0 90);
-  --sidebar-border: oklch(0.31 0.005 248);
-  --sidebar-ring: oklch(0.706 0.171 44.8);
+  --radius: var(--ux4g-radius-sm);
+  --background: var(--ux4g-bg-neutral);
+  --foreground: var(--ux4g-text-neutral-primary);
+  --surface: var(--ux4g-bg-neutral-elevated);
+  --card: var(--ux4g-bg-neutral-elevated);
+  --card-foreground: var(--ux4g-text-neutral-primary);
+  --popover: var(--ux4g-bg-neutral-elevated);
+  --popover-foreground: var(--ux4g-text-neutral-primary);
+  --primary: var(--ux4g-bg-primary-strong);
+  --primary-foreground: var(--ux4g-color-neutral-0);
+  /* Section rule / brand accent, kept under its existing name so panels and
+     page headers that already use it need no change. */
+  --digit-orange: var(--ux4g-bg-primary-strong);
+  --secondary: var(--ux4g-bg-neutral-soft);
+  --secondary-foreground: var(--ux4g-text-neutral-primary);
+  --muted: var(--ux4g-bg-neutral-soft);
+  --muted-foreground: var(--ux4g-text-neutral-secondary);
+  --accent: var(--ux4g-bg-primary-soft);
+  --accent-foreground: var(--ux4g-text-brand-primary-default);
+  --destructive: var(--ux4g-bg-error-strong);
+  --destructive-foreground: var(--ux4g-color-neutral-0);
+  --warning: var(--ux4g-bg-warning-strong);
+  --warning-foreground: var(--ux4g-color-neutral-950);
+  --positive: var(--ux4g-bg-success-strong);
+  --positive-foreground: var(--ux4g-color-neutral-0);
+  --neutral-status: var(--ux4g-text-neutral-secondary);
+  --border: var(--ux4g-border-color-neutral-default);
+  --input: var(--ux4g-border-color-neutral-default);
+  --ring: var(--ux4g-bg-primary-strong);
+  /* Categorical chart palette: UX4G hues at contrast-safe steps. */
+  --chart-1: var(--ux4g-color-primary-600);
+  --chart-2: var(--ux4g-color-blue-700);
+  --chart-3: var(--ux4g-color-cyan-700);
+  --chart-4: var(--ux4g-color-green-700);
+  --chart-5: var(--ux4g-color-orange-700);
+  --sidebar: var(--ux4g-color-neutral-900);
+  --sidebar-foreground: var(--ux4g-color-neutral-200);
+  --sidebar-primary: var(--ux4g-color-primary-300);
+  --sidebar-primary-foreground: var(--ux4g-color-neutral-900);
+  --sidebar-accent: var(--ux4g-color-neutral-800);
+  --sidebar-accent-foreground: var(--ux4g-color-neutral-0);
+  --sidebar-border: var(--ux4g-color-neutral-700);
+  --sidebar-ring: var(--ux4g-color-primary-300);
 }
 
+/* Only the values UX4G does not flip on its own are restated for dark. */
 .dark {
-  --background: oklch(0.18 0.002 197);
-  --foreground: oklch(0.96 0.002 229);
-  --surface: oklch(0.23 0.003 248);
-  --card: oklch(0.23 0.003 248);
-  --card-foreground: oklch(0.96 0.002 229);
-  --popover: oklch(0.23 0.003 248);
-  --popover-foreground: oklch(0.96 0.002 229);
-  --primary: oklch(0.706 0.171 44.8);
-  --primary-foreground: oklch(0.16 0.002 197);
-  --digit-orange: oklch(0.706 0.171 44.8);
-  --secondary: oklch(0.28 0.004 248);
-  --secondary-foreground: oklch(0.96 0.002 229);
-  --muted: oklch(0.28 0.004 248);
-  --muted-foreground: oklch(0.74 0.008 229);
-  --accent: oklch(0.31 0.02 44);
-  --accent-foreground: oklch(0.96 0.002 229);
-  --destructive: oklch(0.64 0.19 31.7);
-  --destructive-foreground: oklch(0.16 0.002 197);
-  --warning: oklch(0.75 0.15 44.8);
-  --warning-foreground: oklch(0.18 0.03 44);
-  --positive: oklch(0.62 0.12 154.1);
-  --positive-foreground: oklch(0.15 0.02 154);
-  --neutral-status: oklch(0.7 0.008 229);
-  --border: oklch(0.33 0.004 248);
-  --input: oklch(0.33 0.004 248);
-  --ring: oklch(0.706 0.171 44.8);
-  --chart-1: oklch(0.706 0.171 44.8);
-  --chart-2: oklch(0.66 0.12 250);
-  --chart-3: oklch(0.78 0.13 60);
-  --chart-4: oklch(0.62 0.12 154.1);
-  --chart-5: oklch(0.64 0.19 31.7);
-  --sidebar: oklch(0.153 0.002 197);
-  --sidebar-foreground: oklch(0.88 0.003 229);
-  --sidebar-primary: oklch(0.706 0.171 44.8);
-  --sidebar-primary-foreground: oklch(0.153 0.002 197);
-  --sidebar-accent: oklch(0.276 0.005 248);
-  --sidebar-accent-foreground: oklch(1 0 90);
-  --sidebar-border: oklch(0.31 0.005 248);
-  --sidebar-ring: oklch(0.706 0.171 44.8);
+  --primary-foreground: var(--ux4g-color-neutral-950);
+  --destructive-foreground: var(--ux4g-color-neutral-950);
+  --positive-foreground: var(--ux4g-color-neutral-950);
+  --warning-foreground: var(--ux4g-color-neutral-950);
+  --chart-1: var(--ux4g-color-primary-300);
+  --chart-2: var(--ux4g-color-blue-300);
+  --chart-3: var(--ux4g-color-cyan-300);
+  --chart-4: var(--ux4g-color-green-300);
+  --chart-5: var(--ux4g-color-orange-300);
+  --sidebar: var(--ux4g-color-neutral-950);
+  --sidebar-foreground: var(--ux4g-color-neutral-200);
+  --sidebar-accent: var(--ux4g-color-neutral-800);
+  --sidebar-border: var(--ux4g-color-neutral-700);
 }
 
 @layer base {
@@ -165,19 +159,33 @@
     letter-spacing: -0.01em;
   }
 
-  /* Visible focus for keyboard users on every interactive control. */
+  /* Visible focus for keyboard users on every interactive control,
+     using the UX4G focus ring. */
   a:focus-visible,
   button:focus-visible,
   input:focus-visible,
   select:focus-visible,
   textarea:focus-visible,
   [tabindex]:focus-visible {
-    outline: 2px solid var(--color-ring);
+    outline: 2px solid var(--ux4g-bg-primary-strong);
     outline-offset: 2px;
+    border-radius: var(--ux4g-radius-xs);
   }
 
   th {
     font-weight: 600;
+  }
+
+  /* Respect a reduced-motion preference. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -201,15 +209,15 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* DIGIT card: white surface, hairline border, soft shadow, square corners. */
+/* Surface card: elevated surface, hairline border, UX4G level-1 elevation. */
 @utility digit-card {
   background-color: var(--color-card);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  box-shadow: 0 1px 2px oklch(0 0 0 / 0.08);
+  border-radius: var(--ux4g-radius-sm);
+  box-shadow: var(--ux4g-shadow-l1);
 }
 
-/* DIGIT section marker: 4px orange rule used to open a page or panel. */
+/* Section marker: brand rule used to open a page or panel. */
 @utility digit-rule {
   border-top: 4px solid var(--digit-orange);
 }
