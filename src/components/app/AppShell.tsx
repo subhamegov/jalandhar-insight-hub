@@ -149,7 +149,10 @@ function CityShell({ children }: { children: ReactNode }) {
             <p className="text-[11px] tracking-[0.12em] text-sidebar-foreground/60 uppercase">
               Government of India
             </p>
-            <p className="mt-1 text-sm leading-tight font-semibold">Jalandhar City Intelligence</p>
+            <p className="mt-1 text-sm leading-tight font-semibold">MoHUA Urban Intelligence</p>
+            <p className="text-[11px] text-sidebar-foreground/60">
+              {city.name}, {city.state}
+            </p>
           </div>
           <NavList />
           <div className="px-4 py-4 text-[11px] leading-relaxed text-sidebar-foreground/50">
