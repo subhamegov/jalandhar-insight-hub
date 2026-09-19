@@ -193,7 +193,7 @@ function CityShell({ children }: { children: ReactNode }) {
             </p>
           </div>
           <NavList />
-          <div className="px-4 py-4 text-[11px] leading-relaxed text-sidebar-foreground/50">
+          <div className="px-4 py-4 text-[11px] leading-relaxed text-sidebar-foreground/90">
             Records shown are working entries. Values marked "Not available" have no verified source
             attached yet.
           </div>
