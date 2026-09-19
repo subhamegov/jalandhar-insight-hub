@@ -28,6 +28,8 @@ export const Route = createFileRoute("/housing/$housingId")({
   component: HousingDetail,
 });
 
+const numText = (v: number | null) => (typeof v === "number" ? String(v) : "Not available");
+
 const lakhToCrore = (v: number | null) => (typeof v === "number" ? (v / 100).toFixed(2) : null);
 
 function HousingDetail() {
@@ -201,7 +203,7 @@ function HousingDetail() {
           ]}
           rows={r.waterSewerage.map((w) => [
             <RecordLink key={w.connection_record_id} id={w.connection_record_id} />,
-            text(w.water_supply_hours_per_day),
+            numText(w.water_supply_hours_per_day),
             w.water_quality_samples_total
               ? `${count(w.water_quality_samples_passed)} of ${count(w.water_quality_samples_total)}`
               : text(null),
@@ -250,7 +252,7 @@ function HousingDetail() {
               s.sanitation_id,
               percent(s.door_to_door_coverage_pct),
               percent(s.segregation_pct),
-              `${text(s.waste_collected_tpd)} / ${text(s.waste_generated_tpd)}`,
+              `${numText(s.waste_collected_tpd)} / ${numText(s.waste_generated_tpd)}`,
               <RecordLink key={s.sanitation_id} id={s.sanitation_id} />,
             ])}
           />
@@ -263,7 +265,7 @@ function HousingDetail() {
             rows={r.transport.map((t) => [
               t.transport_stop_id,
               labelise(t.mode),
-              text(t.service_headway_minutes),
+              numText(t.service_headway_minutes),
               count(t.daily_trips),
               t.actual_stop_or_route ? "Yes" : "No — illustrative",
               <RecordLink key={t.transport_stop_id} id={t.transport_stop_id} />,
@@ -297,7 +299,7 @@ function HousingDetail() {
               text(g.period),
               count(g.complaint_count),
               count(g.repeat_complaints),
-              text(g.average_resolution_hours),
+              numText(g.average_resolution_hours),
               <RecordLink key={g.complaint_aggregate_id} id={g.complaint_aggregate_id} />,
             ])}
           />
