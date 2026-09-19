@@ -318,9 +318,7 @@ function CityShell({ children }: { children: ReactNode }) {
                   <p className="mt-1 text-sm leading-tight font-semibold">
                     MoHUA Urban Intelligence
                   </p>
-                  <p className="text-xs text-sidebar-foreground/60">
-                    {city.name}, {city.state}
-                  </p>
+                  <p className="text-xs text-sidebar-foreground/60">{scopeLine}</p>
                 </div>
                 <button
                   type="button"
@@ -331,7 +329,7 @@ function CityShell({ children }: { children: ReactNode }) {
                   <X className="h-4 w-4" aria-hidden="true" />
                 </button>
               </div>
-              <NavList onNavigate={() => setOpen(false)} />
+              <NavList tree={tree} onNavigate={() => setOpen(false)} />
             </div>
           </div>
         ) : null}
@@ -342,11 +340,9 @@ function CityShell({ children }: { children: ReactNode }) {
               Government of India
             </p>
             <p className="mt-1 text-sm leading-tight font-semibold">MoHUA Urban Intelligence</p>
-            <p className="text-[11px] text-sidebar-foreground/60">
-              {city.name}, {city.state}
-            </p>
+            <p className="text-[11px] text-sidebar-foreground/60">{scopeLine}</p>
           </div>
-          <NavList />
+          <NavList tree={tree} />
           <div className="px-4 py-4 text-[11px] leading-relaxed text-sidebar-foreground/90">
             Records shown are working entries. Values marked "Not available" have no verified source
             attached yet.
