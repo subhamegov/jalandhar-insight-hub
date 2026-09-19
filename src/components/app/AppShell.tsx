@@ -103,7 +103,7 @@ function CityShell({ children }: { children: ReactNode }) {
           </button>
           <div className="min-w-0">
             <p className="truncate text-[10px] tracking-[0.12em] text-sidebar-foreground/60 uppercase">
-              Jalandhar City Intelligence
+              MoHUA Urban Intelligence · {city.name}
             </p>
             <p className="truncate text-sm leading-tight font-semibold">{current ?? "Overview"}</p>
           </div>
