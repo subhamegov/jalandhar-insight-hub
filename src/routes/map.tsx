@@ -617,7 +617,7 @@ function CityMap() {
                     {CATEGORY_LABELS[cat]}
                   </p>
                   <ul className="space-y-0.5">
-                    {MAP_LAYERS.filter((l) => l.category === cat).map((l) => {
+                    {visibleLayers.filter((l) => l.category === cat).map((l) => {
                       const on = activeLayers.includes(l.id);
                       const unavailable =
                         l.source === "official" && l.query.length === 0 && l.caveat;
