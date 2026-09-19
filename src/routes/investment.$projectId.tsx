@@ -51,7 +51,7 @@ function InvestmentDetail() {
   }
 
   const p = chain.project;
-  const prov = provenanceOf(p.project_id);
+  const prov = provenanceOf(p as unknown as Record<string, unknown>);
 
   return (
     <div className="space-y-5">
