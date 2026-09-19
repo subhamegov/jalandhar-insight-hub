@@ -5,25 +5,40 @@ import { cn } from "@/lib/utils";
 export function PageHeader({
   title,
   subtitle,
+  note,
   actions,
 }: {
   title: string;
+  /** One sentence. Longer explanation belongs in Evidence or Data quality. */
   subtitle?: string | undefined;
+  /** Compact status line, e.g. prototype or source caveats. */
+  note?: ReactNode;
   actions?: ReactNode;
 }) {
   return (
-    <header className="mb-5 border-b border-border pb-4">
+    <header className="mb-6 border-b border-border pb-4">
       <div className="digit-rule mb-3 w-16" aria-hidden="true" />
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="min-w-0">
           <h1 className="text-xl font-semibold text-foreground">{title}</h1>
           {subtitle ? (
             <p className="mt-1 max-w-3xl text-sm text-muted-foreground">{subtitle}</p>
           ) : null}
+          {note ? <div className="mt-2 text-xs text-muted-foreground">{note}</div> : null}
         </div>
         {actions}
       </div>
     </header>
+  );
+}
+
+/** Compact prototype-data status. Detail stays in Evidence and Data quality. */
+export function PrototypeNote({ text }: { text?: string }) {
+  return (
+    <span>
+      <span className="font-medium text-foreground">Prototype data</span> ·{" "}
+      {text ?? "Synthetic observations, not official statistics"}
+    </span>
   );
 }
 
