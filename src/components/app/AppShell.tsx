@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import {
   AlertTriangle,
   Boxes,
+  Briefcase,
   Building2,
   Database,
   FileSearch,
