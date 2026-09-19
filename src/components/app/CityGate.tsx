@@ -1,15 +1,63 @@
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useCity } from "@/lib/cityContext";
+import { FourCityOverview } from "@/components/app/FourCityOverview";
 import type { ReactNode } from "react";
 
 /**
- * City views render records for the active city only. Where a city has been
- * registered but its government records are not yet ingested, the views say so
- * rather than showing another city's records.
+ * City views render records for the active city only.
+ *
+ * Three cases are handled honestly:
+ *  - the city has records: its pages render normally;
+ *  - the city is served by the four-city dataset and the page depends on an
+ *    analysis built specifically for Jalandhar: the page says so instead of
+ *    showing another city's reasoning;
+ *  - the city is registered but no records are loaded: the page says so.
  */
+
+/** Pages whose analysis is built on Jalandhar-specific reference work. */
+const JALANDHAR_ONLY = ["/outcomes", "/attention", "/wards"];
+
 export function CityGate({ children }: { children: ReactNode }) {
   const { city, dataset } = useCity();
-  if (dataset.projects.length > 0) return <>{children}</>;
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
+  if (dataset.projects.length === 0) return <NoRecords />;
+
+  if (dataset.synthetic) {
+    if (pathname === "/") return <FourCityOverview />;
+    const blocked = JALANDHAR_ONLY.find((p) => pathname.startsWith(p));
+    if (blocked) return <NotBuiltForCity page={blocked} cityName={city.name} />;
+  }
+
+  return <>{children}</>;
+}
+
+function NotBuiltForCity({ page, cityName }: { page: string; cityName: string }) {
+  const label = page.replace("/", "");
+  return (
+    <section className="rounded-sm border border-border bg-card p-5 shadow-sm">
+      <h2 className="text-lg font-semibold text-foreground">
+        This view is not available for {cityName}
+      </h2>
+      <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+        The {label} analysis is built on Jalandhar-specific reference work — service indicators,
+        priority weighting and ward areas assembled from Jalandhar government sources. Applying it
+        to {cityName} would present reasoning that does not belong to this city, so it is withheld
+        rather than reused.
+      </p>
+      <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+        For {cityName}, the overview, projects, assets, schemes, agencies, evidence, data quality
+        and data layer views all work from this city's own records.
+      </p>
+      <Link to="/" className="mt-3 inline-block text-sm underline underline-offset-2">
+        Back to the {cityName} overview
+      </Link>
+    </section>
+  );
+}
+
+function NoRecords() {
+  const { city } = useCity();
   return (
     <section className="rounded-sm border border-border bg-card p-5 shadow-sm">
       <p className="field-label">{city.city_id}</p>
@@ -19,9 +67,7 @@ export function CityGate({ children }: { children: ReactNode }) {
       <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
         {city.name} ({city.state}) is set up in this system with its reference geography and{" "}
         {city.urban_local_body} as urban local body of record. No project, asset, scheme or
-        evidence records have been ingested for this city yet, so no values are shown. Every page
-        in this application — overview, map, projects, assets, outcomes, schemes, agencies,
-        evidence and data quality — works for {city.name} as soon as its register is loaded.
+        evidence records have been ingested for this city yet, so no values are shown.
       </p>
       <dl className="mt-4 grid gap-3 sm:grid-cols-3">
         <div>
