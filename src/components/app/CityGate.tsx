@@ -18,7 +18,7 @@ import type { ReactNode } from "react";
 const JALANDHAR_ONLY = ["/outcomes", "/attention", "/wards"];
 
 /** Pages that sit above the city level and always render. */
-const CITY_INDEPENDENT = ["/national", "/compare"];
+const CITY_INDEPENDENT = ["/national", "/compare", "/states"];
 
 export function CityGate({ children }: { children: ReactNode }) {
   const { city, dataset, portfolio } = useCity();
