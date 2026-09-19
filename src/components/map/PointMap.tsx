@@ -64,8 +64,13 @@ export default function PointMap({
     layerRef.current = L.layerGroup().addTo(map);
     mapRef.current = map;
     return () => {
-      map.remove();
       mapRef.current = null;
+      layerRef.current = null;
+      try {
+        map.remove();
+      } catch {
+        /* already detached */
+      }
     };
   }, []);
 
