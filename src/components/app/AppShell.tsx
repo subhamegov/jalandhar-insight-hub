@@ -33,87 +33,127 @@ import { CityProvider, useCity } from "@/lib/cityContext";
 import { GeoProvider } from "@/lib/geoContext";
 import { CityGate } from "@/components/app/CityGate";
 
-// Primary destinations, always visible.
-const PRIMARY = [
-  { to: "/national", label: "National View", icon: Globe },
-  { to: "/", label: "Regional Overview", icon: LayoutDashboard },
-] as const;
+// Navigation is contextual to the active scope. Both trees reuse the exact
+// existing routes; only the grouping and labels differ.
+type NavItem = { to: string; label: string; icon: typeof Globe };
+type NavGroup = { id: string; label: string; emphasis: boolean; items: NavItem[] };
+type NavTree = { primary: NavItem[]; groups: NavGroup[] };
 
-// Grouped destinations. Every existing route is kept; only grouping changes.
-const GROUPS = [
-  {
-    id: "decide",
-    label: "Decide",
-    emphasis: true,
-    items: [
-      { to: "/attention", label: "Attention", icon: Flag },
-      { to: "/signals", label: "Decision Signals", icon: Radar },
-      { to: "/interventions", label: "Planning Interventions", icon: ClipboardList },
-      { to: "/briefing", label: "Executive Briefing", icon: Gavel },
-    ],
-  },
-  {
-    id: "explore",
-    label: "Explore",
-    emphasis: false,
-    items: [
-      { to: "/map", label: "City Map", icon: Map },
-      { to: "/localities", label: "Localities", icon: MapPin },
-      { to: "/wards", label: "Ward View", icon: Grid2x2 },
-      { to: "/compare", label: "Compare Cities", icon: GitCompare },
-    ],
-  },
-  {
-    id: "systems",
-    label: "Urban systems",
-    emphasis: false,
-    items: [
-      { to: "/housing", label: "Housing", icon: Home },
-      { to: "/livelihoods", label: "Livelihoods & Mobility", icon: Briefcase },
-      { to: "/investment", label: "Investment", icon: IndianRupee },
-    ],
-  },
-  {
-    id: "delivery",
-    label: "Delivery",
-    emphasis: false,
-    items: [
-      { to: "/projects", label: "Projects", icon: ListChecks },
-      { to: "/assets", label: "Assets", icon: Boxes },
-      { to: "/schemes", label: "Schemes", icon: Scale },
-      { to: "/agencies", label: "Agencies", icon: Building2 },
-    ],
-  },
-  {
-    id: "measure",
-    label: "Measure & trust",
-    emphasis: false,
-    items: [
-      { to: "/outcomes", label: "Outcomes", icon: Target },
-      { to: "/evidence", label: "Evidence", icon: FileSearch },
-      { to: "/data-quality", label: "Data Quality", icon: AlertTriangle },
-      { to: "/data-integrity", label: "Data Integrity", icon: ShieldCheck },
-    ],
-  },
-  {
-    id: "more",
-    label: "More",
-    emphasis: false,
-    items: [{ to: "/data-layer", label: "Data Layer", icon: Database }],
-  },
-] as const;
+const DECIDE: NavGroup = {
+  id: "decide",
+  label: "Decide",
+  emphasis: true,
+  items: [
+    { to: "/attention", label: "Attention", icon: Flag },
+    { to: "/signals", label: "Decision Signals", icon: Radar },
+    { to: "/interventions", label: "Planning Interventions", icon: ClipboardList },
+    { to: "/briefing", label: "Executive Briefing", icon: Gavel },
+  ],
+};
+
+const SYSTEMS: NavGroup = {
+  id: "systems",
+  label: "Urban systems",
+  emphasis: false,
+  items: [
+    { to: "/housing", label: "Housing", icon: Home },
+    { to: "/livelihoods", label: "Livelihoods & Mobility", icon: Briefcase },
+    { to: "/investment", label: "Investment", icon: IndianRupee },
+  ],
+};
+
+const DELIVERY: NavGroup = {
+  id: "delivery",
+  label: "Delivery",
+  emphasis: false,
+  items: [
+    { to: "/projects", label: "Projects", icon: ListChecks },
+    { to: "/assets", label: "Assets", icon: Boxes },
+    { to: "/schemes", label: "Schemes", icon: Scale },
+    { to: "/agencies", label: "Agencies", icon: Building2 },
+  ],
+};
+
+const MEASURE: NavGroup = {
+  id: "measure",
+  label: "Measure & trust",
+  emphasis: false,
+  items: [
+    { to: "/outcomes", label: "Outcomes", icon: Target },
+    { to: "/evidence", label: "Evidence", icon: FileSearch },
+    { to: "/data-quality", label: "Data Quality", icon: AlertTriangle },
+    { to: "/data-integrity", label: "Data Integrity", icon: ShieldCheck },
+  ],
+};
+
+const MORE: NavGroup = {
+  id: "more",
+  label: "More",
+  emphasis: false,
+  items: [{ to: "/data-layer", label: "Data Layer", icon: Database }],
+};
+
+const NATIONAL_NAV: NavTree = {
+  primary: [
+    { to: "/national", label: "National View", icon: Globe },
+    { to: "/", label: "Overview", icon: LayoutDashboard },
+  ],
+  groups: [
+    DECIDE,
+    {
+      id: "explore",
+      label: "Explore",
+      emphasis: false,
+      items: [
+        { to: "/national", label: "India Map", icon: Map },
+        { to: "/states", label: "States", icon: MapPin },
+        { to: "/compare", label: "Cities", icon: GitCompare },
+      ],
+    },
+    SYSTEMS,
+    DELIVERY,
+    MEASURE,
+    MORE,
+  ],
+};
+
+const CITY_NAV: NavTree = {
+  primary: [
+    { to: "/", label: "City Overview", icon: LayoutDashboard },
+    { to: "/map", label: "City Map", icon: Map },
+  ],
+  groups: [
+    DECIDE,
+    {
+      id: "explore",
+      label: "Explore",
+      emphasis: false,
+      items: [
+        { to: "/localities", label: "Localities", icon: MapPin },
+        { to: "/wards", label: "Ward View", icon: Grid2x2 },
+      ],
+    },
+    SYSTEMS,
+    DELIVERY,
+    MEASURE,
+    MORE,
+  ],
+};
 
 const ALL_DESTINATIONS: { to: string; label: string }[] = [
-  ...PRIMARY.map((i) => ({ to: i.to as string, label: i.label as string })),
-  ...GROUPS.flatMap((g) => g.items.map((i) => ({ to: i.to as string, label: i.label as string }))),
-];
+  ...NATIONAL_NAV.primary,
+  ...NATIONAL_NAV.groups.flatMap((g) => g.items),
+  ...CITY_NAV.primary,
+  ...CITY_NAV.groups.flatMap((g) => g.items),
+].map((i) => ({ to: i.to, label: i.label }));
 
 function matches(to: string, pathname: string) {
   return to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(`${to}/`);
 }
 
-function activeGroupId(pathname: string) {
-  return GROUPS.find((g) => g.items.some((i) => matches(i.to, pathname)))?.id ?? null;
+function activeGroupId(tree: NavTree, pathname: string) {
+  if (tree.primary.some((i) => matches(i.to, pathname))) return null;
+  return tree.groups.find((g) => g.items.some((i) => matches(i.to, pathname)))?.id ?? null;
 }
 
 const ITEM_CLASS =
@@ -121,9 +161,9 @@ const ITEM_CLASS =
 const ACTIVE_CLASS =
   "bg-sidebar-accent text-sidebar-accent-foreground font-medium border-l-2 border-sidebar-primary";
 
-function NavList({ onNavigate }: { onNavigate?: () => void }) {
+function NavList({ tree, onNavigate }: { tree: NavTree; onNavigate?: () => void }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const current = activeGroupId(pathname);
+  const current = activeGroupId(tree, pathname);
   // Only the group holding the current page is open; the user can change this
   // and the choice is kept while navigating within the session.
   const [openId, setOpenId] = useState<string | null>(current);
@@ -135,7 +175,7 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <nav className="flex flex-col p-2">
       <div className="flex flex-col gap-1">
-        {PRIMARY.map(({ to, label, icon: Icon }) => (
+        {tree.primary.map(({ to, label, icon: Icon }) => (
           <Link
             key={to}
             to={to}
@@ -153,7 +193,7 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
       <div className="my-2 border-t border-sidebar-border" />
 
       <div className="flex flex-col gap-1">
-        {GROUPS.map((group) => {
+        {tree.groups.map((group) => {
           const expanded = openId === group.id;
           return (
             <div key={group.id}>
@@ -217,7 +257,10 @@ function SyntheticNotice() {
 }
 
 function CityShell({ children }: { children: ReactNode }) {
-  const { city } = useCity();
+  const { city, scope } = useCity();
+  const national = scope.type === "NATIONAL";
+  const tree = national ? NATIONAL_NAV : CITY_NAV;
+  const scopeLine = national ? "India · National" : `${city.name}, ${city.state}`;
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
@@ -252,7 +295,7 @@ function CityShell({ children }: { children: ReactNode }) {
           </button>
           <div className="min-w-0">
             <p className="truncate text-[10px] tracking-[0.12em] text-sidebar-foreground/60 uppercase">
-              MoHUA Urban Intelligence · {city.name}
+              MoHUA Urban Intelligence · {national ? "India · National" : city.name}
             </p>
             <p className="truncate text-sm leading-tight font-semibold">{current ?? "Overview"}</p>
           </div>
@@ -275,9 +318,7 @@ function CityShell({ children }: { children: ReactNode }) {
                   <p className="mt-1 text-sm leading-tight font-semibold">
                     MoHUA Urban Intelligence
                   </p>
-                  <p className="text-xs text-sidebar-foreground/60">
-                    {city.name}, {city.state}
-                  </p>
+                  <p className="text-xs text-sidebar-foreground/60">{scopeLine}</p>
                 </div>
                 <button
                   type="button"
@@ -288,7 +329,7 @@ function CityShell({ children }: { children: ReactNode }) {
                   <X className="h-4 w-4" aria-hidden="true" />
                 </button>
               </div>
-              <NavList onNavigate={() => setOpen(false)} />
+              <NavList tree={tree} onNavigate={() => setOpen(false)} />
             </div>
           </div>
         ) : null}
@@ -299,11 +340,9 @@ function CityShell({ children }: { children: ReactNode }) {
               Government of India
             </p>
             <p className="mt-1 text-sm leading-tight font-semibold">MoHUA Urban Intelligence</p>
-            <p className="text-[11px] text-sidebar-foreground/60">
-              {city.name}, {city.state}
-            </p>
+            <p className="text-[11px] text-sidebar-foreground/60">{scopeLine}</p>
           </div>
-          <NavList />
+          <NavList tree={tree} />
           <div className="px-4 py-4 text-[11px] leading-relaxed text-sidebar-foreground/90">
             Records shown are working entries. Values marked "Not available" have no verified source
             attached yet.

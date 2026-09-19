@@ -16,9 +16,17 @@ import { setActiveCityRecords } from "@/data/selectors";
 
 const KEY = "mohua.activeCity.v1";
 
-/** Explicit portfolio context covering the four prototype cities. */
+/**
+ * Geographic scope. The application operates either nationally (no city is
+ * active) or inside one canonical city. The stored value "ALL" is the national
+ * scope; it is kept as the URL token so existing links stay valid.
+ */
 export const ALL_CITIES = "ALL" as const;
+export const NATIONAL = ALL_CITIES;
 export type CitySelection = CityId | typeof ALL_CITIES;
+
+/** Single scope state the header, sidebar and routing all derive from. */
+export type Scope = { type: "NATIONAL"; cityId: null } | { type: "CITY"; cityId: CityId };
 
 function isSelection(value: unknown): value is CitySelection {
   return value === ALL_CITIES || (typeof value === "string" && isCityId(value));
@@ -32,9 +40,13 @@ interface CityContextValue {
   cities: CityProfile[];
   /** What the header shows: a city id, or ALL for the four-city portfolio. */
   selection: CitySelection;
-  /** True when the explicit All Cities portfolio context is active. */
+  /** True when the national scope is active (no city is selected). */
   portfolio: boolean;
-  setCityId: (id: CitySelection) => void;
+  /** The one scope state: national, or a canonical city. */
+  scope: Scope;
+  /** Change scope. `to` optionally moves to a destination valid in that scope. */
+  setCityId: (id: CitySelection, to?: string) => void;
+  setScope: (scope: Scope, to?: string) => void;
 }
 
 const CityContext = createContext<CityContextValue | null>(null);
@@ -99,28 +111,58 @@ export function CityProvider({ children }: { children: ReactNode }) {
   }, [urlCity, pathname, selection, restored, apply, navigate]);
 
   const setCityId = useCallback(
-    (next: CitySelection) => {
+    (next: CitySelection, to?: string) => {
       apply(next);
       navigate({
-        to: pathname,
+        to: to ?? pathname,
         search: (prev: Record<string, unknown>) => ({ ...prev, city: next }),
       } as never);
     },
     [apply, navigate, pathname],
   );
 
+  // National destinations carry no city. Landing on one clears the city scope
+  // so the header and sidebar never imply a city while operating nationally.
+  useEffect(() => {
+    if (!restored) return;
+    const nationalRoute =
+      pathname.startsWith("/national") ||
+      pathname.startsWith("/states") ||
+      pathname.startsWith("/compare");
+    if (nationalRoute && selection !== ALL_CITIES) {
+      apply(ALL_CITIES);
+      navigate({
+        to: pathname,
+        search: (prev: Record<string, unknown>) => ({ ...prev, city: ALL_CITIES }),
+        replace: true,
+      } as never);
+    }
+  }, [pathname, selection, restored, apply, navigate]);
+
+  const setScope = useCallback(
+    (next: Scope, to?: string) => {
+      setCityId(next.type === "NATIONAL" ? NATIONAL : next.cityId, to);
+    },
+    [setCityId],
+  );
+
   const value = useMemo<CityContextValue>(() => {
     const dataset = datasetFor(cityId);
+    const national = selection === ALL_CITIES;
     return {
       cityId,
       city: dataset.profile,
       dataset,
       cities: CITIES,
       selection,
-      portfolio: selection === ALL_CITIES,
+      portfolio: national,
+      scope: national
+        ? { type: "NATIONAL", cityId: null }
+        : { type: "CITY", cityId: selection as CityId },
       setCityId,
+      setScope,
     };
-  }, [cityId, selection, setCityId]);
+  }, [cityId, selection, setCityId, setScope]);
 
   return <CityContext.Provider value={value}>{children}</CityContext.Provider>;
 }

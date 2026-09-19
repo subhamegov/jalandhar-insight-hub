@@ -23,6 +23,7 @@ import { Route as LivelihoodsRouteImport } from './routes/livelihoods'
 import { Route as MapRouteImport } from './routes/map'
 import { Route as NationalRouteImport } from './routes/national'
 import { Route as OutcomesRouteImport } from './routes/outcomes'
+import { Route as StatesRouteImport } from './routes/states'
 import { Route as AgenciesIndexRouteImport } from './routes/agencies.index'
 import { Route as AgenciesAgencyNameRouteImport } from './routes/agencies.$agencyName'
 import { Route as HousingIndexRouteImport } from './routes/housing.index'
@@ -111,6 +112,11 @@ const NationalRoute = NationalRouteImport.update({
 const OutcomesRoute = OutcomesRouteImport.update({
   id: '/outcomes',
   path: '/outcomes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StatesRoute = StatesRouteImport.update({
+  id: '/states',
+  path: '/states',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AgenciesIndexRoute = AgenciesIndexRouteImport.update({
@@ -225,6 +231,7 @@ export interface FileRoutesByFullPath {
   '/map': typeof MapRoute
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
+  '/states': typeof StatesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/housing/$housingId': typeof HousingHousingIdRoute
   '/interventions/$interventionId': typeof InterventionsInterventionIdRoute
@@ -260,6 +267,7 @@ export interface FileRoutesByTo {
   '/map': typeof MapRoute
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
+  '/states': typeof StatesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/housing/$housingId': typeof HousingHousingIdRoute
   '/interventions/$interventionId': typeof InterventionsInterventionIdRoute
@@ -296,6 +304,7 @@ export interface FileRoutesById {
   '/map': typeof MapRoute
   '/national': typeof NationalRoute
   '/outcomes': typeof OutcomesRoute
+  '/states': typeof StatesRoute
   '/agencies/$agencyName': typeof AgenciesAgencyNameRoute
   '/housing/$housingId': typeof HousingHousingIdRoute
   '/interventions/$interventionId': typeof InterventionsInterventionIdRoute
@@ -333,6 +342,7 @@ export interface FileRouteTypes {
     | '/map'
     | '/national'
     | '/outcomes'
+    | '/states'
     | '/agencies/$agencyName'
     | '/housing/$housingId'
     | '/interventions/$interventionId'
@@ -368,6 +378,7 @@ export interface FileRouteTypes {
     | '/map'
     | '/national'
     | '/outcomes'
+    | '/states'
     | '/agencies/$agencyName'
     | '/housing/$housingId'
     | '/interventions/$interventionId'
@@ -403,6 +414,7 @@ export interface FileRouteTypes {
     | '/map'
     | '/national'
     | '/outcomes'
+    | '/states'
     | '/agencies/$agencyName'
     | '/housing/$housingId'
     | '/interventions/$interventionId'
@@ -439,6 +451,7 @@ export interface RootRouteChildren {
   MapRoute: typeof MapRoute
   NationalRoute: typeof NationalRoute
   OutcomesRoute: typeof OutcomesRoute
+  StatesRoute: typeof StatesRoute
   AgenciesAgencyNameRoute: typeof AgenciesAgencyNameRoute
   HousingHousingIdRoute: typeof HousingHousingIdRoute
   InterventionsInterventionIdRoute: typeof InterventionsInterventionIdRoute
@@ -558,6 +571,13 @@ declare module '@tanstack/react-router' {
       path: '/outcomes'
       fullPath: '/outcomes'
       preLoaderRoute: typeof OutcomesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/states': {
+      id: '/states'
+      path: '/states'
+      fullPath: '/states'
+      preLoaderRoute: typeof StatesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/agencies/': {
@@ -711,6 +731,7 @@ const rootRouteChildren: RootRouteChildren = {
   MapRoute: MapRoute,
   NationalRoute: NationalRoute,
   OutcomesRoute: OutcomesRoute,
+  StatesRoute: StatesRoute,
   AgenciesAgencyNameRoute: AgenciesAgencyNameRoute,
   HousingHousingIdRoute: HousingHousingIdRoute,
   InterventionsInterventionIdRoute: InterventionsInterventionIdRoute,
