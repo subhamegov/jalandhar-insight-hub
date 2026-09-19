@@ -15,6 +15,7 @@ import {
   Flag,
   Globe,
   Grid2x2,
+  GitCompare,
   Home,
   IndianRupee,
   MapPin,
@@ -30,6 +31,7 @@ import { CityGate } from "@/components/app/CityGate";
 
 const NAV = [
   { to: "/national", label: "National View", icon: Globe },
+  { to: "/compare", label: "Compare Cities", icon: GitCompare },
   { to: "/", label: "Overview", icon: LayoutDashboard },
   { to: "/map", label: "City Map", icon: Map },
   { to: "/localities", label: "Localities", icon: MapPin },
