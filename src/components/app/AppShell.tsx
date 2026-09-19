@@ -257,7 +257,10 @@ function SyntheticNotice() {
 }
 
 function CityShell({ children }: { children: ReactNode }) {
-  const { city } = useCity();
+  const { city, scope } = useCity();
+  const national = scope.type === "NATIONAL";
+  const tree = national ? NATIONAL_NAV : CITY_NAV;
+  const scopeLine = national ? "India · National" : `${city.name}, ${city.state}`;
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
