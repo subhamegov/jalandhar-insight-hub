@@ -358,7 +358,7 @@ export function comparisonSet(): ComparisonSet {
     if (!b) continue;
     cities.push({
       cityId: id,
-      cityName: b.city.city_name,
+      cityName: b.city.name,
       state: b.city.state,
       supplied: b.comparison,
       indicators: indicatorsFor(b),
