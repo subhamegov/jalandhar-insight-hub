@@ -34,6 +34,7 @@ import { Route as RecordsRecordIdRouteImport } from './routes/records.$recordId'
 import { Route as SchemesIndexRouteImport } from './routes/schemes.index'
 import { Route as SchemesSchemeNameRouteImport } from './routes/schemes.$schemeName'
 import { Route as SignalsIndexRouteImport } from './routes/signals.index'
+import { Route as SignalsSignalIdRouteImport } from './routes/signals.$signalId'
 import { Route as WardsIndexRouteImport } from './routes/wards.index'
 import { Route as WardsWardIdRouteImport } from './routes/wards.$wardId'
 
@@ -162,6 +163,11 @@ const SignalsIndexRoute = SignalsIndexRouteImport.update({
   path: '/signals/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SignalsSignalIdRoute = SignalsSignalIdRouteImport.update({
+  id: '/signals/$signalId',
+  path: '/signals/$signalId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WardsIndexRoute = WardsIndexRouteImport.update({
   id: '/wards/',
   path: '/wards/',
@@ -192,6 +198,7 @@ export interface FileRoutesByFullPath {
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/records/$recordId': typeof RecordsRecordIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
+  '/signals/$signalId': typeof SignalsSignalIdRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
   '/housing/': typeof HousingIndexRoute
@@ -221,6 +228,7 @@ export interface FileRoutesByTo {
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/records/$recordId': typeof RecordsRecordIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
+  '/signals/$signalId': typeof SignalsSignalIdRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies': typeof AgenciesIndexRoute
   '/housing': typeof HousingIndexRoute
@@ -251,6 +259,7 @@ export interface FileRoutesById {
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/records/$recordId': typeof RecordsRecordIdRoute
   '/schemes/$schemeName': typeof SchemesSchemeNameRoute
+  '/signals/$signalId': typeof SignalsSignalIdRoute
   '/wards/$wardId': typeof WardsWardIdRoute
   '/agencies/': typeof AgenciesIndexRoute
   '/housing/': typeof HousingIndexRoute
@@ -282,6 +291,7 @@ export interface FileRouteTypes {
     | '/projects/$projectId'
     | '/records/$recordId'
     | '/schemes/$schemeName'
+    | '/signals/$signalId'
     | '/wards/$wardId'
     | '/agencies/'
     | '/housing/'
@@ -311,6 +321,7 @@ export interface FileRouteTypes {
     | '/projects/$projectId'
     | '/records/$recordId'
     | '/schemes/$schemeName'
+    | '/signals/$signalId'
     | '/wards/$wardId'
     | '/agencies'
     | '/housing'
@@ -340,6 +351,7 @@ export interface FileRouteTypes {
     | '/projects/$projectId'
     | '/records/$recordId'
     | '/schemes/$schemeName'
+    | '/signals/$signalId'
     | '/wards/$wardId'
     | '/agencies/'
     | '/housing/'
@@ -370,6 +382,7 @@ export interface RootRouteChildren {
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
   RecordsRecordIdRoute: typeof RecordsRecordIdRoute
   SchemesSchemeNameRoute: typeof SchemesSchemeNameRoute
+  SignalsSignalIdRoute: typeof SignalsSignalIdRoute
   WardsWardIdRoute: typeof WardsWardIdRoute
   AgenciesIndexRoute: typeof AgenciesIndexRoute
   HousingIndexRoute: typeof HousingIndexRoute
@@ -558,6 +571,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignalsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/signals/$signalId': {
+      id: '/signals/$signalId'
+      path: '/signals/$signalId'
+      fullPath: '/signals/$signalId'
+      preLoaderRoute: typeof SignalsSignalIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/wards/': {
       id: '/wards/'
       path: '/wards'
@@ -594,6 +614,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
   RecordsRecordIdRoute: RecordsRecordIdRoute,
   SchemesSchemeNameRoute: SchemesSchemeNameRoute,
+  SignalsSignalIdRoute: SignalsSignalIdRoute,
   WardsWardIdRoute: WardsWardIdRoute,
   AgenciesIndexRoute: AgenciesIndexRoute,
   HousingIndexRoute: HousingIndexRoute,
