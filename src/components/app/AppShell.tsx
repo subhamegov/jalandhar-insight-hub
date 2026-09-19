@@ -31,6 +31,7 @@ const NAV = [
   { to: "/map", label: "City Map", icon: Map },
   { to: "/localities", label: "Localities", icon: MapPin },
   { to: "/housing", label: "Housing", icon: Home },
+  { to: "/livelihoods", label: "Livelihoods & Mobility", icon: Briefcase },
   { to: "/projects", label: "Projects", icon: ListChecks },
   { to: "/assets", label: "Assets", icon: Boxes },
   { to: "/outcomes", label: "Outcomes", icon: Target },
