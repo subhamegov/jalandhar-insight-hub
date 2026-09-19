@@ -19,7 +19,12 @@ type Hit = {
   params?: Record<string, string>;
 };
 
-function buildIndex(): Hit[] {
+function buildIndex(
+  projects: Project[],
+  assets: Asset[],
+  schemes: Scheme[],
+  agencies: Agency[],
+): Hit[] {
   const hits: Hit[] = [];
   for (const p of projects) {
     hits.push({
