@@ -18,13 +18,17 @@ import type { ReactNode } from "react";
 const JALANDHAR_ONLY = ["/outcomes", "/attention", "/wards"];
 
 /** Pages that sit above the city level and always render. */
-const CITY_INDEPENDENT = ["/national"];
+const CITY_INDEPENDENT = ["/national", "/compare"];
 
 export function CityGate({ children }: { children: ReactNode }) {
-  const { city, dataset } = useCity();
+  const { city, dataset, portfolio } = useCity();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   if (CITY_INDEPENDENT.some((p) => pathname.startsWith(p))) return <>{children}</>;
+
+  // Explicit All Cities context: city pages do not silently fall back to one
+  // city's records, and no city's figures are added together.
+  if (portfolio) return <PortfolioContext />;
 
   if (dataset.projects.length === 0) return <NoRecords />;
 
@@ -35,6 +39,51 @@ export function CityGate({ children }: { children: ReactNode }) {
   }
 
   return <>{children}</>;
+}
+
+function PortfolioContext() {
+  const { cities, setCityId } = useCity();
+  return (
+    <section className="rounded-sm border border-border bg-card p-5 shadow-sm">
+      <p className="field-label">All cities</p>
+      <h2 className="mt-1 text-lg font-semibold text-foreground">
+        Four-city prototype coverage
+      </h2>
+      <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+        This context covers the four prototype cities together. City dashboards work from one
+        city's own records, so nothing is shown here from a single city, and sampled figures are
+        never added across cities into a portfolio total. Compare the cities side by side, or pick
+        a city to continue into its records.
+      </p>
+      <div className="mt-4 flex flex-wrap gap-2">
+        <Link
+          to="/compare"
+          className="rounded-sm border border-input bg-card px-3 py-1.5 text-sm hover:bg-accent"
+        >
+          Compare cities
+        </Link>
+        <Link
+          to="/national"
+          className="rounded-sm border border-input bg-card px-3 py-1.5 text-sm hover:bg-accent"
+        >
+          National view
+        </Link>
+      </div>
+      <ul className="mt-4 flex flex-wrap gap-2">
+        {cities.map((c) => (
+          <li key={c.city_id}>
+            <button
+              type="button"
+              onClick={() => setCityId(c.city_id)}
+              className="rounded-sm border border-input bg-card px-3 py-1.5 text-sm hover:bg-accent"
+            >
+              {c.name}, {c.state}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 }
 
 function NotBuiltForCity({ page, cityName }: { page: string; cityName: string }) {
