@@ -124,7 +124,10 @@ function CityShell({ children }: { children: ReactNode }) {
                     Government of India
                   </p>
                   <p className="mt-1 text-sm leading-tight font-semibold">
-                    Jalandhar City Intelligence
+                    MoHUA Urban Intelligence
+                  </p>
+                  <p className="text-xs text-sidebar-foreground/60">
+                    {city.name}, {city.state}
                   </p>
                 </div>
                 <button
