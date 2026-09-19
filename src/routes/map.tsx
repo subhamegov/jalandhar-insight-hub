@@ -367,6 +367,9 @@ function CityMap() {
     [activeLayers, osmData],
   );
 
+  const visibleLayers = MAP_LAYERS.filter(
+    (l) => showPriorityLocations || l.id !== "gov_locations",
+  );
   const layerColors = useMemo(() => Object.fromEntries(MAP_LAYERS.map((l) => [l.id, l.color])), []);
 
   const selectedId =

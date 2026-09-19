@@ -90,7 +90,7 @@ export const MAP_LAYERS: MapLayer[] = [
     tags: ["boundary=administrative", "admin_level=8/9"],
     color: "#334155",
     geometry: "line",
-    caveat: "OSM approximation. Replace with authoritative MC Jalandhar geometry when available.",
+    caveat: "OSM approximation. Replace with the authoritative municipal boundary when available.",
   },
   {
     id: "wards",
@@ -101,7 +101,7 @@ export const MAP_LAYERS: MapLayer[] = [
     tags: ["admin_level=10"],
     color: "#64748b",
     geometry: "line",
-    caveat: "OSM ward coverage for Jalandhar is incomplete.",
+    caveat: "OSM ward coverage is incomplete in most cities.",
   },
   {
     id: "localities",
