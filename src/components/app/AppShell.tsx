@@ -245,8 +245,17 @@ export function AppShell({ children }: { children: ReactNode }) {
 }
 
 function SyntheticNotice() {
-  const { dataset } = useCity();
-  const from = useRouterState({ select: (s) => s.location.pathname });
+  const { dataset, city, portfolio } = useCity();
+  const location = useRouterState({ select: (s) => s.location });
+  const currentSearch = location.search as Record<string, unknown>;
+  const queryString = new URLSearchParams(
+    Object.entries(currentSearch ?? {})
+      .filter(([, v]) => typeof v === "string")
+      .map(([k, v]) => [k, v as string]),
+  ).toString();
+  const from = queryString ? `${location.pathname}?${queryString}` : location.pathname;
+  const provenanceSearch: Record<string, string> = { from };
+  if (!portfolio) provenanceSearch["city"] = city.city_id;
   if (!dataset.synthetic || dataset.projects.length === 0) return null;
   return (
     <p className="mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-sm border border-border bg-muted/60 px-3 py-2 text-xs text-muted-foreground">
