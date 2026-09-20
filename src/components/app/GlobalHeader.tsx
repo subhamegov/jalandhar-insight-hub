@@ -143,55 +143,53 @@ export function GlobalHeader() {
 
   return (
     <header className="z-40 border-b border-border bg-background/95 backdrop-blur print:hidden lg:sticky lg:top-0">
-      {/* One grid: context region on the left, utility region on the right.
-          Every control sits in the grid, so nothing can overlap. */}
-      <div className="grid grid-cols-1 items-center gap-x-5 gap-y-3 px-3 py-3 sm:px-4 md:grid-cols-[auto_minmax(12rem,18rem)] lg:grid-cols-[auto_minmax(12rem,18rem)_minmax(0,1fr)] lg:px-8">
-        <InstitutionalIdentity />
-        <div className="min-w-0">
+      {/* Left: scope and city. Centre: search. Right: actions and data status. */}
+      <div className="grid grid-cols-1 items-center gap-x-5 gap-y-3 px-3 py-3 sm:px-4 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:px-8">
+        <div className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-3">
+          <InstitutionalIdentity />
           <div className="min-w-0">
-          <label htmlFor="scope-select" className="field-label">
-            Scope
-          </label>
-          <select
-            id="scope-select"
-            value={selection}
-            onChange={(e) => {
-              const next = e.target.value;
-              if (next === ALL_CITIES) {
-                // Leaving a city: city-only pages are not valid nationally.
-                const stay = pathname === "/" || pathname.startsWith("/compare");
-                setCityId(ALL_CITIES, stay ? undefined : "/national");
-                return;
-              }
-              if (isCityId(next)) {
-                const fromNational = pathname.startsWith("/national") || pathname.startsWith("/compare");
-                setCityId(next, fromNational ? "/" : undefined);
-              }
-            }}
-            className="mt-0.5 block w-full max-w-xs min-h-9 rounded-sm border border-input bg-card px-2 py-1 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-          >
-            <option value={ALL_CITIES}>National</option>
-            {cities.map((c) => (
-              <option key={c.city_id} value={c.city_id}>
-                {c.name}, {c.state}
-                {c.data_loaded ? "" : ": records pending"}
-              </option>
-            ))}
-          </select>
-          <p className="mt-0.5 truncate text-xs text-muted-foreground">
-            {portfolio ? "India · National" : `${city.name} · ${city.city_id}`}
-          </p>
+            <label htmlFor="scope-select" className="field-label">
+              Scope
+            </label>
+            <select
+              id="scope-select"
+              value={selection}
+              onChange={(e) => {
+                const next = e.target.value;
+                if (next === ALL_CITIES) {
+                  // Leaving a city: city-only pages are not valid nationally.
+                  const stay = pathname === "/" || pathname.startsWith("/compare");
+                  setCityId(ALL_CITIES, stay ? undefined : "/national");
+                  return;
+                }
+                if (isCityId(next)) {
+                  const fromNational =
+                    pathname.startsWith("/national") || pathname.startsWith("/compare");
+                  setCityId(next, fromNational ? "/" : undefined);
+                }
+              }}
+              className="mt-0.5 block min-h-9 w-full max-w-xs rounded-sm border border-input bg-card px-2 py-1 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
+              <option value={ALL_CITIES}>National</option>
+              {cities.map((c) => (
+                <option key={c.city_id} value={c.city_id}>
+                  {c.name}, {c.state}
+                  {c.data_loaded ? "" : ": records pending"}
+                </option>
+              ))}
+            </select>
+            <p className="mt-0.5 truncate text-xs text-muted-foreground">
+              {portfolio ? "India, National" : `${city.name}, ${city.state}`}
+            </p>
           </div>
         </div>
 
-        {/* Utility region: search, status, actions: one row, never overlapping. */}
-        <div className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-3 md:col-span-2 lg:col-span-1 lg:justify-end">
-        <div ref={boxRef} className="relative w-full min-w-0 sm:w-64 lg:w-72">
+        <div ref={boxRef} className="relative min-w-0 lg:mx-auto lg:w-full lg:max-w-md">
           <label htmlFor="global-search" className="sr-only">
             Search projects, assets, schemes, agencies, contractors, wards and localities
           </label>
           <Search
-            className="pointer-events-none absolute top-2 left-2 h-4 w-4 text-muted-foreground"
+            className="pointer-events-none absolute top-2.5 left-2 h-4 w-4 text-muted-foreground"
             aria-hidden="true"
           />
           <input
@@ -203,7 +201,7 @@ export function GlobalHeader() {
             }}
             onFocus={() => setOpen(true)}
             placeholder="Search projects, assets, schemes, agencies"
-            className="w-full rounded-sm border border-input bg-card py-1.5 pr-2 pl-8 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            className="min-h-9 w-full rounded-sm border border-input bg-card py-1.5 pr-2 pl-8 text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           />
           {open && query.trim().length >= 2 ? (
             <div className="absolute top-full right-0 left-0 z-50 mt-1 max-h-96 overflow-y-auto rounded-sm border border-border bg-card shadow-md">
@@ -240,55 +238,55 @@ export function GlobalHeader() {
           ) : null}
         </div>
 
-        {/* Compact status metadata: subordinate to scope and page content. */}
-        <dl className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-1 text-xs">
-          <div className="min-w-0">
-            <dt className="field-label">Last refresh</dt>
-            <dd className="num truncate">
-              {dateText(lastRefresh)}{" "}
+        <div className="flex min-w-0 flex-wrap items-center gap-2 lg:justify-end">
+          {projects.length ? (
+            <span className="inline-flex items-center gap-1 rounded-sm border border-border bg-card px-2 py-1 text-xs">
+              <span className="text-muted-foreground">Data status</span>
               <span
                 className={cn(
-                  "text-muted-foreground",
+                  "font-medium",
                   freshness === "current" && "text-positive",
                   freshness === "ageing" && "text-warning",
                   (freshness === "stale" || freshness === "very_stale") && "text-destructive",
                 )}
               >
-                · {freshness === "current" ? "Current" : freshness.replace("_", " ")}
+                {freshness === "current" ? "Current" : freshness.replace("_", " ")}
               </span>
-            </dd>
-          </div>
-          <div className="min-w-0">
-            <dt className="field-label">Evidence coverage</dt>
-            <dd className="num truncate">{completeness}%</dd>
-          </div>
-        </dl>
+              <InfoTip label="Data status">
+                <ul className="space-y-1">
+                  <li>Last refresh: {dateText(lastRefresh)}</li>
+                  <li>Evidence coverage: {completeness}% of project records have a source attached.</li>
+                  <li>
+                    Freshness measures the age of the last verification. Coverage measures whether a
+                    source exists. The two can differ.
+                  </li>
+                </ul>
+              </InfoTip>
+            </span>
+          ) : null}
 
-        {!portfolio && projects.length ? (
-          <div className="flex flex-wrap items-center gap-2">
-            <button
-              type="button"
-              onClick={() => {
-                const { headers, rows } = projectCsv();
-                downloadCsv(
-                  `${city.name.toLowerCase()}-projects-${AS_OF}`,
-                  toCsv(headers, rows),
-                );
-              }}
-              className="inline-flex min-h-9 items-center gap-1.5 rounded-sm border border-input bg-card px-3 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-            >
-              <Download className="h-4 w-4" aria-hidden="true" />
-              Export data
-            </button>
-            <Link
-              to="/brief"
-              className="inline-flex min-h-9 items-center gap-1.5 rounded-sm border border-input bg-card px-3 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-            >
-              <FileText className="h-4 w-4" aria-hidden="true" />
-              City brief
-            </Link>
-          </div>
-        ) : null}
+          {!portfolio && projects.length ? (
+            <>
+              <button
+                type="button"
+                onClick={() => {
+                  const { headers, rows } = projectCsv();
+                  downloadCsv(`${city.name.toLowerCase()}-projects-${AS_OF}`, toCsv(headers, rows));
+                }}
+                className="inline-flex min-h-9 items-center gap-1.5 rounded-sm border border-input bg-card px-3 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              >
+                <Download className="h-4 w-4" aria-hidden="true" />
+                Export data
+              </button>
+              <Link
+                to="/brief"
+                className="inline-flex min-h-9 items-center gap-1.5 rounded-sm border border-input bg-card px-3 py-1.5 text-xs font-medium hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              >
+                <FileText className="h-4 w-4" aria-hidden="true" />
+                City brief
+              </Link>
+            </>
+          ) : null}
         </div>
       </div>
     </header>
