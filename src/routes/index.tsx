@@ -37,7 +37,7 @@ export const Route = createFileRoute("/")({
         content:
           "Jalandhar government investment, project delivery, service outcomes and evidence quality in one senior review view.",
       },
-      { property: "og:title", content: "Jalandhar City Intelligence — City at a glance" },
+      { property: "og:title", content: "Jalandhar City Intelligence: City at a glance" },
       {
         property: "og:description",
         content:
@@ -171,7 +171,7 @@ function Overview() {
     <>
       <PageHeader
         title="City at a glance"
-        subtitle="Jalandhar: what government is investing in, where it is, what is delayed, and how far the evidence can be relied on."
+        subtitle="Government investment, project status, and evidence reliability."
       />
 
       {/* 1. City at a glance */}
@@ -372,7 +372,7 @@ function Overview() {
                           </Link>
                         </td>
                         <td className="py-2 pr-3">
-                          <AttentionBadge label={a.label} title={a.reasons.join("; ")} />
+                          <AttentionBadge label={a.label} title={a.reasons.join(" · ")} />
                         </td>
                         <td className="py-2 pr-3">
                           <StatusBadge status={project.status} />

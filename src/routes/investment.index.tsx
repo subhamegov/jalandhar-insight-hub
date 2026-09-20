@@ -13,9 +13,9 @@ export const Route = createFileRoute("/investment/")({
       {
         name: "description",
         content:
-          "Mission investment followed through funding, expenditure, infrastructure created, operational service and observed citizen-service records.",
+          "Investment tracking from funding and expenditure to observed services.",
       },
-      { property: "og:title", content: "Investment and outcomes — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Investment and outcomes: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "Are investments across different missions collectively improving life for citizens?",
@@ -48,7 +48,7 @@ function InvestmentIndex() {
         <Breadcrumbs trail={[{ label: "Investment and outcomes" }]} />
         <PageHeader
           title={`Investment chain records are not loaded for ${city.name}`}
-          subtitle="This view needs mission project, municipal finance, asset, service and grievance records held together. None are loaded for this city."
+          subtitle="No linked investment, asset, service, or grievance records are loaded for this city."
         />
         <Panel title="What to use instead">
           <Link to="/projects" className="text-sm underline underline-offset-2">
@@ -84,8 +84,8 @@ function InvestmentIndex() {
     <div className="space-y-5">
       <Breadcrumbs trail={[{ label: "Investment and outcomes" }]} />
       <PageHeader
-        title={`${city.name} — investment to outcome`}
-        subtitle="Each project followed from mission funding through expenditure to the services observed around it."
+        title={`${city.name}: investment to outcome`}
+        subtitle="Projects from funding and expenditure to observed services."
       />
 
       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
@@ -105,7 +105,7 @@ function InvestmentIndex() {
 
       <Panel
         title="Municipal finance by financial year"
-        description="All amounts in INR lakh, as supplied. Each year is summed on its own and unspent released funding is shown only where both released and expenditure are recorded."
+        description="Amounts are in INR lakh. Years remain separate. Unspent funding appears only when released and spent values exist."
       >
         <Table
           empty="No municipal finance records for this city."
@@ -131,8 +131,7 @@ function InvestmentIndex() {
           ])}
         />
         <p className="mt-2 text-xs text-muted-foreground">
-          No citywide return on investment is calculated. Spending and service conditions are
-          reported separately because the data does not establish that one produced the other.
+          No citywide return is calculated. The data does not prove that spending caused a service outcome.
         </p>
       </Panel>
 
@@ -204,15 +203,15 @@ function InvestmentIndex() {
             count(c.observations.length),
             count(c.grievances.length),
             <span key={`f-${c.project.project_id}`} className="text-xs text-muted-foreground">
-              {c.flags.length ? c.flags.join("; ") : "Nothing flagged"}
+              {c.flags.length ? c.flags.join(" · ") : "Nothing flagged"}
             </span>,
           ])}
         />
       </Panel>
 
       <Panel
-        title="Convergence — investments serving the same locality"
-        description="Projects are grouped by the locality they sit in or serve. A project appears in each locality its service area covers, and is counted once inside each group."
+        title="Convergence: investments serving the same locality"
+        description="Projects are grouped by locality and counted once in each group they serve."
       >
         <div className="space-y-3">
           {data.convergence
@@ -237,13 +236,13 @@ function InvestmentIndex() {
                 <Bullets
                   title="Incomplete projects"
                   items={g.incompleteProjects.map(
-                    (p) => `${p.project_name} (${p.project_id}) — ${labelise(p.project_status)}`,
+                    (p) => `${p.project_name} (${p.project_id}): ${labelise(p.project_status)}`,
                   )}
                 />
                 <Bullets
                   title="Underutilised assets"
                   items={g.underutilisedAssets.map(
-                    (a) => `${a.asset_name} (${a.asset_id}) — ${percent(a.utilisation_pct)} utilisation`,
+                    (a) => `${a.asset_name} (${a.asset_id}): ${percent(a.utilisation_pct)} utilisation`,
                   )}
                 />
                 <Bullets title="Operational bottlenecks" items={g.bottlenecks} />
@@ -251,8 +250,7 @@ function InvestmentIndex() {
             ))}
         </div>
         <p className="mt-2 text-xs text-muted-foreground">
-          Two projects of the same type in one locality are listed for checking only. Co-location is
-          not duplication, and the data does not record scope boundaries.
+          Co-located projects need review. Co-location alone does not prove duplication.
         </p>
       </Panel>
     </div>

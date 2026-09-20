@@ -14,7 +14,7 @@ export const Route = createFileRoute("/agencies/")({
         content:
           "Which government body owns and implements each intervention in Jalandhar, across centre, state and city.",
       },
-      { property: "og:title", content: "Agencies — Jalandhar City Intelligence" },
+      { property: "og:title", content: "Agencies: Jalandhar City Intelligence" },
       {
         property: "og:description",
         content: "Accountability view of agencies working in Jalandhar.",

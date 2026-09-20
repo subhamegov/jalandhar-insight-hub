@@ -11,8 +11,8 @@ import { count, crore, dateText, percent, text } from "@/lib/format";
 /**
  * Overview for cities served by the four-city dataset.
  *
- * It leads with what people experience — housing, water and sanitation,
- * cleanliness, mobility, livelihoods and municipal responsiveness — and keeps
+ * It leads with what people experience: housing, water and sanitation,
+ * cleanliness, mobility, livelihoods and municipal responsiveness: and keeps
  * mission and investment reporting below as supporting evidence. It reports
  * only what the dataset carries, for the sample it carries, and never
  * extrapolates a sample to a citywide total.
@@ -50,7 +50,7 @@ export function FourCityOverview() {
     <div className="space-y-6">
       <Breadcrumbs />
       <PageHeader
-        title={`${city.name} — how services reach people`}
+        title={`${city.name}: how services reach people`}
         subtitle={`Synthetic prototype records for ${city.urban_local_body}, observed ${dateText(bundle.city.reference_date)}. Figures cover the sampled localities only, are not citywide totals, and are not government statistics.`}
       />
 
@@ -116,7 +116,7 @@ export function FourCityOverview() {
 
       <section className="rounded-sm border border-border bg-card p-4 shadow-sm">
         <h2 className="text-sm font-semibold text-foreground">
-          Mission and investment reporting — supporting evidence
+          Mission and investment reporting: supporting evidence
         </h2>
         <p className="mt-1 text-xs text-muted-foreground">
           Delivery reporting for the same sample. Completion is a construction status, not proof

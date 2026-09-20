@@ -22,7 +22,7 @@ export const Route = createFileRoute("/records/$recordId")({
         content:
           "One canonical record with its provenance and every relationship that connects it to projects, assets, service areas and localities.",
       },
-      { property: "og:title", content: "Record detail — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Record detail: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "Follow a record through its connected projects, assets and service areas.",
@@ -175,7 +175,7 @@ function RecordDetail() {
           {record["coordinates"] ? (
             <p className="mt-3 text-xs text-muted-foreground">
               Position:{" "}
-              {(record["coordinates"] as [number, number]).map((n) => n.toFixed(4)).join(", ")} —{" "}
+              {(record["coordinates"] as [number, number]).map((n) => n.toFixed(4)).join(", ")}:{" "}
               {record["actual_asset_location"] === true
                 ? "reported as an actual location"
                 : "illustrative point anchor, not a surveyed location and not a boundary"}
@@ -276,5 +276,5 @@ function Field({ label, value }: { label: string; value: string }) {
   );
 }
 
-/** Keeps the entity index import honest — every kind is routable. */
+/** Keeps the entity index import honest: every kind is routable. */
 export const ROUTABLE_KINDS = Object.keys(byId) as EntityKind[];

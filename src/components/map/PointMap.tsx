@@ -1,6 +1,6 @@
 // Client-only Leaflet point map, used for the national city overview and for
 // locality anchors. It shares the map framework, tile source and attribution
-// used by the City Map — no second mapping library is introduced.
+// used by the City Map: no second mapping library is introduced.
 //
 // Every point drawn here is a position anchor. Points marked verified=false are
 // illustrative anchors from the synthetic dataset: they are not surveyed
@@ -122,7 +122,7 @@ export default function PointMap({
       });
       marker.bindTooltip(
         `<strong>${p.name}</strong>${p.sub ? `<br/>${p.sub}` : ""}<br/>${
-          p.verified ? "Verified position" : "Illustrative anchor — not a boundary"
+          p.verified ? "Verified position" : "Illustrative anchor: not a boundary"
         }`,
         { direction: "top" },
       );

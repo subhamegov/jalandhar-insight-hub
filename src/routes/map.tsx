@@ -38,7 +38,7 @@ export const Route = createFileRoute("/map")({
         content:
           "Geospatial operating map of Jalandhar on an OpenStreetMap base layer, showing government projects, assets and city infrastructure.",
       },
-      { property: "og:title", content: "City Map — Jalandhar City Intelligence" },
+      { property: "og:title", content: "City Map: Jalandhar City Intelligence" },
       {
         property: "og:description",
         content:

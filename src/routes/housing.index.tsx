@@ -18,7 +18,7 @@ export const Route = createFileRoute("/housing/")({
       },
       {
         property: "og:title",
-        content: "Housing service readiness — MoHUA Urban Intelligence",
+        content: "Housing service readiness: MoHUA Urban Intelligence",
       },
       {
         property: "og:description",
@@ -96,7 +96,7 @@ function HousingIndex() {
     <div className="space-y-5">
       <Breadcrumbs trail={[{ label: "Housing" }]} />
       <PageHeader
-        title={`${city.name} — houses built, homes serviced`}
+        title={`${city.name}: houses built, homes serviced`}
         subtitle={`How many completed homes are ready for families to live in with essential municipal services. ${count(rows.length)} sampled housing records, observed ${dateText(DATASET_REFERENCE_DATE)}. These are sampled synthetic records, not citywide totals and not government statistics.`}
       />
 

@@ -27,7 +27,7 @@ export const Route = createFileRoute("/data-layer")({
         content:
           "The connected four-city data layer: data products, canonical identifiers, cross-mission relationships, provenance and validation.",
       },
-      { property: "og:title", content: "Data Layer — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Data Layer: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "Every data product, relationship and validation check behind the four-city view.",

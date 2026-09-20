@@ -15,7 +15,7 @@ export const Route = createFileRoute("/states")({
         content:
           "States covered by the MoHUA Urban Intelligence prototype, with the cities held under each state.",
       },
-      { property: "og:title", content: "States — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "States: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "Move from India to a state and then into a city in the prototype.",

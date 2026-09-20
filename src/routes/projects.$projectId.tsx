@@ -116,7 +116,7 @@ function ProjectDetail() {
             <StatusBadge status={p.status} />
             <AttentionBadge
               label={assessProject(p).label}
-              title={assessProject(p).reasons.join("; ")}
+              title={assessProject(p).reasons.join(" · ")}
             />
             <FreshnessBadge date={p.last_verified} showDate />
             <EvidenceLink
@@ -167,7 +167,7 @@ function ProjectDetail() {
           System prioritisation:{" "}
           <span className="text-foreground" title={attentionScore(p)
             .reasons.map((r) => `${r.reason} (+${r.weight})`)
-            .join("; ")}>
+            .join(" · ")}>
             {attentionScore(p).band} ({attentionScore(p).score})
           </span>
         </span>

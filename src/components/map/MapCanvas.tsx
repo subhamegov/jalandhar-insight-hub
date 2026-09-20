@@ -142,7 +142,7 @@ export default function MapCanvas({
           opacity: 0.85,
           dashArray: "8 5",
         });
-        line.bindTooltip(`${p.name} — ${p.sub}`, { direction: "top" });
+        line.bindTooltip(`${p.name}: ${p.sub}`, { direction: "top" });
         line.on("click", () => onSelectGov(p.id));
         line.addTo(group);
       }
@@ -154,7 +154,7 @@ export default function MapCanvas({
         fillOpacity: c.fill === "transparent" ? 0.25 : 0.9,
       });
       marker.bindTooltip(
-        count > 1 ? `${p.name} — ${count} projects` : `${p.name} — ${p.sub}`,
+        count > 1 ? `${p.name}: ${count} projects` : `${p.name}: ${p.sub}`,
         { direction: "top", offset: [0, -6] },
       );
       if (count > 1) {

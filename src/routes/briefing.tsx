@@ -14,9 +14,9 @@ export const Route = createFileRoute("/briefing")({
       {
         name: "description",
         content:
-          "What is happening in the city, why it matters for citizens, the evidence behind it, the agencies involved and the decisions that need attention.",
+          "City status, citizen impact, and urgent decisions.",
       },
-      { property: "og:title", content: "Executive briefing — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Executive briefing: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "From citizen-service gaps to evidence, investment, agencies and the decision sought.",
@@ -41,7 +41,7 @@ function BriefingPage() {
         <Breadcrumbs trail={[{ label: "Executive briefing" }]} />
         <PageHeader
           title={`Briefing records are not loaded for ${city.name}`}
-          subtitle="This view reads the supplied briefing scenario, decision signals and planning interventions. None are loaded for this city."
+          subtitle="No briefing scenario, decision signals, or interventions are loaded for this city."
         />
         <Panel title="What to use instead">
           <Link to="/attention" className="text-sm underline underline-offset-2">
@@ -58,7 +58,7 @@ function BriefingPage() {
     <div className="space-y-4">
       <Breadcrumbs trail={[{ label: "Executive briefing" }]} />
       <PageHeader
-        title={`${city.name} — briefing for decision`}
+        title={`${city.name}: briefing for decision`}
         subtitle={
           sc
             ? sc.title
@@ -67,10 +67,7 @@ function BriefingPage() {
       />
 
       <div className="rounded-sm border border-border bg-muted/40 p-3 text-xs leading-relaxed text-muted-foreground">
-        This briefing is built from synthetic prototype records. It is not a government finding, not
-        an official statistic and not an approval. Costs shown are illustrative placeholders. Every
-        statement below links to the record it comes from, and the validation still required is
-        listed at the end.
+        Synthetic prototype records, not government findings or approvals. Costs are illustrative. Each statement links to its source record.
       </div>
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-5">
@@ -113,7 +110,7 @@ function BriefingPage() {
                 </Link>
                 <span className="text-xs text-muted-foreground">
                   {" "}
-                  — {s.locality ? s.locality.name : "Locality not recorded"} ·{" "}
+                 : {s.locality ? s.locality.name : "Locality not recorded"} ·{" "}
                   {count(s.evidence.length)} supporting record
                   {s.evidence.length === 1 ? "" : "s"}
                   {s.unresolvedEvidence.length
@@ -293,7 +290,7 @@ function BriefingPage() {
                 >
                   {d.problem}
                 </Link>
-                <span className="text-muted-foreground"> — {d.decision}</span>
+                <span className="text-muted-foreground">: {d.decision}</span>
               </li>
             ))}
           </ul>

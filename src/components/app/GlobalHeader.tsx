@@ -172,7 +172,7 @@ export function GlobalHeader() {
             {cities.map((c) => (
               <option key={c.city_id} value={c.city_id}>
                 {c.name}, {c.state}
-                {c.data_loaded ? "" : " — records pending"}
+                {c.data_loaded ? "" : ": records pending"}
               </option>
             ))}
           </select>
@@ -182,7 +182,7 @@ export function GlobalHeader() {
           </div>
         </div>
 
-        {/* Utility region: search, status, actions — one row, never overlapping. */}
+        {/* Utility region: search, status, actions: one row, never overlapping. */}
         <div className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-3 lg:justify-end">
         <div ref={boxRef} className="relative w-full min-w-0 sm:w-64 lg:w-72">
           <label htmlFor="global-search" className="sr-only">
@@ -238,7 +238,7 @@ export function GlobalHeader() {
           ) : null}
         </div>
 
-        {/* Compact status metadata — subordinate to scope and page content. */}
+        {/* Compact status metadata: subordinate to scope and page content. */}
         <dl className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-1 text-xs">
           <div className="min-w-0">
             <dt className="field-label">Last refresh</dt>

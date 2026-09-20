@@ -13,9 +13,9 @@ export const Route = createFileRoute("/signals/")({
       {
         name: "description",
         content:
-          "What requires government attention in each city, and the project, infrastructure, service and complaint records that explain why.",
+          "City issues requiring attention and the records explaining them.",
       },
-      { property: "og:title", content: "Decision signals — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Decision signals: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "Evidence-backed conditions, the records behind them and the evidence still missing.",
@@ -51,7 +51,7 @@ function SignalsIndex() {
         <Breadcrumbs trail={[{ label: "Decision signals" }]} />
         <PageHeader
           title={`Decision signal records are not loaded for ${city.name}`}
-          subtitle="This view reads the supplied decision signal records. None are loaded for this city, so nothing is shown rather than anything assumed."
+          subtitle="No decision signal records are loaded for this city."
         />
         <Panel title="What to use instead">
           <Link to="/attention" className="text-sm underline underline-offset-2">
@@ -91,7 +91,7 @@ function SignalsIndex() {
     <div className="space-y-5">
       <Breadcrumbs trail={[{ label: "Decision signals" }]} />
       <PageHeader
-        title={`${city.name} — what requires attention, and why`}
+        title={`${city.name}: what requires attention, and why`}
         subtitle="These are the supplied synthetic decision signals for this prototype."
       />
 
