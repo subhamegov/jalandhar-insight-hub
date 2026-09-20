@@ -21,8 +21,8 @@ export function PageHeader({
     <header className="mb-6 border-b border-border pb-4">
       <div className="digit-rule mb-3 w-16" aria-hidden="true" />
       <div className="flex flex-wrap items-end justify-between gap-4">
-        <div className="flex min-w-0 items-center gap-3">
-          {identity}
+        <div className="flex min-w-0 flex-col items-start gap-3 sm:flex-row sm:items-center">
+          {identity ? <div className="max-w-full shrink-0">{identity}</div> : null}
           <div className="min-w-0">
           <h1 className="text-xl font-semibold text-foreground">{title}</h1>
           {subtitle ? (

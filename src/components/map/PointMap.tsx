@@ -81,11 +81,16 @@ export default function PointMap({
     const container = containerRef.current;
     if (!container || typeof ResizeObserver === "undefined") return;
     const observer = new ResizeObserver(() => {
-      requestAnimationFrame(() => mapRef.current?.invalidateSize(false));
+      requestAnimationFrame(() => {
+        const map = mapRef.current;
+        if (!map) return;
+        map.invalidateSize(false);
+        if (bounds) map.fitBounds(bounds, { padding: [40, 40], animate: false });
+      });
     });
     observer.observe(container);
     return () => observer.disconnect();
-  }, []);
+  }, [bounds]);
 
   // Leaflet throws if the map is resized or moved before its panes are laid
   // out, so view changes run on the next frame and are guarded.
