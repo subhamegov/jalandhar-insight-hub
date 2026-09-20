@@ -252,7 +252,11 @@ function SyntheticNotice() {
     <p className="mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-sm border border-border bg-muted/60 px-3 py-2 text-xs text-muted-foreground">
       <span className="font-medium text-foreground">Prototype data</span>
       <span>Synthetic observations · Not official statistics</span>
-      <Link to="/data-quality" className="font-medium text-primary underline-offset-2 hover:underline">
+      <Link
+        to="/data-quality"
+        search={{ from } as never}
+        className="font-medium text-primary underline-offset-2 hover:underline"
+      >
         View data provenance
       </Link>
     </p>
