@@ -9,7 +9,7 @@ export function CityBanner({ city }: CityBannerProps) {
   return (
     <div
       key={city.city_id}
-      className="h-[120px] w-full overflow-hidden bg-accent/40 sm:h-[156px] xl:h-[188px]"
+      className="h-[120px] w-full overflow-hidden bg-info-surface sm:h-[156px] xl:h-[188px]"
       aria-hidden="true"
     >
       {city.bannerImage ? (

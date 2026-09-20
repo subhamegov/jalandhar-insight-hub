@@ -6,6 +6,7 @@ import { AttentionBadge } from "@/components/app/AttentionBadge";
 import { FreshnessBadge } from "@/components/app/FreshnessBadge";
 import { SourceBadge } from "@/components/app/SourceBadge";
 import { EvidenceLink } from "@/components/app/EvidenceDrawer";
+import { CityBanner } from "@/components/app/CityBanner";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { GovPoint, MarkerState } from "@/components/map/MapCanvas";
 import { assessProject } from "@/data/attentionLabel";
@@ -25,6 +26,7 @@ import { sortByOrder, usePriorityOrder } from "@/lib/priorityOrder";
 import { PriorityHandle, PriorityNotice, usePriorityDrag } from "@/components/app/PriorityControl";
 import { isStale } from "@/lib/freshness";
 import { attentionScore, knownInrValue } from "@/data/registerLogic";
+import { useCity } from "@/lib/cityContext";
 
 const MapCanvas = lazy(() => import("@/components/map/MapCanvas"));
 
@@ -66,6 +68,7 @@ function sum(values: (number | null | undefined)[]): number | null {
 }
 
 function Overview() {
+  const { city } = useCity();
   const rows = useMemo(() => attentionRows(), []);
   const conflicts = useMemo(
     () => [...allConflicts()].sort((a, b) => SEVERITY_RANK[a.severity] - SEVERITY_RANK[b.severity]),
@@ -173,6 +176,8 @@ function Overview() {
         title="City at a glance"
         subtitle="Government investment, project status, and evidence reliability."
       />
+
+      <CityBanner city={city} />
 
       {/* 1. City at a glance */}
       <section aria-labelledby="glance">
