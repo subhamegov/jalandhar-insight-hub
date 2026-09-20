@@ -98,8 +98,8 @@
     },
     {
       "filename": "15_municipal_finance.json",
-      "bytes": 83385,
-      "sha256": "b37d2d21946b8f61983797d37748ac68c6a2e6153452a51f3281ffa546026f4d",
+      "bytes": 83387,
+      "sha256": "d4a346d91e711beb19e8159ab85e2570b27708dec38112543fb840e5368b9fd0",
       "record_count": 128
     },
     {
@@ -141,12 +141,14 @@
     {
       "filename": "22_data_dictionary.json",
       "bytes": 17264,
-      "sha256": "79df369178fbad7473818efe6c7386ecb33ab9e6ddad400e357f7b593138b870"
+      "sha256": "79df369178fbad7473818efe6c7386ecb33ab9e6ddad400e357f7b593138b870",
+      "record_count": null
     },
     {
       "filename": "23_data_quality_report.json",
       "bytes": 2197,
-      "sha256": "5a673ffd87c234510ba8025e08b6017ecce20547d07078f8f0c124609e3531a6"
+      "sha256": "5a673ffd87c234510ba8025e08b6017ecce20547d07078f8f0c124609e3531a6",
+      "record_count": null
     },
     {
       "filename": "24_city_comparison.json",
@@ -168,7 +170,8 @@
     {
       "filename": "validation_report.json",
       "bytes": 2197,
-      "sha256": "5a673ffd87c234510ba8025e08b6017ecce20547d07078f8f0c124609e3531a6"
+      "sha256": "5a673ffd87c234510ba8025e08b6017ecce20547d07078f8f0c124609e3531a6",
+      "record_count": null
     }
   ],
   "all_validation_checks_passed": true
