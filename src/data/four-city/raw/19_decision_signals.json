@@ -2518,5 +2518,817 @@
     ],
     "confidence_basis": "Internal synthetic records are consistent; real-world confidence not assessed",
     "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "signal_id": "SIG-KARNAL-01",
+    "geography_ids": [
+      "LOC-KARNAL-06"
+    ],
+    "related_missions": [
+      "AMRUT_2"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-001"
+    ],
+    "related_assets": [
+      "AST-KARNAL-001"
+    ],
+    "observed_condition": "Delayed drainage delivery",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-001"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-001"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0001"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0001"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review delayed drainage delivery"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": false,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "signal_id": "SIG-KARNAL-02",
+    "geography_ids": [
+      "LOC-KARNAL-02"
+    ],
+    "related_missions": [
+      "AMRUT_2"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-002"
+    ],
+    "related_assets": [
+      "AST-KARNAL-003"
+    ],
+    "observed_condition": "Water interruptions in sampled localities",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-002"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-003"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0002"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0002"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review water interruptions in sampled localities"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": false,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "signal_id": "SIG-KARNAL-03",
+    "geography_ids": [
+      "LOC-KARNAL-01"
+    ],
+    "related_missions": [
+      "SBM_U_2"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-003"
+    ],
+    "related_assets": [
+      "AST-KARNAL-005"
+    ],
+    "observed_condition": "Waste collection reliability varies",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-003"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-005"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0003"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0003"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review waste collection reliability varies"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": true,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "signal_id": "SIG-KARNAL-04",
+    "geography_ids": [
+      "LOC-KARNAL-07"
+    ],
+    "related_missions": [
+      "URBAN_TRANSPORT"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-004"
+    ],
+    "related_assets": [
+      "AST-KARNAL-007"
+    ],
+    "observed_condition": "Road safety milestone review",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-004"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-007"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0004"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0004"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review road safety milestone review"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": false,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "signal_id": "SIG-KARNAL-05",
+    "geography_ids": [
+      "LOC-KARNAL-05"
+    ],
+    "related_missions": [
+      "SMART_CITIES"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-005"
+    ],
+    "related_assets": [
+      "AST-KARNAL-009"
+    ],
+    "observed_condition": "Completed lighting needs outcome validation",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-005"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-009"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0005"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0005"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review completed lighting needs outcome validation"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": false,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "signal_id": "SIG-KARNAL-06",
+    "geography_ids": [
+      "LOC-KARNAL-08"
+    ],
+    "related_missions": [
+      "AMRUT_2"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-006"
+    ],
+    "related_assets": [
+      "AST-KARNAL-011"
+    ],
+    "observed_condition": "Property service linkage gaps",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-006"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-011"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0006"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0006"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review property service linkage gaps"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": true,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "signal_id": "SIG-KARNAL-07",
+    "geography_ids": [
+      "LOC-KARNAL-08"
+    ],
+    "related_missions": [
+      "AMRUT_2"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-006"
+    ],
+    "related_assets": [
+      "AST-KARNAL-011"
+    ],
+    "observed_condition": "Mughal Canal drainage progress",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-006"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-011"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0007"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0007"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review mughal canal drainage progress"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": false,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "signal_id": "SIG-KARNAL-08",
+    "geography_ids": [
+      "LOC-KARNAL-02"
+    ],
+    "related_missions": [
+      "AMRUT_2"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-002"
+    ],
+    "related_assets": [
+      "AST-KARNAL-003"
+    ],
+    "observed_condition": "Water complaint resolution variation",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-002"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-003"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0008"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0008"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review water complaint resolution variation"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": false,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "signal_id": "SIG-KARNAL-09",
+    "geography_ids": [
+      "LOC-KARNAL-01"
+    ],
+    "related_missions": [
+      "SBM_U_2"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-003"
+    ],
+    "related_assets": [
+      "AST-KARNAL-005"
+    ],
+    "observed_condition": "Repeat waste complaints near sampled assets",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-003"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-005"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0009"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0009"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review repeat waste complaints near sampled assets"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": true,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "signal_id": "SIG-KARNAL-10",
+    "geography_ids": [
+      "LOC-KARNAL-07"
+    ],
+    "related_missions": [
+      "URBAN_TRANSPORT"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-004"
+    ],
+    "related_assets": [
+      "AST-KARNAL-007"
+    ],
+    "observed_condition": "Pedestrian works expenditure review",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-004"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-007"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0010"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0010"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review pedestrian works expenditure review"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": false,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "signal_id": "SIG-KARNAL-11",
+    "geography_ids": [
+      "LOC-KARNAL-05"
+    ],
+    "related_missions": [
+      "SMART_CITIES"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-005"
+    ],
+    "related_assets": [
+      "AST-KARNAL-009"
+    ],
+    "observed_condition": "Lighting service response variation",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-005"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-009"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0011"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0011"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review lighting service response variation"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": false,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "signal_id": "SIG-KARNAL-12",
+    "geography_ids": [
+      "LOC-KARNAL-03"
+    ],
+    "related_missions": [
+      "MUNICIPAL"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-012"
+    ],
+    "related_assets": [
+      "AST-KARNAL-023"
+    ],
+    "observed_condition": "Property arrears and service records need reconciliation",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-012"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-023"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0012"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0012"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review property arrears and service records need reconciliation"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": true,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "signal_id": "SIG-KARNAL-13",
+    "geography_ids": [
+      "LOC-KARNAL-02"
+    ],
+    "related_missions": [
+      "AMRUT_2"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-007"
+    ],
+    "related_assets": [
+      "AST-KARNAL-013"
+    ],
+    "observed_condition": "Housing service readiness gaps",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-007"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-013"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0013"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0013"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review housing service readiness gaps"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": false,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "signal_id": "SIG-KARNAL-14",
+    "geography_ids": [
+      "LOC-KARNAL-07"
+    ],
+    "related_missions": [
+      "AMRUT_2"
+    ],
+    "related_projects": [
+      "PRJ-KARNAL-008"
+    ],
+    "related_assets": [
+      "AST-KARNAL-015"
+    ],
+    "observed_condition": "Cross-mission delivery dependencies",
+    "supporting_records": [
+      {
+        "entity": "project",
+        "id": "PRJ-KARNAL-008"
+      },
+      {
+        "entity": "asset",
+        "id": "AST-KARNAL-015"
+      },
+      {
+        "entity": "grievance",
+        "id": "GRV-KARNAL-0014"
+      },
+      {
+        "entity": "service_observation",
+        "id": "SRV-KARNAL-0014"
+      }
+    ],
+    "potential_implications": "Review the linked records before deciding whether operational action is needed.",
+    "data_gaps": [
+      "Field verification",
+      "Authoritative asset coordinates"
+    ],
+    "affected_population_estimate": null,
+    "affected_population_method": null,
+    "possible_interventions": [
+      "Review cross-mission delivery dependencies"
+    ],
+    "responsible_agencies": [
+      "Municipal Corporation Karnal"
+    ],
+    "coordination_required": false,
+    "confidence_basis": "Synthetic linked records only",
+    "last_updated": "2026-09-19"
   }
 ]

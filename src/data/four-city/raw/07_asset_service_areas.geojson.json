@@ -1360,6 +1360,364 @@
           "AST-GUWAHATI-092"
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-01",
+        "service_area_id": "AREA-KARNAL-01",
+        "locality_ids": [
+          "LOC-KARNAL-01"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [],
+        "sewer_asset_ids": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.993,
+          29.692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-02",
+        "service_area_id": "AREA-KARNAL-02",
+        "locality_ids": [
+          "LOC-KARNAL-02"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [
+          "AST-KARNAL-003",
+          "AST-KARNAL-004",
+          "AST-KARNAL-013",
+          "AST-KARNAL-014",
+          "AST-KARNAL-061",
+          "AST-KARNAL-062"
+        ],
+        "sewer_asset_ids": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.97,
+          29.6725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-03",
+        "service_area_id": "AREA-KARNAL-03",
+        "locality_ids": [
+          "LOC-KARNAL-03"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [],
+        "sewer_asset_ids": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9758,
+          29.6668
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-04",
+        "service_area_id": "AREA-KARNAL-04",
+        "locality_ids": [
+          "LOC-KARNAL-04"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [],
+        "sewer_asset_ids": [
+          "AST-KARNAL-057",
+          "AST-KARNAL-058"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.004,
+          29.701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-05",
+        "service_area_id": "AREA-KARNAL-05",
+        "locality_ids": [
+          "LOC-KARNAL-05"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [],
+        "sewer_asset_ids": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.01,
+          29.694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-06",
+        "service_area_id": "AREA-KARNAL-06",
+        "locality_ids": [
+          "LOC-KARNAL-06"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [
+          "AST-KARNAL-029",
+          "AST-KARNAL-030"
+        ],
+        "sewer_asset_ids": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.989,
+          29.683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-07",
+        "service_area_id": "AREA-KARNAL-07",
+        "locality_ids": [
+          "LOC-KARNAL-07"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [],
+        "sewer_asset_ids": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.019,
+          29.706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-08",
+        "service_area_id": "AREA-KARNAL-08",
+        "locality_ids": [
+          "LOC-KARNAL-08"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [],
+        "sewer_asset_ids": [
+          "AST-KARNAL-025",
+          "AST-KARNAL-026"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.997,
+          29.676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-09",
+        "service_area_id": "AREA-KARNAL-09",
+        "locality_ids": [
+          "LOC-KARNAL-09"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [],
+        "sewer_asset_ids": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.976,
+          29.688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-10",
+        "service_area_id": "AREA-KARNAL-10",
+        "locality_ids": [
+          "LOC-KARNAL-10"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [
+          "AST-KARNAL-045",
+          "AST-KARNAL-046"
+        ],
+        "sewer_asset_ids": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.991,
+          29.661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-11",
+        "service_area_id": "AREA-KARNAL-11",
+        "locality_ids": [
+          "LOC-KARNAL-11"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [],
+        "sewer_asset_ids": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.999,
+          29.686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-PROTOTYPE",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-12",
+        "service_area_id": "AREA-KARNAL-12",
+        "locality_ids": [
+          "LOC-KARNAL-12"
+        ],
+        "area_type": "illustrative service anchor",
+        "geometry_precision": "illustrative point, not boundary",
+        "water_asset_ids": [],
+        "sewer_asset_ids": [
+          "AST-KARNAL-041",
+          "AST-KARNAL-042"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9545,
+          29.7015
+        ]
+      }
     }
   ]
 }

@@ -54,5 +54,19 @@
     "waste_generated_tpd_sample": 218.9,
     "waste_processed_tpd_sample": 140.65,
     "warning": "Sample totals, not citywide estimates or actual city performance"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "DERIVED",
+    "derived_from": "Karnal synthetic prototype records",
+    "project_sample_count": 32,
+    "asset_sample_count": 64,
+    "property_aggregate_sample_count": 60,
+    "housing_units_completed_sample": 1446,
+    "housing_units_occupied_sample": 1302,
+    "grievance_count_sample": 1520,
+    "waste_generated_tpd_sample": 33.3,
+    "waste_processed_tpd_sample": 20.65,
+    "warning": "Synthetic sampled records. Not official statistics or citywide totals."
   }
 ]
