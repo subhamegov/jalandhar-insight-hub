@@ -290,7 +290,7 @@ function BriefingPage() {
                 >
                   {d.problem}
                 </Link>
-                <span className="text-muted-foreground">: {d.decision}</span>
+                <span className="text-muted-foreground">: {text(d.decision)}</span>
               </li>
             ))}
           </ul>

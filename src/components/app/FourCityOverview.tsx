@@ -51,7 +51,7 @@ export function FourCityOverview() {
       <Breadcrumbs />
       <PageHeader
         title={`${city.name}: how services reach people`}
-        subtitle={`Synthetic prototype records for ${city.urban_local_body}, observed ${dateText(bundle.city.reference_date)}. Figures cover the sampled localities only, are not citywide totals, and are not government statistics.`}
+        subtitle={`Synthetic sample for ${city.urban_local_body}, observed ${dateText(bundle.city.reference_date)}. Not citywide or official statistics.`}
       />
 
       <section className="rounded-sm border border-border bg-card p-4 shadow-sm">
@@ -59,10 +59,8 @@ export function FourCityOverview() {
           How are citizens experiencing urban services, and where are people still underserved?
         </h2>
         <p className="mt-1 text-sm text-muted-foreground">
-          Each domain below shows the service condition first, with the numerator, denominator and
-          reporting period behind it. Values marked <strong>Observed</strong> come from service
-          records; values marked <strong>Reported</strong> describe delivery and do not by
-          themselves show a citizen outcome. Nothing here is combined into a single score.
+          <strong>Observed</strong> values come from service records. <strong>Reported</strong>{" "}
+          values describe delivery. No combined score is used.
         </p>
         <div className="mt-3 flex flex-wrap gap-2 text-sm">
           {domains.map((d) => (
@@ -86,7 +84,7 @@ export function FourCityOverview() {
       <section className="rounded-sm border border-border bg-card p-4 shadow-sm">
         <h2 className="text-sm font-semibold text-foreground">Decision signals</h2>
         <p className="mt-1 text-xs text-muted-foreground">
-          Conditions observed across missions in the sample, each with the records that support it.
+          Sampled conditions and their supporting records.
         </p>
         <ul className="mt-3 space-y-2">
           {bundle.signals.slice(0, 8).map((s) => (
@@ -110,7 +108,7 @@ export function FourCityOverview() {
           ))}
         </ul>
         <Link to="/data-layer" className="mt-3 inline-block text-sm underline underline-offset-2">
-          Open the data layer to trace any record
+          Trace records
         </Link>
       </section>
 
@@ -119,8 +117,7 @@ export function FourCityOverview() {
           Mission and investment reporting: supporting evidence
         </h2>
         <p className="mt-1 text-xs text-muted-foreground">
-          Delivery reporting for the same sample. Completion is a construction status, not proof
-          that a service reached a household.
+          Delivery data for the same sample. Completion does not prove service access.
         </p>
 
         <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
