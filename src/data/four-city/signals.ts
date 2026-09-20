@@ -266,9 +266,9 @@ function coordinationFor(
 
   if (missions.length > 1 && state.length)
     out.push({
-      level: "Ministry — to consider only",
+      level: "Ministry consideration only",
       detail:
-        "More than one mission and a state-level body are named against the same condition. Whether this needs ministry action is a judgement, not something the record states.",
+        "More than one mission and a state body are named. The record does not state whether ministry action is needed.",
       basis: "related_missions and responsible_agencies read together",
     });
 
