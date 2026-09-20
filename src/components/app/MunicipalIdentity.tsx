@@ -21,11 +21,11 @@ export function MunicipalIdentity({
   return (
     <AuthorityIdentity
       asset={CITY_AUTHORITIES[cityId]}
-      cityName={cityName}
-      stateName={stateName}
       tone={tone}
       variant={compact ? "compact" : "page-header"}
-      className={className}
+      {...(cityName ? { cityName } : {})}
+      {...(stateName ? { stateName } : {})}
+      {...(className ? { className } : {})}
     />
   );
 }
