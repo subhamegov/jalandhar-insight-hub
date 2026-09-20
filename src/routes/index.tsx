@@ -31,17 +31,17 @@ const MapCanvas = lazy(() => import("@/components/map/MapCanvas"));
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "City at a Glance | Jalandhar City Intelligence" },
+      { title: "City at a glance | MoHUA Urban Intelligence Prototype" },
       {
         name: "description",
         content:
-          "Jalandhar government investment, project delivery, service outcomes and evidence quality in one senior review view.",
+          "City geography, delivery records, service observations and evidence for senior review.",
       },
-      { property: "og:title", content: "Jalandhar City Intelligence: City at a glance" },
+      { property: "og:title", content: "City at a glance: MoHUA Urban Intelligence Prototype" },
       {
         property: "og:description",
         content:
-          "What government is investing in, where it is, what is delayed and what is operational in Jalandhar.",
+          "Explore city geography, projects, assets, services and decision signals.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
