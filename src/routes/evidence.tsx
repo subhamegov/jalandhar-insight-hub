@@ -16,7 +16,7 @@ export const Route = createFileRoute("/evidence")({
         content:
           "Source records behind every figure: official documents, tenders, reports and their verification status.",
       },
-      { property: "og:title", content: "Evidence — Jalandhar City Intelligence" },
+      { property: "og:title", content: "Evidence: Jalandhar City Intelligence" },
       {
         property: "og:description",
         content: "Traceability layer linking each Jalandhar record to its source.",

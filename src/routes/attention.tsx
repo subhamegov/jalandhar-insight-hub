@@ -16,7 +16,7 @@ export const Route = createFileRoute("/attention")({
         content:
           "Value weighted ranking of Jalandhar projects needing senior government intervention, with the problem, responsible agency and decision required.",
       },
-      { property: "og:title", content: "Projects Requiring Attention — Jalandhar" },
+      { property: "og:title", content: "Projects Requiring Attention: Jalandhar" },
       {
         property: "og:description",
         content: "Where senior intervention is required across Jalandhar city investments.",

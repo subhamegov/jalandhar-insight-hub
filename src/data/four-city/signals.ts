@@ -138,7 +138,7 @@ function patternsFor(
       )
       .map(
         (h) =>
-          `${h.housing_id}: ${h.completed_houses} completed; water ${h.water_ready_houses ?? "not recorded"}, sewer ${h.sewer_ready_houses ?? "not recorded"}, waste ${h.waste_collection_ready_houses ?? "not recorded"}`,
+          `${h.housing_id}: ${h.completed_houses} completed. Water ${h.water_ready_houses ?? "not recorded"}, sewer ${h.sewer_ready_houses ?? "not recorded"}, waste ${h.waste_collection_ready_houses ?? "not recorded"}`,
       ),
   );
 
@@ -149,7 +149,7 @@ function patternsFor(
     completedProjects.flatMap((p) =>
       ctx.assets
         .filter((a) => notOperational(a) && (a.project_ids ?? []).includes(p.project_id))
-        .map((a) => `${p.project_id} completed; ${a.asset_id} is ${a.commissioning_status}`),
+        .map((a) => `${p.project_id} completed. ${a.asset_id} is ${a.commissioning_status}`),
     ),
   );
 
@@ -223,8 +223,8 @@ function patternsFor(
     "agency_dependencies",
     "Dependency between more than one agency or function",
     [
-      agencies.size > 1 ? `Agencies named: ${[...agencies].join("; ")}` : "",
-      coordination.length > 1 ? `Coordination stated: ${coordination.join("; ")}` : "",
+      agencies.size > 1 ? `Agencies named: ${[...agencies].join(", ")}` : "",
+      coordination.length > 1 ? `Coordination stated: ${coordination.join(", ")}` : "",
       ...deps.map((d) => `Intervention dependency: ${d}`),
     ].filter(Boolean),
   );
@@ -245,7 +245,7 @@ function coordinationFor(
   if (municipal.length)
     out.push({
       level: "City operations",
-      detail: municipal.join("; "),
+      detail: municipal.join(", "),
       basis: "responsible_agencies in the signal record",
     });
 
@@ -253,7 +253,7 @@ function coordinationFor(
   if (state.length)
     out.push({
       level: "State coordination",
-      detail: state.join("; "),
+      detail: state.join(", "),
       basis: "responsible_agencies in the signal record",
     });
 
@@ -266,9 +266,9 @@ function coordinationFor(
 
   if (missions.length > 1 && state.length)
     out.push({
-      level: "Ministry — to consider only",
+      level: "Ministry consideration only",
       detail:
-        "More than one mission and a state-level body are named against the same condition. Whether this needs ministry action is a judgement, not something the record states.",
+        "More than one mission and a state body are named. The record does not state whether ministry action is needed.",
       basis: "related_missions and responsible_agencies read together",
     });
 

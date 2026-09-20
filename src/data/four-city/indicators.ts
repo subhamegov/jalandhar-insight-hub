@@ -118,7 +118,7 @@ export function indicatorContracts(cityId: string): IndicatorContract[] {
             ? `Mean of ${i.numeratorLabel.toLowerCase()} across ${i.denominatorLabel.toLowerCase()}.`
             : `${i.numeratorLabel} summed across ${i.denominatorLabel.toLowerCase()}.`,
       aggregation_method: AGGREGATION[i.kind],
-      geographic_scope: `${view.cityName} sample — ${bundle.localities.length} supplied localities, ${i.records} records used. Not a citywide figure.`,
+      geographic_scope: `${view.cityName} sample. ${bundle.localities.length} supplied localities and ${i.records} records used. Not a citywide figure.`,
       observation_period: i.period,
       source_record_ids: recordIds,
       data_classification: classificationsOf(recordIds, bundle),

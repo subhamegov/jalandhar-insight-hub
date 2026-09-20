@@ -50,10 +50,7 @@ function PortfolioContext() {
         Four-city prototype coverage
       </h2>
       <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-        This context covers the four prototype cities together. City dashboards work from one
-        city's own records, so nothing is shown here from a single city, and sampled figures are
-        never added across cities into a portfolio total. Compare the cities side by side, or pick
-        a city to continue into its records.
+        Four-city prototype coverage. Figures stay separate by city and are never added into a portfolio total.
       </p>
       <div className="mt-4 flex flex-wrap gap-2">
         <Link
@@ -94,14 +91,10 @@ function NotBuiltForCity({ page, cityName }: { page: string; cityName: string })
         This view is not available for {cityName}
       </h2>
       <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-        The {label} analysis is built on Jalandhar-specific reference work — service indicators,
-        priority weighting and ward areas assembled from Jalandhar government sources. Applying it
-        to {cityName} would present reasoning that does not belong to this city, so it is withheld
-        rather than reused.
+        The {label} analysis uses Jalandhar-specific indicators, priorities, and ward records. It is not applied to {cityName}.
       </p>
       <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-        For {cityName}, the overview, projects, assets, schemes, agencies, evidence, data quality
-        and data layer views all work from this city's own records.
+        Other views use {cityName}'s own records.
       </p>
       <Link to="/" className="mt-3 inline-block text-sm underline underline-offset-2">
         Back to the {cityName} overview
@@ -119,9 +112,7 @@ function NoRecords() {
         {city.name} is registered, records not yet loaded
       </h2>
       <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-        {city.name} ({city.state}) is set up in this system with its reference geography and{" "}
-        {city.urban_local_body} as urban local body of record. No project, asset, scheme or
-        evidence records have been ingested for this city yet, so no values are shown.
+        {city.name}, {city.state}, is registered with {city.urban_local_body}. No project, asset, scheme, or evidence records are loaded.
       </p>
       <dl className="mt-4 grid gap-3 sm:grid-cols-3">
         <div>

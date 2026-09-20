@@ -19,7 +19,7 @@ export const Route = createFileRoute("/data-integrity")({
         content:
           "Indicator definitions, source records and the integrity checks behind every figure in the four-city prototype.",
       },
-      { property: "og:title", content: "Data Integrity — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Data Integrity: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content:
@@ -109,14 +109,14 @@ function ContractCard({ contract }: { contract: IndicatorContract }) {
         <div>
           <dt className="field-label">Numerator</dt>
           <dd className="num text-foreground">
-            {contract.numerator === null ? "Not available" : contract.numerator} —{" "}
+            {contract.numerator === null ? "Not available" : contract.numerator}:{" "}
             {contract.numerator_label}
           </dd>
         </div>
         <div>
           <dt className="field-label">Denominator</dt>
           <dd className="num text-foreground">
-            {contract.denominator === null ? "Not available" : contract.denominator} —{" "}
+            {contract.denominator === null ? "Not available" : contract.denominator}:{" "}
             {contract.denominator_label}
           </dd>
         </div>
@@ -198,7 +198,7 @@ function DataIntegrityPage() {
     <div className="space-y-4">
       <PageHeader
         title="Data integrity"
-        subtitle="What each figure counts, the records it comes from, and every check run against them. Failed checks are shown as they are; no source value is corrected here."
+        subtitle="See what each figure counts, its source records, and the checks applied. Source values are never corrected here."
       />
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -255,7 +255,7 @@ function DataIntegrityPage() {
       </Panel>
 
       <Panel
-        title={`Indicator definitions — ${city.name}`}
+        title={`Indicator definitions: ${city.name}`}
         description="One definition per indicator, used wherever the indicator appears. Every value can be re-created from the records listed."
       >
         {contracts.length === 0 ? (

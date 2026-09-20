@@ -50,7 +50,7 @@ export const Route = createFileRoute("/projects/")({
         content:
           "Central, state and city investments in Jalandhar organised by physical intervention and sector, with scheme and funding as metadata.",
       },
-      { property: "og:title", content: "Project register — Jalandhar City Intelligence" },
+      { property: "og:title", content: "Project register: Jalandhar City Intelligence" },
       {
         property: "og:description",
         content:
@@ -199,7 +199,7 @@ function ProjectsPage() {
       value: (p) => assessProject(p).label,
       render: (p) => {
         const a = assessProject(p);
-        return <AttentionBadge label={a.label} title={a.reasons.join("; ")} />;
+        return <AttentionBadge label={a.label} title={a.reasons.join(" · ")} />;
       },
     },
     {

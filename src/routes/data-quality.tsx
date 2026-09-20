@@ -25,7 +25,7 @@ export const Route = createFileRoute("/data-quality")({
       },
       {
         property: "og:title",
-        content: "Data Quality and Reconciliation — Jalandhar City Intelligence",
+        content: "Data Quality and Reconciliation: Jalandhar City Intelligence",
       },
       {
         property: "og:description",
@@ -118,7 +118,7 @@ function DataQualityPage() {
     <>
       <PageHeader
         title="Data quality and reconciliation"
-        subtitle="The honest view of the record set: what is missing, what is ageing and where government sources disagree."
+        subtitle="Missing, ageing, or conflicting government records."
         actions={
           <button
             type="button"
@@ -289,7 +289,7 @@ function DataQualityPage() {
                     <td className="py-2">
                       <EvidenceLink
                         request={{
-                          fact: `${c.rule_label} — ${c.project_name}`,
+                          fact: `${c.rule_label}: ${c.project_name}`,
                           entityId: c.project_id,
                           entityName: c.project_name,
                           reported: c.sources,
@@ -424,5 +424,5 @@ function sourceText(c: Conflict, i: number): string {
   const s = c.sources[i];
   if (!s) return EMPTY.unavailable;
   const parts = [text(s.value), s.source ?? "Source not recorded", dateText(s.source_date)];
-  return parts.join(" — ");
+  return parts.join(": ");
 }

@@ -15,7 +15,7 @@ export const Route = createFileRoute("/signals/$signalId")({
         content:
           "One decision signal with its observed condition, supporting records, related missions, projects, assets, agencies, possible intervention and evidence gaps.",
       },
-      { property: "og:title", content: "Decision signal — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Decision signal: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "What was observed, what supports it, and what is still missing.",
@@ -337,7 +337,7 @@ function SignalDetail() {
                     params={{ interventionId: i.intervention_id }}
                     className="underline underline-offset-2"
                   >
-                    {i.intervention_id} — {i.problem_statement}
+                    {i.intervention_id}: {i.problem_statement}
                   </Link>
                 </p>
                 <div className="mt-2 grid gap-2 md:grid-cols-2">

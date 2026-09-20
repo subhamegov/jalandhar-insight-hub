@@ -12,7 +12,7 @@ export const Route = createFileRoute("/wards/")({
         content:
           "Ward level view of Jalandhar projects, investment, municipal assets and unresolved service gaps.",
       },
-      { property: "og:title", content: "Ward View — Jalandhar City Intelligence" },
+      { property: "og:title", content: "Ward View: Jalandhar City Intelligence" },
       {
         property: "og:description",
         content: "Projects, assets and service gaps grouped by ward or recorded locality.",

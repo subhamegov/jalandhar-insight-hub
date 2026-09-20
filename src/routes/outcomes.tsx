@@ -16,7 +16,7 @@ export const Route = createFileRoute("/outcomes")({
         content:
           "Whether investment in Jalandhar is producing working water, sewerage, waste, transport and air quality services.",
       },
-      { property: "og:title", content: "Outcomes — Jalandhar City Intelligence" },
+      { property: "og:title", content: "Outcomes: Jalandhar City Intelligence" },
       {
         property: "og:description",
         content: "Service outcomes against investment across Jalandhar city systems.",

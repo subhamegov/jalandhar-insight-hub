@@ -21,7 +21,7 @@ export const Route = createFileRoute("/localities/")({
         content:
           "Locality-level view of housing, municipal assets, projects, service observations and grievances for the selected city.",
       },
-      { property: "og:title", content: "Localities — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Localities: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "Explore the localities of the selected city and the records attached to each.",
@@ -67,7 +67,7 @@ function LocalitiesIndex() {
       <div>
         <Breadcrumbs trail={[{ label: "Localities" }]} />
         <PageHeader
-          title={`Localities — ${city.name}`}
+          title={`Localities: ${city.name}`}
           subtitle="No locality records are loaded for this city."
         />
         <Panel>
@@ -96,7 +96,7 @@ function LocalitiesIndex() {
     <div className="space-y-5">
       <Breadcrumbs trail={[{ label: "Localities" }]} />
       <PageHeader
-        title={`Localities — ${city.name}`}
+        title={`Localities: ${city.name}`}
         subtitle={`${localities.length} locality anchors supplied for ${city.urban_local_body}. Each anchor is an illustrative point, not a ward boundary, and carries no statutory ward identity.`}
       />
 

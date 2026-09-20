@@ -16,7 +16,7 @@ export const Route = createFileRoute("/housing/$housingId")({
         content:
           "One housing record traced through its locality, water and sewerage infrastructure, waste collection, transport access, service observations, grievances, investment and decision signals.",
       },
-      { property: "og:title", content: "Housing record — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Housing record: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "Houses completed against the municipal services recorded against them.",
@@ -67,7 +67,7 @@ function HousingDetail() {
         ]}
       />
       <PageHeader
-        title={`${h.housing_id} — ${labelise(h.vertical)}`}
+        title={`${h.housing_id}: ${labelise(h.vertical)}`}
         subtitle={`${labelise(h.mission)} · ${r.locality ? r.locality.name : "Locality not recorded"} · ${city.name}. Synthetic sampled record, classification ${text(prov.data_classification)}, observed ${dateText(prov.observation_date)}.`}
       />
 
@@ -91,7 +91,7 @@ function HousingDetail() {
                   <td className="py-2 pr-3 font-medium">{s.label}</td>
                   <td className="num py-2 pr-3 text-right">{count(s.value)}</td>
                   <td className="num py-2 pr-3 text-right text-muted-foreground">
-                    {s.ofValue === null ? "—" : `${count(s.ofValue)} ${s.ofLabel}`}
+                    {s.ofValue === null ? "Not available" : `${count(s.ofValue)} ${s.ofLabel}`}
                   </td>
                   <td className="py-2 text-xs text-muted-foreground">{s.note}</td>
                 </tr>
@@ -267,7 +267,7 @@ function HousingDetail() {
               labelise(t.mode),
               numText(t.service_headway_minutes),
               count(t.daily_trips),
-              t.actual_stop_or_route ? "Yes" : "No — illustrative",
+              t.actual_stop_or_route ? "Yes" : "No: illustrative",
               <RecordLink key={t.transport_stop_id} id={t.transport_stop_id} />,
             ])}
           />
@@ -332,7 +332,7 @@ function HousingDetail() {
                 <p className="field-label">{s.signal_id}</p>
                 <p className="mt-1 text-sm font-medium text-foreground">{s.observed_condition}</p>
                 {s.potential_implications ? (
-                  <p className="mt-1 text-sm text-muted-foreground">{s.potential_implications}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{text(s.potential_implications)}</p>
                 ) : null}
                 <ul className="mt-2 flex flex-wrap gap-2">
                   {s.supporting_records.map((sr) => (

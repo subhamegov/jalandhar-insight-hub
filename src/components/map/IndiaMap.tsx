@@ -119,7 +119,7 @@ export default function IndiaMap({ points, selectedId = null, onSelect }: IndiaM
       });
       marker.bindTooltip(
         `<strong>${p.name}</strong>${p.sub ? `<br/>${p.sub}` : ""}<br/>${
-          p.verified ? "Verified position" : "Illustrative anchor — not a boundary"
+          p.verified ? "Verified position" : "Illustrative anchor: not a boundary"
         }`,
         { direction: "top" },
       );

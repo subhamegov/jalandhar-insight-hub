@@ -14,7 +14,7 @@ export const Route = createFileRoute("/schemes/")({
         content:
           "Central and state schemes funding work in Jalandhar, treated as metadata against projects.",
       },
-      { property: "og:title", content: "Schemes — Jalandhar City Intelligence" },
+      { property: "og:title", content: "Schemes: Jalandhar City Intelligence" },
       {
         property: "og:description",
         content: "Which schemes fund Jalandhar, and how much they account for.",

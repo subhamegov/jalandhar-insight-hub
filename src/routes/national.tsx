@@ -21,7 +21,7 @@ export const Route = createFileRoute("/national")({
         content:
           "National entry point for MoHUA Urban Intelligence: select a city and move from the national view into its localities, projects, assets and service areas.",
       },
-      { property: "og:title", content: "National view — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "National view: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content:
@@ -120,10 +120,10 @@ function NationalView() {
             <dl className="mt-3 grid grid-cols-2 gap-2 text-sm">
               <Stat label="Project records" value={count(c.projects)} />
               <Stat label="Asset records" value={count(c.assets)} />
-              <Stat label="Localities" value={c.localities ? count(c.localities) : "—"} />
+              <Stat label="Localities" value={c.localities ? count(c.localities) : "Not available"} />
               <Stat
                 label="Sanctioned in records"
-                value={c.sanctioned > 0 ? crore(c.sanctioned) : "—"}
+                value={c.sanctioned > 0 ? crore(c.sanctioned) : "Not available"}
               />
             </dl>
 

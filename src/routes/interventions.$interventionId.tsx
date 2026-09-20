@@ -16,7 +16,7 @@ export const Route = createFileRoute("/interventions/$interventionId")({
         content:
           "One supplied planning intervention: problem, evidence, missions, projects, assets, agencies, illustrative cost, dependencies, risks and the decision sought.",
       },
-      { property: "og:title", content: "Planning intervention — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Planning intervention: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "Evidence, agencies, dependencies and the decision required, with every record linked.",
@@ -148,7 +148,7 @@ function InterventionDetail() {
                 ) : (
                   <span className="font-mono font-semibold">{e.id}</span>
                 )}{" "}
-                <span className="text-muted-foreground">— {e.summary}</span>
+                <span className="text-muted-foreground">{e.summary}</span>
               </li>
             ))}
           </ul>

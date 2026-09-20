@@ -18,7 +18,7 @@ export const Route = createFileRoute("/investment/$projectId")({
         content:
           "One project followed from mission and funding through expenditure, infrastructure created, operating status and the service and complaint records observed around it.",
       },
-      { property: "og:title", content: "Investment chain — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Investment chain: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "Mission, funding, expenditure, infrastructure, service and citizen records for one project.",
@@ -251,7 +251,7 @@ function InvestmentDetail() {
 
       <Panel
         title="Grievances"
-        description="Complaint aggregates naming these assets. Aggregates only — no personal information is held."
+        description="Complaint aggregates naming these assets. Aggregates only: no personal information is held."
       >
         <Table
           empty="No complaint aggregate names these assets."
@@ -297,7 +297,7 @@ function InvestmentDetail() {
                 <p className="field-label">{s.signal_id}</p>
                 <p className="mt-1 text-sm font-medium text-foreground">{s.observed_condition}</p>
                 {s.potential_implications ? (
-                  <p className="mt-1 text-sm text-muted-foreground">{s.potential_implications}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{text(s.potential_implications)}</p>
                 ) : null}
                 <ul className="mt-2 flex flex-wrap gap-2">
                   {s.supporting_records.map((r) => (

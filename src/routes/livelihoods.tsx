@@ -16,7 +16,7 @@ export const Route = createFileRoute("/livelihoods")({
         content:
           "Self-help groups, street-vendor aggregates, municipal markets, housing and transport records read together to show access to livelihoods and everyday movement.",
       },
-      { property: "og:title", content: "Livelihoods and mobility — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Livelihoods and mobility: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content:
@@ -64,7 +64,7 @@ function LivelihoodsPage() {
     <div className="space-y-5">
       <Breadcrumbs trail={[{ label: "Livelihoods and mobility" }]} />
       <PageHeader
-        title={`${city.name} — livelihoods and everyday access`}
+        title={`${city.name}: livelihoods and everyday access`}
         subtitle={`Are urban schemes and municipal investments enabling citizens to access livelihoods and economic opportunities? Observed ${data.period}. Sampled synthetic aggregates, not citywide totals and not government statistics. No beneficiary identity or personal financial record is held.`}
       />
 
@@ -132,7 +132,7 @@ function LivelihoodsPage() {
                     <RecordLink key={tr.transport_stop_id} id={tr.transport_stop_id} />
                   ))
                 : "No stop recorded",
-              v.notes.length ? v.notes.join("; ") : "—",
+              v.notes.length ? v.notes.join(" · ") : "Not available",
             ])}
           />
         </Panel>
@@ -241,7 +241,7 @@ function LivelihoodsPage() {
               m.stop ? m.stop.route_id : "Not available",
               m.stop?.service_headway_minutes ?? "Not available",
               count(m.stop?.daily_trips ?? null),
-              m.routeRecords.length ? count(m.routeRecords.length) : "—",
+              m.routeRecords.length ? count(m.routeRecords.length) : "Not available",
               <span key={`n-${m.housing.housing_id}`} className="text-xs text-muted-foreground">
                 {m.note}
               </span>,
@@ -252,7 +252,7 @@ function LivelihoodsPage() {
 
       <section id="neighbourhoods">
         <Panel
-          title="Neighbourhoods — housing, economic activity and access"
+          title="Neighbourhoods: housing, economic activity and access"
           description="Each locality with the records present, and the records that are absent."
         >
           <Table
@@ -278,7 +278,7 @@ function LivelihoodsPage() {
               count(n.marketAssets),
               count(n.transportStops),
               <span key={`g-${n.locality.id}`} className="text-xs text-muted-foreground">
-                {n.gaps.length ? n.gaps.join("; ") : "No absent record types"}
+                {n.gaps.length ? n.gaps.join(" · ") : "No absent record types"}
               </span>,
             ])}
           />
@@ -305,7 +305,7 @@ function LivelihoodsPage() {
                   <p className="field-label">{s.signal_id}</p>
                   <p className="mt-1 text-sm font-medium text-foreground">{s.observed_condition}</p>
                   {s.potential_implications ? (
-                    <p className="mt-1 text-sm text-muted-foreground">{s.potential_implications}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{text(s.potential_implications)}</p>
                   ) : null}
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {s.supporting_records.map((r) => (

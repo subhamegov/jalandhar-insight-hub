@@ -17,7 +17,7 @@ export const Route = createFileRoute("/assets")({
         content:
           "Register of city infrastructure assets in Jalandhar with owning agency, capacity and operational status.",
       },
-      { property: "og:title", content: "Assets — Jalandhar City Intelligence" },
+      { property: "og:title", content: "Assets: Jalandhar City Intelligence" },
       {
         property: "og:description",
         content: "What infrastructure exists in Jalandhar, who owns it and whether it works.",

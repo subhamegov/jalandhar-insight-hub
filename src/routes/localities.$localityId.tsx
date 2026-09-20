@@ -20,7 +20,7 @@ export const Route = createFileRoute("/localities/$localityId")({
         content:
           "Housing, municipal assets, projects, service observations, grievances and decision signals attached to one locality.",
       },
-      { property: "og:title", content: "Locality detail — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Locality detail: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "Every record attached to one locality anchor, with provenance.",
@@ -106,7 +106,7 @@ function LocalityDetail() {
             <Field label="Geocoding precision" value={text(l.geocoding_precision)} />
             <Field
               label="Official boundary"
-              value={l.is_official_boundary ? "Yes" : "No — illustrative anchor"}
+              value={l.is_official_boundary ? "Yes" : "No: illustrative anchor"}
             />
             <Field label="Record type" value={text(prov.record_type)} />
             <Field label="Data classification" value={text(prov.data_classification)} />
@@ -216,7 +216,7 @@ function LocalityDetail() {
                 <p className="field-label">{s.signal_id}</p>
                 <p className="mt-1 text-sm font-medium text-foreground">{s.observed_condition}</p>
                 {s.potential_implications ? (
-                  <p className="mt-1 text-sm text-muted-foreground">{s.potential_implications}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{text(s.potential_implications)}</p>
                 ) : null}
                 <p className="mt-2 text-xs text-muted-foreground">Supporting records:</p>
                 <ul className="mt-1 flex flex-wrap gap-2">

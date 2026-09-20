@@ -14,9 +14,9 @@ export const Route = createFileRoute("/interventions/")({
       {
         name: "description",
         content:
-          "Supplied planning interventions for each city: the problem, target geography, agencies, illustrative cost, dependencies and the decision sought.",
+          "Planning options, locations, agencies, costs, dependencies, and decisions.",
       },
-      { property: "og:title", content: "Planning interventions — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Planning interventions: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content: "What government could consider doing, and the evidence behind each option.",
@@ -40,7 +40,7 @@ function InterventionsIndex() {
         <Breadcrumbs trail={[{ label: "Planning interventions" }]} />
         <PageHeader
           title={`Planning intervention records are not loaded for ${city.name}`}
-          subtitle="This view reads the supplied planning intervention records. None are loaded for this city, so nothing is shown rather than anything assumed."
+          subtitle="No planning intervention records are loaded for this city."
         />
         <Panel title="What to use instead">
           <Link to="/attention" className="text-sm underline underline-offset-2">
@@ -71,14 +71,12 @@ function InterventionsIndex() {
     <div className="space-y-4">
       <Breadcrumbs trail={[{ label: "Planning interventions" }]} />
       <PageHeader
-        title={`${city.name} — what government could consider doing`}
+        title={`${city.name}: what government could consider doing`}
         subtitle="Supplied intervention records: the problem observed, who it covers and the decision sought."
       />
 
       <div className="rounded-sm border border-border bg-muted/40 p-3 text-xs leading-relaxed text-muted-foreground">
-        Synthetic prototype records. Costs are illustrative placeholders, not detailed project
-        reports, market estimates or sanctioned amounts. Nothing here replaces field verification,
-        engineering assessment or formal government approval.
+        Synthetic prototype records. Costs are illustrative, not sanctioned. Field verification and formal approval are still required.
       </div>
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-5">

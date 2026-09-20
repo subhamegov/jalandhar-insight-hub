@@ -28,7 +28,7 @@ export function FreshnessBadge({
         TONE[f],
         className,
       )}
-      title={`${FRESHNESS_LABEL[f]} — ${FRESHNESS_RANGE[f]}${age === null ? "" : ` (${age} days old)`}`}
+      title={`${FRESHNESS_LABEL[f]}: ${FRESHNESS_RANGE[f]}${age === null ? "" : ` (${age} days old)`}`}
     >
       {FRESHNESS_LABEL[f]}
       {showDate ? <span className="num">· {dateText(date)}</span> : null}

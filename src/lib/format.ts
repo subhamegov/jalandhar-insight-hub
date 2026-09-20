@@ -10,7 +10,9 @@ export const EMPTY = {
 
 export function text(value: string | null | undefined): string {
   if (value === null || value === undefined || value === "") return NA;
-  return value;
+  return value
+    .replace(/\s*—\s*/g, ": ")
+    .replace(/;\s*/g, ". ");
 }
 
 export function labelise(value: string | null | undefined): string {

@@ -14,13 +14,13 @@ export const Route = createFileRoute("/compare")({
       {
         name: "description",
         content:
-          "Compare housing, water, sanitation, investment, livelihood and service indicators across the four prototype cities on the same definitions.",
+          "Compare four cities using consistent service and investment indicators.",
       },
-      { property: "og:title", content: "Compare cities — MoHUA Urban Intelligence" },
+      { property: "og:title", content: "Compare cities: MoHUA Urban Intelligence" },
       {
         property: "og:description",
         content:
-          "Same definition, same units, same sampled records: why similar investments may produce different service outcomes.",
+          "Compare sampled outcomes using the same definitions and units.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -61,14 +61,11 @@ function ComparePage() {
       <Breadcrumbs trail={[{ label: "Compare cities" }]} />
       <PageHeader
         title="Compare the four prototype cities"
-        subtitle="Why might similar investments produce different service outcomes? Each indicator is computed the same way, from the same fields, in every city."
+        subtitle="Compare service outcomes using the same calculation in every city."
       />
 
       <div className="rounded-sm border border-border bg-muted/40 p-3 text-xs leading-relaxed text-muted-foreground">
-        These are sampled synthetic prototype records, not government statistics. Sample totals are
-        never scaled to citywide figures, no city is scored or ranked, and nothing here represents
-        national performance. Cities differ in their institutional arrangements; a difference in a
-        figure is a question to investigate, not a finding.
+        Synthetic sample, not official statistics. Figures are not scaled, scored, ranked, or treated as national performance.
       </div>
 
       <Panel title="Choose an indicator">
@@ -96,7 +93,7 @@ function ComparePage() {
         ) : null}
       </Panel>
 
-      <Panel title={`Side by side — ${selected?.label ?? "Indicator"}`}>
+      <Panel title={`Side by side: ${selected?.label ?? "Indicator"}`}>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[820px] text-sm">
             <thead>
@@ -140,16 +137,16 @@ function ComparePage() {
                   </td>
                   <td className="py-2 pr-3 text-xs">
                     {indicator
-                      ? `${indicator.numerator === null ? "Not applicable" : count(indicator.numerator)} — ${indicator.numeratorLabel}`
+                      ? `${indicator.numerator === null ? "Not applicable" : count(indicator.numerator)}: ${indicator.numeratorLabel}`
                       : "Not available"}
                   </td>
                   <td className="py-2 pr-3 text-xs">
                     {indicator
-                      ? `${indicator.denominator === null ? "Not applicable" : count(indicator.denominator)} — ${indicator.denominatorLabel}`
+                      ? `${indicator.denominator === null ? "Not applicable" : count(indicator.denominator)}: ${indicator.denominatorLabel}`
                       : "Not available"}
                   </td>
-                  <td className="py-2 pr-3 text-xs">{indicator ? text(indicator.period) : "—"}</td>
-                  <td className="py-2 pr-3 text-xs">{indicator ? count(indicator.records) : "—"}</td>
+                  <td className="py-2 pr-3 text-xs">{indicator ? text(indicator.period) : "Not available"}</td>
+                  <td className="py-2 pr-3 text-xs">{indicator ? count(indicator.records) : "Not available"}</td>
                   <td className="py-2 text-xs">
                     {indicator ? (
                       <Link
@@ -172,7 +169,7 @@ function ComparePage() {
                         Open records
                       </Link>
                     ) : (
-                      "—"
+                      "Not available"
                     )}
                   </td>
                 </tr>
@@ -185,7 +182,7 @@ function ComparePage() {
       <Panel
         title={
           drill
-            ? `${drill.cityName} — ${selected?.label ?? "indicator"} by locality`
+            ? `${drill.cityName}: ${selected?.label ?? "indicator"} by locality`
             : "Locality drill-down"
         }
       >
@@ -214,10 +211,7 @@ function ComparePage() {
             </div>
             {drillIndicator ? (
               <p className="mb-3 text-xs text-muted-foreground">
-                City value {fmt(drillIndicator.value, drillIndicator.unit)} over{" "}
-                {text(drillIndicator.period)}. Locality figures use the same computation on that
-                locality&apos;s records only. Locality anchors are illustrative points; no ward
-                boundary is implied.
+                City value {fmt(drillIndicator.value, drillIndicator.unit)} for {text(drillIndicator.period)}. Locality figures use local records only. Points do not imply ward boundaries.
               </p>
             ) : null}
             {localityRows.length === 0 ? (
@@ -312,7 +306,7 @@ function ComparePage() {
                   <td className="py-2 pr-3">
                     {c.supplied ? count(c.supplied.grievance_count_sample) : "Not available"}
                   </td>
-                  <td className="py-2 text-xs">{c.supplied ? text(c.supplied.record_type) : "—"}</td>
+                  <td className="py-2 text-xs">{c.supplied ? text(c.supplied.record_type) : "Not available"}</td>
                 </tr>
               ))}
             </tbody>
