@@ -9,6 +9,7 @@ import { fourCityBundle } from "@/data/four-city/dataset";
 import { useCity } from "@/lib/cityContext";
 import { useGeo } from "@/lib/geoContext";
 import { count, crore } from "@/lib/format";
+import { NationalBanner } from "@/components/app/NationalBanner";
 
 const IndiaMap = lazy(() => import("@/components/map/IndiaMap"));
 
@@ -75,10 +76,12 @@ function NationalView() {
   return (
     <div className="space-y-5">
       <PageHeader
-        title="National view"
+        title="National overview"
         subtitle="Explore urban systems and delivery across the prototype cities."
         note={<PrototypeNote text={`${CITIES.length} cities. Not a national statistic`} />}
       />
+
+      <NationalBanner />
 
       <Panel
         title="Cities in this prototype"

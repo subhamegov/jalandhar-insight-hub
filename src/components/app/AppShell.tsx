@@ -1,5 +1,4 @@
-import { AuthorityIdentity } from "@/components/app/AuthorityIdentity";
-import { CITY_AUTHORITIES, NATIONAL_AUTHORITY } from "@/data/governmentAssets";
+import { MunicipalIdentity } from "@/components/app/MunicipalIdentity";
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
   AlertTriangle,
@@ -263,7 +262,6 @@ function CityShell({ children }: { children: ReactNode }) {
   const { city, scope } = useCity();
   const national = scope.type === "NATIONAL";
   const tree = national ? NATIONAL_NAV : CITY_NAV;
-  const authority = national ? NATIONAL_AUTHORITY : CITY_AUTHORITIES[city.city_id];
   const scopeLine = national ? "India · National" : `${city.name}, ${city.state}`;
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -323,7 +321,7 @@ function CityShell({ children }: { children: ReactNode }) {
                     MoHUA Urban Intelligence
                   </p>
                   <p className="text-xs text-sidebar-foreground/60">{scopeLine}</p>
-                  {national ? null : <AuthorityIdentity asset={authority} tone="sidebar" className="mt-2" />}
+                  {national ? null : <MunicipalIdentity cityId={city.city_id} textOnly tone="sidebar" className="mt-2" />}
                 </div>
                 <button
                   type="button"
@@ -346,7 +344,7 @@ function CityShell({ children }: { children: ReactNode }) {
             </p>
             <p className="mt-1 text-sm leading-tight font-semibold">MoHUA Urban Intelligence</p>
             <p className="text-[11px] text-sidebar-foreground/60">{scopeLine}</p>
-            {national ? null : <AuthorityIdentity asset={authority} tone="sidebar" className="mt-2" />}
+            {national ? null : <MunicipalIdentity cityId={city.city_id} textOnly tone="sidebar" className="mt-2" />}
           </div>
           <NavList tree={tree} />
           <div className="px-4 py-4 text-[11px] leading-relaxed text-sidebar-foreground/90">

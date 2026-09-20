@@ -9,6 +9,7 @@ import { AS_OF, freshnessOf, latestDate } from "@/lib/freshness";
 import { downloadCsv, toCsv } from "@/lib/exportData";
 import { projectCsv } from "@/lib/projectCsv";
 import { cn } from "@/lib/utils";
+import { InstitutionalIdentity } from "@/components/app/InstitutionalIdentity";
 
 type Hit = {
   id: string;
@@ -144,7 +145,8 @@ export function GlobalHeader() {
     <header className="z-40 border-b border-border bg-background/95 backdrop-blur print:hidden lg:sticky lg:top-0">
       {/* One grid: context region on the left, utility region on the right.
           Every control sits in the grid, so nothing can overlap. */}
-      <div className="grid grid-cols-1 items-center gap-x-6 gap-y-3 px-3 py-3 sm:px-4 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] lg:px-8">
+      <div className="grid grid-cols-1 items-center gap-x-5 gap-y-3 px-3 py-3 sm:px-4 md:grid-cols-[auto_minmax(12rem,18rem)] lg:grid-cols-[auto_minmax(12rem,18rem)_minmax(0,1fr)] lg:px-8">
+        <InstitutionalIdentity />
         <div className="min-w-0">
           <div className="min-w-0">
           <label htmlFor="scope-select" className="field-label">
@@ -183,7 +185,7 @@ export function GlobalHeader() {
         </div>
 
         {/* Utility region: search, status, actions: one row, never overlapping. */}
-        <div className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-3 lg:justify-end">
+        <div className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-3 md:col-span-2 lg:col-span-1 lg:justify-end">
         <div ref={boxRef} className="relative w-full min-w-0 sm:w-64 lg:w-72">
           <label htmlFor="global-search" className="sr-only">
             Search projects, assets, schemes, agencies, contractors, wards and localities
