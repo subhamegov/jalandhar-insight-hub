@@ -237,8 +237,13 @@ function coordinationFor(
   interventions: PlanningIntervention[],
 ): CoordinationContext[] {
   const out: CoordinationContext[] = [];
-  const agencies = (signal["responsible_agencies"] as string[] | undefined) ?? [];
-  const coordination = (signal["coordination_required"] as string[] | undefined) ?? [];
+  const asList = (value: unknown): string[] => {
+    if (Array.isArray(value)) return value.filter((v): v is string => typeof v === "string");
+    if (typeof value === "string" && value.trim()) return [value];
+    return [];
+  };
+  const agencies = asList(signal["responsible_agencies"]);
+  const coordination = asList(signal["coordination_required"]);
   const missions = signal.related_missions ?? [];
 
   const municipal = agencies.filter((a) => /municipal|corporation|nagar|council/i.test(a));
