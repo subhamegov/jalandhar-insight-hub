@@ -63,7 +63,7 @@ export function CityProvider({ children }: { children: ReactNode }) {
 
   const isNationalPath =
     pathname.startsWith("/national") || pathname.startsWith("/states") || pathname.startsWith("/compare");
-  const [selection, setSelection] = useState<CitySelection>(isNationalPath ? ALL_CITIES : DEFAULT_CITY_ID);
+  const [selection, setSelection] = useState<CitySelection>(ALL_CITIES);
   const [lastCity, setLastCity] = useState<CityId>(DEFAULT_CITY_ID);
   const [restored, setRestored] = useState(false);
 
