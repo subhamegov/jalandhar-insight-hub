@@ -73,7 +73,7 @@ function RecordDetail() {
         <Breadcrumbs trail={[{ label: recordId }]} />
         <PageHeader
           title="Record not found"
-          subtitle={`No record carries the identifier ${recordId}. Identifiers are matched exactly; records are never matched by name.`}
+          subtitle={`No record carries the identifier ${recordId}. Records are matched by exact identifier, not by name.`}
         />
       </div>
     );

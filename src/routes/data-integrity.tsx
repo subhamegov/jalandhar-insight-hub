@@ -198,7 +198,7 @@ function DataIntegrityPage() {
     <div className="space-y-4">
       <PageHeader
         title="Data integrity"
-        subtitle="What each figure counts, the records it comes from, and every check run against them. Failed checks are shown as they are; no source value is corrected here."
+        subtitle="See what each figure counts, its source records, and the checks applied. Source values are never corrected here."
       />
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">

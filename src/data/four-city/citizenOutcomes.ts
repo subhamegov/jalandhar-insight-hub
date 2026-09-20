@@ -447,7 +447,7 @@ function mobilityDomain(b: FourCityBundle): CitizenDomain {
         id: "stops",
         label: "Transport stops",
         value: num(t.length),
-        basis: `${num(t.filter((r) => r.actual_stop_or_route).length)} recorded as actual stops; the rest are illustrative anchors`,
+        basis: `${num(t.filter((r) => r.actual_stop_or_route).length)} actual stops. The rest are illustrative anchors`,
         period: periodsOf(t),
         nature: "reported",
         drills: [{ kind: "route", to: "/localities", label: "Stops by locality" }],
