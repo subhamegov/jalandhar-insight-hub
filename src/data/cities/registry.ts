@@ -75,7 +75,7 @@ export const CITIES: CityProfile[] = [
   },
 ];
 
-export const DEFAULT_CITY_ID: CityId = "CITY-JALANDHAR";
+export const DEFAULT_CITY_ID: CityId = "CITY-SURAT";
 
 export function cityProfile(id: CityId): CityProfile {
   return CITIES.find((c) => c.city_id === id) ?? CITIES[0]!;

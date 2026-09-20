@@ -75,6 +75,18 @@ export default function PointMap({
     };
   }, []);
 
+  // Leaflet does not observe container changes itself. This keeps tiles and
+  // controls aligned when the application shell or viewport changes size.
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container || typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(() => {
+      requestAnimationFrame(() => mapRef.current?.invalidateSize(false));
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
   // Leaflet throws if the map is resized or moved before its panes are laid
   // out, so view changes run on the next frame and are guarded.
   useEffect(() => {

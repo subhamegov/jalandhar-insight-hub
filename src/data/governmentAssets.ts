@@ -7,6 +7,7 @@
 // to a neutral administrative icon.
 
 import type { CityId } from "@/data/cities/registry";
+import suratLogo from "@/assets/government/surat-municipal-corporation.png.asset.json";
 
 export type AdministrativeLevel = "national" | "state" | "district" | "city";
 export type LogoSource = "official" | "unverified";
@@ -27,6 +28,12 @@ export interface AuthorityAsset {
   variant: "full-colour" | "monochrome" | null;
   usageStatus: UsageStatus;
   lastVerified: string | null;
+  officialWebsite: string;
+  logoSourcePage: string | null;
+  stateId: string | null;
+  districtId: string | null;
+  usageNote: string;
+  fallbackIcon: "landmark" | "building";
 }
 
 export const NATIONAL_AUTHORITY: AuthorityAsset = {
@@ -41,6 +48,12 @@ export const NATIONAL_AUTHORITY: AuthorityAsset = {
   variant: null,
   usageStatus: "do-not-use",
   lastVerified: null,
+  officialWebsite: "https://www.mohua.gov.in/",
+  logoSourcePage: "https://www.ux4g.gov.in/resources/logos",
+  stateId: null,
+  districtId: null,
+  usageNote: "No national emblem is used without confirmed authorisation.",
+  fallbackIcon: "landmark",
 };
 
 /** Urban local body of record for each city in the registry. */
@@ -57,6 +70,12 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     variant: null,
     usageStatus: "do-not-use",
     lastVerified: null,
+    officialWebsite: "https://mcjalandhar.in/",
+    logoSourcePage: null,
+    stateId: "STATE-PUNJAB",
+    districtId: "DISTRICT-JALANDHAR",
+    usageNote: "A current, reusable official mark has not been verified.",
+    fallbackIcon: "building",
   },
   "CITY-THANE": {
     id: "ulb-thane",
@@ -70,6 +89,12 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     variant: null,
     usageStatus: "do-not-use",
     lastVerified: null,
+    officialWebsite: "https://thanecity.gov.in/",
+    logoSourcePage: null,
+    stateId: "STATE-MAHARASHTRA",
+    districtId: "DISTRICT-THANE",
+    usageNote: "A current, reusable official mark has not been verified.",
+    fallbackIcon: "building",
   },
   "CITY-SURAT": {
     id: "ulb-surat",
@@ -77,12 +102,18 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     administrativeLevel: "city",
     authority: "Urban local body",
     geography: "Surat",
-    logoSource: "unverified",
-    sourceUrl: null,
-    assetPath: null,
+    logoSource: "official",
+    sourceUrl: "https://www.suratmunicipal.gov.in/OnlineServices/Images/smc-logo.png",
+    assetPath: suratLogo.url,
     variant: null,
-    usageStatus: "do-not-use",
-    lastVerified: null,
+    usageStatus: "verified",
+    lastVerified: "2026-09-20",
+    officialWebsite: "https://www.suratmunicipal.gov.in/",
+    logoSourcePage: "https://www.suratmunicipal.gov.in/OnlineServices/Home/Sitemap",
+    stateId: "STATE-GUJARAT",
+    districtId: "DISTRICT-SURAT",
+    usageNote: "Official-domain web identity. Used only at small interface sizes with source attribution. Reuse terms require confirmation for broader use.",
+    fallbackIcon: "building",
   },
   "CITY-AHMEDABAD": {
     id: "ulb-ahmedabad",
@@ -96,6 +127,12 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     variant: null,
     usageStatus: "do-not-use",
     lastVerified: null,
+    officialWebsite: "https://ahmedabadcity.gov.in/",
+    logoSourcePage: null,
+    stateId: "STATE-GUJARAT",
+    districtId: "DISTRICT-AHMEDABAD",
+    usageNote: "A current, reusable official mark has not been verified.",
+    fallbackIcon: "building",
   },
   "CITY-GUWAHATI": {
     id: "ulb-guwahati",
@@ -109,6 +146,12 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     variant: null,
     usageStatus: "do-not-use",
     lastVerified: null,
+    officialWebsite: "https://gmc.assam.gov.in/",
+    logoSourcePage: null,
+    stateId: "STATE-ASSAM",
+    districtId: "DISTRICT-KAMRUP-METROPOLITAN",
+    usageNote: "A current, reusable official mark has not been verified.",
+    fallbackIcon: "building",
   },
 };
 
@@ -141,6 +184,12 @@ function district(id: string, geography: string, name: string): AuthorityAsset {
     variant: null,
     usageStatus: "do-not-use",
     lastVerified: null,
+    officialWebsite: id === "surat" ? "https://surat.nic.in/" : id === "jalandhar" ? "https://jalandhar.nic.in/" : "",
+    logoSourcePage: null,
+    stateId: null,
+    districtId: `DISTRICT-${id.toUpperCase()}`,
+    usageNote: "No district seal is used without a verified, reusable official asset.",
+    fallbackIcon: "building",
   };
 }
 

@@ -14,7 +14,9 @@ import { CITIES, DEFAULT_CITY_ID, isCityId, type CityId, type CityProfile } from
 import { datasetFor, type CityDataset } from "@/data/cities/datasets";
 import { setActiveCityRecords } from "@/data/selectors";
 
-const KEY = "mohua.activeCity.v1";
+// A new key intentionally retires the former Jalandhar-era default. Once a
+// visitor makes a city choice in this version, that deliberate choice persists.
+const KEY = "mohua.activeCity.v2";
 
 /**
  * Geographic scope. The application operates either nationally (no city is
@@ -58,7 +60,9 @@ export function CityProvider({ children }: { children: ReactNode }) {
     select: (s) => (s.location.search as Record<string, unknown>)["city"],
   });
 
-  const [selection, setSelection] = useState<CitySelection>(DEFAULT_CITY_ID);
+  const isNationalPath =
+    pathname.startsWith("/national") || pathname.startsWith("/states") || pathname.startsWith("/compare");
+  const [selection, setSelection] = useState<CitySelection>(isNationalPath ? ALL_CITIES : DEFAULT_CITY_ID);
   const [lastCity, setLastCity] = useState<CityId>(DEFAULT_CITY_ID);
   const [restored, setRestored] = useState(false);
 
