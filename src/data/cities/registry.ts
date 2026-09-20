@@ -1,3 +1,9 @@
+import ahmedabadBanner from "@/assets/cities/ahmedabad-city-banner.png.asset.json";
+import guwahatiBanner from "@/assets/cities/guwahati-city-banner.png.asset.json";
+import jalandharBanner from "@/assets/cities/jalandhar-city-banner.png.asset.json";
+import suratBanner from "@/assets/cities/surat-city-banner.png.asset.json";
+import thaneBanner from "@/assets/cities/thane-city-banner.png.asset.json";
+
 // City registry for the MoHUA Urban Intelligence application.
 //
 // One application, many cities. Each city carries only its identity and
@@ -26,6 +32,8 @@ export interface CityProfile {
   bbox: [number, number, number, number];
   /** Whether government records have been ingested for this city yet. */
   data_loaded: boolean;
+  /** Approved decorative city illustration. Not a government identity asset. */
+  bannerImage: string | null;
 }
 
 export const CITIES: CityProfile[] = [
@@ -37,6 +45,7 @@ export const CITIES: CityProfile[] = [
     centre: [31.326, 75.5762],
     bbox: [31.2456, 75.4772, 31.4152, 75.6866],
     data_loaded: true,
+    bannerImage: jalandharBanner.url,
   },
   {
     city_id: "CITY-THANE",
@@ -46,6 +55,7 @@ export const CITIES: CityProfile[] = [
     centre: [19.2183, 72.9781],
     bbox: [19.13, 72.89, 19.32, 73.08],
     data_loaded: true,
+    bannerImage: thaneBanner.url,
   },
   {
     city_id: "CITY-SURAT",
@@ -55,6 +65,7 @@ export const CITIES: CityProfile[] = [
     centre: [21.1702, 72.8311],
     bbox: [21.05, 72.7, 21.29, 72.96],
     data_loaded: true,
+    bannerImage: suratBanner.url,
   },
   {
     city_id: "CITY-AHMEDABAD",
@@ -64,6 +75,7 @@ export const CITIES: CityProfile[] = [
     centre: [23.0225, 72.5714],
     bbox: [22.91, 72.45, 23.15, 72.71],
     data_loaded: true,
+    bannerImage: ahmedabadBanner.url,
   },
   {
     city_id: "CITY-GUWAHATI",
@@ -73,6 +85,7 @@ export const CITIES: CityProfile[] = [
     centre: [26.1445, 91.7362],
     bbox: [26.05, 91.6, 26.24, 91.9],
     data_loaded: true,
+    bannerImage: guwahatiBanner.url,
   },
   {
     city_id: "CITY-KARNAL",
@@ -82,6 +95,7 @@ export const CITIES: CityProfile[] = [
     centre: [29.6803, 76.9896],
     bbox: [29.61, 76.91, 29.75, 77.07],
     data_loaded: true,
+    bannerImage: null,
   },
 ];
 
