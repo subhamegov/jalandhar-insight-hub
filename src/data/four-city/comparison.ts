@@ -346,7 +346,13 @@ function indicatorsFor(b: Bundle): ComparisonIndicator[] {
   ];
 }
 
-const CITY_IDS = ["CITY-THANE", "CITY-SURAT", "CITY-AHMEDABAD", "CITY-GUWAHATI"];
+const CITY_IDS = [
+  "CITY-THANE",
+  "CITY-SURAT",
+  "CITY-AHMEDABAD",
+  "CITY-GUWAHATI",
+  "CITY-KARNAL",
+];
 
 let cached: ComparisonSet | null = null;
 

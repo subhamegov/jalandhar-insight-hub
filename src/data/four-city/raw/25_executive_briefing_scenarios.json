@@ -78,5 +78,36 @@
       "Actual geographic service boundaries"
     ],
     "not_a_real_government_finding": true
+  },
+  {
+    "scenario_id": "BRIEF-KARNAL-01",
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "title": "Karnal connected urban service review",
+    "signal_ids": [
+      "SIG-KARNAL-01",
+      "SIG-KARNAL-02",
+      "SIG-KARNAL-03",
+      "SIG-KARNAL-04",
+      "SIG-KARNAL-05",
+      "SIG-KARNAL-06",
+      "SIG-KARNAL-07",
+      "SIG-KARNAL-08",
+      "SIG-KARNAL-09",
+      "SIG-KARNAL-10",
+      "SIG-KARNAL-11",
+      "SIG-KARNAL-12",
+      "SIG-KARNAL-13",
+      "SIG-KARNAL-14"
+    ],
+    "decision_question": "Which linked records should be field-validated before considering coordinated action?",
+    "required_validation": [
+      "Asset locations",
+      "Complaint aggregates",
+      "Service observations",
+      "Project milestones",
+      "Financial records"
+    ],
+    "not_a_real_government_finding": true
   }
 ]

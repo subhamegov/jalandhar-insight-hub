@@ -1398,5 +1398,1013 @@
       "Operational uptime"
     ],
     "decision_required_from_js": "Request joint review and verified action plan; no automatic funding recommendation"
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "intervention_id": "INT-KARNAL-01",
+    "signal_id": "SIG-KARNAL-01",
+    "problem_statement": "Review response options for delayed drainage delivery.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-001",
+      "AST-KARNAL-001",
+      "GRV-KARNAL-0001",
+      "SRV-KARNAL-0001"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-06"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-001"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-001"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 30,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "AMRUT_2"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "intervention_id": "INT-KARNAL-02",
+    "signal_id": "SIG-KARNAL-02",
+    "problem_statement": "Review response options for water interruptions in sampled localities.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-002",
+      "AST-KARNAL-003",
+      "GRV-KARNAL-0002",
+      "SRV-KARNAL-0002"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-02"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-003"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-002"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 35,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "AMRUT_2"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "intervention_id": "INT-KARNAL-03",
+    "signal_id": "SIG-KARNAL-03",
+    "problem_statement": "Review response options for waste collection reliability varies.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-003",
+      "AST-KARNAL-005",
+      "GRV-KARNAL-0003",
+      "SRV-KARNAL-0003"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-01"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-005"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-003"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 40,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "SBM_U_2"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "intervention_id": "INT-KARNAL-04",
+    "signal_id": "SIG-KARNAL-04",
+    "problem_statement": "Review response options for road safety milestone review.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-004",
+      "AST-KARNAL-007",
+      "GRV-KARNAL-0004",
+      "SRV-KARNAL-0004"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-07"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-007"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-004"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "Karnal Smart City Limited"
+    ],
+    "indicative_cost_inr_lakh": 45,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "URBAN_TRANSPORT"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "intervention_id": "INT-KARNAL-05",
+    "signal_id": "SIG-KARNAL-05",
+    "problem_statement": "Review response options for completed lighting needs outcome validation.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-005",
+      "AST-KARNAL-009",
+      "GRV-KARNAL-0005",
+      "SRV-KARNAL-0005"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-05"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-009"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-005"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 50,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "SMART_CITIES"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "intervention_id": "INT-KARNAL-06",
+    "signal_id": "SIG-KARNAL-06",
+    "problem_statement": "Review response options for property service linkage gaps.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-006",
+      "AST-KARNAL-011",
+      "GRV-KARNAL-0006",
+      "SRV-KARNAL-0006"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-08"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-011"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-006"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 55,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "AMRUT_2"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "intervention_id": "INT-KARNAL-07",
+    "signal_id": "SIG-KARNAL-07",
+    "problem_statement": "Review response options for mughal canal drainage progress.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-006",
+      "AST-KARNAL-011",
+      "GRV-KARNAL-0007",
+      "SRV-KARNAL-0007"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-08"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-011"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-006"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 60,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "AMRUT_2"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "intervention_id": "INT-KARNAL-08",
+    "signal_id": "SIG-KARNAL-08",
+    "problem_statement": "Review response options for water complaint resolution variation.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-002",
+      "AST-KARNAL-003",
+      "GRV-KARNAL-0008",
+      "SRV-KARNAL-0008"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-02"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-003"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-002"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "Karnal Smart City Limited"
+    ],
+    "indicative_cost_inr_lakh": 65,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "AMRUT_2"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "intervention_id": "INT-KARNAL-09",
+    "signal_id": "SIG-KARNAL-09",
+    "problem_statement": "Review response options for repeat waste complaints near sampled assets.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-003",
+      "AST-KARNAL-005",
+      "GRV-KARNAL-0009",
+      "SRV-KARNAL-0009"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-01"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-005"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-003"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 70,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "SBM_U_2"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "intervention_id": "INT-KARNAL-10",
+    "signal_id": "SIG-KARNAL-10",
+    "problem_statement": "Review response options for pedestrian works expenditure review.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-004",
+      "AST-KARNAL-007",
+      "GRV-KARNAL-0010",
+      "SRV-KARNAL-0010"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-07"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-007"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-004"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 75,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "URBAN_TRANSPORT"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "intervention_id": "INT-KARNAL-11",
+    "signal_id": "SIG-KARNAL-11",
+    "problem_statement": "Review response options for lighting service response variation.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-005",
+      "AST-KARNAL-009",
+      "GRV-KARNAL-0011",
+      "SRV-KARNAL-0011"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-05"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-009"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-005"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 80,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "SMART_CITIES"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "intervention_id": "INT-KARNAL-12",
+    "signal_id": "SIG-KARNAL-12",
+    "problem_statement": "Review response options for property arrears and service records need reconciliation.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-012",
+      "AST-KARNAL-023",
+      "GRV-KARNAL-0012",
+      "SRV-KARNAL-0012"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-03"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-023"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-012"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "Karnal Smart City Limited"
+    ],
+    "indicative_cost_inr_lakh": 85,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "MUNICIPAL"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "intervention_id": "INT-KARNAL-13",
+    "signal_id": "SIG-KARNAL-13",
+    "problem_statement": "Review response options for housing service readiness gaps.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-007",
+      "AST-KARNAL-013",
+      "GRV-KARNAL-0013",
+      "SRV-KARNAL-0013"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-02"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-013"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-007"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 90,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "AMRUT_2"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "intervention_id": "INT-KARNAL-14",
+    "signal_id": "SIG-KARNAL-14",
+    "problem_statement": "Review response options for cross-mission delivery dependencies.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-008",
+      "AST-KARNAL-015",
+      "GRV-KARNAL-0014",
+      "SRV-KARNAL-0014"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-07"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-015"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-008"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 95,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "AMRUT_2"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "intervention_id": "INT-KARNAL-15",
+    "signal_id": "SIG-KARNAL-01",
+    "problem_statement": "Review response options for delayed drainage delivery.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-001",
+      "AST-KARNAL-001",
+      "GRV-KARNAL-0001",
+      "SRV-KARNAL-0001"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-06"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-001"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-001"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "District Administration Karnal"
+    ],
+    "indicative_cost_inr_lakh": 100,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "AMRUT_2"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "intervention_id": "INT-KARNAL-16",
+    "signal_id": "SIG-KARNAL-02",
+    "problem_statement": "Review response options for water interruptions in sampled localities.",
+    "supporting_evidence": [
+      "PRJ-KARNAL-002",
+      "AST-KARNAL-003",
+      "GRV-KARNAL-0002",
+      "SRV-KARNAL-0002"
+    ],
+    "target_geography": [
+      "LOC-KARNAL-02"
+    ],
+    "target_population": null,
+    "linked_assets": [
+      "AST-KARNAL-003"
+    ],
+    "linked_projects": [
+      "PRJ-KARNAL-002"
+    ],
+    "lead_agency": "Municipal Corporation Karnal",
+    "supporting_agencies": [
+      "Karnal Smart City Limited"
+    ],
+    "indicative_cost_inr_lakh": 105,
+    "cost_basis": "Illustrative planning allowance only",
+    "funding_options": [
+      "AMRUT_2"
+    ],
+    "dependencies": [
+      "Field validation",
+      "Engineering review"
+    ],
+    "implementation_sequence": [
+      "Validate evidence",
+      "Confirm responsibility",
+      "Prepare action note"
+    ],
+    "expected_outputs": [
+      "Validated action note"
+    ],
+    "expected_outcomes": [
+      "Improved service response, subject to validation"
+    ],
+    "assumptions": [
+      "Synthetic scenario only"
+    ],
+    "risks": [
+      "Evidence may not represent citywide conditions"
+    ],
+    "monitoring_indicators": [
+      "Linked service observations"
+    ],
+    "decision_required_from_js": "Consider directing validation and inter-agency review."
   }
 ]

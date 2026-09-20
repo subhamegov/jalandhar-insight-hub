@@ -68,7 +68,13 @@ export const GROUP_LABELS: Record<IntegrityGroup, string> = {
   city_filtering: "Cross-city filtering",
 };
 
-const CITY_IDS = ["CITY-THANE", "CITY-SURAT", "CITY-AHMEDABAD", "CITY-GUWAHATI"];
+const CITY_IDS = [
+  "CITY-THANE",
+  "CITY-SURAT",
+  "CITY-AHMEDABAD",
+  "CITY-GUWAHATI",
+  "CITY-KARNAL",
+];
 
 const MAX_AFFECTED = 25;
 
@@ -752,8 +758,8 @@ export function runIntegrity(): IntegritySummary {
   }
 
   const limitations = [
-    "The four prototype cities are synthetic. No figure here is a government statistic, and no sampled figure is scaled to a citywide total.",
-    "Locality records are illustrative points. They carry no ward identity and imply no official boundary.",
+    "The five prototype cities are synthetic. No figure here is a government statistic, and no sampled figure is scaled to a citywide total.",
+    "Locality records are illustrative points. Ward references, where present, do not imply an official boundary.",
     "Recorded service connections are not evidence of reliable supply, and commissioning is not evidence of operational service.",
     "Financial figures are held in INR lakh as supplied, and are only combined within the same financial year.",
     "Jalandhar is held separately as government-sourced records and is not part of these prototype checks.",

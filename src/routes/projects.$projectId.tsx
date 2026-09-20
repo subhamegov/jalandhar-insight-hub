@@ -14,7 +14,7 @@ import { EvidenceLink } from "@/components/app/EvidenceDrawer";
 import { assessProject } from "@/data/attentionLabel";
 import { conflictsForProject } from "@/data/conflicts";
 import { componentsFor, eventsFor, programmesFor } from "@/data/programmes";
-import { assets, evidence, isDelayed, projects } from "@/data/selectors";
+import { isDelayed } from "@/data/selectors";
 import {
   LOCATION_QUALITY_LABEL,
   attentionScore,
@@ -22,8 +22,10 @@ import {
   scopeGroupOf,
 } from "@/data/registerLogic";
 import { MAP_LOCATION_UI, resolveMapLocation } from "@/data/mapLocations";
+import { allDatasets } from "@/data/cities/datasets";
+import { useCity } from "@/lib/cityContext";
 
-import type { Conflict, TimelineEvent } from "@/data/types";
+import type { Asset, Conflict, Evidence, Project, TimelineEvent } from "@/data/types";
 import { TIMELINE_EVENT_LABELS, TIMELINE_EVENT_ORDER } from "@/data/types";
 import { crore, dateText, labelise, percent, text } from "@/lib/format";
 import { cn } from "@/lib/utils";
@@ -46,7 +48,9 @@ const TABS = [
 
 export const Route = createFileRoute("/projects/$projectId")({
   loader: ({ params }) => {
-    const project = projects.find((p) => p.project_id === params.projectId);
+    const project = allDatasets()
+      .flatMap((dataset) => dataset.projects)
+      .find((candidate) => candidate.project_id === params.projectId);
     if (!project) throw notFound();
     return { project };
   },
@@ -56,7 +60,7 @@ export const Route = createFileRoute("/projects/$projectId")({
         meta: [{ title: "Project not found" }, { name: "robots", content: "noindex" }],
       };
     }
-    const title = `${loaderData.project.project_name} | Jalandhar City Intelligence`;
+    const title = `${loaderData.project.project_name} | MoHUA Urban Intelligence`;
     const description =
       loaderData.project.short_description ??
       "Project record with status, funding, agencies, location and evidence.";
@@ -76,10 +80,11 @@ export const Route = createFileRoute("/projects/$projectId")({
 
 function ProjectDetail() {
   const { project: p } = Route.useLoaderData();
+  const { dataset } = useCity();
   const [tab, setTab] = useState<(typeof TABS)[number]>("Overview");
 
-  const linkedEvidence = evidence.filter((e) => e.linked_entity === p.project_id);
-  const linkedAssets = assets.filter((a) => a.related_projects.includes(p.project_id));
+  const linkedEvidence = dataset.evidence.filter((e) => e.linked_entity === p.project_id);
+  const linkedAssets = dataset.assets.filter((a) => a.related_projects.includes(p.project_id));
   const funding = componentsFor(p.project_id);
   const events = eventsFor(p.project_id);
   const conflicts = conflictsForProject(p);
@@ -225,12 +230,12 @@ function ProjectDetail() {
       {tab === "Evidence" ? <EvidenceTab items={linkedEvidence} p={p} /> : null}
       {tab === "Delivery" ? <DeliveryTab p={p} /> : null}
       {tab === "Data Conflicts" ? <ConflictsTab conflicts={conflicts} /> : null}
-      {tab === "Reconciliation" ? <ReconciliationTab p={p} /> : null}
+      {tab === "Reconciliation" ? <ReconciliationTab p={p} projects={dataset.projects} /> : null}
     </>
   );
 }
 
-type P = (typeof projects)[number];
+type P = Project;
 
 function OverviewTab({ p, programmes }: { p: P; programmes: string[] }) {
   return (
@@ -362,7 +367,7 @@ function DeliveryTab({ p }: { p: P }) {
   );
 }
 
-function ReconciliationTab({ p }: { p: P }) {
+function ReconciliationTab({ p, projects }: { p: P; projects: Project[] }) {
   const related = relatedRecords(p, projects);
   return (
     <div className="grid gap-4">
@@ -628,7 +633,7 @@ function AgenciesTab({ p }: { p: P }) {
   );
 }
 
-function AssetsTab({ assets: linked }: { assets: typeof assets }) {
+function AssetsTab({ assets: linked }: { assets: Asset[] }) {
   return (
     <Panel
       title="Assets created or affected"
@@ -653,7 +658,7 @@ function AssetsTab({ assets: linked }: { assets: typeof assets }) {
   );
 }
 
-function OutcomesTab({ p, assets: linked }: { p: P; assets: typeof assets }) {
+function OutcomesTab({ p, assets: linked }: { p: P; assets: Asset[] }) {
   const operational = linked.filter((a) => /^operational$/i.test(a.operational_status ?? ""));
   return (
     <Panel title="Service outcome">
@@ -674,7 +679,7 @@ function OutcomesTab({ p, assets: linked }: { p: P; assets: typeof assets }) {
   );
 }
 
-function EvidenceTab({ items, p }: { items: typeof evidence; p: P }) {
+function EvidenceTab({ items, p }: { items: Evidence[]; p: P }) {
   return (
     <Panel title="Evidence">
       <div className="mb-3 grid grid-cols-2 gap-3 md:grid-cols-4">

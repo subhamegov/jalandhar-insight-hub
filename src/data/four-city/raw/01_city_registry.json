@@ -94,5 +94,32 @@
       "wetlands"
     ],
     "source_record_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "name": "Karnal",
+    "state": "Haryana",
+    "ulb_name": "Municipal Corporation Karnal",
+    "country": "India",
+    "record_type": "SYNTHETIC",
+    "source_id": "SRC-KARNAL-GEO",
+    "verified_scope": "City identity and approximate centre only",
+    "city_center_approximate": [
+      29.6803,
+      76.9896
+    ],
+    "center_record_type": "VERIFIED",
+    "geography_caveat": "City-centre reference only. No municipal boundary or authoritative ward polygon is supplied.",
+    "reference_date": "2026-09-19",
+    "locality_count_sampled": 12,
+    "issue_context_synthetic": [
+      "Drainage and street flooding",
+      "Water supply reliability",
+      "Waste collection",
+      "Road safety",
+      "Public lighting",
+      "Property and service delivery"
+    ],
+    "source_record_id": "SRC-KARNAL-GEO"
   }
 ]

@@ -27,7 +27,6 @@ import {
   governmentLevelOf,
   isDelayed,
   projectYear,
-  projects,
 } from "@/data/selectors";
 import { useCity } from "@/lib/cityContext";
 import type { Project } from "@/data/types";
@@ -70,6 +69,7 @@ function uniq(values: (string | null | undefined)[]): string[] {
 function ProjectsPage() {
   const { sector, scheme, agency } = Route.useSearch();
   const { city, dataset } = useCity();
+  const projects = dataset.projects;
   // The geographic scope groups are Jalandhar reference work. Cities served by
   // the four-city dataset carry their own locality scope instead.
   const scopeGroupsApply = !dataset.synthetic;

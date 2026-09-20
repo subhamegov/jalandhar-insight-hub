@@ -4598,5 +4598,3685 @@
     ],
     "period": "2026-08",
     "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0001",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0001"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0002",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0002"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0003",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0003"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0004",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0004"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0005",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0005"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0006",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0006"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0007",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0007"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0008",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0008"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0009",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0009"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0010",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0010"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0011",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0011"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0012",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0012"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0013",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0013"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0014",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0014"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0015",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0015"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0016",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0016"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0017",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0017"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0018",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0018"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0019",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0019"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0020",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0020"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0021",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0021"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0022",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0022"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0023",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0023"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0024",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0024"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0025",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0025"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0026",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0026"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0027",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0027"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0028",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0028"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0029",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0029"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0030",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0030"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0031",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0031"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0032",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0032"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0033",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0033"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0034",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0034"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0035",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0035"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0036",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0036"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0037",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0037"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0038",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0038"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0039",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0039"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0040",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0040"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0041",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0041"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0042",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0042"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0043",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0043"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0044",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0044"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0045",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0045"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0046",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0046"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0047",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0047"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0048",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0048"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0049",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0049"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0050",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0050"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0051",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0051"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0052",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0052"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0053",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0053"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0054",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0054"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0055",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0055"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0056",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0056"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0057",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0057"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0058",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0058"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0059",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0059"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0060",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0060"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0061",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0001"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0062",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0002"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0063",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0003"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0064",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0004"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0065",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0005"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0066",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0006"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0067",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0007"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0068",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0008"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0069",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0009"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0070",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0010"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0071",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0011"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0072",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0012"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0073",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0013"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0074",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0014"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0075",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0015"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0076",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0016"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0077",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0017"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0078",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0018"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0079",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0019"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0080",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0020"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0081",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0021"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0082",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0022"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0083",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0023"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0084",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0024"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0085",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0025"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0086",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0026"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0087",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0027"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0088",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0028"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0089",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0029"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0090",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0030"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0091",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0031"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0092",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0032"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0093",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0033"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0094",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0034"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0095",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0035"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0096",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0036"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0097",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0037"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0098",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0038"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0099",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0039"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0100",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0040"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0101",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0041"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0102",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0042"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0103",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0043"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0104",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0044"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0105",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0045"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0106",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0046"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0107",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0047"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0108",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0048"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0109",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0049"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0110",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0050"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0111",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0051"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0112",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0052"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0113",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0053"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0114",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0054"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0115",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0055"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0116",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0056"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0117",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0057"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0118",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0058"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0119",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0059"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0120",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0060"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0121",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0001"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0122",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0002"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0123",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0003"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0124",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0004"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0125",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0005"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0126",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0006"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0127",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0007"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0128",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0008"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0129",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0009"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0130",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0010"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0131",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0011"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0132",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0012"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0133",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0013"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0134",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0014"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0135",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0015"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0136",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0016"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0137",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0017"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0138",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0018"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0139",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0019"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0140",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0020"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0141",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0021"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0142",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0022"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0143",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0023"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0144",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0024"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0145",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0025"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0146",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0026"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0147",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0027"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0148",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0028"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "complaint_aggregate_id": "GRV-KARNAL-0149",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-009"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0029"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "complaint_aggregate_id": "GRV-KARNAL-0150",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-001"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0030"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "complaint_aggregate_id": "GRV-KARNAL-0151",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 23,
+    "linked_asset_ids": [
+      "AST-KARNAL-007"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0031"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "complaint_aggregate_id": "GRV-KARNAL-0152",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 28,
+    "linked_asset_ids": [
+      "AST-KARNAL-011"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0032"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "complaint_aggregate_id": "GRV-KARNAL-0153",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 33,
+    "linked_asset_ids": [
+      "AST-KARNAL-035"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0033"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "complaint_aggregate_id": "GRV-KARNAL-0154",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 38,
+    "linked_asset_ids": [
+      "AST-KARNAL-021"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0034"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "complaint_aggregate_id": "GRV-KARNAL-0155",
+    "service_type": "public lighting",
+    "complaint_count": 17,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 43,
+    "linked_asset_ids": [
+      "AST-KARNAL-031"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0035"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "complaint_aggregate_id": "GRV-KARNAL-0156",
+    "service_type": "property services",
+    "complaint_count": 2,
+    "repeat_complaints": 1,
+    "average_resolution_hours": 48,
+    "linked_asset_ids": [
+      "AST-KARNAL-017"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0036"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "complaint_aggregate_id": "GRV-KARNAL-0157",
+    "service_type": "drainage",
+    "complaint_count": 5,
+    "repeat_complaints": 2,
+    "average_resolution_hours": 53,
+    "linked_asset_ids": [
+      "AST-KARNAL-005"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0037"
+    ],
+    "period": "2025-Q1",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "complaint_aggregate_id": "GRV-KARNAL-0158",
+    "service_type": "water supply",
+    "complaint_count": 8,
+    "repeat_complaints": 3,
+    "average_resolution_hours": 58,
+    "linked_asset_ids": [
+      "AST-KARNAL-003"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0038"
+    ],
+    "period": "2025-Q2",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "complaint_aggregate_id": "GRV-KARNAL-0159",
+    "service_type": "solid waste",
+    "complaint_count": 11,
+    "repeat_complaints": 4,
+    "average_resolution_hours": 63,
+    "linked_asset_ids": [
+      "AST-KARNAL-023"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0039"
+    ],
+    "period": "2025-Q3",
+    "personal_data_present": false
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-KARNAL-PROTOTYPE",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "complaint_aggregate_id": "GRV-KARNAL-0160",
+    "service_type": "road safety",
+    "complaint_count": 14,
+    "repeat_complaints": 0,
+    "average_resolution_hours": 18,
+    "linked_asset_ids": [
+      "AST-KARNAL-033"
+    ],
+    "linked_property_aggregate_ids": [
+      "PROP-KARNAL-0040"
+    ],
+    "period": "2025-Q4",
+    "personal_data_present": false
   }
 ]

@@ -153,6 +153,25 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     usageNote: "A current, reusable official mark has not been verified.",
     fallbackIcon: "building",
   },
+  "CITY-KARNAL": {
+    id: "ulb-karnal",
+    name: "Municipal Corporation Karnal",
+    administrativeLevel: "city",
+    authority: "Urban local body",
+    geography: "Karnal",
+    logoSource: "unverified",
+    sourceUrl: null,
+    assetPath: null,
+    variant: null,
+    usageStatus: "do-not-use",
+    lastVerified: "2026-09-20",
+    officialWebsite: "https://mckarnal.co.in/",
+    logoSourcePage: null,
+    stateId: "STATE-HARYANA",
+    districtId: "DISTRICT-KARNAL",
+    usageNote: "A current, reusable official municipal mark has not been verified.",
+    fallbackIcon: "building",
+  },
 };
 
 /**
@@ -169,6 +188,7 @@ export const DISTRICT_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     "Kamrup Metropolitan",
     "Kamrup Metropolitan District Administration",
   ),
+  "CITY-KARNAL": district("karnal", "Karnal", "District Administration Karnal"),
 };
 
 function district(id: string, geography: string, name: string): AuthorityAsset {
@@ -184,7 +204,7 @@ function district(id: string, geography: string, name: string): AuthorityAsset {
     variant: null,
     usageStatus: "do-not-use",
     lastVerified: null,
-    officialWebsite: id === "surat" ? "https://surat.nic.in/" : id === "jalandhar" ? "https://jalandhar.nic.in/" : "",
+    officialWebsite: id === "surat" ? "https://surat.nic.in/" : id === "jalandhar" ? "https://jalandhar.nic.in/" : id === "karnal" ? "https://karnal.gov.in/" : "",
     logoSourcePage: null,
     stateId: null,
     districtId: `DISTRICT-${id.toUpperCase()}`,
