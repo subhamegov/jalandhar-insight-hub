@@ -263,7 +263,7 @@ function SyntheticNotice() {
       <span>Synthetic observations · Not official statistics</span>
       <Link
         to="/data-quality"
-        search={{ from } as never}
+        search={provenanceSearch as never}
         className="font-medium text-primary underline-offset-2 hover:underline"
       >
         View data provenance
