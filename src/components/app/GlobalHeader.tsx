@@ -10,6 +10,7 @@ import { downloadCsv, toCsv } from "@/lib/exportData";
 import { projectCsv } from "@/lib/projectCsv";
 import { cn } from "@/lib/utils";
 import { InstitutionalIdentity } from "@/components/app/InstitutionalIdentity";
+import { InfoTip } from "@/components/app/InfoTip";
 
 type Hit = {
   id: string;
