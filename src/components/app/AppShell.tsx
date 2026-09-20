@@ -246,6 +246,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
 function SyntheticNotice() {
   const { dataset } = useCity();
+  const from = useRouterState({ select: (s) => s.location.pathname });
   if (!dataset.synthetic || dataset.projects.length === 0) return null;
   return (
     <p className="mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-sm border border-border bg-muted/60 px-3 py-2 text-xs text-muted-foreground">
