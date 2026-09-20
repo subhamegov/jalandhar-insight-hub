@@ -519,8 +519,8 @@ function DataQualityPage() {
                 .filter((e) => e.conflicting_evidence)
                 .map((e) => (
                   <li key={e.evidence_id} className="py-2">
-                    <div className="flex items-start justify-between gap-2">
-                      <p className="text-sm font-medium break-words">{e.title}</p>
+                    <div className="flex min-w-0 items-start justify-between gap-2">
+                      <p className="min-w-0 text-sm font-medium [overflow-wrap:anywhere]">{e.title}</p>
                       <SourceBadge quality={e.evidence_quality} />
                     </div>
                     <p className="text-xs text-muted-foreground">{text(e.notes)}</p>
