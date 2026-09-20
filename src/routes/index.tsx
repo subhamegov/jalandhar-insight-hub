@@ -7,6 +7,7 @@ import { FreshnessBadge } from "@/components/app/FreshnessBadge";
 import { SourceBadge } from "@/components/app/SourceBadge";
 import { EvidenceLink } from "@/components/app/EvidenceDrawer";
 import { CityBanner } from "@/components/app/CityBanner";
+import { MunicipalIdentity } from "@/components/app/MunicipalIdentity";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { GovPoint, MarkerState } from "@/components/map/MapCanvas";
 import { assessProject } from "@/data/attentionLabel";
@@ -175,6 +176,13 @@ function Overview() {
       <PageHeader
         title="City at a glance"
         subtitle="Government investment, project status, and evidence reliability."
+        identity={
+          <MunicipalIdentity
+            cityId={city.city_id}
+            cityName={city.name}
+            stateName={city.state}
+          />
+        }
       />
 
       <CityBanner city={city} />

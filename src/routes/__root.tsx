@@ -78,28 +78,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Jalandhar City Intelligence" },
+      { title: "MoHUA Urban Intelligence Prototype" },
       {
         name: "description",
         content:
-          "Projects, infrastructure, investment and outcomes across government in Jalandhar.",
+          "Urban systems, delivery, investment and citizen outcomes across six prototype cities.",
       },
-      { name: "author", content: "Jalandhar City Intelligence" },
-      { property: "og:title", content: "Jalandhar City Intelligence" },
+      { name: "author", content: "MoHUA Urban Intelligence Prototype" },
+      { property: "og:title", content: "MoHUA Urban Intelligence Prototype" },
       {
         property: "og:description",
-        content: "One joined-up view of Jalandhar city infrastructure and government investment.",
+        content: "Decision intelligence for urban systems, investments, services and evidence.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

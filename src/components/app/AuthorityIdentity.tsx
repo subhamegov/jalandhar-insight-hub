@@ -34,7 +34,7 @@ export function AuthorityIdentity({
       {variant !== "text-only" && logoUsable(asset) ? (
         <img
           src={asset.assetPath as string}
-          alt={`${asset.name} official logo`}
+          alt={asset.name}
           className={cn(logoHeight, "w-auto shrink-0 object-contain")}
         />
       ) : variant !== "text-only" ? (

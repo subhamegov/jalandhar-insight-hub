@@ -1,14 +1,13 @@
 import { lazy, useMemo, useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { LocateFixed } from "lucide-react";
-import { AuthorityIdentity } from "@/components/app/AuthorityIdentity";
+import { MunicipalIdentity } from "@/components/app/MunicipalIdentity";
 import { Breadcrumbs } from "@/components/app/Breadcrumbs";
 import { CitizenDomainSection } from "@/components/app/CitizenDomains";
 import { CityBanner } from "@/components/app/CityBanner";
 import { PageHeader, PrototypeNote } from "@/components/app/Primitives";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { MapPoint } from "@/components/map/PointMap";
-import { CITY_AUTHORITIES } from "@/data/governmentAssets";
 import { fourCityBundle } from "@/data/four-city/dataset";
 import { citizenDomains } from "@/data/four-city/citizenOutcomes";
 import { missionLabel } from "@/data/four-city/adapter";
@@ -83,9 +82,8 @@ export function FourCityOverview() {
         subtitle={`${city.name}, ${city.state} · ${city.urban_local_body}`}
         note={<PrototypeNote text="Observations are synthetic and are not official statistics" />}
         identity={
-          <AuthorityIdentity
-            asset={CITY_AUTHORITIES[city.city_id]}
-            variant="page-header"
+          <MunicipalIdentity
+            cityId={city.city_id}
             cityName={city.name}
             stateName={city.state}
           />
