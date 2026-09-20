@@ -14,9 +14,10 @@ import { CITIES, DEFAULT_CITY_ID, isCityId, type CityId, type CityProfile } from
 import { datasetFor, type CityDataset } from "@/data/cities/datasets";
 import { setActiveCityRecords } from "@/data/selectors";
 
-// A new key intentionally retires the former Jalandhar-era default. Once a
-// visitor makes a city choice in this version, that deliberate choice persists.
-const KEY = "mohua.activeCity.v2";
+// A new key intentionally retires the former city default. The fresh-visit
+// landing is the national view; once a visitor chooses a scope, that
+// deliberate choice persists.
+const KEY = "mohua.activeCity.v3";
 
 /**
  * Geographic scope. The application operates either nationally (no city is
