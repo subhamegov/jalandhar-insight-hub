@@ -97,11 +97,13 @@ export function CityProvider({ children }: { children: ReactNode }) {
       } catch {
         stored = null;
       }
-      const next = isSelection(stored) ? stored : DEFAULT_CITY_ID;
+      const fresh = !isSelection(stored);
+      const next = fresh ? ALL_CITIES : (stored as CitySelection);
       if (next !== selection) apply(next);
       setRestored(true);
+      // A fresh visit starts at the national view, not inside a city.
       navigate({
-        to: pathname,
+        to: fresh ? "/national" : pathname,
         search: (prev: Record<string, unknown>) => ({ ...prev, city: next }),
         replace: true,
       } as never);
