@@ -180,7 +180,7 @@ export function GlobalHeader() {
               ))}
             </select>
             <p className="mt-0.5 truncate text-xs text-muted-foreground">
-              {portfolio ? "India, National" : `${city.name}, ${city.state}`}
+              {portfolio ? "India, National" : city.urban_local_body}
             </p>
           </div>
         </div>
