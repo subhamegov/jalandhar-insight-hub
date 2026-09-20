@@ -14,9 +14,10 @@ import { CITIES, DEFAULT_CITY_ID, isCityId, type CityId, type CityProfile } from
 import { datasetFor, type CityDataset } from "@/data/cities/datasets";
 import { setActiveCityRecords } from "@/data/selectors";
 
-// A new key intentionally retires the former Jalandhar-era default. Once a
-// visitor makes a city choice in this version, that deliberate choice persists.
-const KEY = "mohua.activeCity.v2";
+// A new key intentionally retires the former city default. The fresh-visit
+// landing is the national view; once a visitor chooses a scope, that
+// deliberate choice persists.
+const KEY = "mohua.activeCity.v3";
 
 /**
  * Geographic scope. The application operates either nationally (no city is
@@ -62,7 +63,7 @@ export function CityProvider({ children }: { children: ReactNode }) {
 
   const isNationalPath =
     pathname.startsWith("/national") || pathname.startsWith("/states") || pathname.startsWith("/compare");
-  const [selection, setSelection] = useState<CitySelection>(isNationalPath ? ALL_CITIES : DEFAULT_CITY_ID);
+  const [selection, setSelection] = useState<CitySelection>(ALL_CITIES);
   const [lastCity, setLastCity] = useState<CityId>(DEFAULT_CITY_ID);
   const [restored, setRestored] = useState(false);
 
@@ -96,11 +97,13 @@ export function CityProvider({ children }: { children: ReactNode }) {
       } catch {
         stored = null;
       }
-      const next = isSelection(stored) ? stored : DEFAULT_CITY_ID;
+      const fresh = !isSelection(stored);
+      const next = fresh ? ALL_CITIES : (stored as CitySelection);
       if (next !== selection) apply(next);
       setRestored(true);
+      // A fresh visit starts at the national view, not inside a city.
       navigate({
-        to: pathname,
+        to: fresh ? "/national" : pathname,
         search: (prev: Record<string, unknown>) => ({ ...prev, city: next }),
         replace: true,
       } as never);
