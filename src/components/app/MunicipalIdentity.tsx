@@ -8,6 +8,7 @@ export function MunicipalIdentity({
   cityName,
   stateName,
   compact = false,
+  textOnly = false,
   tone = "default",
   className,
 }: {
@@ -15,6 +16,7 @@ export function MunicipalIdentity({
   cityName?: string;
   stateName?: string;
   compact?: boolean;
+  textOnly?: boolean;
   tone?: "default" | "sidebar";
   className?: string;
 }) {
@@ -22,7 +24,7 @@ export function MunicipalIdentity({
     <AuthorityIdentity
       asset={CITY_AUTHORITIES[cityId]}
       tone={tone}
-      variant={compact ? "compact" : "page-header"}
+      variant={textOnly ? "text-only" : compact ? "compact" : "page-header"}
       {...(cityName ? { cityName } : {})}
       {...(stateName ? { stateName } : {})}
       {...(className ? { className } : {})}
