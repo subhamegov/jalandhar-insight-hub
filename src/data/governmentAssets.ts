@@ -19,6 +19,7 @@ export type UsageStatus = "verified" | "limited-use" | "do-not-use";
 export interface AuthorityAsset {
   id: string;
   authorityType: "ministry" | "mission" | "municipal-corporation" | "district-administration";
+  cityId: CityId | null;
   /** Authority of record, written exactly as the authority names itself. */
   name: string;
   administrativeLevel: AdministrativeLevel;
@@ -44,6 +45,7 @@ export interface AuthorityAsset {
 export const MOHUA_AUTHORITY: AuthorityAsset = {
   id: "national-mohua",
   authorityType: "ministry",
+  cityId: null,
   name: "Ministry of Housing and Urban Affairs",
   administrativeLevel: "national",
   authority: "Government of India",
@@ -66,6 +68,7 @@ export const MOHUA_AUTHORITY: AuthorityAsset = {
 export const NUDM_AUTHORITY: AuthorityAsset = {
   id: "national-nudm",
   authorityType: "mission",
+  cityId: null,
   name: "National Urban Digital Mission",
   administrativeLevel: "national",
   authority: "Ministry of Housing and Urban Affairs",
@@ -93,6 +96,7 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
   "CITY-JALANDHAR": {
     id: "ulb-jalandhar",
     authorityType: "municipal-corporation",
+    cityId: "CITY-JALANDHAR",
     name: "Municipal Corporation of Jalandhar",
     administrativeLevel: "city",
     authority: "Urban local body",
@@ -114,6 +118,7 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
   "CITY-THANE": {
     id: "ulb-thane",
     authorityType: "municipal-corporation",
+    cityId: "CITY-THANE",
     name: "Thane Municipal Corporation",
     administrativeLevel: "city",
     authority: "Urban local body",
@@ -135,6 +140,7 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
   "CITY-SURAT": {
     id: "ulb-surat",
     authorityType: "municipal-corporation",
+    cityId: "CITY-SURAT",
     name: "Surat Municipal Corporation",
     administrativeLevel: "city",
     authority: "Urban local body",
@@ -156,6 +162,7 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
   "CITY-AHMEDABAD": {
     id: "ulb-ahmedabad",
     authorityType: "municipal-corporation",
+    cityId: "CITY-AHMEDABAD",
     name: "Ahmedabad Municipal Corporation",
     administrativeLevel: "city",
     authority: "Urban local body",
@@ -177,6 +184,7 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
   "CITY-GUWAHATI": {
     id: "ulb-guwahati",
     authorityType: "municipal-corporation",
+    cityId: "CITY-GUWAHATI",
     name: "Guwahati Municipal Corporation",
     administrativeLevel: "city",
     authority: "Urban local body",
@@ -198,6 +206,7 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
   "CITY-KARNAL": {
     id: "ulb-karnal",
     authorityType: "municipal-corporation",
+    cityId: "CITY-KARNAL",
     name: "Municipal Corporation Karnal",
     administrativeLevel: "city",
     authority: "Urban local body",
@@ -239,6 +248,7 @@ function district(id: string, geography: string, name: string): AuthorityAsset {
   return {
     id: `district-${id}`,
     authorityType: "district-administration",
+    cityId: null,
     name,
     administrativeLevel: "district",
     authority: "District administration",
