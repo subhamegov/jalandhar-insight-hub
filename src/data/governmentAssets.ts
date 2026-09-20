@@ -8,13 +8,17 @@
 
 import type { CityId } from "@/data/cities/registry";
 import suratLogo from "@/assets/government/surat-municipal-corporation.png.asset.json";
+import karnalLogo from "@/assets/government/karnal-municipal-corporation.png.asset.json";
+import mohuaIdentity from "@/assets/identity/mohua-identity.png.asset.json";
+import nudmIdentity from "@/assets/identity/nudm-identity.png.asset.json";
 
 export type AdministrativeLevel = "national" | "state" | "district" | "city";
-export type LogoSource = "official" | "unverified";
-export type UsageStatus = "verified" | "do-not-use";
+export type LogoSource = "official" | "supplied-reconstruction" | "unverified";
+export type UsageStatus = "verified" | "limited-use" | "do-not-use";
 
 export interface AuthorityAsset {
   id: string;
+  authorityType: "ministry" | "mission" | "municipal-corporation" | "district-administration";
   /** Authority of record, written exactly as the authority names itself. */
   name: string;
   administrativeLevel: AdministrativeLevel;
@@ -34,32 +38,61 @@ export interface AuthorityAsset {
   districtId: string | null;
   usageNote: string;
   fallbackIcon: "landmark" | "building";
+  fallbackLabel: string;
 }
 
-export const NATIONAL_AUTHORITY: AuthorityAsset = {
+export const MOHUA_AUTHORITY: AuthorityAsset = {
   id: "national-mohua",
-  name: "Ministry of Housing & Urban Affairs",
+  authorityType: "ministry",
+  name: "Ministry of Housing and Urban Affairs",
   administrativeLevel: "national",
   authority: "Government of India",
   geography: "India",
-  logoSource: "unverified",
-  sourceUrl: null,
-  assetPath: null,
-  variant: null,
-  usageStatus: "do-not-use",
-  lastVerified: null,
+  logoSource: "official",
+  sourceUrl: "https://www.nudm.mohua.gov.in/wp-content/uploads/2026/08/Department_of_Urban_Development_Ministry_of_Housing_and_Urban_Affairs_Government_of_India-removebg-preview.png",
+  assetPath: mohuaIdentity.url,
+  variant: "monochrome",
+  usageStatus: "limited-use",
+  lastVerified: "2026-09-20",
   officialWebsite: "https://www.mohua.gov.in/",
-  logoSourcePage: "https://www.ux4g.gov.in/resources/logos",
+  logoSourcePage: "https://www.nudm.mohua.gov.in/",
   stateId: null,
   districtId: null,
-  usageNote: "No national emblem is used without confirmed authorisation.",
+  usageNote: "Official-domain web identity. Displayed without alteration in this prototype. Wider reuse permission requires review.",
   fallbackIcon: "landmark",
+  fallbackLabel: "MoHUA",
 };
+
+export const NUDM_AUTHORITY: AuthorityAsset = {
+  id: "national-nudm",
+  authorityType: "mission",
+  name: "National Urban Digital Mission",
+  administrativeLevel: "national",
+  authority: "Ministry of Housing and Urban Affairs",
+  geography: "India",
+  logoSource: "official",
+  sourceUrl: "https://www.nudm.mohua.gov.in/wp-content/uploads/2026/06/NUDM-LOGO_Transparent-Bg-1-1.png",
+  assetPath: nudmIdentity.url,
+  variant: "full-colour",
+  usageStatus: "limited-use",
+  lastVerified: "2026-09-20",
+  officialWebsite: "https://www.nudm.mohua.gov.in/",
+  logoSourcePage: "https://www.nudm.mohua.gov.in/resources/engagement/",
+  stateId: null,
+  districtId: null,
+  usageNote: "Official-domain NUDM identity. Displayed without alteration in this prototype. Wider reuse permission requires review.",
+  fallbackIcon: "landmark",
+  fallbackLabel: "NUDM",
+};
+
+/** Backward-compatible national authority reference. */
+export const NATIONAL_AUTHORITY = MOHUA_AUTHORITY;
 
 /** Urban local body of record for each city in the registry. */
 export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
   "CITY-JALANDHAR": {
     id: "ulb-jalandhar",
+    authorityType: "municipal-corporation",
     name: "Municipal Corporation of Jalandhar",
     administrativeLevel: "city",
     authority: "Urban local body",
@@ -76,9 +109,11 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     districtId: "DISTRICT-JALANDHAR",
     usageNote: "A current, reusable official mark has not been verified.",
     fallbackIcon: "building",
+    fallbackLabel: "MC Jalandhar",
   },
   "CITY-THANE": {
     id: "ulb-thane",
+    authorityType: "municipal-corporation",
     name: "Thane Municipal Corporation",
     administrativeLevel: "city",
     authority: "Urban local body",
@@ -95,9 +130,11 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     districtId: "DISTRICT-THANE",
     usageNote: "A current, reusable official mark has not been verified.",
     fallbackIcon: "building",
+    fallbackLabel: "TMC",
   },
   "CITY-SURAT": {
     id: "ulb-surat",
+    authorityType: "municipal-corporation",
     name: "Surat Municipal Corporation",
     administrativeLevel: "city",
     authority: "Urban local body",
@@ -114,9 +151,11 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     districtId: "DISTRICT-SURAT",
     usageNote: "Official-domain web identity. Used only at small interface sizes with source attribution. Reuse terms require confirmation for broader use.",
     fallbackIcon: "building",
+    fallbackLabel: "SMC",
   },
   "CITY-AHMEDABAD": {
     id: "ulb-ahmedabad",
+    authorityType: "municipal-corporation",
     name: "Ahmedabad Municipal Corporation",
     administrativeLevel: "city",
     authority: "Urban local body",
@@ -133,9 +172,11 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     districtId: "DISTRICT-AHMEDABAD",
     usageNote: "A current, reusable official mark has not been verified.",
     fallbackIcon: "building",
+    fallbackLabel: "AMC",
   },
   "CITY-GUWAHATI": {
     id: "ulb-guwahati",
+    authorityType: "municipal-corporation",
     name: "Guwahati Municipal Corporation",
     administrativeLevel: "city",
     authority: "Urban local body",
@@ -152,25 +193,28 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     districtId: "DISTRICT-KAMRUP-METROPOLITAN",
     usageNote: "A current, reusable official mark has not been verified.",
     fallbackIcon: "building",
+    fallbackLabel: "GMC",
   },
   "CITY-KARNAL": {
     id: "ulb-karnal",
+    authorityType: "municipal-corporation",
     name: "Municipal Corporation Karnal",
     administrativeLevel: "city",
     authority: "Urban local body",
     geography: "Karnal",
-    logoSource: "unverified",
-    sourceUrl: null,
-    assetPath: null,
-    variant: null,
-    usageStatus: "do-not-use",
+    logoSource: "official",
+    sourceUrl: "https://mckarnal.co.in/themes/custom/mc_theme/mc-karnal.png",
+    assetPath: karnalLogo.url,
+    variant: "full-colour",
+    usageStatus: "limited-use",
     lastVerified: "2026-09-20",
     officialWebsite: "https://mckarnal.co.in/",
-    logoSourcePage: null,
+    logoSourcePage: "https://mckarnal.co.in/",
     stateId: "STATE-HARYANA",
     districtId: "DISTRICT-KARNAL",
-    usageNote: "A current, reusable official municipal mark has not been verified.",
+    usageNote: "Current municipal-site identity. The district directory points to a different municipal domain, so broader reuse requires review.",
     fallbackIcon: "building",
+    fallbackLabel: "MC Karnal",
   },
 };
 
@@ -194,6 +238,7 @@ export const DISTRICT_AUTHORITIES: Record<CityId, AuthorityAsset> = {
 function district(id: string, geography: string, name: string): AuthorityAsset {
   return {
     id: `district-${id}`,
+    authorityType: "district-administration",
     name,
     administrativeLevel: "district",
     authority: "District administration",
@@ -210,10 +255,11 @@ function district(id: string, geography: string, name: string): AuthorityAsset {
     districtId: `DISTRICT-${id.toUpperCase()}`,
     usageNote: "No district seal is used without a verified, reusable official asset.",
     fallbackIcon: "building",
+    fallbackLabel: name,
   };
 }
 
 /** True only when an official asset has been supplied and verified. */
 export function logoUsable(asset: AuthorityAsset): boolean {
-  return asset.usageStatus === "verified" && asset.logoSource === "official" && !!asset.assetPath;
+  return (asset.usageStatus === "verified" || asset.usageStatus === "limited-use") && asset.logoSource === "official" && !!asset.assetPath;
 }
