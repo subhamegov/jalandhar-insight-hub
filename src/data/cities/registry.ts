@@ -10,7 +10,8 @@ export type CityId =
   | "CITY-THANE"
   | "CITY-SURAT"
   | "CITY-AHMEDABAD"
-  | "CITY-GUWAHATI";
+  | "CITY-GUWAHATI"
+  | "CITY-KARNAL";
 
 export interface CityProfile {
   city_id: CityId;
@@ -71,6 +72,15 @@ export const CITIES: CityProfile[] = [
     urban_local_body: "Guwahati Municipal Corporation",
     centre: [26.1445, 91.7362],
     bbox: [26.05, 91.6, 26.24, 91.9],
+    data_loaded: true,
+  },
+  {
+    city_id: "CITY-KARNAL",
+    name: "Karnal",
+    state: "Haryana",
+    urban_local_body: "Municipal Corporation Karnal",
+    centre: [29.6803, 76.9896],
+    bbox: [29.61, 76.91, 29.75, 77.07],
     data_loaded: true,
   },
 ];

@@ -22,6 +22,7 @@ import {
   scopeGroupOf,
 } from "@/data/registerLogic";
 import { MAP_LOCATION_UI, resolveMapLocation } from "@/data/mapLocations";
+import { allDatasets } from "@/data/cities/datasets";
 
 import type { Conflict, TimelineEvent } from "@/data/types";
 import { TIMELINE_EVENT_LABELS, TIMELINE_EVENT_ORDER } from "@/data/types";
@@ -46,7 +47,9 @@ const TABS = [
 
 export const Route = createFileRoute("/projects/$projectId")({
   loader: ({ params }) => {
-    const project = projects.find((p) => p.project_id === params.projectId);
+    const project = allDatasets()
+      .flatMap((dataset) => dataset.projects)
+      .find((candidate) => candidate.project_id === params.projectId);
     if (!project) throw notFound();
     return { project };
   },
@@ -56,7 +59,7 @@ export const Route = createFileRoute("/projects/$projectId")({
         meta: [{ title: "Project not found" }, { name: "robots", content: "noindex" }],
       };
     }
-    const title = `${loaderData.project.project_name} | Jalandhar City Intelligence`;
+    const title = `${loaderData.project.project_name} | MoHUA Urban Intelligence`;
     const description =
       loaderData.project.short_description ??
       "Project record with status, funding, agencies, location and evidence.";

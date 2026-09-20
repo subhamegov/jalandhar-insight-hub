@@ -14,7 +14,7 @@ export const Route = createFileRoute("/compare")({
       {
         name: "description",
         content:
-          "Compare four cities using consistent service and investment indicators.",
+          "Compare prototype cities using consistent service and investment indicators.",
       },
       { property: "og:title", content: "Compare cities: MoHUA Urban Intelligence" },
       {
@@ -60,7 +60,7 @@ function ComparePage() {
     <div className="space-y-4">
       <Breadcrumbs trail={[{ label: "Compare cities" }]} />
       <PageHeader
-        title="Compare the four prototype cities"
+        title="Compare prototype cities"
         subtitle="Compare service outcomes using the same calculation in every city."
       />
 

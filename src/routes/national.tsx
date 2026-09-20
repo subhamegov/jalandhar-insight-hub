@@ -77,7 +77,7 @@ function NationalView() {
       <PageHeader
         title="National view"
         subtitle="Explore urban systems and delivery across the prototype cities."
-        note={<PrototypeNote text="Five cities · Not a national statistic" />}
+        note={<PrototypeNote text={`${CITIES.length} cities. Not a national statistic`} />}
       />
 
       <Panel

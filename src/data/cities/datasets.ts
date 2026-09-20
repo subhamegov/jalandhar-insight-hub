@@ -1,8 +1,8 @@
 // Per-city datasets.
 //
 // Jalandhar is the existing, unchanged Jalandhar record set built from
-// government sources. Thane, Surat, Ahmedabad and Guwahati are served by the
-// MoHUA four-city dataset, which is synthetic prototype data — it is adapted
+// government sources. The other registered cities are served by the shared
+// synthetic prototype dataset, which is adapted
 // into the same application model, never mixed with Jalandhar records and
 // never presented as government statistics.
 
@@ -53,6 +53,7 @@ const DATASETS: Record<CityId, CityDataset> = {
   "CITY-SURAT": fourCity("CITY-SURAT"),
   "CITY-AHMEDABAD": fourCity("CITY-AHMEDABAD"),
   "CITY-GUWAHATI": fourCity("CITY-GUWAHATI"),
+  "CITY-KARNAL": fourCity("CITY-KARNAL"),
 };
 
 export function datasetFor(id: CityId): CityDataset {
