@@ -63,9 +63,10 @@ function DataLayerPage() {
 
   return (
     <div className="space-y-6">
+      <ReturnLink fallback="/data-quality" />
       <PageHeader
-        title="Data Layer"
-        subtitle="The connected cross-mission dataset behind the four-city views: data products as supplied, canonical identifiers, relationships, provenance and validation."
+        title="Data layer"
+        subtitle="Data products as supplied, with canonical identifiers, relationships, provenance and validation."
       />
 
       <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
