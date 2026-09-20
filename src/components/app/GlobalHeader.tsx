@@ -145,7 +145,7 @@ export function GlobalHeader() {
   return (
     <header className="z-40 border-b border-border bg-background/95 backdrop-blur print:hidden lg:sticky lg:top-0">
       {/* Left: scope and city. Centre: search. Right: actions and data status. */}
-      <div className="grid grid-cols-1 items-center gap-x-5 gap-y-3 px-3 py-3 sm:px-4 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:px-8">
+      <div className="grid grid-cols-1 items-center gap-x-5 gap-y-3 px-3 py-3 sm:px-4 lg:grid-cols-[minmax(0,auto)_minmax(14rem,1fr)_minmax(0,auto)] lg:px-8">
         <div className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-3">
           <InstitutionalIdentity />
           <div className="min-w-0">
