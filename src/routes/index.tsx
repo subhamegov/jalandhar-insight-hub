@@ -1,6 +1,7 @@
 import { lazy, useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BarRow, MetricCard, PageHeader, Panel } from "@/components/app/Primitives";
+import { BreakdownList } from "@/components/app/BreakdownList";
 import { StatusBadge } from "@/components/app/StatusBadge";
 import { AttentionBadge } from "@/components/app/AttentionBadge";
 import { FreshnessBadge } from "@/components/app/FreshnessBadge";
