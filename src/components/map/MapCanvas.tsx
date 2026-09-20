@@ -99,6 +99,17 @@ export default function MapCanvas({
     };
   }, []);
 
+  // Keep Leaflet synchronized with shell, sidebar, and viewport resizing.
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container || typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(() => {
+      requestAnimationFrame(() => mapRef.current?.invalidateSize(false));
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
   // OSM reference features
   useEffect(() => {
     const group = osmLayerRef.current;
