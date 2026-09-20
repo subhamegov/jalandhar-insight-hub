@@ -1,10 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { EmptyNote, MetricCard, PageHeader, Panel } from "@/components/app/Primitives";
 import { StatusBadge } from "@/components/app/StatusBadge";
-import { allConflicts } from "@/data/conflicts";
+import { conflictsForProject } from "@/data/conflicts";
 import type { Indicator, IndicatorSeries, OutcomeDomain } from "@/data/outcomes";
 import { outcomeDomains } from "@/data/outcomes";
-import { isCompletedNotOperational, isDelayed, projects } from "@/data/selectors";
+import { isCompletedNotOperational, isDelayed } from "@/data/selectors";
+import type { Project } from "@/data/types";
+import { useCity } from "@/lib/cityContext";
 import { crore, dateText, text } from "@/lib/format";
 
 export const Route = createFileRoute("/outcomes")({
@@ -28,7 +30,7 @@ export const Route = createFileRoute("/outcomes")({
   component: OutcomesPage,
 });
 
-function valueSum(pick: (p: (typeof projects)[number]) => number | null): number | null {
+function valueSum(projects: Project[], pick: (p: Project) => number | null): number | null {
   return projects.reduce<number | null>((acc, p) => {
     const v = pick(p);
     return v === null || v === undefined ? acc : (acc ?? 0) + v;
@@ -36,11 +38,13 @@ function valueSum(pick: (p: (typeof projects)[number]) => number | null): number
 }
 
 function OutcomesPage() {
-  const conflicts = allConflicts();
+  const { dataset } = useCity();
+  const projects = dataset.projects;
+  const conflicts = projects.flatMap(conflictsForProject);
   const material = conflicts.filter((c) => c.severity === "material_conflict");
-  const delayedValue = valueSum((p) => (isDelayed(p) ? p.sanctioned_cost : null));
-  const stalledValue = valueSum((p) => (p.status === "stalled" ? p.sanctioned_cost : null));
-  const builtNotRunning = valueSum((p) =>
+  const delayedValue = valueSum(projects, (p) => (isDelayed(p) ? p.sanctioned_cost : null));
+  const stalledValue = valueSum(projects, (p) => (p.status === "stalled" ? p.sanctioned_cost : null));
+  const builtNotRunning = valueSum(projects, (p) =>
     isCompletedNotOperational(p) ? p.sanctioned_cost : null,
   );
 
@@ -63,12 +67,12 @@ function OutcomesPage() {
         <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-6">
           <MetricCard
             label="Total sanctioned value"
-            value={crore(valueSum((p) => p.sanctioned_cost))}
+            value={crore(valueSum(projects, (p) => p.sanctioned_cost))}
             hint="Sum of verified sanction values only"
           />
           <MetricCard
             label="Total expenditure"
-            value={crore(valueSum((p) => p.expenditure))}
+            value={crore(valueSum(projects, (p) => p.expenditure))}
             hint="Sum of verified expenditure only"
           />
           <MetricCard
@@ -105,7 +109,7 @@ function OutcomesPage() {
 
       <div className="mt-4 grid gap-4">
         {outcomeDomains.map((domain) => (
-          <DomainPanel key={domain.id} domain={domain} />
+          <DomainPanel key={domain.id} domain={domain} projects={projects} />
         ))}
       </div>
 
@@ -140,7 +144,7 @@ function OutcomesPage() {
   );
 }
 
-function DomainPanel({ domain }: { domain: OutcomeDomain }) {
+function DomainPanel({ domain, projects }: { domain: OutcomeDomain; projects: Project[] }) {
   const linked = projects.filter((p) => p.sector && domain.sectors.includes(p.sector));
   const spend = linked.reduce<number | null>(
     (acc, p) => (p.expenditure === null ? acc : (acc ?? 0) + p.expenditure),
