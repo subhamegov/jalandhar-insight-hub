@@ -496,9 +496,11 @@ function DataQualityPage() {
             {completeness.map((f) => {
               const p = Math.round((f.filled / f.total) * 100);
               return (
-                <div key={f.field} className="flex items-center gap-3 py-1">
-                  <span className="w-56 shrink-0 truncate text-sm">{labelise(f.field)}</span>
-                  <span className="h-2 flex-1 rounded-sm bg-muted">
+                <div key={f.field} className="flex min-w-0 items-center gap-3 py-1">
+                  <span className="min-w-0 flex-1 truncate text-sm sm:w-56 sm:flex-none sm:shrink-0">
+                    {labelise(f.field)}
+                  </span>
+                  <span className="hidden h-2 flex-1 rounded-sm bg-muted sm:block">
                     <span className="block h-2 rounded-sm bg-primary" style={{ width: `${p}%` }} />
                   </span>
                   <span className="num w-16 shrink-0 text-right text-xs text-muted-foreground">
