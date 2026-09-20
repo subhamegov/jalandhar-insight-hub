@@ -3,7 +3,7 @@ import { DataTable, type Column } from "@/components/app/DataTable";
 import { PageHeader } from "@/components/app/Primitives";
 import { lookupEntity } from "@/data/four-city/dataset";
 import { Breadcrumbs } from "@/components/app/Breadcrumbs";
-import { assets } from "@/data/selectors";
+import { useCity } from "@/lib/cityContext";
 import type { Asset } from "@/data/types";
 import { CITY_SYSTEMS } from "@/data/types";
 import { count, dateText, text } from "@/lib/format";
@@ -28,6 +28,8 @@ export const Route = createFileRoute("/assets")({
 });
 
 function AssetsPage() {
+  const { dataset } = useCity();
+  const assets = dataset.assets;
   const columns: Column<Asset>[] = [
     {
       key: "asset_name",

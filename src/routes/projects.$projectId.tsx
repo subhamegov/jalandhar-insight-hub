@@ -23,6 +23,7 @@ import {
 } from "@/data/registerLogic";
 import { MAP_LOCATION_UI, resolveMapLocation } from "@/data/mapLocations";
 import { allDatasets } from "@/data/cities/datasets";
+import { useCity } from "@/lib/cityContext";
 
 import type { Conflict, TimelineEvent } from "@/data/types";
 import { TIMELINE_EVENT_LABELS, TIMELINE_EVENT_ORDER } from "@/data/types";
@@ -79,10 +80,11 @@ export const Route = createFileRoute("/projects/$projectId")({
 
 function ProjectDetail() {
   const { project: p } = Route.useLoaderData();
+  const { dataset } = useCity();
   const [tab, setTab] = useState<(typeof TABS)[number]>("Overview");
 
-  const linkedEvidence = evidence.filter((e) => e.linked_entity === p.project_id);
-  const linkedAssets = assets.filter((a) => a.related_projects.includes(p.project_id));
+  const linkedEvidence = dataset.evidence.filter((e) => e.linked_entity === p.project_id);
+  const linkedAssets = dataset.assets.filter((a) => a.related_projects.includes(p.project_id));
   const funding = componentsFor(p.project_id);
   const events = eventsFor(p.project_id);
   const conflicts = conflictsForProject(p);
