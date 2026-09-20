@@ -9,6 +9,7 @@
 import type { CityId } from "@/data/cities/registry";
 import suratLogo from "@/assets/government/surat-municipal-corporation.png.asset.json";
 import karnalLogo from "@/assets/government/karnal-municipal-corporation.png.asset.json";
+import thaneLogo from "@/assets/government/thane-municipal-corporation.png.asset.json";
 import mohuaIdentity from "@/assets/identity/mohua-identity.png.asset.json";
 import nudmIdentity from "@/assets/identity/nudm-identity.png.asset.json";
 
@@ -101,17 +102,17 @@ export const CITY_AUTHORITIES: Record<CityId, AuthorityAsset> = {
     administrativeLevel: "city",
     authority: "Urban local body",
     geography: "Jalandhar",
-    logoSource: "unverified",
-    sourceUrl: null,
-    assetPath: null,
-    variant: null,
-    usageStatus: "do-not-use",
-    lastVerified: null,
+    logoSource: "official",
+    sourceUrl: "https://propertytax.thanecity.gov.in/images/TMC_web_page_banner.jpg",
+    assetPath: thaneLogo.url,
+    variant: "full-colour",
+    usageStatus: "limited-use",
+    lastVerified: "2026-09-20",
     officialWebsite: "https://mcjalandhar.in/",
-    logoSourcePage: null,
+    logoSourcePage: "https://propertytax.thanecity.gov.in/",
     stateId: "STATE-PUNJAB",
     districtId: "DISTRICT-JALANDHAR",
-    usageNote: "A current, reusable official mark has not been verified.",
+    usageNote: "The supplied crest matches the mark shown by an official Thane Municipal Corporation service. Wider reuse permission requires review.",
     fallbackIcon: "building",
     fallbackLabel: "MC Jalandhar",
   },
