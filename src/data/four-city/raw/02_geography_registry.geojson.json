@@ -1160,6 +1160,354 @@
         "geocoding_precision": "approximate; synthetic displacement",
         "is_official_boundary": false
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-01",
+        "id": "LOC-KARNAL-01",
+        "name": "Model Town",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-01",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.993,
+          29.692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-02",
+        "id": "LOC-KARNAL-02",
+        "name": "Sector 6",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-02",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.97,
+          29.6725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-03",
+        "id": "LOC-KARNAL-03",
+        "name": "Sector 7",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-03",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9758,
+          29.6668
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-04",
+        "id": "LOC-KARNAL-04",
+        "name": "Sector 13",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-04",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.004,
+          29.701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-05",
+        "id": "LOC-KARNAL-05",
+        "name": "Sector 14",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-05",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.01,
+          29.694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-06",
+        "id": "LOC-KARNAL-06",
+        "name": "Old City",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-06",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.989,
+          29.683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-07",
+        "id": "LOC-KARNAL-07",
+        "name": "Kunjpura Road",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-07",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.019,
+          29.706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-08",
+        "id": "LOC-KARNAL-08",
+        "name": "Mughal Canal area",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-08",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.997,
+          29.676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-09",
+        "id": "LOC-KARNAL-09",
+        "name": "Nyaypuri",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-09",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.976,
+          29.688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-10",
+        "id": "LOC-KARNAL-10",
+        "name": "Chaman Garden",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-10",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.991,
+          29.661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-11",
+        "id": "LOC-KARNAL-11",
+        "name": "Civil Lines",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-11",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.999,
+          29.686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-KARNAL-GEO",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-12",
+        "id": "LOC-KARNAL-12",
+        "name": "NDRI surroundings",
+        "geometry_type": "Point",
+        "official_ward_id": "WARD-KARNAL-12",
+        "ward_boundary_version": null,
+        "municipal_zone_id": null,
+        "property_assessment_ward_id": null,
+        "geocoding_precision": "illustrative_locality_anchor",
+        "is_official_boundary": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9545,
+          29.7015
+        ]
+      }
     }
   ]
 }

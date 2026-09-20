@@ -15200,6 +15200,2438 @@
         "geometry_precision": "synthetic point near approximate locality anchor",
         "actual_asset_location": false
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-001",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-06",
+        "asset_id": "AST-KARNAL-001",
+        "asset_type": "DRAIN",
+        "asset_name": "Old City stormwater drainage asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-001"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-06"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 13.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.98855,
+          29.68345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-001",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-06",
+        "asset_id": "AST-KARNAL-002",
+        "asset_type": "DRAIN",
+        "asset_name": "Old City stormwater drainage asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-001"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-06"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 17.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.989,
+          29.683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-002",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-02",
+        "asset_id": "AST-KARNAL-003",
+        "asset_type": "WATER_PIPE",
+        "asset_name": "Sector 6 water supply asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-002"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-02"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 20.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.97045,
+          29.67205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-002",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-02",
+        "asset_id": "AST-KARNAL-004",
+        "asset_type": "WATER_PIPE",
+        "asset_name": "Sector 6 water supply asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-002"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-02"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 24.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9709,
+          29.6716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-003",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-01",
+        "asset_id": "AST-KARNAL-005",
+        "asset_type": "MRF",
+        "asset_name": "Model Town solid waste management asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-003"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-01"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 27.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9921,
+          29.6929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-003",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-01",
+        "asset_id": "AST-KARNAL-006",
+        "asset_type": "MRF",
+        "asset_name": "Model Town solid waste management asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-003"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-01"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 31.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99255,
+          29.69245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-004",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-07",
+        "asset_id": "AST-KARNAL-007",
+        "asset_type": "ROAD",
+        "asset_name": "Kunjpura Road urban mobility asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-004"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-07"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 34.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.019,
+          29.706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-004",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-07",
+        "asset_id": "AST-KARNAL-008",
+        "asset_type": "ROAD",
+        "asset_name": "Kunjpura Road urban mobility asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-004"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-07"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 38.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.01945,
+          29.70555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-005",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-05",
+        "asset_id": "AST-KARNAL-009",
+        "asset_type": "STREETLIGHT",
+        "asset_name": "Sector 14 public lighting asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-005"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-05"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 41.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0109,
+          29.6931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-005",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-05",
+        "asset_id": "AST-KARNAL-010",
+        "asset_type": "STREETLIGHT",
+        "asset_name": "Sector 14 public lighting asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-005"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-05"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 45.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0091,
+          29.6949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-006",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-08",
+        "asset_id": "AST-KARNAL-011",
+        "asset_type": "DRAIN",
+        "asset_name": "Mughal Canal area stormwater drainage asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-006"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-08"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 48.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99655,
+          29.67645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-006",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-08",
+        "asset_id": "AST-KARNAL-012",
+        "asset_type": "DRAIN",
+        "asset_name": "Mughal Canal area stormwater drainage asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-006"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-08"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 52.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.997,
+          29.676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-007",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-02",
+        "asset_id": "AST-KARNAL-013",
+        "asset_type": "WATER_PIPE",
+        "asset_name": "Sector 6 water supply asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-007"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-02"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 55.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.97045,
+          29.67205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-007",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-02",
+        "asset_id": "AST-KARNAL-014",
+        "asset_type": "WATER_PIPE",
+        "asset_name": "Sector 6 water supply asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-007"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-02"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 59.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9709,
+          29.6716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-008",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-07",
+        "asset_id": "AST-KARNAL-015",
+        "asset_type": "DRAIN",
+        "asset_name": "Kunjpura Road stormwater drainage asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-008"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-07"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 62.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0181,
+          29.7069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-008",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-07",
+        "asset_id": "AST-KARNAL-016",
+        "asset_type": "DRAIN",
+        "asset_name": "Kunjpura Road stormwater drainage asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-008"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-07"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 66.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.01855,
+          29.70645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-009",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-12",
+        "asset_id": "AST-KARNAL-017",
+        "asset_type": "MRF",
+        "asset_name": "NDRI surroundings solid waste management asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-009"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-12"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 69.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9545,
+          29.7015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-009",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-12",
+        "asset_id": "AST-KARNAL-018",
+        "asset_type": "MRF",
+        "asset_name": "NDRI surroundings solid waste management asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-009"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-12"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 73.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.95495,
+          29.70105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-010",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-05",
+        "asset_id": "AST-KARNAL-019",
+        "asset_type": "ROAD",
+        "asset_name": "Sector 14 urban mobility asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-010"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-05"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 76.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0109,
+          29.6931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-010",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-05",
+        "asset_id": "AST-KARNAL-020",
+        "asset_type": "ROAD",
+        "asset_name": "Sector 14 urban mobility asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-010"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-05"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 80.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0091,
+          29.6949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-011",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-10",
+        "asset_id": "AST-KARNAL-021",
+        "asset_type": "STREETLIGHT",
+        "asset_name": "Chaman Garden public lighting asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-011"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-10"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 83.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99055,
+          29.66145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-011",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-10",
+        "asset_id": "AST-KARNAL-022",
+        "asset_type": "STREETLIGHT",
+        "asset_name": "Chaman Garden public lighting asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-011"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-10"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 87.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.991,
+          29.661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-012",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-03",
+        "asset_id": "AST-KARNAL-023",
+        "asset_type": "SERVICE_CENTRE",
+        "asset_name": "Sector 7 digital municipal service asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-012"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-03"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 90.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.97625,
+          29.66635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-012",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-03",
+        "asset_id": "AST-KARNAL-024",
+        "asset_type": "SERVICE_CENTRE",
+        "asset_name": "Sector 7 digital municipal service asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-012"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-03"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 94.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9767,
+          29.6659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-013",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-08",
+        "asset_id": "AST-KARNAL-025",
+        "asset_type": "SEWER_PIPE",
+        "asset_name": "Mughal Canal area sewerage network asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-013"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-08"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 97.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9961,
+          29.6769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-013",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-08",
+        "asset_id": "AST-KARNAL-026",
+        "asset_type": "SEWER_PIPE",
+        "asset_name": "Mughal Canal area sewerage network asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-013"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-08"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 11.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99655,
+          29.67645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-014",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-01",
+        "asset_id": "AST-KARNAL-027",
+        "asset_type": "PUBLIC_TOILET",
+        "asset_name": "Model Town public sanitation asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-014"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-01"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 14.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.993,
+          29.692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-014",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-01",
+        "asset_id": "AST-KARNAL-028",
+        "asset_type": "PUBLIC_TOILET",
+        "asset_name": "Model Town public sanitation asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-014"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-01"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 18.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99345,
+          29.69155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-015",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-06",
+        "asset_id": "AST-KARNAL-029",
+        "asset_type": "WATER_PIPE",
+        "asset_name": "Old City water supply asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-015"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-06"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 21.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9899,
+          29.6821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-015",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-06",
+        "asset_id": "AST-KARNAL-030",
+        "asset_type": "WATER_PIPE",
+        "asset_name": "Old City water supply asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-015"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-06"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 25.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9881,
+          29.6839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-016",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-11",
+        "asset_id": "AST-KARNAL-031",
+        "asset_type": "DRAIN",
+        "asset_name": "Civil Lines stormwater drainage asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-016"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-11"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 28.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99855,
+          29.68645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-016",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-11",
+        "asset_id": "AST-KARNAL-032",
+        "asset_type": "DRAIN",
+        "asset_name": "Civil Lines stormwater drainage asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-016"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-11"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 32.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.999,
+          29.686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-017",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-04",
+        "asset_id": "AST-KARNAL-033",
+        "asset_type": "MRF",
+        "asset_name": "Sector 13 solid waste management asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-017"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-04"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 35.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.00445,
+          29.70055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-017",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-04",
+        "asset_id": "AST-KARNAL-034",
+        "asset_type": "MRF",
+        "asset_name": "Sector 13 solid waste management asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-017"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-04"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 39.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0049,
+          29.7001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-018",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-09",
+        "asset_id": "AST-KARNAL-035",
+        "asset_type": "ROAD",
+        "asset_name": "Nyaypuri urban mobility asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-018"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-09"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 42.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9751,
+          29.6889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-018",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-09",
+        "asset_id": "AST-KARNAL-036",
+        "asset_type": "ROAD",
+        "asset_name": "Nyaypuri urban mobility asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-018"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-09"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 46.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.97555,
+          29.68845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-019",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-02",
+        "asset_id": "AST-KARNAL-037",
+        "asset_type": "STREETLIGHT",
+        "asset_name": "Sector 6 public lighting asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-019"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-02"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 49.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.97,
+          29.6725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-019",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-02",
+        "asset_id": "AST-KARNAL-038",
+        "asset_type": "STREETLIGHT",
+        "asset_name": "Sector 6 public lighting asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-019"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-02"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 53.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.97045,
+          29.67205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-020",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-07",
+        "asset_id": "AST-KARNAL-039",
+        "asset_type": "SERVICE_CENTRE",
+        "asset_name": "Kunjpura Road digital municipal service asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-020"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-07"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 56.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0199,
+          29.7051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-020",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-07",
+        "asset_id": "AST-KARNAL-040",
+        "asset_type": "SERVICE_CENTRE",
+        "asset_name": "Kunjpura Road digital municipal service asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-020"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-07"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 60.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0181,
+          29.7069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-021",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-12",
+        "asset_id": "AST-KARNAL-041",
+        "asset_type": "SEWER_PIPE",
+        "asset_name": "NDRI surroundings sewerage network asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-021"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-12"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 63.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.95405,
+          29.70195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-021",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-12",
+        "asset_id": "AST-KARNAL-042",
+        "asset_type": "SEWER_PIPE",
+        "asset_name": "NDRI surroundings sewerage network asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-021"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-12"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 67.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9545,
+          29.7015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-022",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-05",
+        "asset_id": "AST-KARNAL-043",
+        "asset_type": "PUBLIC_TOILET",
+        "asset_name": "Sector 14 public sanitation asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-022"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-05"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 70.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.01045,
+          29.69355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-022",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-05",
+        "asset_id": "AST-KARNAL-044",
+        "asset_type": "PUBLIC_TOILET",
+        "asset_name": "Sector 14 public sanitation asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-022"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-05"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 74.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0109,
+          29.6931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-023",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-10",
+        "asset_id": "AST-KARNAL-045",
+        "asset_type": "WATER_PIPE",
+        "asset_name": "Chaman Garden water supply asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-023"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-10"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 77.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9901,
+          29.6619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-023",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-10",
+        "asset_id": "AST-KARNAL-046",
+        "asset_type": "WATER_PIPE",
+        "asset_name": "Chaman Garden water supply asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-023"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-10"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 81.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99055,
+          29.66145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-024",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-03",
+        "asset_id": "AST-KARNAL-047",
+        "asset_type": "DRAIN",
+        "asset_name": "Sector 7 stormwater drainage asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-024"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-03"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 84.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9758,
+          29.6668
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-024",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-03",
+        "asset_id": "AST-KARNAL-048",
+        "asset_type": "DRAIN",
+        "asset_name": "Sector 7 stormwater drainage asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-024"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-03"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 88.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.97625,
+          29.66635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-025",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-08",
+        "asset_id": "AST-KARNAL-049",
+        "asset_type": "MRF",
+        "asset_name": "Mughal Canal area solid waste management asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-025"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-08"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 91.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9979,
+          29.6751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-025",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-08",
+        "asset_id": "AST-KARNAL-050",
+        "asset_type": "MRF",
+        "asset_name": "Mughal Canal area solid waste management asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-025"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-08"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 95.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9961,
+          29.6769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-026",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-01",
+        "asset_id": "AST-KARNAL-051",
+        "asset_type": "ROAD",
+        "asset_name": "Model Town urban mobility asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-026"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-01"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 98.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99255,
+          29.69245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-026",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-01",
+        "asset_id": "AST-KARNAL-052",
+        "asset_type": "ROAD",
+        "asset_name": "Model Town urban mobility asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-026"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-01"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 12.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.993,
+          29.692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-027",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-06",
+        "asset_id": "AST-KARNAL-053",
+        "asset_type": "STREETLIGHT",
+        "asset_name": "Old City public lighting asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-027"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-06"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 15.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.98945,
+          29.68255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-027",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-06",
+        "asset_id": "AST-KARNAL-054",
+        "asset_type": "STREETLIGHT",
+        "asset_name": "Old City public lighting asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-027"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-06"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 19.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9899,
+          29.6821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-028",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-11",
+        "asset_id": "AST-KARNAL-055",
+        "asset_type": "SERVICE_CENTRE",
+        "asset_name": "Civil Lines digital municipal service asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-028"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-11"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 22.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9981,
+          29.6869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-028",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-11",
+        "asset_id": "AST-KARNAL-056",
+        "asset_type": "SERVICE_CENTRE",
+        "asset_name": "Civil Lines digital municipal service asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-028"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-11"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 26.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99855,
+          29.68645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-029",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-04",
+        "asset_id": "AST-KARNAL-057",
+        "asset_type": "SEWER_PIPE",
+        "asset_name": "Sector 13 sewerage network asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-029"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-04"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 29.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.004,
+          29.701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-029",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-04",
+        "asset_id": "AST-KARNAL-058",
+        "asset_type": "SEWER_PIPE",
+        "asset_name": "Sector 13 sewerage network asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-029"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-04"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "commissioned",
+        "condition": "good",
+        "capacity_value": 33.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": 78,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.00445,
+          29.70055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-030",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-09",
+        "asset_id": "AST-KARNAL-059",
+        "asset_type": "PUBLIC_TOILET",
+        "asset_name": "Nyaypuri public sanitation asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-030"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-09"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 36.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9769,
+          29.6871
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-030",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-09",
+        "asset_id": "AST-KARNAL-060",
+        "asset_type": "PUBLIC_TOILET",
+        "asset_name": "Nyaypuri public sanitation asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-030"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-09"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 40.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9751,
+          29.6889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-031",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-02",
+        "asset_id": "AST-KARNAL-061",
+        "asset_type": "WATER_PIPE",
+        "asset_name": "Sector 6 water supply asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-031"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-02"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 43.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.96955,
+          29.67295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-031",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-02",
+        "asset_id": "AST-KARNAL-062",
+        "asset_type": "WATER_PIPE",
+        "asset_name": "Sector 6 water supply asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-031"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-02"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 47.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.97,
+          29.6725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-032",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-07",
+        "asset_id": "AST-KARNAL-063",
+        "asset_type": "DRAIN",
+        "asset_name": "Kunjpura Road stormwater drainage asset 1",
+        "project_ids": [
+          "PRJ-KARNAL-032"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-07"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 50.5,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.01945,
+          29.70555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city_id": "CITY-KARNAL",
+        "record_type": "SYNTHETIC",
+        "verification_status": "prototype_only",
+        "source_record_id": "SRC-PRJ-KARNAL-032",
+        "source_url": null,
+        "observation_date": "2026-09-19",
+        "data_classification": "PUBLIC_SYNTHETIC",
+        "locality_id": "LOC-KARNAL-07",
+        "asset_id": "AST-KARNAL-064",
+        "asset_type": "DRAIN",
+        "asset_name": "Kunjpura Road stormwater drainage asset 2",
+        "project_ids": [
+          "PRJ-KARNAL-032"
+        ],
+        "service_area_ids": [
+          "AREA-KARNAL-07"
+        ],
+        "owner_agency": "Municipal Corporation Karnal",
+        "operator_agency": "Municipal Corporation Karnal",
+        "commissioning_status": "under implementation",
+        "condition": "fair",
+        "capacity_value": 54.0,
+        "capacity_unit": "prototype units",
+        "utilisation_pct": null,
+        "geometry_precision": "illustrative",
+        "actual_asset_location": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0199,
+          29.7051
+        ]
+      }
     }
   ]
 }

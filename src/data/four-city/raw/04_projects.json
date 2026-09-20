@@ -2878,5 +2878,1069 @@
       "FIN-GUWAHATI-020"
     ],
     "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-001",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "project_id": "PRJ-KARNAL-001",
+    "mission": "AMRUT_2",
+    "project_name": "Old City drainage improvement",
+    "project_type": "Stormwater drainage",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "delayed",
+    "physical_progress_pct": 58,
+    "financial_progress_pct": 58.9,
+    "estimated_cost_inr_lakh": 840,
+    "awarded_cost_inr_lakh": 806.4,
+    "start_date": "2023-02-01",
+    "scheduled_completion_date": "2026-02-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-001",
+      "AST-KARNAL-002"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-001"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-001",
+      "FIN-KARNAL-033"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-002",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "project_id": "PRJ-KARNAL-002",
+    "mission": "AMRUT_2",
+    "project_name": "Sector 6–7 water distribution improvement",
+    "project_type": "Water supply",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 52,
+    "financial_progress_pct": 50.0,
+    "estimated_cost_inr_lakh": 620,
+    "awarded_cost_inr_lakh": 595.2,
+    "start_date": "2024-03-01",
+    "scheduled_completion_date": "2025-03-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-003",
+      "AST-KARNAL-004"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-002"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-002",
+      "FIN-KARNAL-034"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-003",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "project_id": "PRJ-KARNAL-003",
+    "mission": "SBM_U_2",
+    "project_name": "Model Town waste collection improvement",
+    "project_type": "Solid waste management",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 64,
+    "financial_progress_pct": 60.0,
+    "estimated_cost_inr_lakh": 275,
+    "awarded_cost_inr_lakh": 264.0,
+    "start_date": "2022-04-01",
+    "scheduled_completion_date": "2026-04-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-005",
+      "AST-KARNAL-006"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-003"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-003",
+      "FIN-KARNAL-035"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-004",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "project_id": "PRJ-KARNAL-004",
+    "mission": "URBAN_TRANSPORT",
+    "project_name": "Kunjpura Road pedestrian safety improvements",
+    "project_type": "Urban mobility",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "delayed",
+    "physical_progress_pct": 41,
+    "financial_progress_pct": 44.6,
+    "estimated_cost_inr_lakh": 460,
+    "awarded_cost_inr_lakh": 441.6,
+    "start_date": "2023-05-01",
+    "scheduled_completion_date": "2025-05-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-007",
+      "AST-KARNAL-008"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-004"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-004",
+      "FIN-KARNAL-036"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-005",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "project_id": "PRJ-KARNAL-005",
+    "mission": "SMART_CITIES",
+    "project_name": "Sector 14 streetlight modernisation",
+    "project_type": "Public lighting",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "completed",
+    "physical_progress_pct": 100,
+    "financial_progress_pct": 96.2,
+    "estimated_cost_inr_lakh": 185,
+    "awarded_cost_inr_lakh": 177.6,
+    "start_date": "2024-06-01",
+    "scheduled_completion_date": "2026-06-28",
+    "actual_completion_date": "2025-06-15",
+    "asset_ids": [
+      "AST-KARNAL-009",
+      "AST-KARNAL-010"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-005"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-005",
+      "FIN-KARNAL-037"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-006",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "project_id": "PRJ-KARNAL-006",
+    "mission": "AMRUT_2",
+    "project_name": "Mughal Canal drainage rehabilitation",
+    "project_type": "Stormwater drainage",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 47,
+    "financial_progress_pct": 44.9,
+    "estimated_cost_inr_lakh": 535,
+    "awarded_cost_inr_lakh": 513.6,
+    "start_date": "2022-07-01",
+    "scheduled_completion_date": "2025-07-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-011",
+      "AST-KARNAL-012"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-006"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-006",
+      "FIN-KARNAL-038"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-007",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "project_id": "PRJ-KARNAL-007",
+    "mission": "AMRUT_2",
+    "project_name": "Sector 6 neighbourhood water pressure improvement",
+    "project_type": "Water supply",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 84,
+    "financial_progress_pct": 72.2,
+    "estimated_cost_inr_lakh": 409,
+    "awarded_cost_inr_lakh": 392.64,
+    "start_date": "2023-08-01",
+    "scheduled_completion_date": "2026-08-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-013",
+      "AST-KARNAL-014"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-007"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-007",
+      "FIN-KARNAL-039"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-008",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "project_id": "PRJ-KARNAL-008",
+    "mission": "AMRUT_2",
+    "project_name": "Kunjpura Road secondary drain rehabilitation",
+    "project_type": "Stormwater drainage",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 91,
+    "financial_progress_pct": 78.3,
+    "estimated_cost_inr_lakh": 446,
+    "awarded_cost_inr_lakh": 428.16,
+    "start_date": "2024-09-01",
+    "scheduled_completion_date": "2025-09-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-015",
+      "AST-KARNAL-016"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-008"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-008",
+      "FIN-KARNAL-040"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-009",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "project_id": "PRJ-KARNAL-009",
+    "mission": "SBM_U_2",
+    "project_name": "NDRI surroundings door-to-door waste route improvement",
+    "project_type": "Solid waste management",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "completed",
+    "physical_progress_pct": 100,
+    "financial_progress_pct": 94.0,
+    "estimated_cost_inr_lakh": 483,
+    "awarded_cost_inr_lakh": 463.68,
+    "start_date": "2022-01-01",
+    "scheduled_completion_date": "2026-01-28",
+    "actual_completion_date": "2025-01-15",
+    "asset_ids": [
+      "AST-KARNAL-017",
+      "AST-KARNAL-018"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-009"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-009",
+      "FIN-KARNAL-041"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-010",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "project_id": "PRJ-KARNAL-010",
+    "mission": "URBAN_TRANSPORT",
+    "project_name": "Sector 14 junction pedestrian safety works",
+    "project_type": "Urban mobility",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "delayed",
+    "physical_progress_pct": 47,
+    "financial_progress_pct": 40.4,
+    "estimated_cost_inr_lakh": 520,
+    "awarded_cost_inr_lakh": 499.2,
+    "start_date": "2023-02-01",
+    "scheduled_completion_date": "2025-02-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-019",
+      "AST-KARNAL-020"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-010"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-010",
+      "FIN-KARNAL-042"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-011",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "project_id": "PRJ-KARNAL-011",
+    "mission": "SMART_CITIES",
+    "project_name": "Chaman Garden led streetlight renewal",
+    "project_type": "Public lighting",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 54,
+    "financial_progress_pct": 46.4,
+    "estimated_cost_inr_lakh": 557,
+    "awarded_cost_inr_lakh": 534.72,
+    "start_date": "2024-03-01",
+    "scheduled_completion_date": "2026-03-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-021",
+      "AST-KARNAL-022"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-011"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-011",
+      "FIN-KARNAL-043"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-012",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "project_id": "PRJ-KARNAL-012",
+    "mission": "MUNICIPAL",
+    "project_name": "Sector 7 property service linkage improvement",
+    "project_type": "Digital municipal service",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 61,
+    "financial_progress_pct": 52.5,
+    "estimated_cost_inr_lakh": 594,
+    "awarded_cost_inr_lakh": 570.24,
+    "start_date": "2022-04-01",
+    "scheduled_completion_date": "2025-04-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-023",
+      "AST-KARNAL-024"
+    ],
+    "housing_ids": [
+      "HOU-KARNAL-012"
+    ],
+    "financial_record_ids": [
+      "FIN-KARNAL-012",
+      "FIN-KARNAL-044"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-013",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "project_id": "PRJ-KARNAL-013",
+    "mission": "AMRUT_2",
+    "project_name": "Mughal Canal area sewer network improvement",
+    "project_type": "Sewerage network",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "completed",
+    "physical_progress_pct": 100,
+    "financial_progress_pct": 94.0,
+    "estimated_cost_inr_lakh": 631,
+    "awarded_cost_inr_lakh": 605.76,
+    "start_date": "2023-05-01",
+    "scheduled_completion_date": "2026-05-28",
+    "actual_completion_date": "2025-05-15",
+    "asset_ids": [
+      "AST-KARNAL-025",
+      "AST-KARNAL-026"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-013",
+      "FIN-KARNAL-045"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-014",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "project_id": "PRJ-KARNAL-014",
+    "mission": "SBM_U_2",
+    "project_name": "Model Town public sanitation renewal",
+    "project_type": "Public sanitation",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "delayed",
+    "physical_progress_pct": 75,
+    "financial_progress_pct": 64.5,
+    "estimated_cost_inr_lakh": 158,
+    "awarded_cost_inr_lakh": 151.68,
+    "start_date": "2024-06-01",
+    "scheduled_completion_date": "2025-06-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-027",
+      "AST-KARNAL-028"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-014",
+      "FIN-KARNAL-046"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-015",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "project_id": "PRJ-KARNAL-015",
+    "mission": "AMRUT_2",
+    "project_name": "Old City neighbourhood water pressure improvement",
+    "project_type": "Water supply",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 82,
+    "financial_progress_pct": 70.5,
+    "estimated_cost_inr_lakh": 195,
+    "awarded_cost_inr_lakh": 187.2,
+    "start_date": "2022-07-01",
+    "scheduled_completion_date": "2026-07-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-029",
+      "AST-KARNAL-030"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-015",
+      "FIN-KARNAL-047"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-016",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "project_id": "PRJ-KARNAL-016",
+    "mission": "AMRUT_2",
+    "project_name": "Civil Lines secondary drain rehabilitation",
+    "project_type": "Stormwater drainage",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 89,
+    "financial_progress_pct": 76.5,
+    "estimated_cost_inr_lakh": 232,
+    "awarded_cost_inr_lakh": 222.72,
+    "start_date": "2023-08-01",
+    "scheduled_completion_date": "2025-08-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-031",
+      "AST-KARNAL-032"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-016",
+      "FIN-KARNAL-048"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-017",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "project_id": "PRJ-KARNAL-017",
+    "mission": "SBM_U_2",
+    "project_name": "Sector 13 door-to-door waste route improvement",
+    "project_type": "Solid waste management",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "completed",
+    "physical_progress_pct": 100,
+    "financial_progress_pct": 94.0,
+    "estimated_cost_inr_lakh": 269,
+    "awarded_cost_inr_lakh": 258.24,
+    "start_date": "2024-09-01",
+    "scheduled_completion_date": "2026-09-28",
+    "actual_completion_date": "2025-09-15",
+    "asset_ids": [
+      "AST-KARNAL-033",
+      "AST-KARNAL-034"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-017"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-018",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "project_id": "PRJ-KARNAL-018",
+    "mission": "URBAN_TRANSPORT",
+    "project_name": "Nyaypuri junction pedestrian safety works",
+    "project_type": "Urban mobility",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "delayed",
+    "physical_progress_pct": 45,
+    "financial_progress_pct": 38.7,
+    "estimated_cost_inr_lakh": 306,
+    "awarded_cost_inr_lakh": 293.76,
+    "start_date": "2022-01-01",
+    "scheduled_completion_date": "2025-01-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-035",
+      "AST-KARNAL-036"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-018"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-019",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "project_id": "PRJ-KARNAL-019",
+    "mission": "SMART_CITIES",
+    "project_name": "Sector 6 led streetlight renewal",
+    "project_type": "Public lighting",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 52,
+    "financial_progress_pct": 44.7,
+    "estimated_cost_inr_lakh": 343,
+    "awarded_cost_inr_lakh": 329.28,
+    "start_date": "2023-02-01",
+    "scheduled_completion_date": "2026-02-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-037",
+      "AST-KARNAL-038"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-019"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-020",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "project_id": "PRJ-KARNAL-020",
+    "mission": "MUNICIPAL",
+    "project_name": "Kunjpura Road property service linkage improvement",
+    "project_type": "Digital municipal service",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 59,
+    "financial_progress_pct": 50.7,
+    "estimated_cost_inr_lakh": 380,
+    "awarded_cost_inr_lakh": 364.8,
+    "start_date": "2024-03-01",
+    "scheduled_completion_date": "2025-03-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-039",
+      "AST-KARNAL-040"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-020"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-021",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-12",
+    "project_id": "PRJ-KARNAL-021",
+    "mission": "AMRUT_2",
+    "project_name": "NDRI surroundings sewer network improvement",
+    "project_type": "Sewerage network",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "completed",
+    "physical_progress_pct": 100,
+    "financial_progress_pct": 94.0,
+    "estimated_cost_inr_lakh": 417,
+    "awarded_cost_inr_lakh": 400.32,
+    "start_date": "2022-04-01",
+    "scheduled_completion_date": "2026-04-28",
+    "actual_completion_date": "2025-04-15",
+    "asset_ids": [
+      "AST-KARNAL-041",
+      "AST-KARNAL-042"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-021"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-022",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-05",
+    "project_id": "PRJ-KARNAL-022",
+    "mission": "SBM_U_2",
+    "project_name": "Sector 14 public sanitation renewal",
+    "project_type": "Public sanitation",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "delayed",
+    "physical_progress_pct": 73,
+    "financial_progress_pct": 62.8,
+    "estimated_cost_inr_lakh": 454,
+    "awarded_cost_inr_lakh": 435.84,
+    "start_date": "2023-05-01",
+    "scheduled_completion_date": "2025-05-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-043",
+      "AST-KARNAL-044"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-022"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-023",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-10",
+    "project_id": "PRJ-KARNAL-023",
+    "mission": "AMRUT_2",
+    "project_name": "Chaman Garden neighbourhood water pressure improvement",
+    "project_type": "Water supply",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 80,
+    "financial_progress_pct": 68.8,
+    "estimated_cost_inr_lakh": 491,
+    "awarded_cost_inr_lakh": 471.36,
+    "start_date": "2024-06-01",
+    "scheduled_completion_date": "2026-06-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-045",
+      "AST-KARNAL-046"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-023"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-024",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-03",
+    "project_id": "PRJ-KARNAL-024",
+    "mission": "AMRUT_2",
+    "project_name": "Sector 7 secondary drain rehabilitation",
+    "project_type": "Stormwater drainage",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 87,
+    "financial_progress_pct": 74.8,
+    "estimated_cost_inr_lakh": 528,
+    "awarded_cost_inr_lakh": 506.88,
+    "start_date": "2022-07-01",
+    "scheduled_completion_date": "2025-07-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-047",
+      "AST-KARNAL-048"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-024"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-025",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-08",
+    "project_id": "PRJ-KARNAL-025",
+    "mission": "SBM_U_2",
+    "project_name": "Mughal Canal area door-to-door waste route improvement",
+    "project_type": "Solid waste management",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "completed",
+    "physical_progress_pct": 100,
+    "financial_progress_pct": 94.0,
+    "estimated_cost_inr_lakh": 565,
+    "awarded_cost_inr_lakh": 542.4,
+    "start_date": "2023-08-01",
+    "scheduled_completion_date": "2026-08-28",
+    "actual_completion_date": "2025-08-15",
+    "asset_ids": [
+      "AST-KARNAL-049",
+      "AST-KARNAL-050"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-025"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-026",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-01",
+    "project_id": "PRJ-KARNAL-026",
+    "mission": "URBAN_TRANSPORT",
+    "project_name": "Model Town junction pedestrian safety works",
+    "project_type": "Urban mobility",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "delayed",
+    "physical_progress_pct": 43,
+    "financial_progress_pct": 37.0,
+    "estimated_cost_inr_lakh": 602,
+    "awarded_cost_inr_lakh": 577.92,
+    "start_date": "2024-09-01",
+    "scheduled_completion_date": "2025-09-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-051",
+      "AST-KARNAL-052"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-026"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-027",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-06",
+    "project_id": "PRJ-KARNAL-027",
+    "mission": "SMART_CITIES",
+    "project_name": "Old City led streetlight renewal",
+    "project_type": "Public lighting",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 50,
+    "financial_progress_pct": 43.0,
+    "estimated_cost_inr_lakh": 639,
+    "awarded_cost_inr_lakh": 613.44,
+    "start_date": "2022-01-01",
+    "scheduled_completion_date": "2026-01-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-053",
+      "AST-KARNAL-054"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-027"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-028",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-11",
+    "project_id": "PRJ-KARNAL-028",
+    "mission": "MUNICIPAL",
+    "project_name": "Civil Lines property service linkage improvement",
+    "project_type": "Digital municipal service",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 57,
+    "financial_progress_pct": 49.0,
+    "estimated_cost_inr_lakh": 166,
+    "awarded_cost_inr_lakh": 159.36,
+    "start_date": "2023-02-01",
+    "scheduled_completion_date": "2025-02-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-055",
+      "AST-KARNAL-056"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-028"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-029",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-04",
+    "project_id": "PRJ-KARNAL-029",
+    "mission": "AMRUT_2",
+    "project_name": "Sector 13 sewer network improvement",
+    "project_type": "Sewerage network",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "completed",
+    "physical_progress_pct": 100,
+    "financial_progress_pct": 94.0,
+    "estimated_cost_inr_lakh": 203,
+    "awarded_cost_inr_lakh": 194.88,
+    "start_date": "2024-03-01",
+    "scheduled_completion_date": "2026-03-28",
+    "actual_completion_date": "2025-03-15",
+    "asset_ids": [
+      "AST-KARNAL-057",
+      "AST-KARNAL-058"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-029"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-030",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-09",
+    "project_id": "PRJ-KARNAL-030",
+    "mission": "SBM_U_2",
+    "project_name": "Nyaypuri public sanitation renewal",
+    "project_type": "Public sanitation",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "delayed",
+    "physical_progress_pct": 71,
+    "financial_progress_pct": 61.1,
+    "estimated_cost_inr_lakh": 240,
+    "awarded_cost_inr_lakh": 230.4,
+    "start_date": "2022-04-01",
+    "scheduled_completion_date": "2025-04-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-059",
+      "AST-KARNAL-060"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-030"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-031",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-02",
+    "project_id": "PRJ-KARNAL-031",
+    "mission": "AMRUT_2",
+    "project_name": "Sector 6 neighbourhood water pressure improvement",
+    "project_type": "Water supply",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 78,
+    "financial_progress_pct": 67.1,
+    "estimated_cost_inr_lakh": 277,
+    "awarded_cost_inr_lakh": 265.92,
+    "start_date": "2023-05-01",
+    "scheduled_completion_date": "2026-05-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-061",
+      "AST-KARNAL-062"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-031"
+    ],
+    "official_project_id": null
+  },
+  {
+    "city_id": "CITY-KARNAL",
+    "record_type": "SYNTHETIC",
+    "verification_status": "prototype_only",
+    "source_record_id": "SRC-PRJ-KARNAL-032",
+    "source_url": null,
+    "observation_date": "2026-09-19",
+    "data_classification": "PUBLIC_SYNTHETIC",
+    "locality_id": "LOC-KARNAL-07",
+    "project_id": "PRJ-KARNAL-032",
+    "mission": "AMRUT_2",
+    "project_name": "Kunjpura Road secondary drain rehabilitation",
+    "project_type": "Stormwater drainage",
+    "implementing_agency": "Municipal Corporation Karnal",
+    "project_status": "in_progress",
+    "physical_progress_pct": 85,
+    "financial_progress_pct": 73.1,
+    "estimated_cost_inr_lakh": 314,
+    "awarded_cost_inr_lakh": 301.44,
+    "start_date": "2024-06-01",
+    "scheduled_completion_date": "2025-06-28",
+    "actual_completion_date": null,
+    "asset_ids": [
+      "AST-KARNAL-063",
+      "AST-KARNAL-064"
+    ],
+    "housing_ids": [],
+    "financial_record_ids": [
+      "FIN-KARNAL-032"
+    ],
+    "official_project_id": null
   }
 ]
