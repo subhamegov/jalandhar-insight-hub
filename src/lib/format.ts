@@ -1,8 +1,8 @@
-export const NA = "Data not available";
+export const NA = "Not available";
 
 /** Standard wording for empty and weak states. */
 export const EMPTY = {
-  unavailable: "Data not available",
+  unavailable: "Not available",
   notVerified: "Not independently verified",
   stale: "Source requires refresh",
   noProjects: "No projects match these filters",

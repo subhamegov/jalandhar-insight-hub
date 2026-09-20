@@ -135,7 +135,7 @@ function SignalsIndex() {
           <select aria-label="Filter signals by pattern"
             value={pattern}
             onChange={(e) => setPattern(e.target.value)}
-            className="rounded-sm border border-border bg-background px-2 py-1.5 text-sm"
+            className="w-full min-w-0 max-w-full rounded-sm border border-border bg-background px-2 py-1.5 text-sm sm:w-auto sm:max-w-xs"
           >
             <option value="all">All conditions</option>
             {data.patternCounts.map((p) => (

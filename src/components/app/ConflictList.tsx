@@ -26,7 +26,7 @@ export function ConflictList({
       {conflicts.map((c) => (
         <li key={c.conflict_id} className="rounded-sm border border-border p-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <p className="text-sm font-medium">
+            <p className="min-w-0 text-sm font-medium [overflow-wrap:anywhere]">
               {showProject ? (
                 <span className="text-muted-foreground">{c.project_name}: </span>
               ) : null}

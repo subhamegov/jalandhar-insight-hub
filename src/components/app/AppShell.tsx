@@ -245,13 +245,27 @@ export function AppShell({ children }: { children: ReactNode }) {
 }
 
 function SyntheticNotice() {
-  const { dataset } = useCity();
+  const { dataset, city, portfolio } = useCity();
+  const location = useRouterState({ select: (s) => s.location });
+  const currentSearch = location.search as Record<string, unknown>;
+  const queryString = new URLSearchParams(
+    Object.entries(currentSearch ?? {})
+      .filter(([, v]) => typeof v === "string")
+      .map(([k, v]) => [k, v as string]),
+  ).toString();
+  const from = queryString ? `${location.pathname}?${queryString}` : location.pathname;
+  const provenanceSearch: Record<string, string> = { from };
+  if (!portfolio) provenanceSearch["city"] = city.city_id;
   if (!dataset.synthetic || dataset.projects.length === 0) return null;
   return (
     <p className="mb-4 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-sm border border-border bg-muted/60 px-3 py-2 text-xs text-muted-foreground">
       <span className="font-medium text-foreground">Prototype data</span>
       <span>Synthetic observations · Not official statistics</span>
-      <Link to="/data-quality" className="font-medium text-primary underline-offset-2 hover:underline">
+      <Link
+        to="/data-quality"
+        search={provenanceSearch as never}
+        className="font-medium text-primary underline-offset-2 hover:underline"
+      >
         View data provenance
       </Link>
     </p>

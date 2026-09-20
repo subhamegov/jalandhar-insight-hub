@@ -1,6 +1,7 @@
 import { lazy, useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BarRow, MetricCard, PageHeader, Panel } from "@/components/app/Primitives";
+import { BreakdownList } from "@/components/app/BreakdownList";
 import { StatusBadge } from "@/components/app/StatusBadge";
 import { AttentionBadge } from "@/components/app/AttentionBadge";
 import { FreshnessBadge } from "@/components/app/FreshnessBadge";
@@ -511,13 +512,13 @@ function Overview() {
         </h2>
         <div className="grid gap-4 xl:grid-cols-3">
           <Panel title="Investment by sector" description="Sanctioned cost, INR crore">
-            <Bars rows={sectorInvestment} />
+            <Bars rows={sectorInvestment} expandLabel="View all sectors" />
           </Panel>
           <Panel title="Investment by status" description="Sanctioned cost, INR crore">
-            <Bars rows={statusInvestment} />
+            <Bars rows={statusInvestment} expandLabel="View all statuses" />
           </Panel>
           <Panel title="Investment by agency" description="Implementing agency, INR crore">
-            <Bars rows={agencyInvestment} />
+            <Bars rows={agencyInvestment} expandLabel="View all agencies" />
           </Panel>
         </div>
         <p className="mt-2 text-xs text-muted-foreground">
@@ -648,27 +649,17 @@ function groupSum(
     .sort((a, b) => b[1] - a[1] || b[2] - a[2]);
 }
 
-function Bars({ rows }: { rows: [string, number, number][] }) {
-  const max = Math.max(...rows.map((r) => r[1]), 1);
-  if (!rows.length) return <p className="text-sm text-muted-foreground">{EMPTY.noProjects}</p>;
+function Bars({ rows, expandLabel }: { rows: [string, number, number][]; expandLabel: string }) {
   return (
-    <div>
-      {rows.map(([label, value, n]) => (
-        <BarRow
-          key={label}
-          label={
-            <span className="truncate" title={label}>
-              {label}{" "}
-              <span className="text-muted-foreground">
-                ({n} {n === 1 ? "project" : "projects"})
-              </span>
-            </span>
-          }
-          value={value}
-          max={max}
-          valueLabel={value > 0 ? crore(value) : EMPTY.unavailable}
-        />
-      ))}
-    </div>
+    <BreakdownList
+      expandLabel={expandLabel}
+      emptyNote={EMPTY.noProjects}
+      rows={rows.map(([label, value, n]) => ({
+        key: label,
+        label,
+        count: n,
+        value: value > 0 ? value : null,
+      }))}
+    />
   );
 }

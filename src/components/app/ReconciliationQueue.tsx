@@ -95,8 +95,8 @@ export function ReconciliationQueue() {
                   </button>
                 </div>
               </div>
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse text-sm">
+              <div className="w-full min-w-0 max-w-full overflow-x-auto">
+                <table className="w-full min-w-[40rem] border-collapse text-sm">
                   <thead>
                     <tr className="bg-muted/30">
                       {[

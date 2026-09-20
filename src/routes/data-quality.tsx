@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MetricCard, PageHeader, Panel } from "@/components/app/Primitives";
+import { ReturnLink } from "@/components/app/ReturnLink";
+import { InfoTip } from "@/components/app/InfoTip";
 import { SourceBadge } from "@/components/app/SourceBadge";
 import { FreshnessBadge } from "@/components/app/FreshnessBadge";
 import { ConflictList } from "@/components/app/ConflictList";
@@ -114,11 +116,157 @@ function DataQualityPage() {
     downloadCsv("jalandhar-data-conflicts", csv);
   };
 
+  const groups: Array<{
+    id: string;
+    title: string;
+    checks: Array<{
+      label: string;
+      value: number;
+      tone: "warning" | "critical";
+      info: string;
+      to: string;
+      action: string;
+    }>;
+  }> = [
+    {
+      id: "completeness",
+      title: "Completeness",
+      checks: [
+        {
+          label: "Projects without known cost",
+          value: noCost.length,
+          tone: "warning",
+          info: "Projects where neither a sanctioned nor a contracted INR value is recorded in the available data. Missing, not zero.",
+          to: "/projects",
+          action: "View affected projects",
+        },
+        {
+          label: "Projects without contractor",
+          value: noContractor.length,
+          tone: "warning",
+          info: "Projects where the implementation or contracting party is not recorded in the available data.",
+          to: "/projects",
+          action: "View affected projects",
+        },
+        {
+          label: "Projects without an implementing agency",
+          value: noAgency.length,
+          tone: "warning",
+          info: "No accountable body is recorded against the project.",
+          to: "/projects",
+          action: "View affected projects",
+        },
+        {
+          label: "Assets without owning agency",
+          value: assetsNoOwner.length,
+          tone: "warning",
+          info: "Asset records with no owning body recorded. Ownership is unknown, not absent.",
+          to: "/assets",
+          action: "View affected assets",
+        },
+        {
+          label: "Projects without current status",
+          value: noStatus.length,
+          tone: "warning",
+          info: "Status is recorded as unknown in the source record.",
+          to: "/projects",
+          action: "View affected projects",
+        },
+      ],
+    },
+    {
+      id: "freshness",
+      title: "Freshness",
+      checks: [
+        {
+          label: "Not verified in 180 days",
+          value: notVerified180.length,
+          tone: "critical",
+          info: "Counts projects whose last verification date is older than 180 days, or has no date at all. This measures the age of the check, not whether a source exists. Evidence coverage measures whether a source is attached at all, so the two figures can differ.",
+          to: "/projects",
+          action: "View affected projects",
+        },
+        {
+          label: "Historical-only evidence",
+          value: historicalOnly.length,
+          tone: "warning",
+          info: "The only attached source is historical. No current official source is recorded.",
+          to: "/evidence",
+          action: "View evidence records",
+        },
+      ],
+    },
+    {
+      id: "consistency",
+      title: "Consistency",
+      checks: [
+        {
+          label: "Conflicting costs",
+          value: costConflicts.length,
+          tone: "critical",
+          info: "More than one sanctioned or contract value is recorded for the same project.",
+          to: "/projects",
+          action: "View affected projects",
+        },
+        {
+          label: "Conflicting deadlines",
+          value: deadlineConflicts.length,
+          tone: "critical",
+          info: "More than one completion date is reported for the same project.",
+          to: "/projects",
+          action: "View affected projects",
+        },
+        {
+          label: "Completed without operational confirmation",
+          value: completedNotOperational.length,
+          tone: "critical",
+          info: "Construction is reported complete but no record confirms the service is operating.",
+          to: "/projects",
+          action: "View affected projects",
+        },
+      ],
+    },
+    {
+      id: "geographic",
+      title: "Geographic quality",
+      checks: [
+        {
+          label: "Projects without coordinates",
+          value: noCoords.length,
+          tone: "warning",
+          info: "No coordinate pair is recorded, so the project cannot be placed on the map.",
+          to: "/map",
+          action: "Open the city map",
+        },
+      ],
+    },
+    {
+      id: "reconciliation",
+      title: "Reconciliation",
+      checks: [
+        {
+          label: "Projects requiring reconciliation",
+          value: needsReconciliation.length,
+          tone: "critical",
+          info: "Scope may overlap another record. The overlap needs confirming before either record is used.",
+          to: "/projects",
+          action: "View affected projects",
+        },
+      ],
+    },
+  ];
+
+  const flagged = groups.reduce(
+    (total, g) => total + g.checks.filter((c) => c.value > 0).length,
+    0,
+  );
+
   return (
     <>
+      <ReturnLink fallback="/evidence" />
       <PageHeader
         title="Data quality and reconciliation"
-        subtitle="Missing, ageing, or conflicting government records."
+        subtitle="Check completeness, freshness and consistency of available records."
         actions={
           <button
             type="button"
@@ -131,78 +279,50 @@ function DataQualityPage() {
       />
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <MetricCard
-          label="Projects requiring reconciliation"
-          value={needsReconciliation.length}
-          tone="critical"
-          hint="Scope may overlap another record"
-        />
-        <MetricCard
-          label="Projects without known cost"
-          value={noCost.length}
-          tone="warning"
-          hint="No INR value published"
-        />
-        <MetricCard
-          label="Projects without contractor"
-          value={noContractor.length}
-          tone="warning"
-          hint="Delivery party not published"
-        />
-        <MetricCard
-          label="Historical-only evidence"
-          value={historicalOnly.length}
-          tone="warning"
-          hint="No current official source"
-        />
-        <MetricCard
-          label="Projects without coordinates"
-          value={noCoords.length}
-          tone="warning"
-          hint="Cannot be placed on the map"
-        />
-        <MetricCard
-          label="Projects without current status"
-          value={noStatus.length}
-          tone="warning"
-          hint="Status recorded as unknown"
-        />
-        <MetricCard
-          label="Not verified in 180 days"
-          value={notVerified180.length}
-          tone="critical"
-          hint={EMPTY.stale}
-        />
-        <MetricCard
-          label="Conflicting costs"
-          value={costConflicts.length}
-          tone="critical"
-          hint="More than one sanctioned or contract value"
-        />
-        <MetricCard
-          label="Conflicting deadlines"
-          value={deadlineConflicts.length}
-          tone="critical"
-          hint="More than one completion date reported"
-        />
-        <MetricCard
-          label="Completed without operational confirmation"
-          value={completedNotOperational.length}
-          tone="critical"
-          hint="Built, service unproven"
-        />
-        <MetricCard
-          label="Projects without an implementing agency"
-          value={noAgency.length}
-          tone="warning"
-          hint="No accountable body recorded"
-        />
-        <MetricCard
-          label="Assets without owning agency"
-          value={assetsNoOwner.length}
-          tone="warning"
-          hint="Ownership unclear"
-        />
+        <MetricCard label="Project records checked" value={projects.length} />
+        <MetricCard label="Field completeness" value={`${pct}%`} />
+        <MetricCard label="Checks with findings" value={flagged} tone="warning" />
+        <MetricCard label="Conflicts detected" value={detected.length} tone="critical" />
+      </div>
+
+      <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {groups.map((group) => (
+          <Panel key={group.id} title={group.title}>
+            <ul className="min-w-0 divide-y divide-border">
+              {group.checks.map((check) => (
+                <li key={check.label} className="min-w-0 py-2 first:pt-0">
+                  <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3">
+                    <span className="flex min-w-0 items-start gap-1 text-sm break-words text-foreground">
+                      {check.label}
+                      <InfoTip label={check.label}>
+                        <p>{check.info}</p>
+                      </InfoTip>
+                    </span>
+                    <span
+                      className={`num shrink-0 text-right text-lg font-semibold tabular-nums ${
+                        check.value === 0
+                          ? "text-muted-foreground"
+                          : check.tone === "critical"
+                            ? "text-destructive"
+                            : "text-warning"
+                      }`}
+                    >
+                      {check.value}
+                    </span>
+                  </div>
+                  {check.value > 0 ? (
+                    <Link
+                      to={check.to}
+                      className="mt-1 inline-block text-xs font-medium text-primary underline-offset-2 hover:underline"
+                    >
+                      {check.action}
+                    </Link>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </Panel>
+        ))}
       </div>
 
       <ReconciliationQueue />
@@ -376,9 +496,11 @@ function DataQualityPage() {
             {completeness.map((f) => {
               const p = Math.round((f.filled / f.total) * 100);
               return (
-                <div key={f.field} className="flex items-center gap-3 py-1">
-                  <span className="w-56 shrink-0 truncate text-sm">{labelise(f.field)}</span>
-                  <span className="h-2 flex-1 rounded-sm bg-muted">
+                <div key={f.field} className="flex min-w-0 items-center gap-3 py-1">
+                  <span className="min-w-0 flex-1 truncate text-sm sm:w-56 sm:flex-none sm:shrink-0">
+                    {labelise(f.field)}
+                  </span>
+                  <span className="hidden h-2 flex-1 rounded-sm bg-muted sm:block">
                     <span className="block h-2 rounded-sm bg-primary" style={{ width: `${p}%` }} />
                   </span>
                   <span className="num w-16 shrink-0 text-right text-xs text-muted-foreground">
@@ -397,8 +519,8 @@ function DataQualityPage() {
                 .filter((e) => e.conflicting_evidence)
                 .map((e) => (
                   <li key={e.evidence_id} className="py-2">
-                    <div className="flex items-start justify-between gap-2">
-                      <p className="text-sm font-medium break-words">{e.title}</p>
+                    <div className="flex min-w-0 items-start justify-between gap-2">
+                      <p className="min-w-0 text-sm font-medium [overflow-wrap:anywhere]">{e.title}</p>
                       <SourceBadge quality={e.evidence_quality} />
                     </div>
                     <p className="text-xs text-muted-foreground">{text(e.notes)}</p>
