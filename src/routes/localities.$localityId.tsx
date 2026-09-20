@@ -216,7 +216,7 @@ function LocalityDetail() {
                 <p className="field-label">{s.signal_id}</p>
                 <p className="mt-1 text-sm font-medium text-foreground">{s.observed_condition}</p>
                 {s.potential_implications ? (
-                  <p className="mt-1 text-sm text-muted-foreground">{s.potential_implications}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{text(s.potential_implications)}</p>
                 ) : null}
                 <p className="mt-2 text-xs text-muted-foreground">Supporting records:</p>
                 <ul className="mt-1 flex flex-wrap gap-2">
