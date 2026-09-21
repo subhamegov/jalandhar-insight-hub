@@ -17,10 +17,10 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <p className="field-label">Work in progress</p>
+        <h1 className="mt-1 text-xl font-semibold text-foreground">This page is not available</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          The page does not exist, or that part of the prototype is still being built.
         </p>
         <div className="mt-6">
           <Link

@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useCity } from "@/lib/cityContext";
 import { FourCityOverview } from "@/components/app/FourCityOverview";
+import { Unavailable } from "@/components/app/Unavailable";
 import type { ReactNode } from "react";
 
 /**
