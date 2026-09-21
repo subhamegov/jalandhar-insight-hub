@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -14,6 +15,13 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AppShell } from "@/components/app/AppShell";
 
 function NotFoundComponent() {
+  // The scope travels in the URL, so the return action matches the context the
+  // reader came from without depending on any provider above this boundary.
+  const city = useRouterState({
+    select: (state) => (state.location.search as Record<string, unknown>)["city"],
+  });
+  const national = city === undefined || city === "ALL";
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
@@ -24,10 +32,10 @@ function NotFoundComponent() {
         </p>
         <div className="mt-6">
           <Link
-            to="/"
+            to={national ? "/national" : "/"}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Back to {national ? "national overview" : "city overview"}
           </Link>
         </div>
       </div>
