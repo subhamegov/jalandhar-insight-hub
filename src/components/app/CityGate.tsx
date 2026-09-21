@@ -86,20 +86,10 @@ function PortfolioContext() {
 function NotBuiltForCity({ page, cityName }: { page: string; cityName: string }) {
   const label = page.replace("/", "");
   return (
-    <section className="rounded-sm border border-border bg-card p-5 shadow-sm">
-      <h2 className="text-lg font-semibold text-foreground">
-        This view is not available for {cityName}
-      </h2>
-      <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-        The {label} analysis uses Jalandhar-specific indicators, priorities, and ward records. It is not applied to {cityName}.
-      </p>
-      <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-        Other views use {cityName}'s own records.
-      </p>
-      <Link to="/" className="mt-3 inline-block text-sm underline underline-offset-2">
-        Back to the {cityName} overview
-      </Link>
-    </section>
+    <Unavailable
+      title={`This view is not available for ${cityName}`}
+      detail={`The ${label} analysis uses Jalandhar-specific indicators, priorities and ward records. It is not applied to ${cityName}. Other views use ${cityName}'s own records.`}
+    />
   );
 }
 
