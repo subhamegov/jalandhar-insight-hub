@@ -4,6 +4,7 @@ import { EvidenceBadge, StatusBadge } from "@/components/app/StatusBadge";
 import { agencies, assets, evidence, isDelayed, projects } from "@/data/selectors";
 import { knownInrValue } from "@/data/registerLogic";
 import { crore, dateText, text } from "@/lib/format";
+import { Unavailable } from "@/components/app/Unavailable";
 
 export const Route = createFileRoute("/agencies/$agencyName")({
   loader: ({ params }) => {
@@ -36,6 +37,17 @@ function sum(values: (number | null)[]): number | null {
 
 function AgencyPage() {
   const { name, agency } = Route.useLoaderData();
+
+  if (!agency) {
+    return (
+      <Unavailable
+        title="This agency is not in the current city's records"
+        detail={`No agency named ${name} is loaded.`}
+        backTo="/agencies"
+        backLabel="agencies"
+      />
+    );
+  }
 
   const owned = projects.filter((p) => p.owning_agency === name);
   const implemented = projects.filter((p) => p.implementing_agency === name);

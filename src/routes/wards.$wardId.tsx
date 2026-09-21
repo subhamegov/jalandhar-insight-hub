@@ -7,6 +7,7 @@ import type { GovPoint } from "@/components/map/MapCanvas";
 import { areaInvestment, serviceGaps, wardArea } from "@/data/wards";
 import type { CitySystem } from "@/data/types";
 import { crore, dateText, text } from "@/lib/format";
+import { Unavailable } from "@/components/app/Unavailable";
 
 const MapCanvas = lazy(() => import("@/components/map/MapCanvas"));
 
@@ -44,15 +45,12 @@ export const Route = createFileRoute("/wards/$wardId")({
 
 function AreaNotFound() {
   return (
-    <>
-      <PageHeader title="Area not found" />
-      <EmptyNote>
-        No area with this identifier.{" "}
-        <Link to="/wards" className="text-primary">
-          Back to Ward View
-        </Link>
-      </EmptyNote>
-    </>
+    <Unavailable
+      title="Area not found"
+      detail="No area carries this identifier."
+      backTo="/wards"
+      backLabel="ward view"
+    />
   );
 }
 
