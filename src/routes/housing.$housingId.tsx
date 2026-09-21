@@ -6,6 +6,7 @@ import { housingRecord } from "@/data/four-city/housing";
 import { provenanceOf } from "@/data/four-city/dataset";
 import { useCity } from "@/lib/cityContext";
 import { count, dateText, labelise, percent, text } from "@/lib/format";
+import { Unavailable } from "@/components/app/Unavailable";
 
 export const Route = createFileRoute("/housing/$housingId")({
   head: () => ({
@@ -41,13 +42,12 @@ function HousingDetail() {
     return (
       <div className="space-y-4">
         <Breadcrumbs trail={[{ label: "Housing", to: "/housing" }, { label: housingId }]} />
-        <PageHeader
-          title="Housing record not found in this city"
-          subtitle={`${housingId} does not belong to ${city.name}. Records are never matched across cities.`}
+        <Unavailable
+          title="This housing record is not in the current city's records"
+          detail={`${housingId} does not belong to ${city.name}. Records are never matched across cities.`}
+          backTo="/housing"
+          backLabel="housing"
         />
-        <Link to="/housing" className="text-sm underline underline-offset-2">
-          Back to housing
-        </Link>
       </div>
     );
   }

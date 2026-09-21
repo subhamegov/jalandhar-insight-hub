@@ -12,6 +12,7 @@ import { ENTITY_LABELS, type EntityKind } from "@/data/four-city/types";
 import { useCity } from "@/lib/cityContext";
 import { useGeo } from "@/lib/geoContext";
 import { dateText, labelise, text } from "@/lib/format";
+import { Unavailable } from "@/components/app/Unavailable";
 
 export const Route = createFileRoute("/records/$recordId")({
   head: () => ({
@@ -71,9 +72,9 @@ function RecordDetail() {
     return (
       <div>
         <Breadcrumbs trail={[{ label: recordId }]} />
-        <PageHeader
+        <Unavailable
           title="Record not found"
-          subtitle={`No record carries the identifier ${recordId}. Records are matched by exact identifier, not by name.`}
+          detail={`No record carries the identifier ${recordId}. Records are matched by exact identifier, not by name.`}
         />
       </div>
     );
