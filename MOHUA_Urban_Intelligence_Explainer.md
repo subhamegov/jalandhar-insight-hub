@@ -1,10 +1,10 @@
 # MoHUA Urban Intelligence: prototype explainer
 
-MoHUA Urban Intelligence is a decision-support prototype for senior ministry officials to understand urban conditions and delivery across missions, states and cities. It brings together the data fields currently used across MoHUA mission records to connect investments, infrastructure, services and citizen outcomes. Officials can begin with a geography or a decision signal, open the underlying records and identify where administrative attention or cross-mission coordination may be needed.
+MoHUA Urban Intelligence is a decision-support prototype for senior ministry officials to understand urban conditions and delivery across missions, states and cities. It connects investments, infrastructure, services and citizen outcomes using the data fields held in MoHUA mission records. Officials can begin with a geography or a decision signal, open the underlying records and identify where administrative attention or cross-mission coordination may be needed.
 
 ## How to use it
 
-Choose National or City scope in the header, then start from the map or an observed condition. Open a Decision Signal, an urban system or a delivery record, and follow the linked projects, assets, investments, agencies and evidence. Use the connected records to review a decision or prepare a briefing.
+Choose National or City scope, then start from the map or an observed condition. Open a Decision Signal, an urban system or a delivery record, and follow the linked projects, assets, investments, agencies and evidence. Use the connected records to review a decision or prepare a briefing.
 
 ## Sample navigation flows
 
