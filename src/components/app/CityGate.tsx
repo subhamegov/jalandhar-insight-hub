@@ -24,6 +24,10 @@ const CITY_INDEPENDENT = ["/national", "/compare", "/states"];
 export function CityGate({ children }: { children: ReactNode }) {
   const { city, dataset, portfolio } = useCity();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  // An unmatched URL only resolves to the root match. Let it through so the
+  // not-found page is shown instead of a city or national panel.
+  const matchCount = useRouterState({ select: (s) => s.matches.length });
+  if (matchCount <= 1) return <>{children}</>;
 
   if (CITY_INDEPENDENT.some((p) => pathname.startsWith(p))) return <>{children}</>;
 
