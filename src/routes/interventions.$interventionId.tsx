@@ -6,6 +6,7 @@ import { interventionView } from "@/data/four-city/briefing";
 import { provenanceOf } from "@/data/four-city/dataset";
 import { useCity } from "@/lib/cityContext";
 import { count, text } from "@/lib/format";
+import { Unavailable } from "@/components/app/Unavailable";
 
 export const Route = createFileRoute("/interventions/$interventionId")({
   head: () => ({
@@ -54,13 +55,12 @@ function InterventionDetail() {
     return (
       <div className="space-y-4">
         <Breadcrumbs trail={[{ label: "Planning interventions", to: "/interventions" }, { label: interventionId }]} />
-        <PageHeader
+        <Unavailable
           title="This intervention is not loaded for the active city"
-          subtitle="Intervention records belong to one city. Switch city in the header, or return to the list."
+          detail="Intervention records belong to one city. Switch city in the header, or return to the list."
+          backTo="/interventions"
+          backLabel="planning interventions"
         />
-        <Link to="/interventions" className="text-sm underline underline-offset-2">
-          Back to planning interventions
-        </Link>
       </div>
     );
   }

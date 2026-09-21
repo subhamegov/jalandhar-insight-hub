@@ -29,6 +29,7 @@ import type { Asset, Conflict, Evidence, Project, TimelineEvent } from "@/data/t
 import { TIMELINE_EVENT_LABELS, TIMELINE_EVENT_ORDER } from "@/data/types";
 import { crore, dateText, labelise, percent, text } from "@/lib/format";
 import { cn } from "@/lib/utils";
+import { Unavailable } from "@/components/app/Unavailable";
 
 const MapCanvas = lazy(() => import("@/components/map/MapCanvas"));
 
@@ -75,6 +76,14 @@ export const Route = createFileRoute("/projects/$projectId")({
       ],
     };
   },
+  notFoundComponent: () => (
+    <Unavailable
+      title="This project is not in the loaded records"
+      detail="No project carries this identifier. Projects are matched by exact identifier, not by name."
+      backTo="/projects"
+      backLabel="projects"
+    />
+  ),
   component: ProjectDetail,
 });
 

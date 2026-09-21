@@ -8,6 +8,7 @@ import { localityRecords, provenanceOf } from "@/data/four-city/dataset";
 import { useCity } from "@/lib/cityContext";
 import { useGeo } from "@/lib/geoContext";
 import { count, dateText, labelise, percent, text } from "@/lib/format";
+import { Unavailable } from "@/components/app/Unavailable";
 
 const PointMap = lazy(() => import("@/components/map/PointMap"));
 
@@ -47,13 +48,12 @@ function LocalityDetail() {
     return (
       <div>
         <Breadcrumbs trail={[{ label: "Localities", to: "/localities" }, { label: localityId }]} />
-        <PageHeader
-          title="Locality not found in this city"
-          subtitle={`${localityId} does not belong to ${city.name}. Localities are never matched across cities.`}
+        <Unavailable
+          title="This locality is not in the current city's records"
+          detail={`${localityId} does not belong to ${city.name}. Localities are never matched across cities.`}
+          backTo="/localities"
+          backLabel="localities"
         />
-        <Link to="/localities" className="text-sm underline underline-offset-2">
-          Back to localities
-        </Link>
       </div>
     );
   }

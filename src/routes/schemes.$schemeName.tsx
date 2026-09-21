@@ -5,6 +5,7 @@ import { componentsFor, fundingComponents, programmesFor } from "@/data/programm
 import { evidence, projects, schemes } from "@/data/selectors";
 import { knownInrValue } from "@/data/registerLogic";
 import { crore, dateText, labelise, text } from "@/lib/format";
+import { Unavailable } from "@/components/app/Unavailable";
 
 export const Route = createFileRoute("/schemes/$schemeName")({
   loader: ({ params }) => {
@@ -37,6 +38,17 @@ function sum(values: (number | null)[]): number | null {
 
 function SchemePage() {
   const { name, scheme } = Route.useLoaderData();
+
+  if (!scheme) {
+    return (
+      <Unavailable
+        title="This scheme is not in the current city's records"
+        detail={`No scheme named ${name} is loaded.`}
+        backTo="/schemes"
+        backLabel="schemes"
+      />
+    );
+  }
 
   const linked = projects.filter((p) => programmesFor(p.project_id, p.scheme).includes(name));
   const components = fundingComponents.filter((c) => c.programme === name);

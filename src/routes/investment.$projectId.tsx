@@ -8,6 +8,7 @@ import { investmentChain } from "@/data/four-city/investment";
 import { provenanceOf } from "@/data/four-city/dataset";
 import { useCity } from "@/lib/cityContext";
 import { count, dateText, labelise, percent, text } from "@/lib/format";
+import { Unavailable } from "@/components/app/Unavailable";
 
 export const Route = createFileRoute("/investment/$projectId")({
   head: () => ({
@@ -39,13 +40,12 @@ function InvestmentDetail() {
     return (
       <div className="space-y-4">
         <Breadcrumbs trail={[{ label: "Investment and outcomes", to: "/investment" }, { label: projectId }]} />
-        <PageHeader
+        <Unavailable
           title="This project is not in the current city's records"
-          subtitle={`No project with identifier ${projectId} is loaded for ${city.name}.`}
+          detail={`No project with identifier ${projectId} is loaded for ${city.name}.`}
+          backTo="/investment"
+          backLabel="investment and outcomes"
         />
-        <Link to="/investment" className="text-sm underline underline-offset-2">
-          Back to investment and outcomes
-        </Link>
       </div>
     );
   }

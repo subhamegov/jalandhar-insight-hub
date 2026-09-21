@@ -5,6 +5,7 @@ import { provenanceOf } from "@/data/four-city/dataset";
 import { signalView } from "@/data/four-city/signals";
 import { useCity } from "@/lib/cityContext";
 import { count, dateText, labelise, text } from "@/lib/format";
+import { Unavailable } from "@/components/app/Unavailable";
 
 export const Route = createFileRoute("/signals/$signalId")({
   head: () => ({
@@ -59,13 +60,12 @@ function SignalDetail() {
     return (
       <div className="space-y-4">
         <Breadcrumbs trail={[{ label: "Decision signals", to: "/signals" }, { label: signalId }]} />
-        <PageHeader
-          title="Signal not found in this city"
-          subtitle={`${signalId} does not belong to ${city.name}. Signals are never matched across cities.`}
+        <Unavailable
+          title="This signal is not in the current city's records"
+          detail={`${signalId} does not belong to ${city.name}. Signals are never matched across cities.`}
+          backTo="/signals"
+          backLabel="decision signals"
         />
-        <Link to="/signals" className="text-sm underline underline-offset-2">
-          Back to decision signals
-        </Link>
       </div>
     );
   }
