@@ -18,7 +18,9 @@ function NotFoundComponent() {
   // The scope travels in the URL, so the return action matches the context the
   // reader came from without depending on any provider above this boundary.
   const city = useRouterState({
-    select: (state) => (state.location.search as Record<string, unknown>)["city"],
+    select: (state) => (state.location.search as Record<string, unknown>)["city"] as
+      | string
+      | undefined,
   });
   const national = city === undefined || city === "ALL";
 
