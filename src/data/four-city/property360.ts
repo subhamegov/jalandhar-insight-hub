@@ -22,6 +22,7 @@ import type {
   WaterSewerageRecord,
 } from "./types";
 import { projects as jalandharProjects } from "@/data/jalandhar";
+import { dossierFor, type PropertyDossier } from "./propertyDossier";
 
 export type PropertyRelationshipType =
   | "Directly linked"
@@ -97,6 +98,8 @@ export interface Property360View {
   ecosystem: PropertyEcosystemItem[];
   enrichment: PropertyEnrichmentRecord[];
   graph: { out: Edge[]; in: Edge[] };
+  /** Complete synthetic dossier. Null for the Jalandhar demonstration entry. */
+  dossier: PropertyDossier | null;
 }
 
 const MISSION_DEFINITIONS = [
