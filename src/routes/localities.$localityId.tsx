@@ -180,11 +180,11 @@ function LocalityDetail() {
 
       <Panel
         title="Properties in this locality"
-        description="Open any property to see its full Property 360 record."
+        description="Open any property to see its full Household 360 record."
       >
         <RecordTable
           empty="No property records are attached to this locality."
-          headers={["Property", "Land use", "Households", "Assessment", "Property 360"]}
+          headers={["Property", "Land use", "Households", "Assessment", "Household 360"]}
           rows={records.properties.map((p) => [
             <Link
               key={p.property_aggregate_id}
@@ -203,7 +203,7 @@ function LocalityDetail() {
               params={{ recordId: p.property_aggregate_id }}
               className="text-xs underline underline-offset-2"
             >
-              Open Property 360
+              Open Household 360
             </Link>,
           ])}
         />

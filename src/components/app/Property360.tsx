@@ -111,7 +111,7 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
         trail={[
           { label: "Localities", to: "/localities" },
           { label: locality.name, to: "/localities/$localityId", params: { localityId: locality.id } },
-          { label: `Property 360: ${property.property_aggregate_id}` },
+          { label: `Household 360: ${property.property_aggregate_id}` },
         ]}
       />
 
@@ -130,7 +130,7 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
           <div className="min-w-0 p-4">
             <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
               <div className="min-w-0">
-                <p className="field-label">Property 360 civic catalogue</p>
+                <p className="field-label">Household 360 civic catalogue</p>
                 <h1 className="mt-1 break-words text-2xl font-semibold text-foreground">
                   {property.property_aggregate_id}
                 </h1>
@@ -199,7 +199,7 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
 function CatalogueNavigation({ activeSection, onSelect }: { activeSection: SectionId; onSelect: (section: SectionId) => void }) {
   const activeGroup = CHAPTER_GROUPS.find((group) => group.items.some(([id]) => id === activeSection));
   return (
-    <nav aria-label="Property 360 chapters" className="min-w-0 xl:sticky xl:top-4 xl:self-start">
+    <nav aria-label="Household 360 chapters" className="min-w-0 xl:sticky xl:top-4 xl:self-start">
       <div className="digit-card p-3">
         <div className="xl:hidden">
           <label className="field-label mb-2 block" htmlFor="property-section">Catalogue section</label>

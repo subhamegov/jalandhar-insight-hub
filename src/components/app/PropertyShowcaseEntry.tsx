@@ -28,7 +28,7 @@ export function PropertyShowcaseEntry({ city }: { city: CityProfile }) {
           search={{ city: city.city_id } as never}
           className="inline-flex min-h-9 shrink-0 items-center gap-2 rounded-sm border border-input bg-card px-3 py-2 text-sm font-medium text-foreground hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
         >
-          Open Property 360
+          Open Household 360
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       </div>
