@@ -1,4 +1,4 @@
-import { lazy, useMemo, useState, type ReactNode } from "react";
+import { lazy, useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   AlertCircle,
@@ -20,8 +20,13 @@ import propertyHouse from "@/assets/property/property-house.png";
 import { Breadcrumbs } from "@/components/app/Breadcrumbs";
 import { EmptyNote, Field, Panel, PrototypeNote } from "@/components/app/Primitives";
 import { Button } from "@/components/ui/button";
+import { InfoTip } from "@/components/app/InfoTip";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { MapPoint } from "@/components/map/PointMap";
+import { ENTITY_LABELS } from "@/data/four-city/types";
+import { lookupEntity } from "@/data/four-city/dataset";
 import type {
   Property360View,
   PropertyEcosystemItem,
@@ -34,25 +39,72 @@ import { cn } from "@/lib/utils";
 
 const PointMap = lazy(() => import("@/components/map/PointMap"));
 
-const CHAPTERS = [
-  ["overview", "Overview"],
-  ["housing", "Housing"],
-  ["water-sewerage", "Water and sewerage"],
-  ["sanitation-waste", "Sanitation and waste"],
-  ["municipal-finance", "Municipal finance"],
-  ["services-grievances", "Services and grievances"],
-  ["livelihoods-inclusion", "Livelihoods and inclusion"],
-  ["mission-linkages", "Mission linkages"],
-  ["projects-assets", "Projects and assets"],
-  ["urban-ecosystem", "Surrounding urban ecosystem"],
-  ["evidence-quality", "Evidence and data quality"],
+const CHAPTER_GROUPS = [
+  { label: "Property", items: [["overview", "Overview"], ["housing", "Housing"], ["municipal-finance", "Municipal finance"]] },
+  { label: "Services", items: [["water-sewerage", "Water & sewerage"], ["sanitation-waste", "Sanitation & waste"], ["services-grievances", "Services & grievances"]] },
+  { label: "Urban ecosystem", items: [["livelihoods-inclusion", "Livelihoods & inclusion"], ["urban-ecosystem", "Surrounding urban ecosystem"], ["mission-linkages", "Mission linkages"]] },
+  { label: "Delivery & trust", items: [["delivery-journey", "Public delivery journey"], ["projects-assets", "Projects & assets"], ["evidence-quality", "Evidence & data quality"]] },
 ] as const;
 
-type MapLayer = "property" | "services" | "projects" | "assets" | "missions" | "ecosystem";
+type SectionId = "overview" | "housing" | "municipal-finance" | "water-sewerage" | "sanitation-waste" | "services-grievances" | "livelihoods-inclusion" | "urban-ecosystem" | "mission-linkages" | "delivery-journey" | "projects-assets" | "evidence-quality";
+type MapLayer = "water" | "waste" | "projects" | "vending" | "markets" | "transport";
+
+const ALL_CHAPTERS: ReadonlyArray<readonly [SectionId, string]> = [
+  ["overview", "Overview"], ["housing", "Housing"], ["municipal-finance", "Municipal finance"],
+  ["water-sewerage", "Water & sewerage"], ["sanitation-waste", "Sanitation & waste"], ["services-grievances", "Services & grievances"],
+  ["livelihoods-inclusion", "Livelihoods & inclusion"], ["urban-ecosystem", "Surrounding urban ecosystem"], ["mission-linkages", "Mission linkages"],
+  ["delivery-journey", "Public delivery journey"], ["projects-assets", "Projects & assets"], ["evidence-quality", "Evidence & data quality"],
+];
+
+interface CatalogueRecord {
+  id: string;
+  mapId: string;
+  name: string;
+  type: string;
+  mission: string;
+  relationship: string;
+  status: string;
+  evidence: string;
+  point: MapPoint | null;
+  project?: boolean;
+  raw: Record<string, unknown>;
+}
 
 export function Property360({ view, city }: { view: Property360View; city: CityProfile }) {
   const { property, locality } = view;
   const chips = propertyChips(view);
+  const [activeSection, setActiveSection] = useState<SectionId>("overview");
+  const [selectedMission, setSelectedMission] = useState("all");
+  const [mapLayer, setMapLayer] = useState<MapLayer>("water");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const section = params.get("activeSection");
+    const mission = params.get("selectedMission");
+    const layer = params.get("mapLayer");
+    if (ALL_CHAPTERS.some(([id]) => id === section)) setActiveSection(section as SectionId);
+    if (mission) setSelectedMission(mission);
+    if (["water", "waste", "projects", "vending", "markets", "transport"].includes(layer ?? "")) setMapLayer(layer as MapLayer);
+  }, []);
+
+  const preserveState = (next: Partial<{ activeSection: SectionId; selectedMission: string; mapLayer: MapLayer }>) => {
+    const state = { activeSection, selectedMission, mapLayer, ...next };
+    setActiveSection(state.activeSection);
+    setSelectedMission(state.selectedMission);
+    setMapLayer(state.mapLayer);
+    const url = new URL(window.location.href);
+    url.searchParams.set("city", city.city_id);
+    url.searchParams.set("propertyId", property.property_aggregate_id);
+    url.searchParams.set("activeSection", state.activeSection);
+    url.searchParams.set("selectedMission", state.selectedMission);
+    url.searchParams.set("mapLayer", state.mapLayer);
+    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}#${state.activeSection}`);
+  };
+
+  const selectSection = (section: SectionId) => {
+    preserveState({ activeSection: section });
+    requestAnimationFrame(() => document.getElementById(section)?.scrollIntoView({ behavior: "smooth", block: "start" }));
+  };
   return (
     <div className="min-w-0 space-y-5">
       <Breadcrumbs
@@ -63,44 +115,41 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
         ]}
       />
 
-      <header className="digit-card overflow-hidden">
-        <div className="grid min-w-0 md:grid-cols-[11rem_minmax(0,1fr)]">
-          <div className="flex min-h-40 items-center justify-center border-b border-border bg-info-surface p-4 md:border-r md:border-b-0">
+      <header className="digit-card overflow-hidden border-t-4 border-t-primary">
+        <div className="grid min-w-0 sm:grid-cols-[9rem_minmax(0,1fr)]">
+          <div className="flex min-h-32 items-center justify-center border-b border-border bg-info-surface p-3 sm:border-r sm:border-b-0">
             <img
               src={propertyHouse}
               alt=""
               aria-hidden="true"
               width={816}
               height={816}
-              className="h-36 w-36 object-contain"
+              className="h-28 w-28 object-contain"
             />
           </div>
-          <div className="min-w-0 p-4 sm:p-5">
-            <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0 p-4">
+            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
               <div className="min-w-0">
-                <p className="field-label">Property 360</p>
-                <h1 className="mt-1 break-words text-xl font-semibold text-foreground">
+                <p className="field-label">Property 360 civic catalogue</p>
+                <h1 className="mt-1 break-words text-2xl font-semibold text-foreground">
                   {property.property_aggregate_id}
                 </h1>
                 <p className="mt-1 text-sm text-muted-foreground">
                   {locality.name}, {city.name}, {city.state}
                 </p>
               </div>
-              <span className="inline-flex items-center gap-1.5 rounded-sm border border-warning/40 bg-warning/10 px-2 py-1 text-xs font-medium text-foreground">
+              <span className="hidden items-center gap-1.5 rounded-sm border border-warning/40 bg-warning/10 px-2 py-1 text-xs font-medium text-foreground sm:inline-flex">
                 <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
                 {view.geography.label}
               </span>
             </div>
 
-            <dl className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-              <Field label="Building" value={property.building_id} mono />
-              <Field label="Land use" value={labelise(property.land_use)} />
+            <dl className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-5">
+              <Field label="Classification" value={labelise(property.land_use)} />
               <Field label="Households" value={count(property.households)} mono />
-              <Field label="Occupancy" value={labelise(property.occupancy_category)} />
+              <Field label="Service summary" value={`${[property.water_connection_id, property.sewer_connection_id, property.waste_collection_route_id].filter(Boolean).length} of 3 recorded`} />
               <Field label="Assessment" value={labelise(property.assessment_status)} />
-              <Field label="Locality" value={locality.name} />
-              <Field label="City" value={city.name} />
-              <Field label="Geography" value={view.geography.label} />
+              <Field label="Prototype classification" value={text(view.provenance.data_classification)} />
             </dl>
 
             {chips.length ? (
@@ -125,37 +174,21 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
         </div>
       </header>
 
-      <div className="grid min-w-0 gap-5 xl:grid-cols-[13rem_minmax(0,1fr)]">
-        <nav aria-label="Property 360 chapters" className="min-w-0 xl:sticky xl:top-4 xl:self-start">
-          <div className="digit-card p-2">
-            <p className="field-label px-2 py-1.5">Property chapters</p>
-            <ol className="grid gap-0.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1">
-              {CHAPTERS.map(([id, label], index) => (
-                <li key={id}>
-                  <a
-                    href={`#${id}`}
-                    className="flex min-h-9 items-start gap-2 rounded-sm px-2 py-2 text-sm text-foreground hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-                  >
-                    <span className="num text-xs text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
-                    <span>{label}</span>
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </nav>
+      <div className="grid min-w-0 gap-5 xl:grid-cols-[14rem_minmax(0,1fr)]">
+        <CatalogueNavigation activeSection={activeSection} onSelect={selectSection} />
 
         <main className="min-w-0 space-y-5">
-          <PropertyOverview view={view} city={city} />
+          <PropertyOverview view={view} city={city} selectedMission={selectedMission} mapLayer={mapLayer} onMissionChange={(mission: string) => preserveState({ selectedMission: mission })} onLayerChange={(layer: MapLayer) => preserveState({ mapLayer: layer })} activeSection={activeSection} />
           <HousingSection view={view} cityId={city.city_id} />
           <WaterSection view={view} cityId={city.city_id} />
           <SanitationSection view={view} cityId={city.city_id} />
           <FinanceSection view={view} cityId={city.city_id} />
           <ServicesSection view={view} cityId={city.city_id} />
           <LivelihoodSection view={view} cityId={city.city_id} />
-          <MissionSection view={view} cityId={city.city_id} />
-          <ProjectsAssetsSection view={view} cityId={city.city_id} />
           <EcosystemSection view={view} cityId={city.city_id} />
+          <MissionSection view={view} cityId={city.city_id} />
+          <DeliveryJourneySection view={view} />
+          <ProjectsAssetsSection view={view} cityId={city.city_id} />
           <EvidenceSection view={view} city={city} />
         </main>
       </div>
@@ -163,7 +196,34 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
   );
 }
 
-function PropertyOverview({ view, city }: { view: Property360View; city: CityProfile }) {
+function CatalogueNavigation({ activeSection, onSelect }: { activeSection: SectionId; onSelect: (section: SectionId) => void }) {
+  const activeGroup = CHAPTER_GROUPS.find((group) => group.items.some(([id]) => id === activeSection));
+  return (
+    <nav aria-label="Property 360 chapters" className="min-w-0 xl:sticky xl:top-4 xl:self-start">
+      <div className="digit-card p-3">
+        <div className="xl:hidden">
+          <label className="field-label mb-2 block" htmlFor="property-section">Catalogue section</label>
+          <Select value={activeSection} onValueChange={(value) => onSelect(value as SectionId)}>
+            <SelectTrigger id="property-section"><SelectValue /></SelectTrigger>
+            <SelectContent>{CHAPTER_GROUPS.map((group) => group.items.map(([id, label]) => <SelectItem key={id} value={id}>{group.label}: {label}</SelectItem>))}</SelectContent>
+          </Select>
+        </div>
+        <div className="hidden xl:block">
+          <p className="field-label px-2 pb-2">Catalogue index</p>
+          {CHAPTER_GROUPS.map((group) => {
+            const open = group === activeGroup;
+            return <div key={group.label} className="border-t border-border py-2 first:border-t-0">
+              <p className="px-2 py-1 text-[0.68rem] font-semibold uppercase text-muted-foreground">{group.label}</p>
+              {open ? <ol className="space-y-0.5">{group.items.map(([id, label]) => <li key={id}><button type="button" onClick={() => onSelect(id)} aria-current={activeSection === id ? "location" : undefined} className={cn("grid min-h-9 w-full grid-cols-[1rem_minmax(0,1fr)] items-start gap-2 rounded-sm px-2 py-2 text-left text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none", activeSection === id ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-accent")}><span className="text-xs opacity-70">{String(ALL_CHAPTERS.findIndex(([chapter]) => chapter === id) + 1).padStart(2, "0")}</span><span>{label}</span></button></li>)}</ol> : null}
+            </div>;
+          })}
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+function PropertyOverview({ view, city, selectedMission, mapLayer, onMissionChange, onLayerChange, activeSection }: { view: Property360View; city: CityProfile; selectedMission: string; mapLayer: MapLayer; onMissionChange: (mission: string) => void; onLayerChange: (layer: MapLayer) => void; activeSection: SectionId }) {
   const p = view.property;
   const abstract = catalogueNote(view, city);
   const showcase = propertyShowcase(city.city_id);
@@ -207,123 +267,87 @@ function PropertyOverview({ view, city }: { view: Property360View; city: CityPro
         <p className="max-w-4xl text-sm leading-6 text-foreground">{abstract}</p>
       </Panel>
 
-      <MissionStrip missions={view.missions} />
-      <PropertyMap view={view} />
+      <MissionStrip missions={view.missions} selectedMission={selectedMission} onSelect={onMissionChange} />
+      <PropertyMap view={view} cityId={city.city_id} selectedMission={selectedMission} layer={mapLayer} onLayerChange={onLayerChange} activeSection={activeSection} />
     </section>
   );
 }
 
-function PropertyMap({ view }: { view: Property360View }) {
-  const [layers, setLayers] = useState<Record<MapLayer, boolean>>({
-    property: true,
-    services: true,
-    projects: true,
-    assets: true,
-    missions: false,
-    ecosystem: true,
-  });
-  const points = useMemo(() => {
-    const rows: Array<MapPoint & { layer: MapLayer }> = [
-      {
-        id: view.property.property_aggregate_id,
-        name: view.property.property_aggregate_id,
-        sub: "Property shown at its approximate locality context",
-        lat: view.geography.point.lat,
-        lon: view.geography.point.lon,
-        verified: false,
-        layer: "property",
-      },
-    ];
-    if (view.serviceArea) {
-      rows.push({
-        id: view.serviceArea.service_area_id,
-        name: view.serviceArea.service_area_id,
-        sub: `${labelise(view.serviceArea.area_type)} service-area anchor`,
-        lat: view.serviceArea.coordinates[1],
-        lon: view.serviceArea.coordinates[0],
-        verified: false,
-        layer: "services",
-      });
-    }
-    for (const asset of view.assets) {
-      rows.push({
-        id: asset.asset_id,
-        name: asset.asset_name,
-        sub: `${labelise(asset.asset_type)}${asset.actual_asset_location ? "" : ": illustrative anchor"}`,
-        lat: asset.coordinates[1],
-        lon: asset.coordinates[0],
-        verified: asset.actual_asset_location,
-        layer: "assets",
-      });
-    }
-    for (const project of view.projects) {
-      rows.push({
-        id: `project-${project.project_id}`,
-        name: project.project_name,
-        sub: `${labelise(project.mission)} project context at the locality anchor`,
-        lat: view.geography.point.lat,
-        lon: view.geography.point.lon,
-        verified: false,
-        layer: "projects",
-      });
-    }
-    for (const mission of view.missions.filter((row) => row.relationship !== "No known linkage")) {
-      rows.push({
-        id: `mission-${mission.key}`,
-        name: mission.name,
-        sub: `${mission.relationship}: mission context at the locality anchor`,
-        lat: view.geography.point.lat,
-        lon: view.geography.point.lon,
-        verified: false,
-        layer: "missions",
-      });
-    }
-    for (const item of view.ecosystem) {
-      if (!item.point) continue;
-      rows.push({
-        id: item.id,
-        name: item.name,
-        sub: `${item.mission}: ${item.relationship}`,
-        lat: item.point.lat,
-        lon: item.point.lon,
-        verified: item.point.verified,
-        layer: "ecosystem",
-      });
-    }
-    return rows.filter((row) => layers[row.layer]);
-  }, [layers, view]);
+function PropertyMap({ view, cityId, selectedMission, layer, onLayerChange, activeSection }: { view: Property360View; cityId: string; selectedMission: string; layer: MapLayer; onLayerChange: (layer: MapLayer) => void; activeSection: SectionId }) {
+  const records = useMemo(() => catalogueRecords(view, layer).filter((record) => selectedMission === "all" || view.missions.find((mission) => mission.key === selectedMission)?.recordIds.includes(record.id)), [layer, selectedMission, view]);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [preview, setPreview] = useState<CatalogueRecord | null>(null);
+  const points = records.flatMap((record) => record.point ? [record.point] : []);
+  const selectRecord = (record: CatalogueRecord) => {
+    if (record.point) setSelectedId(record.mapId);
+    setPreview(record);
+  };
+  const selectMarker = (mapId: string) => {
+    const record = records.find((item) => item.mapId === mapId);
+    if (record) selectRecord(record);
+  };
   return (
-    <Panel title="Property and urban context" description={view.geography.note}>
+    <Panel title="Investigate the city around this property" description={view.geography.note} right={<InfoTip label="Map method"><p>Only supplied coordinates or labelled locality anchors are shown. Selecting a record never creates a coordinate.</p></InfoTip>}>
       <div className="mb-3 flex flex-wrap gap-2" aria-label="Map layers">
-        {(Object.keys(layers) as MapLayer[]).map((layer) => (
+        {(["water", "waste", "projects", "vending", "markets", "transport"] as MapLayer[]).map((option) => (
           <Button
-            key={layer}
+            key={option}
             type="button"
             size="sm"
-            variant={layers[layer] ? "secondary" : "outline"}
-            aria-pressed={layers[layer]}
-            onClick={() => setLayers((current) => ({ ...current, [layer]: !current[layer] }))}
+            variant={layer === option ? "default" : "outline"}
+            aria-pressed={layer === option}
+            onClick={() => { onLayerChange(option); setSelectedId(null); }}
           >
-            {labelise(layer)}
+            {labelise(option)}
           </Button>
         ))}
       </div>
-      <div className="h-72 w-full overflow-hidden rounded-sm border border-border sm:h-80">
-        <ClientOnly fallback={<div className="flex h-full items-center justify-center bg-muted text-sm text-muted-foreground">Loading map…</div>}>
-          <PointMap
-            points={points}
-            centre={[view.geography.point.lat, view.geography.point.lon]}
-            zoom={13}
-            selectedId={view.property.property_aggregate_id}
-            fitToPoints={points.length > 1}
-          />
-        </ClientOnly>
+      <div className="grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(16rem,0.65fr)]">
+        <div className="h-72 w-full overflow-hidden rounded-sm border border-border sm:h-80 lg:h-[26rem]">
+          <ClientOnly fallback={<div className="flex h-full items-center justify-center bg-muted text-sm text-muted-foreground">Loading map…</div>}>
+            <PointMap points={points} centre={[view.geography.point.lat, view.geography.point.lon]} zoom={13} selectedId={selectedId} onSelect={selectMarker} fitToPoints={points.length > 1} />
+          </ClientOnly>
+        </div>
+        <div className="min-w-0">
+          <p className="field-label mb-2">Linked records · {records.length}</p>
+          {records.length ? <ul className="max-h-[26rem] space-y-2 overflow-y-auto pr-1">{records.map((record) => <li key={record.id}><button type="button" onClick={() => selectRecord(record)} className={cn("w-full rounded-sm border p-3 text-left focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none", selectedId === record.mapId ? "border-primary bg-info-surface" : "border-border bg-card hover:bg-accent")}><p className="text-sm font-semibold text-foreground">{record.name}</p><p className="mt-1 text-xs text-muted-foreground">{record.type} · {relationshipLabel(record.relationship)}</p><p className="mt-1 text-xs text-muted-foreground">{record.point ? record.point.verified ? "Reported position" : "In the same locality" : "No mappable position"}</p></button></li>)}</ul> : <EmptyNote>No records match this layer and mission.</EmptyNote>}
+        </div>
       </div>
       <p className="mt-2 text-xs text-muted-foreground">
         Dashed amber points are illustrative anchors. Proximity and shared locality do not establish service receipt or programme benefit.
       </p>
+      <RecordPreview record={preview} cityId={cityId} returnSection={activeSection} propertyId={view.property.property_aggregate_id} onClose={() => setPreview(null)} />
     </Panel>
   );
+}
+
+function catalogueRecords(view: Property360View, layer: MapLayer): CatalogueRecord[] {
+  const localityPoint = (id: string, name: string, sub: string): MapPoint => ({ id, name, sub, lat: view.geography.point.lat, lon: view.geography.point.lon, verified: false });
+  const assetPoint = (id: string) => {
+    const asset = view.assets.find((row) => row.asset_id === id);
+    return asset ? { id, name: asset.asset_name, sub: asset.actual_asset_location ? "Reported asset position" : "Illustrative asset anchor", lat: asset.coordinates[1], lon: asset.coordinates[0], verified: asset.actual_asset_location } : null;
+  };
+  const make = (id: string, name: string, type: string, mission: string, relationship: string, status: string, evidence: string, point: MapPoint | null, raw: Record<string, unknown>, project = false): CatalogueRecord => ({ id, mapId: point?.id ?? id, name, type, mission, relationship, status, evidence, point, raw, project });
+  if (layer === "water") {
+    const rows = view.waterRecords.map((row) => make(row.connection_record_id, "Water and sewerage service", "Water and sewerage service", "AMRUT", "Directly linked", labelise(row.service_status), "Property aggregate identifier", view.serviceArea ? { id: row.connection_record_id, name: "Water and sewerage service", sub: "Service-area anchor", lat: view.serviceArea.coordinates[1], lon: view.serviceArea.coordinates[0], verified: false } : localityPoint(row.connection_record_id, "Water and sewerage service", "In the same locality"), row as unknown as Record<string, unknown>));
+    if (!rows.length && view.serviceArea) rows.push(make(view.serviceArea.service_area_id, "Water service area", "Asset service area", "AMRUT", "Falls within", labelise(view.serviceArea.area_type), "Property water service-area identifier", { id: view.serviceArea.service_area_id, name: "Water service area", sub: "Service-area anchor", lat: view.serviceArea.coordinates[1], lon: view.serviceArea.coordinates[0], verified: false }, view.serviceArea as unknown as Record<string, unknown>));
+    return rows;
+  }
+  if (layer === "waste") return view.sanitation.map((row) => make(row.sanitation_id, "Waste collection service", "Sanitation service", "SBM-U", row.collection_route_id === view.property.waste_collection_route_id ? "Served by" : "Related through locality", row.collection_route_id ? "Route recorded" : "Route not available", row.collection_route_id === view.property.waste_collection_route_id ? "Matching collection route identifier" : "Shared canonical locality", localityPoint(row.sanitation_id, "Waste collection service", "In the same locality"), row as unknown as Record<string, unknown>));
+  if (layer === "projects") return view.projects.map((row) => make(row.project_id, row.project_name, "Project", labelise(row.mission), "Related through locality", labelise(row.project_status), "Shared canonical locality", localityPoint(`project-${row.project_id}`, row.project_name, "Project context in the same locality"), row as unknown as Record<string, unknown>, true));
+  if (layer === "vending") return view.vendors.map((row) => make(row.vendor_aggregate_id, "Street-vending activity", "Street-vendor aggregate", "PM SVANidhi", "Related through locality", row.vending_zone_id ? "Vending zone recorded" : "Zone not available", "Shared canonical locality", assetPoint(row.market_asset_id ?? "") ?? localityPoint(row.vendor_aggregate_id, "Street-vending activity", "In the same locality"), row as unknown as Record<string, unknown>));
+  if (layer === "markets") return view.ecosystem.filter((item) => item.kind === "livelihood" && item.point).map((item) => {
+    const point = item.point ? { id: item.id, name: item.name, sub: `${item.mission}: ${relationshipLabel(item.relationship)}`, lat: item.point.lat, lon: item.point.lon, verified: item.point.verified } : null;
+    const found = lookupEntity(item.supportingRecordId);
+    return make(item.supportingRecordId, item.name, "Market and livelihood context", item.mission, item.relationship, "Context available", "Linked market asset or shared canonical locality", point, found?.record ?? {});
+  });
+  return view.transport.map((row) => make(row.transport_stop_id, `${labelise(row.mode)} transport record`, "Transport route", "Urban transport context", "Related through locality", row.actual_stop_or_route ? "Reported route or stop" : "Illustrative record", "Shared canonical locality", localityPoint(row.transport_stop_id, `${labelise(row.mode)} transport record`, "In the same locality"), row as unknown as Record<string, unknown>));
+}
+
+function RecordPreview({ record, cityId, returnSection, propertyId, onClose }: { record: CatalogueRecord | null; cityId: string; returnSection: SectionId; propertyId: string; onClose: () => void }) {
+  if (!record) return null;
+  const returnPath = `/records/${encodeURIComponent(propertyId)}?city=${encodeURIComponent(cityId)}&propertyId=${encodeURIComponent(propertyId)}&activeSection=${encodeURIComponent(returnSection)}#${returnSection}`;
+  return <Sheet open onOpenChange={(open) => { if (!open) onClose(); }}><SheetContent className="w-full max-w-md overflow-y-auto sm:max-w-md"><SheetHeader><SheetTitle>{record.name}</SheetTitle><SheetDescription>{record.type}</SheetDescription></SheetHeader><div className="mt-6 space-y-4"><dl className="grid gap-3 sm:grid-cols-2"><Field label="Mission" value={record.mission} /><Field label="Relationship" value={relationshipLabel(record.relationship)} /><Field label="Status" value={record.status} /><Field label="Geography" value={record.point ? record.point.verified ? "Reported position" : "In the same locality" : "No mappable position"} /></dl><div><p className="field-label">Evidence</p><p className="mt-1 text-sm text-foreground">{record.evidence}</p></div><Button asChild className="w-full"><Link to={record.project ? "/projects/$projectId" : "/records/$recordId"} params={(record.project ? { projectId: record.id } : { recordId: record.id }) as never} search={{ city: cityId, from: returnPath } as never}>Open full record</Link></Button><details className="rounded-sm border border-border"><summary className="cursor-pointer px-3 py-3 text-sm font-semibold focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">Full raw metadata</summary><dl className="grid gap-3 border-t border-border p-3">{Object.entries(record.raw).map(([key, value]) => <Field key={key} label={labelise(key)} value={formatRaw(value)} mono={key.includes("id")} />)}</dl></details></div></SheetContent></Sheet>;
 }
 
 function HousingSection({ view, cityId }: { view: Property360View; cityId: string }) {
@@ -342,7 +366,7 @@ function HousingSection({ view, cityId }: { view: Property360View; cityId: strin
 
 function WaterSection({ view, cityId }: { view: Property360View; cityId: string }) {
   return (
-    <Chapter id="water-sewerage" number="03" title="Water and sewerage">
+    <Chapter id="water-sewerage" number="04" title="Water and sewerage">
       <div className="grid gap-4 lg:grid-cols-2">
         <Panel title="Utility identifiers">
           <dl className="grid gap-3 sm:grid-cols-2">
@@ -370,7 +394,7 @@ function SanitationSection({ view, cityId }: { view: Property360View; cityId: st
   const exact = view.sanitation.filter((row) => row.collection_route_id === view.property.waste_collection_route_id);
   const rows = exact.length ? exact : view.sanitation;
   return (
-    <Chapter id="sanitation-waste" number="04" title="Sanitation and waste">
+    <Chapter id="sanitation-waste" number="05" title="Sanitation and waste">
       <Panel title="Waste service context" right={<RelationshipBadge label={exact.length ? "Served by" : rows.length ? "Related through locality" : "No known linkage"} />}>
         <Field label="Assigned waste route" value={text(view.property.waste_collection_route_id)} mono />
         {rows.length ? (
@@ -384,7 +408,7 @@ function SanitationSection({ view, cityId }: { view: Property360View; cityId: st
 function FinanceSection({ view, cityId }: { view: Property360View; cityId: string }) {
   const p = view.property;
   return (
-    <Chapter id="municipal-finance" number="05" title="Municipal finance">
+    <Chapter id="municipal-finance" number="03" title="Municipal finance">
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
         <Panel title="Property tax position">
           <dl className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
@@ -427,7 +451,7 @@ function LivelihoodSection({ view, cityId }: { view: Property360View; cityId: st
 
 function MissionSection({ view, cityId }: { view: Property360View; cityId: string }) {
   return (
-    <Chapter id="mission-linkages" number="08" title="Mission linkages" note="Direct service links are separated from locality context">
+    <Chapter id="mission-linkages" number="09" title="Mission linkages" note="Direct service links are separated from locality context">
       <div className="divide-y divide-border rounded-sm border border-border bg-card">
         {view.missions.map((mission) => <MissionRow key={mission.key} mission={mission} cityId={cityId} />)}
       </div>
@@ -437,7 +461,7 @@ function MissionSection({ view, cityId }: { view: Property360View; cityId: strin
 
 function ProjectsAssetsSection({ view, cityId }: { view: Property360View; cityId: string }) {
   return (
-    <Chapter id="projects-assets" number="09" title="Projects and assets" note="Service-chain assets first, then locality context">
+    <Chapter id="projects-assets" number="11" title="Projects and assets" note="Service-chain assets first, then locality context">
       <div className="grid gap-4 lg:grid-cols-2">
         <Panel title="Projects in the locality">
           {view.projects.length ? <RecordRows>{view.projects.map((row) => <RecordRow key={row.project_id} icon={Landmark} title={row.project_name} relationship="Related through locality" detail={`${labelise(row.mission)}. ${labelise(row.project_status)}.`} id={row.project_id} cityId={cityId} project />)}</RecordRows> : <EmptyNote>No project shares this locality.</EmptyNote>}
@@ -452,7 +476,7 @@ function ProjectsAssetsSection({ view, cityId }: { view: Property360View; cityId
 
 function EcosystemSection({ view, cityId }: { view: Property360View; cityId: string }) {
   return (
-    <Chapter id="urban-ecosystem" number="10" title="Surrounding urban ecosystem" note="Synthetic locality context. Not beneficiary proof">
+    <Chapter id="urban-ecosystem" number="08" title="Surrounding urban ecosystem" note="Synthetic locality context. Not beneficiary proof">
       {(["livelihood", "public-service", "mobility"] as const).map((kind) => (
         <div key={kind} className="mb-4 last:mb-0">
           <h3 className="mb-2 text-sm font-semibold text-foreground">{kind === "livelihood" ? "Livelihood ecosystem" : kind === "public-service" ? "Public-service ecosystem" : "Mobility ecosystem"}</h3>
@@ -463,12 +487,24 @@ function EcosystemSection({ view, cityId }: { view: Property360View; cityId: str
   );
 }
 
+function DeliveryJourneySection({ view }: { view: Property360View }) {
+  const stages = [
+    { label: "Property record", value: "Catalogue entry available" },
+    { label: "Service connection", value: view.waterRecords.length ? "Direct record available" : "No direct record" },
+    { label: "Municipal response", value: view.observations.length || view.grievances.length ? "Delivery evidence available" : "No linked evidence" },
+    { label: "Infrastructure context", value: view.projects.length || view.assets.length ? "Locality context available" : "No linked context" },
+  ];
+  return <Chapter id="delivery-journey" number="10" title="Public delivery journey" note="A trace through available records, not a service-performance score">
+    <ol className="grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 xl:grid-cols-4">{stages.map((stage, index) => <li key={stage.label} className="min-w-0 bg-card p-4"><p className="num text-xs text-primary">{String(index + 1).padStart(2, "0")}</p><p className="mt-2 text-sm font-semibold text-foreground">{stage.label}</p><p className="mt-1 text-xs text-muted-foreground">{stage.value}</p></li>)}</ol>
+  </Chapter>;
+}
+
 function EvidenceSection({ view, city }: { view: Property360View; city: CityProfile }) {
   const p = view.property;
   const rawFields: Array<[string, unknown]> = Object.entries(p);
   const returnPath = `/records/${encodeURIComponent(p.property_aggregate_id)}?city=${encodeURIComponent(city.city_id)}#evidence-quality`;
   return (
-    <Chapter id="evidence-quality" number="11" title="Evidence and data quality">
+    <Chapter id="evidence-quality" number="12" title="Evidence and data quality">
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_18rem]">
         <Panel title="Trust record">
           <dl className="grid gap-3 sm:grid-cols-2">
@@ -490,14 +526,15 @@ function EvidenceSection({ view, city }: { view: Property360View; city: CityProf
           </Button>
         </Panel>
       </div>
-      <Panel className="max-w-full overflow-hidden" title="Relationship provenance" description="Each demonstration relationship retains its source, target, geography and classification.">
-        <div className="w-full min-w-0 overflow-x-auto">
+      <details className="digit-card mt-4 group">
+        <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">Full relationship evidence and provenance</summary>
+        <div className="w-full min-w-0 overflow-x-auto border-t border-border p-4">
           <table className="w-full min-w-[48rem] text-sm">
             <thead><tr className="border-b border-border text-left"><th className="field-label py-2">Relationship</th><th className="field-label py-2">Target record</th><th className="field-label py-2">Geography</th><th className="field-label py-2">Classification</th><th className="field-label py-2">Provenance</th></tr></thead>
             <tbody>{view.enrichment.map((row) => <tr key={`${row.relationshipType}-${row.targetEntityId}`} className="border-b border-border/60 align-top"><td className="py-2 pr-3">{relationshipLabel(row.relationshipType)}</td><td className="py-2 pr-3"><RelationshipRecordLink id={row.targetEntityId} cityId={city.city_id} /></td><td className="py-2 pr-3">{labelise(row.geographicPrecision)}</td><td className="py-2 pr-3">{labelise(row.dataClassification)}</td><td className="py-2 text-xs text-muted-foreground">{row.provenance}</td></tr>)}</tbody>
           </table>
         </div>
-      </Panel>
+      </details>
       <details className="digit-card mt-4 group">
         <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">Values exactly as supplied</summary>
         <div className="border-t border-border p-4">
@@ -522,7 +559,9 @@ function SectionTitle({ id, number, title, note }: { id: string; number: string;
 function RecordRows({ children }: { children: ReactNode }) { return <ul className="divide-y divide-border">{children}</ul>; }
 
 function RecordRow({ icon: Icon, title, relationship, detail, id, cityId, project = false }: { icon: typeof Home; title: string; relationship: string; detail: string; id: string; cityId: string; project?: boolean }) {
-  return <li className="grid min-w-0 grid-cols-[1.5rem_minmax(0,1fr)] gap-2 py-3 first:pt-0 last:pb-0"><Icon className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" /><div className="min-w-0"><div className="flex flex-wrap items-start justify-between gap-2"><p className="min-w-0 break-words text-sm font-medium text-foreground">{title}</p><RelationshipBadge label={relationship} /></div><p className="mt-1 text-xs leading-5 text-muted-foreground">{detail}</p><Link to={project ? "/projects/$projectId" : "/records/$recordId"} params={(project ? { projectId: id } : { recordId: id }) as never} search={{ city: cityId } as never} className="mt-1 inline-flex text-xs font-medium text-primary underline-offset-2 hover:underline">Supporting record: {id}</Link></div></li>;
+  const found = lookupEntity(id);
+  const displayTitle = title === id && found ? ENTITY_LABELS[found.kind] : title;
+  return <li className="grid min-w-0 grid-cols-[1.5rem_minmax(0,1fr)] gap-2 py-3 first:pt-0 last:pb-0"><Icon className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" /><div className="min-w-0"><div className="flex flex-wrap items-start justify-between gap-2"><p className="min-w-0 break-words text-sm font-medium text-foreground">{displayTitle}</p><RelationshipBadge label={relationship} /></div><p className="mt-1 text-xs leading-5 text-muted-foreground">{detail}</p><Link to={project ? "/projects/$projectId" : "/records/$recordId"} params={(project ? { projectId: id } : { recordId: id }) as never} search={{ city: cityId } as never} className="mt-1 inline-flex text-xs font-medium text-primary underline-offset-2 hover:underline focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">Open full record</Link></div></li>;
 }
 
 function EcosystemRows({ items, cityId, empty }: { items: PropertyEcosystemItem[]; cityId: string; empty: string }) {
@@ -531,8 +570,9 @@ function EcosystemRows({ items, cityId, empty }: { items: PropertyEcosystemItem[
   return <div className="rounded-sm border border-border bg-card px-3"><RecordRows>{items.map((item) => <RecordRow key={`${item.kind}-${item.id}`} icon={icons[item.kind]} title={item.name} relationship={item.relationship} detail={`${item.mission}. ${item.meaning}`} id={item.supportingRecordId} cityId={cityId} />)}</RecordRows></div>;
 }
 
-function MissionStrip({ missions }: { missions: PropertyMissionRelationship[] }) {
-  return <Panel title="Mission snapshot"><ul className="grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 xl:grid-cols-5">{missions.map((mission) => <li key={mission.key} className="min-w-0 bg-card p-3"><p className="text-xs font-semibold text-foreground">{mission.name}</p><p className="mt-1 text-xs text-muted-foreground">{mission.relationship}</p></li>)}</ul></Panel>;
+function MissionStrip({ missions, selectedMission, onSelect }: { missions: PropertyMissionRelationship[]; selectedMission: string; onSelect: (mission: string) => void }) {
+  const available = missions.filter((mission) => mission.relationship !== "No known linkage");
+  return <Panel title="Mission relationships" description="Select a mission to filter the investigative map and linked records." right={<InfoTip label="Mission relationship"><p>A relationship may be direct, service-area based, or shared locality context. It does not establish a beneficiary relationship.</p></InfoTip>}><div className="flex flex-wrap gap-2" role="group" aria-label="Mission filter"><Button type="button" size="sm" variant={selectedMission === "all" ? "default" : "outline"} aria-pressed={selectedMission === "all"} onClick={() => onSelect("all")}>All missions</Button>{available.map((mission) => <Button key={mission.key} type="button" size="sm" variant={selectedMission === mission.key ? "default" : "outline"} aria-pressed={selectedMission === mission.key} onClick={() => onSelect(mission.key)}>{mission.name}</Button>)}</div></Panel>;
 }
 
 function MissionRow({ mission, cityId }: { mission: PropertyMissionRelationship; cityId: string }) {
@@ -541,7 +581,7 @@ function MissionRow({ mission, cityId }: { mission: PropertyMissionRelationship;
 
 function RelationshipRecordLink({ id, cityId }: { id: string; cityId: string }) {
   const isJalandharProject = cityId === "CITY-JALANDHAR" && id.startsWith("PRJ-JAL-");
-  return <Link to={isJalandharProject ? "/projects/$projectId" : "/records/$recordId"} params={(isJalandharProject ? { projectId: id } : { recordId: id }) as never} search={{ city: cityId } as never} className="num text-xs text-primary underline-offset-2 hover:underline">{id}</Link>;
+  return <Link to={isJalandharProject ? "/projects/$projectId" : "/records/$recordId"} params={(isJalandharProject ? { projectId: id } : { recordId: id }) as never} search={{ city: cityId } as never} className="num text-xs text-primary underline-offset-2 hover:underline focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">{id}</Link>;
 }
 
 function RelationshipBadge({ label }: { label: string }) {
