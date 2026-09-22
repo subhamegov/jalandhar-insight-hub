@@ -82,6 +82,39 @@ function LocalityDetail() {
 
       <PropertyShowcaseEntry city={city} />
 
+      <Panel
+        title={`Properties in ${l.name}`}
+        description="Open any property to see its full Household 360 record."
+      >
+        <RecordTable
+          empty="No property records are attached to this locality."
+          headers={["Property", "Land use", "Households", "Assessment", "Household 360"]}
+          rows={records.properties.map((p) => [
+            <Link
+              key={p.property_aggregate_id}
+              to="/records/$recordId"
+              params={{ recordId: p.property_aggregate_id }}
+              search={{ city: city.city_id } as never}
+              className="num underline underline-offset-2"
+            >
+              {p.property_aggregate_id}
+            </Link>,
+            text(p.land_use),
+            count(p.households),
+            text(p.assessment_status),
+            <Link
+              key={`p360-${p.property_aggregate_id}`}
+              to="/records/$recordId"
+              params={{ recordId: p.property_aggregate_id }}
+              search={{ city: city.city_id } as never}
+              className="text-xs underline underline-offset-2"
+            >
+              Open Household 360
+            </Link>,
+          ])}
+        />
+      </Panel>
+
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <Panel title="Locality anchor" description="Point geometry as supplied. Not a polygon.">
           <div className="h-64 w-full overflow-hidden rounded-sm border border-border">
@@ -174,37 +207,6 @@ function LocalityDetail() {
             count(h.occupied_houses),
             count(h.water_ready_houses),
             <RecordLink key={h.housing_id} id={h.housing_id} />,
-          ])}
-        />
-      </Panel>
-
-      <Panel
-        title="Properties in this locality"
-        description="Open any property to see its full Household 360 record."
-      >
-        <RecordTable
-          empty="No property records are attached to this locality."
-          headers={["Property", "Land use", "Households", "Assessment", "Household 360"]}
-          rows={records.properties.map((p) => [
-            <Link
-              key={p.property_aggregate_id}
-              to="/records/$recordId"
-              params={{ recordId: p.property_aggregate_id }}
-              className="num underline underline-offset-2"
-            >
-              {p.property_aggregate_id}
-            </Link>,
-            text(p.land_use),
-            count(p.households),
-            text(p.assessment_status),
-            <Link
-              key={`p360-${p.property_aggregate_id}`}
-              to="/records/$recordId"
-              params={{ recordId: p.property_aggregate_id }}
-              className="text-xs underline underline-offset-2"
-            >
-              Open Household 360
-            </Link>,
           ])}
         />
       </Panel>
