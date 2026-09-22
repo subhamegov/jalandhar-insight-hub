@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { lazy } from "react";
 import { PageHeader, Panel } from "@/components/app/Primitives";
 import { Breadcrumbs } from "@/components/app/Breadcrumbs";
+import { PropertyShowcaseEntry } from "@/components/app/PropertyShowcaseEntry";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { MapPoint } from "@/components/map/PointMap";
 import { fourCityBundle, localityRecords } from "@/data/four-city/dataset";
@@ -99,6 +100,8 @@ function LocalitiesIndex() {
         title={`Localities: ${city.name}`}
         subtitle={`${localities.length} locality anchors supplied for ${city.urban_local_body}. Each anchor is an illustrative point, not a ward boundary, and carries no statutory ward identity.`}
       />
+
+      <PropertyShowcaseEntry city={city} />
 
       <Panel
         title="Locality anchors"

@@ -9,6 +9,7 @@ import { useCity } from "@/lib/cityContext";
 import { useGeo } from "@/lib/geoContext";
 import { count, dateText, labelise, percent, text } from "@/lib/format";
 import { Unavailable } from "@/components/app/Unavailable";
+import { PropertyShowcaseEntry } from "@/components/app/PropertyShowcaseEntry";
 
 const PointMap = lazy(() => import("@/components/map/PointMap"));
 
@@ -78,6 +79,8 @@ function LocalityDetail() {
         title={`${l.name}, ${city.name}`}
         subtitle={`${l.id} · ${labelise(l.geometry_type)}. This is an illustrative point anchor. It carries no statutory ward identity, and no ward boundary is implied or inferred.`}
       />
+
+      <PropertyShowcaseEntry city={city} />
 
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <Panel title="Locality anchor" description="Point geometry as supplied. Not a polygon.">
@@ -171,6 +174,37 @@ function LocalityDetail() {
             count(h.occupied_houses),
             count(h.water_ready_houses),
             <RecordLink key={h.housing_id} id={h.housing_id} />,
+          ])}
+        />
+      </Panel>
+
+      <Panel
+        title="Properties in this locality"
+        description="Open any property to see its full Property 360 record."
+      >
+        <RecordTable
+          empty="No property records are attached to this locality."
+          headers={["Property", "Land use", "Households", "Assessment", "Property 360"]}
+          rows={records.properties.map((p) => [
+            <Link
+              key={p.property_aggregate_id}
+              to="/records/$recordId"
+              params={{ recordId: p.property_aggregate_id }}
+              className="num underline underline-offset-2"
+            >
+              {p.property_aggregate_id}
+            </Link>,
+            text(p.land_use),
+            count(p.households),
+            text(p.assessment_status),
+            <Link
+              key={`p360-${p.property_aggregate_id}`}
+              to="/records/$recordId"
+              params={{ recordId: p.property_aggregate_id }}
+              className="text-xs underline underline-offset-2"
+            >
+              Open Property 360
+            </Link>,
           ])}
         />
       </Panel>
