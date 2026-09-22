@@ -13,6 +13,8 @@ import { useCity } from "@/lib/cityContext";
 import { useGeo } from "@/lib/geoContext";
 import { dateText, labelise, text } from "@/lib/format";
 import { Unavailable } from "@/components/app/Unavailable";
+import { Property360 } from "@/components/app/Property360";
+import { property360 } from "@/data/four-city/property360";
 
 export const Route = createFileRoute("/records/$recordId")({
   head: () => ({
@@ -87,6 +89,11 @@ function RecordDetail() {
   const prov = provenanceOf(record);
   const { out, in: inbound } = relationshipsFor(recordId);
   const otherCity = recordCity && recordCity !== city.city_id;
+
+  if (kind === "property_aggregate" && !otherCity) {
+    const propertyView = property360(city.city_id, recordId);
+    if (propertyView) return <Property360 view={propertyView} city={city} />;
+  }
 
   const trail = [
     ...(locality
