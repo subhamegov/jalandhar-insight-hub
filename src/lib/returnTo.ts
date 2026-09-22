@@ -3,7 +3,7 @@
 // as `from`, so a direct link, a refresh and browser history all behave the
 // same way. Browser history alone is not used.
 
-const SAFE_PATH = /^\/[A-Za-z0-9\-._~/$%?&=,+]*$/;
+const SAFE_PATH = /^\/[A-Za-z0-9\-._~/$%?&=,+#]*$/;
 
 /** Accept only internal application paths. Anything else is discarded. */
 export function safeReturnPath(value: unknown): string | null {

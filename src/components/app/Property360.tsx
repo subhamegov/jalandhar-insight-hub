@@ -1,4 +1,4 @@
-import { lazy, useMemo, useState, type ReactNode } from "react";
+import { lazy, useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   AlertCircle,
@@ -14,14 +14,20 @@ import {
   Route,
   ShieldCheck,
   Store,
+  TramFront,
   Users,
 } from "lucide-react";
 import propertyHouse from "@/assets/property/property-house.png";
 import { Breadcrumbs } from "@/components/app/Breadcrumbs";
 import { EmptyNote, Field, Panel, PrototypeNote } from "@/components/app/Primitives";
 import { Button } from "@/components/ui/button";
+import { InfoTip } from "@/components/app/InfoTip";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { MapPoint } from "@/components/map/PointMap";
+import { ENTITY_LABELS, type EntityKind } from "@/data/four-city/types";
+import { lookupEntity } from "@/data/four-city/dataset";
 import type {
   Property360View,
   PropertyEcosystemItem,
@@ -34,25 +40,53 @@ import { cn } from "@/lib/utils";
 
 const PointMap = lazy(() => import("@/components/map/PointMap"));
 
-const CHAPTERS = [
-  ["overview", "Overview"],
-  ["housing", "Housing"],
-  ["water-sewerage", "Water and sewerage"],
-  ["sanitation-waste", "Sanitation and waste"],
-  ["municipal-finance", "Municipal finance"],
-  ["services-grievances", "Services and grievances"],
-  ["livelihoods-inclusion", "Livelihoods and inclusion"],
-  ["mission-linkages", "Mission linkages"],
-  ["projects-assets", "Projects and assets"],
-  ["urban-ecosystem", "Surrounding urban ecosystem"],
-  ["evidence-quality", "Evidence and data quality"],
+const CHAPTER_GROUPS = [
+  { label: "Property", items: [["overview", "Overview"], ["housing", "Housing"], ["municipal-finance", "Municipal finance"]] },
+  { label: "Services", items: [["water-sewerage", "Water & sewerage"], ["sanitation-waste", "Sanitation & waste"], ["services-grievances", "Services & grievances"]] },
+  { label: "Urban ecosystem", items: [["livelihoods-inclusion", "Livelihoods & inclusion"], ["urban-ecosystem", "Surrounding urban ecosystem"], ["mission-linkages", "Mission linkages"]] },
+  { label: "Delivery & trust", items: [["delivery-journey", "Public delivery journey"], ["projects-assets", "Projects & assets"], ["evidence-quality", "Evidence & data quality"]] },
 ] as const;
 
-type MapLayer = "property" | "services" | "projects" | "assets" | "missions" | "ecosystem";
+type SectionId = (typeof CHAPTER_GROUPS)[number]["items"][number][0];
+type MapLayer = "water" | "waste" | "projects" | "vending" | "markets" | "transport";
+
+const ALL_CHAPTERS = CHAPTER_GROUPS.flatMap((group) => group.items);
 
 export function Property360({ view, city }: { view: Property360View; city: CityProfile }) {
   const { property, locality } = view;
   const chips = propertyChips(view);
+  const [activeSection, setActiveSection] = useState<SectionId>("overview");
+  const [selectedMission, setSelectedMission] = useState("all");
+  const [mapLayer, setMapLayer] = useState<MapLayer>("water");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const section = params.get("activeSection");
+    const mission = params.get("selectedMission");
+    const layer = params.get("mapLayer");
+    if (ALL_CHAPTERS.some(([id]) => id === section)) setActiveSection(section as SectionId);
+    if (mission) setSelectedMission(mission);
+    if (["water", "waste", "projects", "vending", "markets", "transport"].includes(layer ?? "")) setMapLayer(layer as MapLayer);
+  }, []);
+
+  const preserveState = (next: Partial<{ activeSection: SectionId; selectedMission: string; mapLayer: MapLayer }>) => {
+    const state = { activeSection, selectedMission, mapLayer, ...next };
+    setActiveSection(state.activeSection);
+    setSelectedMission(state.selectedMission);
+    setMapLayer(state.mapLayer);
+    const url = new URL(window.location.href);
+    url.searchParams.set("city", city.city_id);
+    url.searchParams.set("propertyId", property.property_aggregate_id);
+    url.searchParams.set("activeSection", state.activeSection);
+    url.searchParams.set("selectedMission", state.selectedMission);
+    url.searchParams.set("mapLayer", state.mapLayer);
+    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}#${state.activeSection}`);
+  };
+
+  const selectSection = (section: SectionId) => {
+    preserveState({ activeSection: section });
+    requestAnimationFrame(() => document.getElementById(section)?.scrollIntoView({ behavior: "smooth", block: "start" }));
+  };
   return (
     <div className="min-w-0 space-y-5">
       <Breadcrumbs
@@ -63,44 +97,41 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
         ]}
       />
 
-      <header className="digit-card overflow-hidden">
-        <div className="grid min-w-0 md:grid-cols-[11rem_minmax(0,1fr)]">
-          <div className="flex min-h-40 items-center justify-center border-b border-border bg-info-surface p-4 md:border-r md:border-b-0">
+      <header className="digit-card overflow-hidden border-t-4 border-t-primary">
+        <div className="grid min-w-0 sm:grid-cols-[9rem_minmax(0,1fr)]">
+          <div className="flex min-h-32 items-center justify-center border-b border-border bg-info-surface p-3 sm:border-r sm:border-b-0">
             <img
               src={propertyHouse}
               alt=""
               aria-hidden="true"
               width={816}
               height={816}
-              className="h-36 w-36 object-contain"
+              className="h-28 w-28 object-contain"
             />
           </div>
-          <div className="min-w-0 p-4 sm:p-5">
-            <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0 p-4">
+            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
               <div className="min-w-0">
-                <p className="field-label">Property 360</p>
-                <h1 className="mt-1 break-words text-xl font-semibold text-foreground">
+                <p className="field-label">Property 360 civic catalogue</p>
+                <h1 className="mt-1 break-words text-2xl font-semibold text-foreground">
                   {property.property_aggregate_id}
                 </h1>
                 <p className="mt-1 text-sm text-muted-foreground">
                   {locality.name}, {city.name}, {city.state}
                 </p>
               </div>
-              <span className="inline-flex items-center gap-1.5 rounded-sm border border-warning/40 bg-warning/10 px-2 py-1 text-xs font-medium text-foreground">
+              <span className="hidden items-center gap-1.5 rounded-sm border border-warning/40 bg-warning/10 px-2 py-1 text-xs font-medium text-foreground sm:inline-flex">
                 <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
                 {view.geography.label}
               </span>
             </div>
 
-            <dl className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-              <Field label="Building" value={property.building_id} mono />
-              <Field label="Land use" value={labelise(property.land_use)} />
+            <dl className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-5">
+              <Field label="Classification" value={labelise(property.land_use)} />
               <Field label="Households" value={count(property.households)} mono />
-              <Field label="Occupancy" value={labelise(property.occupancy_category)} />
+              <Field label="Service summary" value={`${[property.water_connection_id, property.sewer_connection_id, property.waste_collection_route_id].filter(Boolean).length} of 3 recorded`} />
               <Field label="Assessment" value={labelise(property.assessment_status)} />
-              <Field label="Locality" value={locality.name} />
-              <Field label="City" value={city.name} />
-              <Field label="Geography" value={view.geography.label} />
+              <Field label="Prototype classification" value={text(view.provenance.data_classification)} />
             </dl>
 
             {chips.length ? (
@@ -125,28 +156,11 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
         </div>
       </header>
 
-      <div className="grid min-w-0 gap-5 xl:grid-cols-[13rem_minmax(0,1fr)]">
-        <nav aria-label="Property 360 chapters" className="min-w-0 xl:sticky xl:top-4 xl:self-start">
-          <div className="digit-card p-2">
-            <p className="field-label px-2 py-1.5">Property chapters</p>
-            <ol className="grid gap-0.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1">
-              {CHAPTERS.map(([id, label], index) => (
-                <li key={id}>
-                  <a
-                    href={`#${id}`}
-                    className="flex min-h-9 items-start gap-2 rounded-sm px-2 py-2 text-sm text-foreground hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-                  >
-                    <span className="num text-xs text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
-                    <span>{label}</span>
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </nav>
+      <div className="grid min-w-0 gap-5 xl:grid-cols-[14rem_minmax(0,1fr)]">
+        <CatalogueNavigation activeSection={activeSection} onSelect={selectSection} />
 
         <main className="min-w-0 space-y-5">
-          <PropertyOverview view={view} city={city} />
+          <PropertyOverview view={view} city={city} selectedMission={selectedMission} mapLayer={mapLayer} onMissionChange={(mission) => preserveState({ selectedMission: mission })} onLayerChange={(layer) => preserveState({ mapLayer: layer })} activeSection={activeSection} />
           <HousingSection view={view} cityId={city.city_id} />
           <WaterSection view={view} cityId={city.city_id} />
           <SanitationSection view={view} cityId={city.city_id} />
@@ -156,6 +170,7 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
           <MissionSection view={view} cityId={city.city_id} />
           <ProjectsAssetsSection view={view} cityId={city.city_id} />
           <EcosystemSection view={view} cityId={city.city_id} />
+          <DeliveryJourneySection view={view} />
           <EvidenceSection view={view} city={city} />
         </main>
       </div>
