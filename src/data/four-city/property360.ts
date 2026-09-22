@@ -21,7 +21,7 @@ import type {
   TransportRecord,
   WaterSewerageRecord,
 } from "./types";
-import { assets as jalandharAssets, projects as jalandharProjects } from "@/data/jalandhar";
+import { projects as jalandharProjects } from "@/data/jalandhar";
 
 export type PropertyRelationshipType =
   | "Directly linked"
@@ -165,6 +165,8 @@ function jalandharProperty360(propertyId: string): Property360View | null {
   if (propertyId !== "DEMO-PROP-JALANDHAR-001") return null;
   const project = jalandharProjects.find((row) => row.project_id === "PRJ-JAL-001");
   if (!project || project.latitude === null || project.longitude === null) return null;
+  const projectLatitude = project.latitude;
+  const projectLongitude = project.longitude;
   const localityId = "DEMO-LOC-JALANDHAR-WATER-001";
   const property: PropertyAggregate = {
     city_id: "CITY-JALANDHAR", record_type: "SYNTHETIC", verification_status: "demonstration_only",
@@ -184,7 +186,7 @@ function jalandharProperty360(propertyId: string): Property360View | null {
     name: project.locality ?? "Jalandhar project area", geometry_type: "Point", official_ward_id: null,
     ward_boundary_version: null, municipal_zone_id: null, property_assessment_ward_id: null,
     geocoding_precision: "project_coordinate_context", is_official_boundary: false,
-    coordinates: [project.longitude, project.latitude],
+    coordinates: [projectLongitude, projectLatitude],
   };
   const adaptedProject: MissionProject = {
     city_id: "CITY-JALANDHAR", record_type: "VERIFIED", verification_status: project.evidence_quality,
@@ -198,16 +200,6 @@ function jalandharProperty360(propertyId: string): Property360View | null {
     actual_completion_date: project.actual_completion_date, asset_ids: [], housing_ids: [], financial_record_ids: [],
     official_project_id: null,
   };
-  const linkedAssets: MunicipalAsset[] = jalandharAssets.filter((asset) => asset.related_projects.includes(project.project_id)).map((asset) => ({
-    city_id: "CITY-JALANDHAR", record_type: "VERIFIED", verification_status: "unverified",
-    source_record_id: asset.asset_id, source_url: null, observation_date: asset.last_verified,
-    data_classification: "JALANDHAR_ASSET_REGISTER", locality_id: localityId, asset_id: asset.asset_id,
-    asset_type: asset.asset_type ?? "Urban asset", asset_name: asset.asset_name, project_ids: asset.related_projects,
-    service_area_ids: [], owner_agency: asset.owning_agency, operator_agency: asset.operating_agency,
-    commissioning_status: asset.operational_status ?? "Not available", condition: null, capacity_value: asset.capacity,
-    capacity_unit: asset.capacity_unit, utilisation_pct: null, geometry_precision: "project_coordinate_context",
-    actual_asset_location: false, coordinates: [asset.longitude ?? project.longitude, asset.latitude ?? project.latitude],
-  }));
   const enrichment = [relationshipRecord(
     property,
     project.project_id,
@@ -218,12 +210,12 @@ function jalandharProperty360(propertyId: string): Property360View | null {
   return {
     property, locality, provenance: provenanceOf(property as unknown as Record<string, unknown>),
     geography: {
-      point: { lon: project.longitude, lat: project.latitude }, precision: "approximate_locality_context",
+      point: { lon: projectLongitude, lat: projectLatitude }, precision: "approximate_locality_context",
       label: "Approximate locality context",
       note: "No property coordinate exists. The map reuses the existing project coordinate as broad context, not an exact property location.",
     },
     serviceArea: null, waterRecords: [], housing: [], sanitation: [], grievances: [], observations: [],
-    livelihoods: [], vendors: [], transport: [], projects: [adaptedProject], assets: linkedAssets, finance: [],
+    livelihoods: [], vendors: [], transport: [], projects: [adaptedProject], assets: [], finance: [],
     missions: MISSION_DEFINITIONS.map((definition) => definition.key === "AMRUT" ? ({
       key: definition.key, name: definition.name, relationship: "Related through locality", recordIds: [project.project_id],
       meaning: "An existing water project provides project-area context. It does not prove service to this demonstration property.",

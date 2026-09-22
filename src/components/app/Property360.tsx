@@ -28,6 +28,7 @@ import type {
   PropertyMissionRelationship,
 } from "@/data/four-city/property360";
 import type { CityProfile } from "@/data/cities/registry";
+import { propertyShowcase } from "@/data/propertyShowcases";
 import { count, dateText, labelise, NA, text } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
@@ -165,9 +166,17 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
 function PropertyOverview({ view, city }: { view: Property360View; city: CityProfile }) {
   const p = view.property;
   const abstract = catalogueNote(view, city);
+  const showcase = propertyShowcase(city.city_id);
   return (
     <section id="overview" className="scroll-mt-4 space-y-4" aria-labelledby="overview-title">
       <SectionTitle id="overview-title" number="01" title="Overview" note="Catalogue entry with linked civic evidence" />
+      {showcase.propertyId === p.property_aggregate_id ? (
+        <Panel title="Demonstration journey">
+          <p className="text-sm font-medium text-foreground">{showcase.title}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{showcase.storyline}</p>
+          <p className="mt-2 text-xs text-muted-foreground">This is a guided prototype example. Synthetic relationships are context, not official findings.</p>
+        </Panel>
+      ) : null}
       <div className="grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_18rem]">
         <Panel title="Property snapshot">
           <dl className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
