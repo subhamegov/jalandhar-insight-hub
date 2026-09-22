@@ -317,6 +317,35 @@ function PropertyMap({ view, cityId, selectedMission, layer, onLayerChange, acti
   );
 }
 
+function catalogueRecords(view: Property360View, layer: MapLayer): CatalogueRecord[] {
+  const localityPoint = (id: string, name: string, sub: string): MapPoint => ({ id, name, sub, lat: view.geography.point.lat, lon: view.geography.point.lon, verified: false });
+  const assetPoint = (id: string) => {
+    const asset = view.assets.find((row) => row.asset_id === id);
+    return asset ? { id, name: asset.asset_name, sub: asset.actual_asset_location ? "Reported asset position" : "Illustrative asset anchor", lat: asset.coordinates[1], lon: asset.coordinates[0], verified: asset.actual_asset_location } : null;
+  };
+  const make = (id: string, name: string, type: string, mission: string, relationship: string, status: string, evidence: string, point: MapPoint | null, raw: Record<string, unknown>, project = false): CatalogueRecord => ({ id, mapId: point?.id ?? id, name, type, mission, relationship, status, evidence, point, raw, project });
+  if (layer === "water") {
+    const rows = view.waterRecords.map((row) => make(row.connection_record_id, "Water and sewerage service", "Water and sewerage service", "AMRUT", "Directly linked", labelise(row.service_status), "Property aggregate identifier", view.serviceArea ? { id: row.connection_record_id, name: "Water and sewerage service", sub: "Service-area anchor", lat: view.serviceArea.coordinates[1], lon: view.serviceArea.coordinates[0], verified: false } : localityPoint(row.connection_record_id, "Water and sewerage service", "In the same locality"), row as unknown as Record<string, unknown>));
+    if (!rows.length && view.serviceArea) rows.push(make(view.serviceArea.service_area_id, "Water service area", "Asset service area", "AMRUT", "Falls within", labelise(view.serviceArea.area_type), "Property water service-area identifier", { id: view.serviceArea.service_area_id, name: "Water service area", sub: "Service-area anchor", lat: view.serviceArea.coordinates[1], lon: view.serviceArea.coordinates[0], verified: false }, view.serviceArea as unknown as Record<string, unknown>));
+    return rows;
+  }
+  if (layer === "waste") return view.sanitation.map((row) => make(row.sanitation_id, "Waste collection service", "Sanitation service", "SBM-U", row.collection_route_id === view.property.waste_collection_route_id ? "Served by" : "Related through locality", row.collection_route_id ? "Route recorded" : "Route not available", row.collection_route_id === view.property.waste_collection_route_id ? "Matching collection route identifier" : "Shared canonical locality", localityPoint(row.sanitation_id, "Waste collection service", "In the same locality"), row as unknown as Record<string, unknown>));
+  if (layer === "projects") return view.projects.map((row) => make(row.project_id, row.project_name, "Project", labelise(row.mission), "Related through locality", labelise(row.project_status), "Shared canonical locality", localityPoint(`project-${row.project_id}`, row.project_name, "Project context in the same locality"), row as unknown as Record<string, unknown>, true));
+  if (layer === "vending") return view.vendors.map((row) => make(row.vendor_aggregate_id, "Street-vending activity", "Street-vendor aggregate", "PM SVANidhi", "Related through locality", row.vending_zone_id ? "Vending zone recorded" : "Zone not available", "Shared canonical locality", assetPoint(row.market_asset_id ?? "") ?? localityPoint(row.vendor_aggregate_id, "Street-vending activity", "In the same locality"), row as unknown as Record<string, unknown>));
+  if (layer === "markets") return view.ecosystem.filter((item) => item.kind === "livelihood" && item.point).map((item) => {
+    const point = item.point ? { id: item.id, name: item.name, sub: `${item.mission}: ${relationshipLabel(item.relationship)}`, lat: item.point.lat, lon: item.point.lon, verified: item.point.verified } : null;
+    const found = lookupEntity(item.supportingRecordId);
+    return make(item.supportingRecordId, item.name, "Market and livelihood context", item.mission, item.relationship, "Context available", "Linked market asset or shared canonical locality", point, found?.record ?? {});
+  });
+  return view.transport.map((row) => make(row.transport_stop_id, `${labelise(row.mode)} transport record`, "Transport route", "Urban transport context", "Related through locality", row.actual_stop_or_route ? "Reported route or stop" : "Illustrative record", "Shared canonical locality", localityPoint(row.transport_stop_id, `${labelise(row.mode)} transport record`, "In the same locality"), row as unknown as Record<string, unknown>));
+}
+
+function RecordPreview({ record, cityId, returnSection, propertyId, onClose }: { record: CatalogueRecord | null; cityId: string; returnSection: SectionId; propertyId: string; onClose: () => void }) {
+  if (!record) return null;
+  const returnPath = `/records/${encodeURIComponent(propertyId)}?city=${encodeURIComponent(cityId)}&propertyId=${encodeURIComponent(propertyId)}&activeSection=${encodeURIComponent(returnSection)}#${returnSection}`;
+  return <Sheet open onOpenChange={(open) => { if (!open) onClose(); }}><SheetContent className="w-full max-w-md overflow-y-auto sm:max-w-md"><SheetHeader><SheetTitle>{record.name}</SheetTitle><SheetDescription>{record.type}</SheetDescription></SheetHeader><div className="mt-6 space-y-4"><dl className="grid gap-3 sm:grid-cols-2"><Field label="Mission" value={record.mission} /><Field label="Relationship" value={relationshipLabel(record.relationship)} /><Field label="Status" value={record.status} /><Field label="Geography" value={record.point ? record.point.verified ? "Reported position" : "In the same locality" : "No mappable position"} /></dl><div><p className="field-label">Evidence</p><p className="mt-1 text-sm text-foreground">{record.evidence}</p></div><Button asChild className="w-full"><Link to={record.project ? "/projects/$projectId" : "/records/$recordId"} params={(record.project ? { projectId: record.id } : { recordId: record.id }) as never} search={{ city: cityId, from: returnPath } as never}>Open full record</Link></Button><details className="rounded-sm border border-border"><summary className="cursor-pointer px-3 py-3 text-sm font-semibold focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">Full raw metadata</summary><dl className="grid gap-3 border-t border-border p-3">{Object.entries(record.raw).map(([key, value]) => <Field key={key} label={labelise(key)} value={formatRaw(value)} mono={key.includes("id")} />)}</dl></details></div></SheetContent></Sheet>;
+}
+
 function HousingSection({ view, cityId }: { view: Property360View; cityId: string }) {
   return (
     <Chapter id="housing" number="02" title="Housing" note="Direct property links remain distinct from locality context">
@@ -526,7 +555,9 @@ function SectionTitle({ id, number, title, note }: { id: string; number: string;
 function RecordRows({ children }: { children: ReactNode }) { return <ul className="divide-y divide-border">{children}</ul>; }
 
 function RecordRow({ icon: Icon, title, relationship, detail, id, cityId, project = false }: { icon: typeof Home; title: string; relationship: string; detail: string; id: string; cityId: string; project?: boolean }) {
-  return <li className="grid min-w-0 grid-cols-[1.5rem_minmax(0,1fr)] gap-2 py-3 first:pt-0 last:pb-0"><Icon className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" /><div className="min-w-0"><div className="flex flex-wrap items-start justify-between gap-2"><p className="min-w-0 break-words text-sm font-medium text-foreground">{title}</p><RelationshipBadge label={relationship} /></div><p className="mt-1 text-xs leading-5 text-muted-foreground">{detail}</p><Link to={project ? "/projects/$projectId" : "/records/$recordId"} params={(project ? { projectId: id } : { recordId: id }) as never} search={{ city: cityId } as never} className="mt-1 inline-flex text-xs font-medium text-primary underline-offset-2 hover:underline">Supporting record: {id}</Link></div></li>;
+  const found = lookupEntity(id);
+  const displayTitle = title === id && found ? ENTITY_LABELS[found.kind] : title;
+  return <li className="grid min-w-0 grid-cols-[1.5rem_minmax(0,1fr)] gap-2 py-3 first:pt-0 last:pb-0"><Icon className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" /><div className="min-w-0"><div className="flex flex-wrap items-start justify-between gap-2"><p className="min-w-0 break-words text-sm font-medium text-foreground">{displayTitle}</p><RelationshipBadge label={relationship} /></div><p className="mt-1 text-xs leading-5 text-muted-foreground">{detail}</p><Link to={project ? "/projects/$projectId" : "/records/$recordId"} params={(project ? { projectId: id } : { recordId: id }) as never} search={{ city: cityId } as never} className="mt-1 inline-flex text-xs font-medium text-primary underline-offset-2 hover:underline focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">Open full record</Link></div></li>;
 }
 
 function EcosystemRows({ items, cityId, empty }: { items: PropertyEcosystemItem[]; cityId: string; empty: string }) {
