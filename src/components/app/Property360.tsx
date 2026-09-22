@@ -494,7 +494,7 @@ function EvidenceSection({ view, city }: { view: Property360View; city: CityProf
         <div className="w-full min-w-0 overflow-x-auto">
           <table className="w-full min-w-[48rem] text-sm">
             <thead><tr className="border-b border-border text-left"><th className="field-label py-2">Relationship</th><th className="field-label py-2">Target record</th><th className="field-label py-2">Geography</th><th className="field-label py-2">Classification</th><th className="field-label py-2">Provenance</th></tr></thead>
-            <tbody>{view.enrichment.map((row) => <tr key={`${row.relationshipType}-${row.targetEntityId}`} className="border-b border-border/60 align-top"><td className="py-2 pr-3">{row.relationshipType}</td><td className="py-2 pr-3"><RelationshipRecordLink id={row.targetEntityId} cityId={city.city_id} /></td><td className="py-2 pr-3">{labelise(row.geographicPrecision)}</td><td className="py-2 pr-3">{labelise(row.dataClassification)}</td><td className="py-2 text-xs text-muted-foreground">{row.provenance}</td></tr>)}</tbody>
+            <tbody>{view.enrichment.map((row) => <tr key={`${row.relationshipType}-${row.targetEntityId}`} className="border-b border-border/60 align-top"><td className="py-2 pr-3">{relationshipLabel(row.relationshipType)}</td><td className="py-2 pr-3"><RelationshipRecordLink id={row.targetEntityId} cityId={city.city_id} /></td><td className="py-2 pr-3">{labelise(row.geographicPrecision)}</td><td className="py-2 pr-3">{labelise(row.dataClassification)}</td><td className="py-2 text-xs text-muted-foreground">{row.provenance}</td></tr>)}</tbody>
           </table>
         </div>
       </Panel>
@@ -545,7 +545,11 @@ function RelationshipRecordLink({ id, cityId }: { id: string; cityId: string }) 
 }
 
 function RelationshipBadge({ label }: { label: string }) {
-  return <span className="inline-flex w-fit shrink-0 rounded-sm border border-border bg-muted px-1.5 py-0.5 text-[0.7rem] font-medium text-foreground">{label}</span>;
+  return <span className="inline-flex w-fit shrink-0 rounded-sm border border-border bg-muted px-1.5 py-0.5 text-[0.7rem] font-medium text-foreground">{relationshipLabel(label)}</span>;
+}
+
+function relationshipLabel(label: string): string {
+  return label === "Related through locality" ? "In the same locality" : label;
 }
 
 function ReadinessRow({ label, value }: { label: string; value: string }) { return <li className="flex min-w-0 items-start justify-between gap-3 py-2 first:pt-0 last:pb-0"><span className="text-muted-foreground">{label}</span><span className="min-w-0 text-right font-medium text-foreground">{value}</span></li>; }
