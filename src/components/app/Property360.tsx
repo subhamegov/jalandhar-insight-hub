@@ -270,7 +270,7 @@ function PropertyOverview({ view, city, selectedMission, mapLayer, onMissionChan
 }
 
 function PropertyMap({ view, cityId, selectedMission, layer, onLayerChange, activeSection }: { view: Property360View; cityId: string; selectedMission: string; layer: MapLayer; onLayerChange: (layer: MapLayer) => void; activeSection: SectionId }) {
-  const records = useMemo(() => catalogueRecords(view, layer).filter((record) => selectedMission === "all" || record.mission === selectedMission), [layer, selectedMission, view]);
+  const records = useMemo(() => catalogueRecords(view, layer).filter((record) => selectedMission === "all" || view.missions.find((mission) => mission.key === selectedMission)?.recordIds.includes(record.id)), [layer, selectedMission, view]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [preview, setPreview] = useState<CatalogueRecord | null>(null);
   const points = records.flatMap((record) => record.point ? [record.point] : []);
@@ -333,7 +333,7 @@ function HousingSection({ view, cityId }: { view: Property360View; cityId: strin
 
 function WaterSection({ view, cityId }: { view: Property360View; cityId: string }) {
   return (
-    <Chapter id="water-sewerage" number="03" title="Water and sewerage">
+    <Chapter id="water-sewerage" number="04" title="Water and sewerage">
       <div className="grid gap-4 lg:grid-cols-2">
         <Panel title="Utility identifiers">
           <dl className="grid gap-3 sm:grid-cols-2">
@@ -361,7 +361,7 @@ function SanitationSection({ view, cityId }: { view: Property360View; cityId: st
   const exact = view.sanitation.filter((row) => row.collection_route_id === view.property.waste_collection_route_id);
   const rows = exact.length ? exact : view.sanitation;
   return (
-    <Chapter id="sanitation-waste" number="04" title="Sanitation and waste">
+    <Chapter id="sanitation-waste" number="05" title="Sanitation and waste">
       <Panel title="Waste service context" right={<RelationshipBadge label={exact.length ? "Served by" : rows.length ? "Related through locality" : "No known linkage"} />}>
         <Field label="Assigned waste route" value={text(view.property.waste_collection_route_id)} mono />
         {rows.length ? (
@@ -375,7 +375,7 @@ function SanitationSection({ view, cityId }: { view: Property360View; cityId: st
 function FinanceSection({ view, cityId }: { view: Property360View; cityId: string }) {
   const p = view.property;
   return (
-    <Chapter id="municipal-finance" number="05" title="Municipal finance">
+    <Chapter id="municipal-finance" number="03" title="Municipal finance">
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
         <Panel title="Property tax position">
           <dl className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
@@ -418,7 +418,7 @@ function LivelihoodSection({ view, cityId }: { view: Property360View; cityId: st
 
 function MissionSection({ view, cityId }: { view: Property360View; cityId: string }) {
   return (
-    <Chapter id="mission-linkages" number="08" title="Mission linkages" note="Direct service links are separated from locality context">
+    <Chapter id="mission-linkages" number="09" title="Mission linkages" note="Direct service links are separated from locality context">
       <div className="divide-y divide-border rounded-sm border border-border bg-card">
         {view.missions.map((mission) => <MissionRow key={mission.key} mission={mission} cityId={cityId} />)}
       </div>
@@ -428,7 +428,7 @@ function MissionSection({ view, cityId }: { view: Property360View; cityId: strin
 
 function ProjectsAssetsSection({ view, cityId }: { view: Property360View; cityId: string }) {
   return (
-    <Chapter id="projects-assets" number="09" title="Projects and assets" note="Service-chain assets first, then locality context">
+    <Chapter id="projects-assets" number="11" title="Projects and assets" note="Service-chain assets first, then locality context">
       <div className="grid gap-4 lg:grid-cols-2">
         <Panel title="Projects in the locality">
           {view.projects.length ? <RecordRows>{view.projects.map((row) => <RecordRow key={row.project_id} icon={Landmark} title={row.project_name} relationship="Related through locality" detail={`${labelise(row.mission)}. ${labelise(row.project_status)}.`} id={row.project_id} cityId={cityId} project />)}</RecordRows> : <EmptyNote>No project shares this locality.</EmptyNote>}
@@ -443,7 +443,7 @@ function ProjectsAssetsSection({ view, cityId }: { view: Property360View; cityId
 
 function EcosystemSection({ view, cityId }: { view: Property360View; cityId: string }) {
   return (
-    <Chapter id="urban-ecosystem" number="10" title="Surrounding urban ecosystem" note="Synthetic locality context. Not beneficiary proof">
+    <Chapter id="urban-ecosystem" number="08" title="Surrounding urban ecosystem" note="Synthetic locality context. Not beneficiary proof">
       {(["livelihood", "public-service", "mobility"] as const).map((kind) => (
         <div key={kind} className="mb-4 last:mb-0">
           <h3 className="mb-2 text-sm font-semibold text-foreground">{kind === "livelihood" ? "Livelihood ecosystem" : kind === "public-service" ? "Public-service ecosystem" : "Mobility ecosystem"}</h3>
@@ -454,12 +454,24 @@ function EcosystemSection({ view, cityId }: { view: Property360View; cityId: str
   );
 }
 
+function DeliveryJourneySection({ view }: { view: Property360View }) {
+  const stages = [
+    { label: "Property record", value: "Catalogue entry available" },
+    { label: "Service connection", value: view.waterRecords.length ? "Direct record available" : "No direct record" },
+    { label: "Municipal response", value: view.observations.length || view.grievances.length ? "Delivery evidence available" : "No linked evidence" },
+    { label: "Infrastructure context", value: view.projects.length || view.assets.length ? "Locality context available" : "No linked context" },
+  ];
+  return <Chapter id="delivery-journey" number="10" title="Public delivery journey" note="A trace through available records, not a service-performance score">
+    <ol className="grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 xl:grid-cols-4">{stages.map((stage, index) => <li key={stage.label} className="min-w-0 bg-card p-4"><p className="num text-xs text-primary">{String(index + 1).padStart(2, "0")}</p><p className="mt-2 text-sm font-semibold text-foreground">{stage.label}</p><p className="mt-1 text-xs text-muted-foreground">{stage.value}</p></li>)}</ol>
+  </Chapter>;
+}
+
 function EvidenceSection({ view, city }: { view: Property360View; city: CityProfile }) {
   const p = view.property;
   const rawFields: Array<[string, unknown]> = Object.entries(p);
   const returnPath = `/records/${encodeURIComponent(p.property_aggregate_id)}?city=${encodeURIComponent(city.city_id)}#evidence-quality`;
   return (
-    <Chapter id="evidence-quality" number="11" title="Evidence and data quality">
+    <Chapter id="evidence-quality" number="12" title="Evidence and data quality">
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_18rem]">
         <Panel title="Trust record">
           <dl className="grid gap-3 sm:grid-cols-2">
@@ -481,14 +493,15 @@ function EvidenceSection({ view, city }: { view: Property360View; city: CityProf
           </Button>
         </Panel>
       </div>
-      <Panel className="max-w-full overflow-hidden" title="Relationship provenance" description="Each demonstration relationship retains its source, target, geography and classification.">
-        <div className="w-full min-w-0 overflow-x-auto">
+      <details className="digit-card mt-4 group">
+        <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">Full relationship evidence and provenance</summary>
+        <div className="w-full min-w-0 overflow-x-auto border-t border-border p-4">
           <table className="w-full min-w-[48rem] text-sm">
             <thead><tr className="border-b border-border text-left"><th className="field-label py-2">Relationship</th><th className="field-label py-2">Target record</th><th className="field-label py-2">Geography</th><th className="field-label py-2">Classification</th><th className="field-label py-2">Provenance</th></tr></thead>
             <tbody>{view.enrichment.map((row) => <tr key={`${row.relationshipType}-${row.targetEntityId}`} className="border-b border-border/60 align-top"><td className="py-2 pr-3">{relationshipLabel(row.relationshipType)}</td><td className="py-2 pr-3"><RelationshipRecordLink id={row.targetEntityId} cityId={city.city_id} /></td><td className="py-2 pr-3">{labelise(row.geographicPrecision)}</td><td className="py-2 pr-3">{labelise(row.dataClassification)}</td><td className="py-2 text-xs text-muted-foreground">{row.provenance}</td></tr>)}</tbody>
           </table>
         </div>
-      </Panel>
+      </details>
       <details className="digit-card mt-4 group">
         <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">Values exactly as supplied</summary>
         <div className="border-t border-border p-4">
@@ -522,8 +535,9 @@ function EcosystemRows({ items, cityId, empty }: { items: PropertyEcosystemItem[
   return <div className="rounded-sm border border-border bg-card px-3"><RecordRows>{items.map((item) => <RecordRow key={`${item.kind}-${item.id}`} icon={icons[item.kind]} title={item.name} relationship={item.relationship} detail={`${item.mission}. ${item.meaning}`} id={item.supportingRecordId} cityId={cityId} />)}</RecordRows></div>;
 }
 
-function MissionStrip({ missions }: { missions: PropertyMissionRelationship[] }) {
-  return <Panel title="Mission snapshot"><ul className="grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 xl:grid-cols-5">{missions.map((mission) => <li key={mission.key} className="min-w-0 bg-card p-3"><p className="text-xs font-semibold text-foreground">{mission.name}</p><p className="mt-1 text-xs text-muted-foreground">{mission.relationship}</p></li>)}</ul></Panel>;
+function MissionStrip({ missions, selectedMission, onSelect }: { missions: PropertyMissionRelationship[]; selectedMission: string; onSelect: (mission: string) => void }) {
+  const available = missions.filter((mission) => mission.relationship !== "No known linkage");
+  return <Panel title="Mission relationships" description="Select a mission to filter the investigative map and linked records." right={<InfoTip label="Mission relationship"><p>A relationship may be direct, service-area based, or shared locality context. It does not establish a beneficiary relationship.</p></InfoTip>}><div className="flex flex-wrap gap-2" role="group" aria-label="Mission filter"><Button type="button" size="sm" variant={selectedMission === "all" ? "default" : "outline"} aria-pressed={selectedMission === "all"} onClick={() => onSelect("all")}>All missions</Button>{available.map((mission) => <Button key={mission.key} type="button" size="sm" variant={selectedMission === mission.key ? "default" : "outline"} aria-pressed={selectedMission === mission.key} onClick={() => onSelect(mission.key)}>{mission.name}</Button>)}</div></Panel>;
 }
 
 function MissionRow({ mission, cityId }: { mission: PropertyMissionRelationship; cityId: string }) {
@@ -532,7 +546,7 @@ function MissionRow({ mission, cityId }: { mission: PropertyMissionRelationship;
 
 function RelationshipRecordLink({ id, cityId }: { id: string; cityId: string }) {
   const isJalandharProject = cityId === "CITY-JALANDHAR" && id.startsWith("PRJ-JAL-");
-  return <Link to={isJalandharProject ? "/projects/$projectId" : "/records/$recordId"} params={(isJalandharProject ? { projectId: id } : { recordId: id }) as never} search={{ city: cityId } as never} className="num text-xs text-primary underline-offset-2 hover:underline">{id}</Link>;
+  return <Link to={isJalandharProject ? "/projects/$projectId" : "/records/$recordId"} params={(isJalandharProject ? { projectId: id } : { recordId: id }) as never} search={{ city: cityId } as never} className="num text-xs text-primary underline-offset-2 hover:underline focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">{id}</Link>;
 }
 
 function RelationshipBadge({ label }: { label: string }) {
