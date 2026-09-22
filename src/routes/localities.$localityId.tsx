@@ -178,6 +178,37 @@ function LocalityDetail() {
         />
       </Panel>
 
+      <Panel
+        title="Properties in this locality"
+        description="Open any property to see its full Property 360 record."
+      >
+        <RecordTable
+          empty="No property records are attached to this locality."
+          headers={["Property", "Land use", "Households", "Assessment", "Property 360"]}
+          rows={records.properties.map((p) => [
+            <Link
+              key={p.property_aggregate_id}
+              to="/records/$recordId"
+              params={{ recordId: p.property_aggregate_id }}
+              className="num underline underline-offset-2"
+            >
+              {p.property_aggregate_id}
+            </Link>,
+            text(p.land_use),
+            count(p.households),
+            text(p.assessment_status),
+            <Link
+              key={`p360-${p.property_aggregate_id}`}
+              to="/records/$recordId"
+              params={{ recordId: p.property_aggregate_id }}
+              className="text-xs underline underline-offset-2"
+            >
+              Open Property 360
+            </Link>,
+          ])}
+        />
+      </Panel>
+
       <Panel title="Service-delivery observations">
         <RecordTable
           empty="No service observations are attached to this locality."
