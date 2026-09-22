@@ -14,7 +14,6 @@ import {
   Route,
   ShieldCheck,
   Store,
-  TramFront,
   Users,
 } from "lucide-react";
 import propertyHouse from "@/assets/property/property-house.png";
@@ -26,7 +25,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { MapPoint } from "@/components/map/PointMap";
-import { ENTITY_LABELS, type EntityKind } from "@/data/four-city/types";
+import { ENTITY_LABELS } from "@/data/four-city/types";
 import { lookupEntity } from "@/data/four-city/dataset";
 import type {
   Property360View,
@@ -50,7 +49,12 @@ const CHAPTER_GROUPS = [
 type SectionId = "overview" | "housing" | "municipal-finance" | "water-sewerage" | "sanitation-waste" | "services-grievances" | "livelihoods-inclusion" | "urban-ecosystem" | "mission-linkages" | "delivery-journey" | "projects-assets" | "evidence-quality";
 type MapLayer = "water" | "waste" | "projects" | "vending" | "markets" | "transport";
 
-const ALL_CHAPTERS: ReadonlyArray<readonly [SectionId, string]> = CHAPTER_GROUPS.flatMap((group) => group.items) as ReadonlyArray<readonly [SectionId, string]>;
+const ALL_CHAPTERS: ReadonlyArray<readonly [SectionId, string]> = [
+  ["overview", "Overview"], ["housing", "Housing"], ["municipal-finance", "Municipal finance"],
+  ["water-sewerage", "Water & sewerage"], ["sanitation-waste", "Sanitation & waste"], ["services-grievances", "Services & grievances"],
+  ["livelihoods-inclusion", "Livelihoods & inclusion"], ["urban-ecosystem", "Surrounding urban ecosystem"], ["mission-linkages", "Mission linkages"],
+  ["delivery-journey", "Public delivery journey"], ["projects-assets", "Projects & assets"], ["evidence-quality", "Evidence & data quality"],
+];
 
 interface CatalogueRecord {
   id: string;
