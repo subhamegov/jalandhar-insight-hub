@@ -80,6 +80,8 @@ function LocalityDetail() {
         subtitle={`${l.id} · ${labelise(l.geometry_type)}. This is an illustrative point anchor. It carries no statutory ward identity, and no ward boundary is implied or inferred.`}
       />
 
+      <PropertyShowcaseEntry city={city} />
+
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <Panel title="Locality anchor" description="Point geometry as supplied. Not a polygon.">
           <div className="h-64 w-full overflow-hidden rounded-sm border border-border">
