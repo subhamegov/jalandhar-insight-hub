@@ -226,7 +226,7 @@ function jalandharProperty360(propertyId: string): Property360View | null {
     }) : ({ key: definition.key, name: definition.name, relationship: "No known linkage", recordIds: [],
       meaning: "No property or locality relationship is available in the current Jalandhar records.",
       evidenceBasis: "No canonical relationship resolved", syntheticEnrichment: false })),
-    ecosystem: [], enrichment, graph: { out: [], in: [] },
+    ecosystem: [], enrichment, graph: { out: [], in: [] }, dossier: null,
   };
 }
 
@@ -500,5 +500,6 @@ export function property360(cityId: string, propertyId: string): Property360View
     ecosystem,
     enrichment: enrichmentIds,
     graph: relationshipsFor(property.property_aggregate_id),
+    dossier: dossierFor(cityId, property),
   };
 }
