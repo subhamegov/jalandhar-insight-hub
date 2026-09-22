@@ -9,6 +9,7 @@ import { useCity } from "@/lib/cityContext";
 import { useGeo } from "@/lib/geoContext";
 import { count, dateText, labelise, percent, text } from "@/lib/format";
 import { Unavailable } from "@/components/app/Unavailable";
+import { PropertyShowcaseEntry } from "@/components/app/PropertyShowcaseEntry";
 
 const PointMap = lazy(() => import("@/components/map/PointMap"));
 
