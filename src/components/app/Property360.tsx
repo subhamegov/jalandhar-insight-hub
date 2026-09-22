@@ -47,10 +47,24 @@ const CHAPTER_GROUPS = [
   { label: "Delivery & trust", items: [["delivery-journey", "Public delivery journey"], ["projects-assets", "Projects & assets"], ["evidence-quality", "Evidence & data quality"]] },
 ] as const;
 
-type SectionId = (typeof CHAPTER_GROUPS)[number]["items"][number][0];
+type SectionId = "overview" | "housing" | "municipal-finance" | "water-sewerage" | "sanitation-waste" | "services-grievances" | "livelihoods-inclusion" | "urban-ecosystem" | "mission-linkages" | "delivery-journey" | "projects-assets" | "evidence-quality";
 type MapLayer = "water" | "waste" | "projects" | "vending" | "markets" | "transport";
 
-const ALL_CHAPTERS = CHAPTER_GROUPS.flatMap((group) => group.items);
+const ALL_CHAPTERS: ReadonlyArray<readonly [SectionId, string]> = CHAPTER_GROUPS.flatMap((group) => group.items) as ReadonlyArray<readonly [SectionId, string]>;
+
+interface CatalogueRecord {
+  id: string;
+  mapId: string;
+  name: string;
+  type: string;
+  mission: string;
+  relationship: string;
+  status: string;
+  evidence: string;
+  point: MapPoint | null;
+  project?: boolean;
+  raw: Record<string, unknown>;
+}
 
 export function Property360({ view, city }: { view: Property360View; city: CityProfile }) {
   const { property, locality } = view;
@@ -160,17 +174,17 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
         <CatalogueNavigation activeSection={activeSection} onSelect={selectSection} />
 
         <main className="min-w-0 space-y-5">
-          <PropertyOverview view={view} city={city} selectedMission={selectedMission} mapLayer={mapLayer} onMissionChange={(mission) => preserveState({ selectedMission: mission })} onLayerChange={(layer) => preserveState({ mapLayer: layer })} activeSection={activeSection} />
+          <PropertyOverview view={view} city={city} selectedMission={selectedMission} mapLayer={mapLayer} onMissionChange={(mission: string) => preserveState({ selectedMission: mission })} onLayerChange={(layer: MapLayer) => preserveState({ mapLayer: layer })} activeSection={activeSection} />
           <HousingSection view={view} cityId={city.city_id} />
           <WaterSection view={view} cityId={city.city_id} />
           <SanitationSection view={view} cityId={city.city_id} />
           <FinanceSection view={view} cityId={city.city_id} />
           <ServicesSection view={view} cityId={city.city_id} />
           <LivelihoodSection view={view} cityId={city.city_id} />
-          <MissionSection view={view} cityId={city.city_id} />
-          <ProjectsAssetsSection view={view} cityId={city.city_id} />
           <EcosystemSection view={view} cityId={city.city_id} />
+          <MissionSection view={view} cityId={city.city_id} />
           <DeliveryJourneySection view={view} />
+          <ProjectsAssetsSection view={view} cityId={city.city_id} />
           <EvidenceSection view={view} city={city} />
         </main>
       </div>
@@ -178,7 +192,34 @@ export function Property360({ view, city }: { view: Property360View; city: CityP
   );
 }
 
-function PropertyOverview({ view, city }: { view: Property360View; city: CityProfile }) {
+function CatalogueNavigation({ activeSection, onSelect }: { activeSection: SectionId; onSelect: (section: SectionId) => void }) {
+  const activeGroup = CHAPTER_GROUPS.find((group) => group.items.some(([id]) => id === activeSection));
+  return (
+    <nav aria-label="Property 360 chapters" className="min-w-0 xl:sticky xl:top-4 xl:self-start">
+      <div className="digit-card p-3">
+        <div className="xl:hidden">
+          <label className="field-label mb-2 block" htmlFor="property-section">Catalogue section</label>
+          <Select value={activeSection} onValueChange={(value) => onSelect(value as SectionId)}>
+            <SelectTrigger id="property-section"><SelectValue /></SelectTrigger>
+            <SelectContent>{CHAPTER_GROUPS.map((group) => group.items.map(([id, label]) => <SelectItem key={id} value={id}>{group.label}: {label}</SelectItem>))}</SelectContent>
+          </Select>
+        </div>
+        <div className="hidden xl:block">
+          <p className="field-label px-2 pb-2">Catalogue index</p>
+          {CHAPTER_GROUPS.map((group) => {
+            const open = group === activeGroup;
+            return <div key={group.label} className="border-t border-border py-2 first:border-t-0">
+              <p className="px-2 py-1 text-[0.68rem] font-semibold uppercase text-muted-foreground">{group.label}</p>
+              {open ? <ol className="space-y-0.5">{group.items.map(([id, label]) => <li key={id}><button type="button" onClick={() => onSelect(id)} aria-current={activeSection === id ? "location" : undefined} className={cn("grid min-h-9 w-full grid-cols-[1rem_minmax(0,1fr)] items-start gap-2 rounded-sm px-2 py-2 text-left text-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none", activeSection === id ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-accent")}><span className="text-xs opacity-70">{String(ALL_CHAPTERS.findIndex(([chapter]) => chapter === id) + 1).padStart(2, "0")}</span><span>{label}</span></button></li>)}</ol> : null}
+            </div>;
+          })}
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+function PropertyOverview({ view, city, selectedMission, mapLayer, onMissionChange, onLayerChange, activeSection }: { view: Property360View; city: CityProfile; selectedMission: string; mapLayer: MapLayer; onMissionChange: (mission: string) => void; onLayerChange: (layer: MapLayer) => void; activeSection: SectionId }) {
   const p = view.property;
   const abstract = catalogueNote(view, city);
   const showcase = propertyShowcase(city.city_id);
@@ -222,121 +263,56 @@ function PropertyOverview({ view, city }: { view: Property360View; city: CityPro
         <p className="max-w-4xl text-sm leading-6 text-foreground">{abstract}</p>
       </Panel>
 
-      <MissionStrip missions={view.missions} />
-      <PropertyMap view={view} />
+      <MissionStrip missions={view.missions} selectedMission={selectedMission} onSelect={onMissionChange} />
+      <PropertyMap view={view} cityId={city.city_id} selectedMission={selectedMission} layer={mapLayer} onLayerChange={onLayerChange} activeSection={activeSection} />
     </section>
   );
 }
 
-function PropertyMap({ view }: { view: Property360View }) {
-  const [layers, setLayers] = useState<Record<MapLayer, boolean>>({
-    property: true,
-    services: true,
-    projects: true,
-    assets: true,
-    missions: false,
-    ecosystem: true,
-  });
-  const points = useMemo(() => {
-    const rows: Array<MapPoint & { layer: MapLayer }> = [
-      {
-        id: view.property.property_aggregate_id,
-        name: view.property.property_aggregate_id,
-        sub: "Property shown at its approximate locality context",
-        lat: view.geography.point.lat,
-        lon: view.geography.point.lon,
-        verified: false,
-        layer: "property",
-      },
-    ];
-    if (view.serviceArea) {
-      rows.push({
-        id: view.serviceArea.service_area_id,
-        name: view.serviceArea.service_area_id,
-        sub: `${labelise(view.serviceArea.area_type)} service-area anchor`,
-        lat: view.serviceArea.coordinates[1],
-        lon: view.serviceArea.coordinates[0],
-        verified: false,
-        layer: "services",
-      });
-    }
-    for (const asset of view.assets) {
-      rows.push({
-        id: asset.asset_id,
-        name: asset.asset_name,
-        sub: `${labelise(asset.asset_type)}${asset.actual_asset_location ? "" : ": illustrative anchor"}`,
-        lat: asset.coordinates[1],
-        lon: asset.coordinates[0],
-        verified: asset.actual_asset_location,
-        layer: "assets",
-      });
-    }
-    for (const project of view.projects) {
-      rows.push({
-        id: `project-${project.project_id}`,
-        name: project.project_name,
-        sub: `${labelise(project.mission)} project context at the locality anchor`,
-        lat: view.geography.point.lat,
-        lon: view.geography.point.lon,
-        verified: false,
-        layer: "projects",
-      });
-    }
-    for (const mission of view.missions.filter((row) => row.relationship !== "No known linkage")) {
-      rows.push({
-        id: `mission-${mission.key}`,
-        name: mission.name,
-        sub: `${mission.relationship}: mission context at the locality anchor`,
-        lat: view.geography.point.lat,
-        lon: view.geography.point.lon,
-        verified: false,
-        layer: "missions",
-      });
-    }
-    for (const item of view.ecosystem) {
-      if (!item.point) continue;
-      rows.push({
-        id: item.id,
-        name: item.name,
-        sub: `${item.mission}: ${item.relationship}`,
-        lat: item.point.lat,
-        lon: item.point.lon,
-        verified: item.point.verified,
-        layer: "ecosystem",
-      });
-    }
-    return rows.filter((row) => layers[row.layer]);
-  }, [layers, view]);
+function PropertyMap({ view, cityId, selectedMission, layer, onLayerChange, activeSection }: { view: Property360View; cityId: string; selectedMission: string; layer: MapLayer; onLayerChange: (layer: MapLayer) => void; activeSection: SectionId }) {
+  const records = useMemo(() => catalogueRecords(view, layer).filter((record) => selectedMission === "all" || record.mission === selectedMission), [layer, selectedMission, view]);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [preview, setPreview] = useState<CatalogueRecord | null>(null);
+  const points = records.flatMap((record) => record.point ? [record.point] : []);
+  const selectRecord = (record: CatalogueRecord) => {
+    if (record.point) setSelectedId(record.mapId);
+    setPreview(record);
+  };
+  const selectMarker = (mapId: string) => {
+    const record = records.find((item) => item.mapId === mapId);
+    if (record) selectRecord(record);
+  };
   return (
-    <Panel title="Property and urban context" description={view.geography.note}>
+    <Panel title="Investigate the city around this property" description={view.geography.note} right={<InfoTip label="Map method"><p>Only supplied coordinates or labelled locality anchors are shown. Selecting a record never creates a coordinate.</p></InfoTip>}>
       <div className="mb-3 flex flex-wrap gap-2" aria-label="Map layers">
-        {(Object.keys(layers) as MapLayer[]).map((layer) => (
+        {(["water", "waste", "projects", "vending", "markets", "transport"] as MapLayer[]).map((option) => (
           <Button
-            key={layer}
+            key={option}
             type="button"
             size="sm"
-            variant={layers[layer] ? "secondary" : "outline"}
-            aria-pressed={layers[layer]}
-            onClick={() => setLayers((current) => ({ ...current, [layer]: !current[layer] }))}
+            variant={layer === option ? "default" : "outline"}
+            aria-pressed={layer === option}
+            onClick={() => { onLayerChange(option); setSelectedId(null); }}
           >
-            {labelise(layer)}
+            {labelise(option)}
           </Button>
         ))}
       </div>
-      <div className="h-72 w-full overflow-hidden rounded-sm border border-border sm:h-80">
-        <ClientOnly fallback={<div className="flex h-full items-center justify-center bg-muted text-sm text-muted-foreground">Loading map…</div>}>
-          <PointMap
-            points={points}
-            centre={[view.geography.point.lat, view.geography.point.lon]}
-            zoom={13}
-            selectedId={view.property.property_aggregate_id}
-            fitToPoints={points.length > 1}
-          />
-        </ClientOnly>
+      <div className="grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(16rem,0.65fr)]">
+        <div className="h-72 w-full overflow-hidden rounded-sm border border-border sm:h-80 lg:h-[26rem]">
+          <ClientOnly fallback={<div className="flex h-full items-center justify-center bg-muted text-sm text-muted-foreground">Loading map…</div>}>
+            <PointMap points={points} centre={[view.geography.point.lat, view.geography.point.lon]} zoom={13} selectedId={selectedId} onSelect={selectMarker} fitToPoints={points.length > 1} />
+          </ClientOnly>
+        </div>
+        <div className="min-w-0">
+          <p className="field-label mb-2">Linked records · {records.length}</p>
+          {records.length ? <ul className="max-h-[26rem] space-y-2 overflow-y-auto pr-1">{records.map((record) => <li key={record.id}><button type="button" onClick={() => selectRecord(record)} className={cn("w-full rounded-sm border p-3 text-left focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none", selectedId === record.mapId ? "border-primary bg-info-surface" : "border-border bg-card hover:bg-accent")}><p className="text-sm font-semibold text-foreground">{record.name}</p><p className="mt-1 text-xs text-muted-foreground">{record.type} · {relationshipLabel(record.relationship)}</p><p className="mt-1 text-xs text-muted-foreground">{record.point ? record.point.verified ? "Reported position" : "In the same locality" : "No mappable position"}</p></button></li>)}</ul> : <EmptyNote>No records match this layer and mission.</EmptyNote>}
+        </div>
       </div>
       <p className="mt-2 text-xs text-muted-foreground">
         Dashed amber points are illustrative anchors. Proximity and shared locality do not establish service receipt or programme benefit.
       </p>
+      <RecordPreview record={preview} cityId={cityId} returnSection={activeSection} propertyId={view.property.property_aggregate_id} onClose={() => setPreview(null)} />
     </Panel>
   );
 }
