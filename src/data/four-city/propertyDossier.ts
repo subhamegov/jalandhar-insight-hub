@@ -328,26 +328,29 @@ function buildDossier(property: PropertyAggregate, context: DossierContext): Pro
     Boolean(housingRow) &&
     (housingRow?.completed_houses ?? 0) > (housingRow?.occupied_houses ?? 0);
 
-  /* Scenario: canonical facts decide first, seeded variation breaks the ties so
-     the eight scenarios are spread across the inventory. */
-  const openGrievanceSeed = next() < 0.45 && context.grievances.length > 0;
-  let scenario: ScenarioKey;
-  if (unreliableSupply) scenario = "unreliable_water";
-  else if (housingRow && !sewerConnected) scenario = "housing_pending_sewerage";
-  else if ((arrears ?? 0) > 0 && next() < 0.7) scenario = "tax_outstanding";
-  else if (openGrievanceSeed) scenario = "unresolved_grievance";
-  else if (!sewerConnected || !property.waste_collection_route_id) scenario = "interdepartmental";
-  else if (context.projects.length > 0 && next() < 0.45) scenario = "neighbourhood_investment";
-  else if (connected && (arrears ?? 0) === 0) scenario = "fully_serviced";
-  else scenario = "no_open_issues";
+  /* Scenario: canonical facts decide which storylines are possible, and a
+     seeded roll spreads the remaining choices across the inventory. */
+  const eligible: ScenarioKey[] = [];
+  if (unreliableSupply) eligible.push("unreliable_water", "unreliable_water");
+  if (housingRow && !sewerConnected) eligible.push("housing_pending_sewerage", "housing_pending_sewerage");
+  if ((arrears ?? 0) > 0) eligible.push("tax_outstanding");
+  if (context.grievances.length > 0) eligible.push("unresolved_grievance", "unresolved_grievance");
+  if (!sewerConnected || !property.waste_collection_route_id) eligible.push("interdepartmental");
+  if (context.projects.length > 0) eligible.push("neighbourhood_investment");
+  if (connected && sewerConnected && property.waste_collection_route_id && (arrears ?? 1) === 0)
+    eligible.push("fully_serviced", "fully_serviced");
+  if (connected && sewerConnected && property.waste_collection_route_id) eligible.push("no_open_issues");
+  const scenario: ScenarioKey = eligible.length ? pick(next, eligible) : "no_open_issues";
 
   const households = property.households;
   const usage = property.land_use ?? "residential";
   const floors = between(next, 1, usage === "residential" ? 4 : 6);
   const builtUp = property.built_up_area_sqm;
   const plot = builtUp === null ? null : Math.round(builtUp / (0.6 + next() * 0.3));
-  const occupancyDate = dateBefore(next, 400, 3600);
-  const approvalDate = dateBefore(next, 1200, 5000);
+  const approvalDaysAgo = between(next, 2000, 5200);
+  const approvalDate = dateBefore(() => 0, approvalDaysAgo, approvalDaysAgo);
+  const occupancyDaysAgo = between(next, 300, approvalDaysAgo - 300);
+  const occupancyDate = dateBefore(() => 0, occupancyDaysAgo, occupancyDaysAgo);
 
   const dossierProperty: DossierProperty = {
     propertyId: id,
