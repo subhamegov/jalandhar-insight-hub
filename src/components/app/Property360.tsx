@@ -468,7 +468,7 @@ function EvidenceSection({ view, city }: { view: Property360View; city: CityProf
             <Field label="Verification" value={text(view.provenance.verification_status)} />
             <Field label="Observed" value={dateText(view.provenance.observation_date)} />
             <Field label="Geography confidence" value={view.geography.label} />
-            <Field label="Context records added" value={count(view.enrichment.length)} mono />
+            <Field label="Relationship records" value={count(view.enrichment.length)} mono />
           </dl>
           <div className="mt-4 rounded-sm border border-warning/40 bg-warning/10 p-3 text-sm text-foreground">
             <PrototypeNote text="Synthetic property and locality observations. Not official statistics or surveyed property positions" />
@@ -481,6 +481,14 @@ function EvidenceSection({ view, city }: { view: Property360View; city: CityProf
           </Button>
         </Panel>
       </div>
+      <Panel title="Relationship provenance" description="Each demonstration relationship retains its source, target, geography and classification.">
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[48rem] text-sm">
+            <thead><tr className="border-b border-border text-left"><th className="field-label py-2">Relationship</th><th className="field-label py-2">Target record</th><th className="field-label py-2">Geography</th><th className="field-label py-2">Classification</th><th className="field-label py-2">Provenance</th></tr></thead>
+            <tbody>{view.enrichment.map((row) => <tr key={`${row.relationshipType}-${row.targetEntityId}`} className="border-b border-border/60 align-top"><td className="py-2 pr-3">{row.relationshipType}</td><td className="py-2 pr-3"><RelationshipRecordLink id={row.targetEntityId} cityId={city.city_id} /></td><td className="py-2 pr-3">{labelise(row.geographicPrecision)}</td><td className="py-2 pr-3">{labelise(row.dataClassification)}</td><td className="py-2 text-xs text-muted-foreground">{row.provenance}</td></tr>)}</tbody>
+          </table>
+        </div>
+      </Panel>
       <details className="digit-card mt-4 group">
         <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">Values exactly as supplied</summary>
         <div className="border-t border-border p-4">
@@ -519,7 +527,12 @@ function MissionStrip({ missions }: { missions: PropertyMissionRelationship[] })
 }
 
 function MissionRow({ mission, cityId }: { mission: PropertyMissionRelationship; cityId: string }) {
-  return <div className="grid min-w-0 gap-2 p-3 sm:grid-cols-[9rem_8.5rem_minmax(0,1fr)] sm:p-4"><p className="text-sm font-semibold text-foreground">{mission.name}</p><RelationshipBadge label={mission.relationship} /><div className="min-w-0"><p className="text-sm text-foreground">{mission.meaning}</p><p className="mt-1 text-xs text-muted-foreground">Evidence: {mission.evidenceBasis}</p>{mission.recordIds.length ? <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1">{mission.recordIds.slice(0, 4).map((id) => <Link key={id} to="/records/$recordId" params={{ recordId: id }} search={{ city: cityId } as never} className="num text-xs text-primary underline-offset-2 hover:underline">{id}</Link>)}</div> : null}</div></div>;
+  return <div className="grid min-w-0 gap-2 p-3 sm:grid-cols-[9rem_8.5rem_minmax(0,1fr)] sm:p-4"><p className="text-sm font-semibold text-foreground">{mission.name}</p><RelationshipBadge label={mission.relationship} /><div className="min-w-0"><p className="text-sm text-foreground">{mission.meaning}</p><p className="mt-1 text-xs text-muted-foreground">Evidence: {mission.evidenceBasis}</p>{mission.recordIds.length ? <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1">{mission.recordIds.slice(0, 4).map((id) => <RelationshipRecordLink key={id} id={id} cityId={cityId} />)}</div> : null}</div></div>;
+}
+
+function RelationshipRecordLink({ id, cityId }: { id: string; cityId: string }) {
+  const isJalandharProject = cityId === "CITY-JALANDHAR" && id.startsWith("PRJ-JAL-");
+  return <Link to={isJalandharProject ? "/projects/$projectId" : "/records/$recordId"} params={(isJalandharProject ? { projectId: id } : { recordId: id }) as never} search={{ city: cityId } as never} className="num text-xs text-primary underline-offset-2 hover:underline">{id}</Link>;
 }
 
 function RelationshipBadge({ label }: { label: string }) {
