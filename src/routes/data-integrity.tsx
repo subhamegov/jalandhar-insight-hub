@@ -140,7 +140,7 @@ function ContractCard({ contract }: { contract: IndicatorContract }) {
           <dt className="field-label">Classification</dt>
           <dd className="text-foreground">
             {contract.data_classification.length
-              ? contract.data_classification.join(", ")
+              ? contract.data_classification.map((c) => text(c)).join(", ")
               : "Not recorded"}
           </dd>
         </div>
