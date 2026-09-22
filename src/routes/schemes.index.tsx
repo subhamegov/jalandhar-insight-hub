@@ -64,7 +64,7 @@ function SchemesPage() {
     },
     {
       key: "jalandhar_sanctioned_value",
-      header: "Sanctioned in Jalandhar",
+      header: "Sanctioned across cities",
       align: "right",
       value: (s) => s.jalandhar_sanctioned_value,
       render: (s) => <span className="num">{crore(s.jalandhar_sanctioned_value)}</span>,
