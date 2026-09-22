@@ -9,6 +9,7 @@ import {
   type IntegrityGroup,
 } from "@/data/four-city/integrity";
 import { indicatorContracts, type IndicatorContract } from "@/data/four-city/indicators";
+import { text } from "@/lib/format";
 
 export const Route = createFileRoute("/data-integrity")({
   head: () => ({
