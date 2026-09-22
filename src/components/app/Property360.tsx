@@ -27,6 +27,7 @@ import { ClientOnly } from "@/components/map/ClientOnly";
 import type { MapPoint } from "@/components/map/PointMap";
 import { ENTITY_LABELS } from "@/data/four-city/types";
 import { lookupEntity } from "@/data/four-city/dataset";
+import type { PropertyDossier } from "@/data/four-city/propertyDossier";
 import type {
   Property360View,
   PropertyEcosystemItem,
@@ -267,6 +268,9 @@ function PropertyOverview({ view, city, selectedMission, mapLayer, onMissionChan
         <p className="max-w-4xl text-sm leading-6 text-foreground">{abstract}</p>
       </Panel>
 
+      {view.dossier ? <DossierIdentityPanel d={view.dossier} /> : null}
+      {view.dossier ? <DossierSignalPanel d={view.dossier} /> : null}
+
       <MissionStrip missions={view.missions} selectedMission={selectedMission} onSelect={onMissionChange} />
       <PropertyMap view={view} cityId={city.city_id} selectedMission={selectedMission} layer={mapLayer} onLayerChange={onLayerChange} activeSection={activeSection} />
     </section>
@@ -353,6 +357,7 @@ function RecordPreview({ record, cityId, returnSection, propertyId, onClose }: {
 function HousingSection({ view, cityId }: { view: Property360View; cityId: string }) {
   return (
     <Chapter id="housing" number="02" title="Housing" note="Direct property links remain distinct from locality context">
+      {view.dossier ? <DossierHouseholdPanel d={view.dossier} /> : null}
       {view.housing.length ? (
         <RecordRows>
           {view.housing.map((row) => (
@@ -386,6 +391,7 @@ function WaterSection({ view, cityId }: { view: Property360View; cityId: string 
           ) : <EmptyNote>No utility service record is linked to this property.</EmptyNote>}
         </Panel>
       </div>
+      {view.dossier ? <DossierWaterPanel d={view.dossier} /> : null}
     </Chapter>
   );
 }
@@ -401,6 +407,7 @@ function SanitationSection({ view, cityId }: { view: Property360View; cityId: st
           <div className="mt-3"><RecordRows>{rows.map((row) => <RecordRow key={row.sanitation_id} icon={Recycle} title={row.collection_route_id ?? row.sanitation_id} relationship={row.collection_route_id === view.property.waste_collection_route_id ? "Served by" : "Related through locality"} detail={`Door-to-door coverage: ${row.door_to_door_coverage_pct === null ? NA : `${row.door_to_door_coverage_pct}%`}. Segregation: ${row.segregation_pct === null ? NA : `${row.segregation_pct}%`}.`} id={row.sanitation_id} cityId={cityId} />)}</RecordRows></div>
         ) : null}
       </Panel>
+      {view.dossier ? <DossierWastePanel d={view.dossier} /> : null}
     </Chapter>
   );
 }
@@ -421,6 +428,7 @@ function FinanceSection({ view, cityId }: { view: Property360View; cityId: strin
           {view.finance.length ? <RecordRows>{view.finance.slice(0, 6).map((row) => <RecordRow key={row.finance_id} icon={CircleDollarSign} title={`${row.financial_year ?? "Period not available"}: ${inrLakh(row.expenditure_inr_lakh)}`} relationship="Related through locality" detail={`${text(row.funding_source)}. Project ${text(row.project_id)}.`} id={row.finance_id} cityId={cityId} />)}</RecordRows> : <EmptyNote>No project finance record is attached to this locality.</EmptyNote>}
         </Panel>
       </div>
+      {view.dossier ? <DossierTaxPanel d={view.dossier} /> : null}
     </Chapter>
   );
 }
@@ -436,6 +444,7 @@ function ServicesSection({ view, cityId }: { view: Property360View; cityId: stri
           {view.grievances.length ? <RecordRows>{view.grievances.map((row) => <RecordRow key={row.complaint_aggregate_id} icon={AlertCircle} title={labelise(row.service_type)} relationship="Directly linked" detail={`${count(row.complaint_count)} complaints, including ${count(row.repeat_complaints)} repeat complaints, for ${text(row.period)}.`} id={row.complaint_aggregate_id} cityId={cityId} />)}</RecordRows> : <EmptyNote>No grievance aggregate explicitly lists this property.</EmptyNote>}
         </Panel>
       </div>
+      {view.dossier ? <DossierComplaintsPanel d={view.dossier} cityId={cityId} /> : null}
     </Chapter>
   );
 }
@@ -470,6 +479,8 @@ function ProjectsAssetsSection({ view, cityId }: { view: Property360View; cityId
           {view.assets.length ? <RecordRows>{view.assets.slice(0, 10).map((row) => <RecordRow key={row.asset_id} icon={Building2} title={row.asset_name} relationship={view.serviceArea?.water_asset_ids.includes(row.asset_id) || view.serviceArea?.sewer_asset_ids.includes(row.asset_id) ? "Served by" : "Related through locality"} detail={`${labelise(row.asset_type)}. ${labelise(row.commissioning_status)}.`} id={row.asset_id} cityId={cityId} />)}</RecordRows> : <EmptyNote>No connected or same-locality asset is available.</EmptyNote>}
         </Panel>
       </div>
+      {view.dossier ? <DossierInfrastructurePanel d={view.dossier} cityId={cityId} /> : null}
+      {view.dossier ? <DossierInvestmentPanel d={view.dossier} cityId={cityId} /> : null}
     </Chapter>
   );
 }
@@ -526,6 +537,7 @@ function EvidenceSection({ view, city }: { view: Property360View; city: CityProf
           </Button>
         </Panel>
       </div>
+      {view.dossier ? <DossierApprovalPanel d={view.dossier} /> : null}
       <details className="digit-card mt-4 group">
         <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">Full relationship evidence and provenance</summary>
         <div className="w-full min-w-0 overflow-x-auto border-t border-border p-4">
@@ -544,6 +556,228 @@ function EvidenceSection({ view, city }: { view: Property360View; city: CityProf
         </div>
       </details>
     </Chapter>
+  );
+}
+
+
+/* ---------- Household 360 dossier panels ---------- */
+
+function DossierGrid({ children }: { children: ReactNode }) {
+  return <dl className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{children}</dl>;
+}
+
+function DossierIdentityPanel({ d }: { d: PropertyDossier }) {
+  const p = d.property;
+  return (
+    <Panel title="Property record" description="Complete synthetic record for this prototype property." right={<RelationshipBadge label={d.scenarioLabel} />}>
+      <DossierGrid>
+        <Field label="Dwelling reference" value={p.dwellingId} mono />
+        <Field label="Ward" value={p.wardId} mono />
+        <Field label="Address" value={p.syntheticAddress} />
+        <Field label="Property type" value={p.propertyType} />
+        <Field label="Usage" value={labelise(p.usageType)} />
+        <Field label="Plot area" value={p.plotAreaSqm === null ? NA : `${count(p.plotAreaSqm)} sq m`} mono />
+        <Field label="Built-up area" value={p.builtUpAreaSqm === null ? NA : `${count(p.builtUpAreaSqm)} sq m`} mono />
+        <Field label="Floors" value={count(p.floors)} mono />
+        <Field label="Construction" value={p.constructionStatus} />
+        <Field label="Occupancy" value={p.occupancyStatus} />
+        <Field label="Register status" value={p.registrationStatus} />
+        <Field label="Record updated" value={dateText(p.lastUpdated)} />
+      </DossierGrid>
+      <p className="mt-3 text-xs text-muted-foreground">{p.geographicReference}</p>
+    </Panel>
+  );
+}
+
+function DossierSignalPanel({ d }: { d: PropertyDossier }) {
+  return (
+    <Panel title="Intervention signal" description="Read from the linked records. Not a performance score." right={<InfoTip label="Signal method"><p>The signal names a condition seen in the linked records, the action it points to, and the department responsible. It does not rank the property.</p></InfoTip>}>
+      <p className="text-sm font-semibold text-foreground">{d.signal.headline}</p>
+      <p className="mt-1 text-sm text-muted-foreground">{d.signal.condition}</p>
+      <dl className="mt-3 grid gap-3 sm:grid-cols-2">
+        <Field label="Required action" value={d.signal.requiredIntervention} />
+        <Field label="Responsible" value={d.signal.responsibleAgencies.length ? d.signal.responsibleAgencies.join(", ") : "Not applicable"} />
+      </dl>
+    </Panel>
+  );
+}
+
+function DossierHouseholdPanel({ d }: { d: PropertyDossier }) {
+  const h = d.household;
+  return (
+    <Panel title="Household record" description="Anonymous aggregate. No personal data is held.">
+      <DossierGrid>
+        <Field label="Household reference" value={h.anonymousHouseholdId} mono />
+        <Field label="Occupancy type" value={h.occupancyType} />
+        <Field label="Average household size" value={h.householdSize === null ? NA : count(h.householdSize)} mono />
+        <Field label="Dwelling units" value={count(h.dwellingUnits)} mono />
+        <Field label="Occupied since" value={dateText(h.occupancyDate)} />
+        <Field label="Housing assistance" value={h.housingAssistanceReference ?? "Not applicable"} mono />
+      </DossierGrid>
+      <p className="mt-3 text-xs text-muted-foreground">{h.occupancyEvidence}</p>
+      <dl className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        <Field label="Scheme" value={d.housing.schemeId ? labelise(d.housing.schemeId) : "Not applicable"} />
+        <Field label="Project" value={d.housing.projectId ?? "Not applicable"} mono />
+        <Field label="Allotment reference" value={d.housing.allotmentId ?? "Not applicable"} mono />
+        <Field label="Sanction" value={d.housing.sanctionStatus} />
+        <Field label="Completion" value={d.housing.completionStatus} />
+        <Field label="Occupancy in the aggregate" value={d.housing.occupancyStatus} />
+      </dl>
+    </Panel>
+  );
+}
+
+function DossierWaterPanel({ d }: { d: PropertyDossier }) {
+  return (
+    <Panel title="Water service" description="Connection status and service condition are shown separately.">
+      <DossierGrid>
+        <Field label="Connection" value={d.water.connectionId ?? "Not recorded"} mono />
+        <Field label="Connection status" value={labelise(d.water.connectionStatus)} />
+        <Field label="Connected since" value={dateText(d.water.connectionDate)} />
+        <Field label="Meter" value={d.water.meterId ?? "Not applicable"} mono />
+        <Field label="Source" value={d.water.supplySource ? labelise(d.water.supplySource) : NA} />
+        <Field label="Service area" value={d.water.serviceAreaId ?? "Not recorded"} mono />
+        <Field label="Serving asset" value={d.water.distributionAssetId ?? "Not recorded"} mono />
+        <Field label="Supply" value={d.water.supplyFrequency} />
+        <Field label="Supply hours" value={d.water.supplyHoursPerDay === null ? NA : `${d.water.supplyHoursPerDay} hours a day`} mono />
+        <Field label="Actual condition" value={d.water.reliability} />
+        <Field label="Water quality" value={d.water.waterQuality} />
+        <Field label="Billing" value={d.water.billingStatus} />
+        <Field label="Responsible" value={d.water.responsibleAgency} />
+      </DossierGrid>
+      <div className="mt-4 border-t border-border pt-3">
+        <p className="field-label mb-2">Sewerage</p>
+        <DossierGrid>
+          <Field label="Connection" value={d.sanitation.connectionId ?? "Not recorded"} mono />
+          <Field label="Type" value={d.sanitation.sanitationType} />
+          <Field label="Status" value={d.sanitation.connectionStatus} />
+          <Field label="Network" value={d.sanitation.networkId ?? "Not applicable"} mono />
+          <Field label="Treatment asset" value={d.sanitation.treatmentAssetId ?? "Not recorded"} mono />
+          <Field label="Operation" value={d.sanitation.operationalStatus} />
+          <Field label="Responsible" value={d.sanitation.responsibleAgency} />
+        </DossierGrid>
+      </div>
+    </Panel>
+  );
+}
+
+function DossierWastePanel({ d }: { d: PropertyDossier }) {
+  return (
+    <Panel title="Solid waste service">
+      <DossierGrid>
+        <Field label="Route" value={d.solidWaste.collectionRouteId ?? "Not recorded"} mono />
+        <Field label="Agency" value={d.solidWaste.collectionAgency} />
+        <Field label="Method" value={d.solidWaste.collectionMethod} />
+        <Field label="Frequency" value={d.solidWaste.collectionFrequency} />
+        <Field label="Last collection" value={dateText(d.solidWaste.lastCollection)} />
+        <Field label="Segregation" value={d.solidWaste.segregationStatus} />
+        <Field label="Service status" value={d.solidWaste.serviceStatus} />
+      </DossierGrid>
+    </Panel>
+  );
+}
+
+function DossierTaxPanel({ d }: { d: PropertyDossier }) {
+  const t = d.tax;
+  return (
+    <Panel title="Property tax account" description="Demand, payments and outstanding for the current year." right={<RelationshipBadge label={t.paymentStatus} />}>
+      <DossierGrid>
+        <Field label="Assessment" value={t.assessmentId} mono />
+        <Field label="Financial year" value={t.financialYear} />
+        <Field label="Assessment status" value={labelise(t.assessmentStatus)} />
+        <Field label="Demand" value={inr(t.demandInr)} mono />
+        <Field label="Payments" value={inr(t.paymentsInr)} mono />
+        <Field label="Adjustments" value={inr(t.adjustmentsInr)} mono />
+        <Field label="Outstanding" value={inr(t.outstandingInr)} mono />
+        <Field label="Recorded arrears" value={inr(t.arrearsInr)} mono />
+        <Field label="Last payment" value={dateText(t.lastPaymentDate)} />
+        <Field label="Responsible" value={t.responsibleAgency} />
+      </DossierGrid>
+      <p className="mt-3 text-xs text-muted-foreground">
+        {t.reconciles ? "Demand less payments matches the recorded arrears." : "Demand, payments and arrears do not reconcile in the supplied record."}
+      </p>
+    </Panel>
+  );
+}
+
+function DossierComplaintsPanel({ d, cityId }: { d: PropertyDossier; cityId: string }) {
+  const open = d.complaints.filter((row) => row.status !== "Resolved");
+  return (
+    <Panel title="Complaints against this property" right={<RelationshipBadge label={open.length ? `${open.length} open` : "No open complaints"} />}>
+      {d.complaints.length ? (
+        <ul className="divide-y divide-border">
+          {d.complaints.map((row) => (
+            <li key={row.complaintId} className="py-3 first:pt-0 last:pb-0">
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <p className="text-sm font-medium text-foreground">{labelise(row.serviceCategory)}</p>
+                <RelationshipBadge label={row.status} />
+              </div>
+              <dl className="mt-2 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                <Field label="Complaint" value={row.complaintId} mono />
+                <Field label="Raised" value={dateText(row.createdAt)} />
+                <Field label="Resolved" value={row.resolvedAt ? dateText(row.resolvedAt) : "Not resolved"} />
+                <Field label="Assigned to" value={row.assignedAgency} />
+                <Field label="Service standard" value={row.slaStatus} />
+                <Field label="Related asset" value={row.relatedAssetId ?? "Not applicable"} mono />
+              </dl>
+              <p className="mt-1 text-xs text-muted-foreground">{row.resolutionEvidence}</p>
+              {row.aggregateRecordId ? (
+                <p className="mt-1 text-xs"><RelationshipRecordLink id={row.aggregateRecordId} cityId={cityId} /></p>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      ) : <EmptyNote>No open complaints are recorded against this property.</EmptyNote>}
+    </Panel>
+  );
+}
+
+function DossierInfrastructurePanel({ d, cityId }: { d: PropertyDossier; cityId: string }) {
+  return (
+    <Panel title="Infrastructure serving or surrounding this property" description="Serving assets first, then assets in the same locality.">
+      {d.infrastructure.length ? (
+        <RecordRows>
+          {d.infrastructure.map((row) => (
+            <RecordRow key={row.assetId} icon={Building2} title={`${labelise(row.assetType)} ${row.assetId}`} relationship={row.relationshipType} detail={`${row.operationalStatus}. Operated by ${row.implementingAgency}. Evidence: ${row.evidenceReference}.`} id={row.assetId} cityId={cityId} />
+          ))}
+        </RecordRows>
+      ) : <EmptyNote>No asset is linked to this property or its locality.</EmptyNote>}
+    </Panel>
+  );
+}
+
+function DossierInvestmentPanel({ d, cityId }: { d: PropertyDossier; cityId: string }) {
+  return (
+    <Panel title="Investment context" description="Project investment in this locality. Amounts are not attributed to this property and are not added together.">
+      {d.investments.length ? (
+        <RecordRows>
+          {d.investments.map((row) => (
+            <RecordRow key={row.projectId} icon={CircleDollarSign} title={`${labelise(row.missionId)}: ${row.projectId}`} relationship={row.relationshipType} detail={`${inrLakh(row.investmentAmountInrLakh)} in ${row.financialPeriod ?? "a period not recorded"}. ${labelise(row.deliveryStatus)}. ${row.implementingAgency}.`} id={row.projectId} cityId={cityId} project />
+          ))}
+        </RecordRows>
+      ) : <EmptyNote>No project investment is recorded in this locality.</EmptyNote>}
+    </Panel>
+  );
+}
+
+function DossierApprovalPanel({ d }: { d: PropertyDossier }) {
+  return (
+    <Panel title="Building approval and record provenance">
+      <DossierGrid>
+        <Field label="Application" value={d.approval.applicationId} mono />
+        <Field label="Approval" value={d.approval.approvalStatus} />
+        <Field label="Approved on" value={dateText(d.approval.approvalDate)} />
+        <Field label="Approved usage" value={labelise(d.approval.approvedUsage)} />
+        <Field label="Completion" value={d.approval.completionStatus} />
+        <Field label="Occupancy certificate" value={d.approval.occupancyCertificateStatus} />
+        <Field label="Authority" value={d.approval.responsibleAuthority} />
+        <Field label="Source record" value={d.provenance.sourceId} mono />
+        <Field label="Source type" value={labelise(d.provenance.sourceType)} />
+        <Field label="Classification" value={text(d.provenance.syntheticClassification)} />
+        <Field label="Record updated" value={dateText(d.provenance.recordUpdatedAt)} />
+      </DossierGrid>
+      <p className="mt-3 text-xs text-muted-foreground">{d.provenance.relationshipEvidence}</p>
+    </Panel>
   );
 }
 

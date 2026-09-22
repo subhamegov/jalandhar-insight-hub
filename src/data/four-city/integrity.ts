@@ -18,6 +18,7 @@ import {
 } from "./dataset";
 import { indicatorContracts } from "./indicators";
 import { runValidation } from "./validation";
+import { validateDossiers } from "./propertyDossier";
 
 export type IntegrityGroup =
   | "referential"
@@ -743,6 +744,28 @@ function datasetChecks(): IntegrityCheck[] {
     ),
   );
 
+  for (const d of validateDossiers()) {
+    checks.push(
+      make(
+        d.id,
+        d.label,
+        d.id === "dossier-finance"
+          ? "financial"
+          : d.id === "dossier-dates"
+            ? "temporal"
+            : d.id === "dossier-city"
+              ? "city_filtering"
+              : d.id === "dossier-status"
+                ? "numerical"
+                : "referential",
+        null,
+        d.method,
+        d.affected,
+        ["Household 360", "Locality pages", "Record pages"],
+      ),
+    );
+  }
+
   return checks;
 }
 
@@ -763,6 +786,7 @@ export function runIntegrity(): IntegritySummary {
     "Recorded service connections are not evidence of reliable supply, and commissioning is not evidence of operational service.",
     "Financial figures are held in INR lakh as supplied, and are only combined within the same financial year.",
     "Jalandhar is held separately as government-sourced records and is not part of these prototype checks.",
+    "Household 360 records are completed with deterministic synthetic enrichment. Source fields are never overwritten, and no enriched value is a government statistic.",
     "Where a value is missing it stays missing: it is shown as not available and is never read as zero.",
   ];
 
