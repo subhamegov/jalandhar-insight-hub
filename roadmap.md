@@ -1,7 +1,9 @@
 # Roadmap
 
-- [x] Select one canonical showcase property per city from supplied records.
-- [x] Add deterministic, clearly synthetic relationship enrichment only where needed.
-- [x] Add city-specific example-property entry points to City Overview.
-- [x] Ensure all relationship evidence links resolve and map context matches the city.
-- [x] Validate six journeys, responsive behavior, isolation, and prepare the matrix.
+- [ ] Refine the Property 360 cover into a compact civic catalogue identity.
+- [ ] Group chapter navigation into four active, responsive catalogue sections.
+- [ ] Make mission and map-layer selection update linked records and marker focus.
+- [ ] Add one reusable record preview with details, evidence, and return context.
+- [ ] Move raw fields, methods, full evidence, IDs, and provenance behind disclosure controls.
+- [ ] Preserve city, property, active section, mission, layer, and filters in navigation state.
+- [ ] Validate all six city journeys across desktop, tablet, and mobile without overflow or leakage.
