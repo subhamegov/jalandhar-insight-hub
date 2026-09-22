@@ -536,7 +536,7 @@ function MissionStrip({ missions }: { missions: PropertyMissionRelationship[] })
 }
 
 function MissionRow({ mission, cityId }: { mission: PropertyMissionRelationship; cityId: string }) {
-  return <div className="grid min-w-0 gap-2 p-3 sm:grid-cols-[9rem_8.5rem_minmax(0,1fr)] sm:p-4"><p className="text-sm font-semibold text-foreground">{mission.name}</p><RelationshipBadge label={mission.relationship} /><div className="min-w-0"><p className="text-sm text-foreground">{mission.meaning}</p><p className="mt-1 text-xs text-muted-foreground">Evidence: {mission.evidenceBasis}</p>{mission.recordIds.length ? <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1">{mission.recordIds.slice(0, 4).map((id) => <RelationshipRecordLink key={id} id={id} cityId={cityId} />)}</div> : null}</div></div>;
+  return <div className="grid min-w-0 gap-2 p-3 sm:grid-cols-[9rem_8.5rem_minmax(0,1fr)] sm:p-4"><p className="text-sm font-semibold text-foreground">{mission.name}</p><RelationshipBadge label={mission.relationship} /><div className="min-w-0"><p className="text-sm text-foreground">{mission.meaning}</p><p className="mt-1 break-words text-xs text-muted-foreground">Evidence: {mission.evidenceBasis}</p>{mission.recordIds.length ? <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1">{mission.recordIds.slice(0, 4).map((id) => <RelationshipRecordLink key={id} id={id} cityId={cityId} />)}</div> : null}</div></div>;
 }
 
 function RelationshipRecordLink({ id, cityId }: { id: string; cityId: string }) {
