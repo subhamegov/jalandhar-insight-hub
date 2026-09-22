@@ -8,8 +8,16 @@ export const EMPTY = {
   noProjects: "No projects match these filters",
 } as const;
 
+/** Raw classification codes shown in plain words, never as raw codes. */
+const PHRASES: Record<string, string> = {
+  PUBLIC_SYNTHETIC: "Synthetic public data",
+  public_synthetic: "Synthetic public data",
+};
+
 export function text(value: string | null | undefined): string {
   if (value === null || value === undefined || value === "") return NA;
+  const phrase = PHRASES[value.trim()];
+  if (phrase) return phrase;
   return value
     .replace(/\s*—\s*/g, ": ")
     .replace(/;\s*/g, ". ");
@@ -17,6 +25,8 @@ export function text(value: string | null | undefined): string {
 
 export function labelise(value: string | null | undefined): string {
   if (!value) return NA;
+  const phrase = PHRASES[value.trim()];
+  if (phrase) return phrase;
   return value.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
