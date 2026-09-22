@@ -490,8 +490,8 @@ function EvidenceSection({ view, city }: { view: Property360View; city: CityProf
           </Button>
         </Panel>
       </div>
-      <Panel title="Relationship provenance" description="Each demonstration relationship retains its source, target, geography and classification.">
-        <div className="min-w-0 max-w-full overflow-x-auto">
+      <Panel className="max-w-full overflow-hidden" title="Relationship provenance" description="Each demonstration relationship retains its source, target, geography and classification.">
+        <div className="w-full min-w-0 overflow-x-auto">
           <table className="w-full min-w-[48rem] text-sm">
             <thead><tr className="border-b border-border text-left"><th className="field-label py-2">Relationship</th><th className="field-label py-2">Target record</th><th className="field-label py-2">Geography</th><th className="field-label py-2">Classification</th><th className="field-label py-2">Provenance</th></tr></thead>
             <tbody>{view.enrichment.map((row) => <tr key={`${row.relationshipType}-${row.targetEntityId}`} className="border-b border-border/60 align-top"><td className="py-2 pr-3">{row.relationshipType}</td><td className="py-2 pr-3"><RelationshipRecordLink id={row.targetEntityId} cityId={city.city_id} /></td><td className="py-2 pr-3">{labelise(row.geographicPrecision)}</td><td className="py-2 pr-3">{labelise(row.dataClassification)}</td><td className="py-2 text-xs text-muted-foreground">{row.provenance}</td></tr>)}</tbody>
