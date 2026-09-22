@@ -1,7 +1,7 @@
-# Property 360 roadmap
+# Roadmap
 
-- [ ] Add shared city-safe Property 360 intelligence and enrichment selectors
-- [ ] Add the geo-aware civic dossier interface with local chapter navigation
-- [ ] Integrate Property 360 into canonical record details without changing other records
-- [ ] Preserve provenance return context and honest Jalandhar unavailable behavior
-- [ ] Verify representative records across all cities, maps, narrow screens, and build output
+- [ ] Select one canonical showcase property per city from supplied records.
+- [ ] Add deterministic, clearly synthetic relationship enrichment only where needed.
+- [ ] Add city-specific example-property entry points to City Overview.
+- [ ] Ensure all relationship evidence links resolve and map context matches the city.
+- [ ] Validate six journeys, responsive behavior, isolation, and prepare the matrix.

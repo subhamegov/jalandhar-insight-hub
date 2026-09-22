@@ -8,6 +8,7 @@ import { FreshnessBadge } from "@/components/app/FreshnessBadge";
 import { SourceBadge } from "@/components/app/SourceBadge";
 import { EvidenceLink } from "@/components/app/EvidenceDrawer";
 import { CityBanner } from "@/components/app/CityBanner";
+import { PropertyShowcaseEntry } from "@/components/app/PropertyShowcaseEntry";
 import { MunicipalIdentity } from "@/components/app/MunicipalIdentity";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { GovPoint, MarkerState } from "@/components/map/MapCanvas";
@@ -187,6 +188,10 @@ function Overview() {
       />
 
       <CityBanner city={city} />
+
+      <div className="mt-4">
+        <PropertyShowcaseEntry city={city} />
+      </div>
 
       {/* 1. City at a glance */}
       <section aria-labelledby="glance">

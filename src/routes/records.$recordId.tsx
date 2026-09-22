@@ -68,6 +68,8 @@ function RecordDetail() {
   const { recordId } = useParams({ from: "/records/$recordId" });
   const { city } = useCity();
   const { localities } = useGeo();
+  const propertyView = property360(city.city_id, recordId);
+  if (propertyView) return <Property360 view={propertyView} city={city} />;
   const found = lookupEntity(recordId);
 
   if (!found) {
@@ -89,11 +91,6 @@ function RecordDetail() {
   const prov = provenanceOf(record);
   const { out, in: inbound } = relationshipsFor(recordId);
   const otherCity = recordCity && recordCity !== city.city_id;
-
-  if (kind === "property_aggregate" && !otherCity) {
-    const propertyView = property360(city.city_id, recordId);
-    if (propertyView) return <Property360 view={propertyView} city={city} />;
-  }
 
   const trail = [
     ...(locality

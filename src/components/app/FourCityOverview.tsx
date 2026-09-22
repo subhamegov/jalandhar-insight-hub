@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/app/Breadcrumbs";
 import { CitizenDomainSection } from "@/components/app/CitizenDomains";
 import { CityBanner } from "@/components/app/CityBanner";
 import { PageHeader, PrototypeNote } from "@/components/app/Primitives";
+import { PropertyShowcaseEntry } from "@/components/app/PropertyShowcaseEntry";
 import { ClientOnly } from "@/components/map/ClientOnly";
 import type { MapPoint } from "@/components/map/PointMap";
 import { fourCityBundle } from "@/data/four-city/dataset";
@@ -99,6 +100,8 @@ export function FourCityOverview() {
       />
 
       <CityBanner city={city} />
+
+      <PropertyShowcaseEntry city={city} />
 
       <section className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,3fr)_minmax(20rem,2fr)]">
         <div className="min-w-0 overflow-hidden rounded-sm border border-border bg-card shadow-sm">
